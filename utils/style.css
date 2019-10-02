@@ -7,7 +7,7 @@ Version: 1.0.0
 Tags: flat, responsive, clean, minimal
 */
 
-/* @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600|Prata&display=swap'); */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600|Prata&display=swap');
 
 body{
 	padding: 0; margin: 0 auto;
