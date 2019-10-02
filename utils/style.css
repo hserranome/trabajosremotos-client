@@ -1,0 +1,383 @@
+/*
+Theme name: Trabajos Remotos
+Author: Mascarell
+Author URI: https://mascarell.me
+Description: Custom theme for trabajos remotos
+Version: 1.0.0
+Tags: flat, responsive, clean, minimal
+*/
+
+/* @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600|Prata&display=swap'); */
+
+body{
+	padding: 0; margin: 0 auto;
+	left: 0; top: 0;
+	font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
+	color: #000;
+	padding-top: 64px; padding-bottom: 64px;
+}
+html{ margin: 0; padding: 0;}
+*, * > *{	transition: .25s linear;}
+
+/* Some basic styling */
+a{ text-decoration: none; color: inherit; }
+.strong{ font-weight: 600; }
+
+.prata{ font-family: 'Prata', serif; }
+
+.container{
+	width: 100%; max-width: 960px;
+	margin: 0 auto;
+	text-align: center;
+	padding: 1rem;
+	box-sizing: border-box;
+}
+.container.big{ max-width: 1170px; }
+/* ----------------------------------- */
+
+/* Hero section on some pages */
+.hero{
+	max-width: 100%;
+	min-height: 30vh;
+	display: flex; flex-flow: column wrap;
+	box-sizing: border-box;
+	justify-content: center; align-items: center;
+	border-bottom: 1px solid #dedede;
+}
+.hero p{
+	text-align: left;
+	margin: 0; padding: 0;
+	margin-bottom: .5rem;
+	font-size: 1.2rem;
+}
+.hero h1{
+	font-weight: 400;
+	font-size: 1rem;
+	text-align: left;
+	margin: 0; padding: 0;
+	margin-bottom: .5rem;
+	color: #ad1dca;
+}
+/* ----------------------------------- */
+
+/* Footer */
+.footer{
+	border-top: 1px solid #dedede;
+	padding-top: 2rem; padding-bottom: 2rem;
+}
+.footer .container{
+	font-size: 1rem;
+	display: flex; flex-flow: column wrap;
+	justify-content: center; align-items: center;
+}
+.footer .container .social{
+	display: flex; flex-flow: row nowrap;
+}
+.footer .container .img{
+	width: 50px; height: 50px;
+	display: flex; justify-content: center; align-items: center;
+	margin-left: 1rem;
+	border-radius: 50px;
+	transition: .1s linear;
+}
+.footer .container .img:hover{
+	background-color: #f3f3f3;
+}
+.footer .container .img img{ max-width: 50%; }
+/* ----------------------------------- */
+
+/* List of jobs */
+.trabajos{
+	padding-top: 4rem; padding-bottom: 4rem;
+	display: flex; flex-flow: column wrap;
+	justify-content: flex-end; align-items: flex-start;
+}
+.trabajos .trabajo{
+	flex: 0 0 100%;
+	width: 100%; float: right;
+	text-align: left;
+	border: 1px solid #dedede;
+	padding: 0; margin: 0;
+	margin-bottom: 1rem;
+	position: relative;
+}
+.trabajos .trabajo a{
+	display: block;
+	padding: 1rem;
+	position: relative;
+}
+.trabajos .trabajo.categoria a{
+	padding-left: 4rem;
+}
+.trabajos .trabajo .img{
+	position: absolute;
+	top: 50%; transform: translateY(-50%);
+	width: 64px; max-width: 64px;
+	height: 64px; max-height: 64px;
+	display: none; flex-flow: row wrap; justify-content: center; align-items: center;
+	background-color: white; border: 1px solid #dedede;
+	border-radius: 50px;
+	left: -32px;
+	overflow: hidden;
+}
+.trabajos .trabajo.categoria img{
+	position: absolute;
+	top: 50%; transform: translateY(-50%);
+	width: 32px; max-width: 32px;
+	height: 32px; max-height: 32px;
+	left: 15px;
+}
+.trabajos .trabajo .img img{ max-width: 64px; width: 64px; }
+.trabajos .trabajo h2{
+	margin: 0; padding: 0;
+	display: flex; flex-flow: row nowrap;
+	justify-content: space-between; align-items: flex-start;
+	font-size: 1.1rem;
+}
+.trabajos .trabajo h3{
+	font-weight: 400;
+	margin: 0; padding: 0;
+}
+.trabajos .trabajo h2 span{
+	font-size: 1.2rem;
+	font-family: 'Montserrat', sans-serif;
+	color: #838383;
+	font-weight: 400;
+}
+.trabajos .trabajo p{
+	margin: 0; padding: 0;
+	color: #838383;
+	padding-bottom: .5rem;
+}
+.trabajos .trabajo h2 span, .trabajos .trabajo p{
+	font-size: .8rem;
+}
+/* ----------------------------------- */
+
+/* Submit new job listing form */
+form ul.wpuf-form{
+	display: flex; flex-flow: row wrap;
+	justify-content: center; align-items: flex-start;
+	width: 100%; max-width: 100%;
+	margin: 0 auto;
+}
+form ul.wpuf-form li{
+	display: flex; flex-flow: column wrap;
+	justify-content: space-between; align-items: flex-start;
+	flex: 0 0 100%;
+	text-align: left;
+	box-sizing: border-box;
+}
+form ul.wpuf-form li input, form ul.wpuf-form li select{
+	width: 100%; padding: 12px;
+	border: 1px solid #dedede;
+	background-color: white;
+	box-sizing: border-box;
+}
+form ul.wpuf-form .wpuf-submit-button{
+	color: white;
+	border: none; outline: none;
+	background-color: #ad1dca;
+	font-weight: 600;
+}
+form ul.wpuf-form .wpuf-submit-button:hover{ cursor: pointer; }
+form ul.wpuf-form .wpuf-info{
+	width: 100%;
+	flex: 0 0 98%;
+	padding: 12px;
+	text-align: left;
+	box-sizing: border-box;
+	margin: 8px;
+}
+/* ----------------------------------- */
+
+/* Desktop menu */
+nav.desktop{
+	display: none;
+	border-bottom: 1px solid #dedede;
+	position: fixed; top: 0; left: 0;
+	width: 100%; max-width: 100%;
+	z-index: 9999;
+	background-color: white;
+}
+nav.desktop .container{
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between; align-items: center;
+	height: 96px; max-height: 96px;
+}
+nav.desktop .container ul{
+	margin: 0; padding: 0;
+	display: flex; flex-flow: row nowrap;
+	justify-content: flex-end; align-items: center;
+	list-style-type: none;
+}
+nav.desktop .container ul li a{
+	margin-right: 1rem;
+	font-weight: 600;
+	font-size: .9rem;
+}
+/* ----------------------------------- */
+
+/* Mobile menu */
+nav.mobile{
+	display: block;
+	position: fixed;
+	left: 0; width: 100%; max-width: 100%;
+	min-height: 64px; max-height: 64px; height: 64px;
+	background-color: white;
+	box-shadow: 0 1px 4px 0 rgba(0,0,0,.12);
+	padding: 1rem; box-sizing: border-box;
+	z-index: 999;
+}
+nav.mobile.top{ top: 0; }
+nav.mobile.bottom{ bottom: 0; }
+nav.mobile.top form{ 
+	display: flex; 
+	flex-flow: row nowrap;
+	justify-content: flex-start; align-items: center;
+	background-color: #f2f2f2;
+	padding: 4px 16px;
+	box-sizing: border-box;
+	border-radius: 50px; width: 100%;
+}
+nav.mobile.top form img{
+	width: 20px; max-width: 20px;
+	transform: scale(.8);
+}
+nav.mobile.top form input{
+	border: none; outline: none;
+	background-color: transparent;
+	font-size: .8rem;
+	margin-left: 12px;
+	flex: 1;
+}
+nav.mobile.bottom ul{
+	display: flex; flex-flow: row nowrap;
+	justify-content: space-around; align-items: center;
+	margin: 0; padding: 0; width: 100%; max-width: 100%;
+	list-style-type: none;
+	font-size: .8rem;
+}
+nav.mobile.bottom ul li.current_page_item a{
+	color: #ad1dca;
+}
+nav.mobile.bottom ul li a{
+	position: relative;
+	min-height: 40px; display: flex;
+	flex-flow: row wrap; justify-content: center; align-items: flex-end;
+}
+nav.mobile.bottom ul li a::before{
+	content: '';
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	position: absolute; width: 25px; height: 25px;
+	top: -5px;
+}
+nav.mobile.bottom ul li.blog a::before{ background-image: url('/wp-content/themes/trabajosremotos/images/blog.svg'); }
+nav.mobile.bottom ul li.inicio a::before{ background-image: url('/wp-content/themes/trabajosremotos/images/home.svg'); }
+nav.mobile.bottom ul li.categorias a::before{ background-image: url('/wp-content/themes/trabajosremotos/images/list.svg'); }
+nav.mobile.bottom ul li.publicar a::before{ background-image: url('/wp-content/themes/trabajosremotos/images/add.svg'); }
+/* Same icons with accent color */
+nav.mobile.bottom ul li.current_page_item.blog a::before{ background-image: url('/wp-content/themes/trabajosremotos/images/blog-accent.svg'); }
+nav.mobile.bottom ul li.current_page_item.inicio a::before{ background-image: url('/wp-content/themes/trabajosremotos/images/home-accent.svg'); }
+nav.mobile.bottom ul li.current_page_item.categorias a::before{ background-image: url('/wp-content/themes/trabajosremotos/images/list-accent.svg'); }
+nav.mobile.bottom ul li.current_page_item.publicar a::before{ background-image: url('/wp-content/themes/trabajosremotos/images/add-accent.svg'); }
+/* ----------------------------------- */
+
+/* Single job listing */
+.anuncio{
+	margin-top: 2rem;
+}
+.anuncio .container{
+	display: flex; flex-flow: row wrap;
+	justify-content: space-between; align-items: flex-start;
+}
+.anuncio .container .content{
+	flex: 0 0 100%;
+	text-align: left;
+}
+.anuncio .container .sidebar{
+	flex: 0 0 100%;
+	display: none;
+}
+.anuncio .container .content p.date{
+	text-transform: uppercase;
+	color: #838383;
+	margin: 0; padding: 0;
+}
+.anuncio .container .content > h1{
+	margin: 0; padding: 0;
+	margin-top: .5rem;
+}
+.anuncio .container .content .description{
+	margin-top: 2rem;
+}
+.anuncio .container .content .description h1, .anuncio .container .content .description h2, .anuncio .container .content .description h3, .anuncio .container .content .description h4, .anuncio .container .content .description h5, .anuncio .container .content .description h6{
+	font-weight: 600;
+	font-size: 1.1rem;
+	margin: 0; padding: 0;
+	margin-bottom: 2rem;
+	box-sizing: border-box;
+}
+.anuncio .container .content .description p, .anuncio .container .content .description ul, .anuncio .container .content .description > div{
+	margin: 0; padding: 0;
+	margin-bottom: 2rem;
+	box-sizing: border-box;
+	line-height: 1.6;
+}
+.anuncio .container .content .description ul{ margin-left: 2rem; }
+.anuncio .container .content .description li{ margin-bottom: 1rem; }
+/* ----------------------------------- */
+
+/* Tablets */
+@media only screen and (min-width : 48em) {	
+	body{ padding-top: 96px; padding-bottom: 0; }
+
+	.hero p{
+		text-align: center;
+		font-size: 2.2rem;
+	}
+	.hero h1{
+		text-align: center;
+	}
+
+	.anuncio .container .content{
+		flex: 0 0 65%;
+		text-align: left;
+	}
+	.anuncio .container .sidebar{
+		flex: 0 0 30%;
+		display: block;
+	}
+
+	nav.mobile{ display: none; }
+	nav.desktop{ display: flex; }
+
+	form ul.wpuf-form li.half{ flex: 0 0 50%; }
+
+	.trabajos .trabajo{ width: calc(100% - 32px); float: right; }
+	.trabajos .trabajo a{ padding: 1rem 3.5rem; }
+	.trabajos .trabajo h2{ font-size: 1.6rem; }
+	.trabajos .trabajo h2 span, .trabajos .trabajo p{ font-size: 1rem; }
+	.trabajos .trabajo .img{ display: flex; }
+
+	.footer .container{
+		font-size: 1rem;
+		display: flex; flex-flow: row nowrap;
+		justify-content: space-between; align-items: center;
+	}
+}
+/* ----------------------------------- */
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 62em) {
+}
+/* ----------------------------------- */
+
+::selection{
+	background-color: rgba(245, 224, 106, 0.959);
+	color: black;
+}
