@@ -9,8 +9,10 @@ function JobsList (props) {
 	}, [initialJobs]);
 
 	return (
-		<div>
-			{JSON.stringify(jobs)}
+		<div className="container">
+			<div className="trabajos">
+				{JSON.stringify(jobs)}
+			</div>
 		</div>
 	)
 }
