@@ -1,13 +1,18 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 
 function JobsList (props) {
-	const [jobs, setJobs] = useState([]);
-
+	const { initialJobs } = props;
+	const [jobs, setJobs] = useState(0);
+	
 	useEffect(() => {
-		// Llamada a la api
-		// la respuesta va en setJobs(res.data) xddd
-	}, []);
+		if (initialJobs) setJobs(initialJobs);
+	}, [initialJobs]);
 
-	return (<div>xd</div>)
+	return (
+		<div>
+			{JSON.stringify(jobs)}
+		</div>
+	)
 }
+
 export default JobsList;
