@@ -11,7 +11,7 @@ function JobsList (props) {
 	return (
 		<div className="container">
 			<div className="trabajos">
-				{JSON.stringify(jobs)}
+				
 			</div>
 		</div>
 	)
