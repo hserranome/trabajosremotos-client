@@ -1,6 +1,7 @@
 import JobsList from '../modules/JobsList';
-import Link from 'next/link'
-// import '../utils/style.css';
+import fetch from 'isomorphic-unfetch';
+
+import '../utils/style.css';
 
 // La de trabajo single
 // La de formulario que lleva al pago
