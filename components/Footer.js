@@ -6,8 +6,8 @@ const Footer = (props) => (
             </div>
 
             <div className="social">
-                <a href="" target="_blank" className="img"><img src="" alt="icono twitter" /></a>
-                <a href="" target="_blank" className="img"><img src="" alt="icono facebook" /></a>
+                <a href="" target="_blank" className="img"><img src="/static/images/twitter.svg" alt="icono twitter" /></a>
+                <a href="" target="_blank" className="img"><img src="/static/images/facebook.svg" alt="icono facebook" /></a>
             </div>
         </div>
     </div>
