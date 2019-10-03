@@ -68,8 +68,8 @@ a{ text-decoration: none; color: inherit; }
 }
 .footer .container{
 	font-size: 1rem;
-	display: flex; flex-flow: column wrap;
-	justify-content: center; align-items: center;
+	display: flex; flex-flow: row nowrap;
+	justify-content: space-between; align-items: center;
 }
 .footer .container .social{
 	display: flex; flex-flow: row nowrap;
@@ -260,7 +260,7 @@ nav.mobile.bottom ul{
 	list-style-type: none;
 	font-size: .8rem;
 }
-nav.mobile.bottom ul li.current_page_item a{
+nav.mobile.bottom ul li a.active{
 	color: #ad1dca;
 }
 nav.mobile.bottom ul li a{
@@ -276,15 +276,15 @@ nav.mobile.bottom ul li a::before{
 	position: absolute; width: 25px; height: 25px;
 	top: -5px;
 }
-nav.mobile.bottom ul li.blog a::before{ background-image: url('/wp-content/themes/trabajosremotos/images/blog.svg'); }
-nav.mobile.bottom ul li.inicio a::before{ background-image: url('/wp-content/themes/trabajosremotos/images/home.svg'); }
-nav.mobile.bottom ul li.categorias a::before{ background-image: url('/wp-content/themes/trabajosremotos/images/list.svg'); }
-nav.mobile.bottom ul li.publicar a::before{ background-image: url('/wp-content/themes/trabajosremotos/images/add.svg'); }
+nav.mobile.bottom ul li.blog a::before{ background-image: url('/static/images/blog.svg'); }
+nav.mobile.bottom ul li.inicio a::before{ background-image: url('/static/images/home.svg'); }
+nav.mobile.bottom ul li.categorias a::before{ background-image: url('/static/images/list.svg'); }
+nav.mobile.bottom ul li.publicar a::before{ background-image: url('/static/images/add.svg'); }
 /* Same icons with accent color */
-nav.mobile.bottom ul li.current_page_item.blog a::before{ background-image: url('/wp-content/themes/trabajosremotos/images/blog-accent.svg'); }
-nav.mobile.bottom ul li.current_page_item.inicio a::before{ background-image: url('/wp-content/themes/trabajosremotos/images/home-accent.svg'); }
-nav.mobile.bottom ul li.current_page_item.categorias a::before{ background-image: url('/wp-content/themes/trabajosremotos/images/list-accent.svg'); }
-nav.mobile.bottom ul li.current_page_item.publicar a::before{ background-image: url('/wp-content/themes/trabajosremotos/images/add-accent.svg'); }
+nav.mobile.bottom ul li.blog a.active::before{ background-image: url('/static/images/blog-accent.svg'); }
+nav.mobile.bottom ul li.inicio a.active::before{ background-image: url('/static/images/home-accent.svg'); }
+nav.mobile.bottom ul li.categorias a.active::before{ background-image: url('/static/images/list-accent.svg'); }
+nav.mobile.bottom ul li.publicar a.active::before{ background-image: url('/static/images/add-accent.svg'); }
 /* ----------------------------------- */
 
 /* Single job listing */

@@ -1,0 +1,67 @@
+import Link from './ActiveLink';
+
+const Header = (props) => (
+    <div>
+        <nav className="mobile top">
+            <form method="get" id="searchform" action="">
+                <img src="/static/images/search.svg" alt="icono de busqueda" />
+                <input type="hidden" name="post_type" value="trabajos-remotos" />
+                <input type="text" className="field" name="s" id="s" placeholder="Encuentra tu próximo trabajo" />
+            </form>
+        </nav>
+
+        <nav className="mobile bottom">
+            <ul>
+                <li class="inicio">
+                    <Link activeClassName="active" href="/">
+                        <a>Inicio</a>
+                    </Link>
+                </li>
+                <li class="categorias">
+                    <Link activeClassName="active" href="/categorias">
+                        <a>Categorias</a>
+                    </Link>
+                </li>
+                <li class="publicar">
+                    <Link activeClassName="active" href="/publicar">
+                        <a>Publicar</a>
+                    </Link>
+                </li>
+                <li class="blog">
+                    <Link activeClassName="active" href="/blog">
+                        <a>Blog</a>
+                    </Link>
+                </li>
+            </ul>
+        </nav>
+
+        <nav className="desktop">
+            <div className="container big">
+                <div className="logo">👏 Trabajos 👏 a 👏 distancia 👏</div>
+
+                <ul>
+                    <li>
+                        <Link href="">
+                            <a>Inicio xdd</a>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="">
+                            <a>Inicio</a>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="">
+                            <a>Inicio</a>
+                        </Link>
+                    </li>
+                    <li>
+                        <div className="search"></div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+)
+
+export default Header;

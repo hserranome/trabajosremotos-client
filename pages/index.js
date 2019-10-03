@@ -1,3 +1,4 @@
+import Layout from '../components/Layout'
 import JobsList from '../modules/JobsList';
 import fetch from 'isomorphic-unfetch';
 
@@ -10,13 +11,19 @@ const Index = (props) => {
 	const { initialJobs } = props;
 
 	return (
-		<div className="container">
+		<Layout>
 			<div className="hero">
-				<h1>Trabajos remotos</h1>
-				<p className="prata">La plataforma para encontrar trabajos online de manera sencilla.</p>
+				<div className="container">
+					<h1>Trabajos remotos</h1>
+					<p className="prata">La plataforma para encontrar trabajos online de manera sencilla.</p>
+				</div>
 			</div>
-			<JobsList initialJobs={initialJobs} />
-		</div>
+			
+			<div className="trabajos">
+				<p>Aqui van los trabajos xdddd</p>
+				{/* <JobsList initialJobs={initialJobs} /> */}
+			</div>
+		</Layout>
 	)
 };
 
