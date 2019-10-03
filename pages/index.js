@@ -20,18 +20,17 @@ const Index = (props) => {
 			</div>
 			
 			<div className="trabajos">
-				<p>Aqui van los trabajos xdddd</p>
-				{/* <JobsList initialJobs={initialJobs} /> */}
+				<JobsList initialJobs={initialJobs} />
 			</div>
 		</Layout>
 	)
 };
 
-Index.getInitialProps = async function () {
-	const res = await fetch('https://api.tvmaze.com/search/shows?q=batman');
+Index.getInitialProps = async () => {
+	const res = await fetch('http://localhost:5000/trabajos');
 	const data = await res.json();
 	return {
-		initialJobs: data.map(entry => entry.show)
+		initialJobs: data.jobs,
 	};
 };
 
