@@ -131,8 +131,10 @@ a{ text-decoration: none; color: inherit; }
 .trabajos .trabajo .img img{ max-width: 64px; width: 64px; }
 .trabajos .trabajo h2{
 	margin: 0; padding: 0;
-	display: flex; flex-flow: row nowrap;
-	justify-content: space-between; align-items: flex-start;
+	display: flex; 
+	flex-flow: row nowrap;
+	justify-content: space-between; 
+	align-items: center;
 	font-size: 1.1rem;
 }
 .trabajos .trabajo h3{
@@ -216,6 +218,7 @@ nav.desktop{
 	z-index: 9999;
 	background-color: white;
 }
+nav.desktop .logo:hover{ cursor :pointer; }
 nav.desktop .container{
 	display: flex;
 	flex-flow: row nowrap;
