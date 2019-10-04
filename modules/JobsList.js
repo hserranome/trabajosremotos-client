@@ -9,14 +9,21 @@ function JobsList (props) {
 	return (
 		<div className="container">
 			<div className="trabajos">
-				{jobs.map((job) => (
-					<div className="trabajo" key={job.id}>
-						<a href={`/trabajo/${job.slug}`}>
-							<h2 className="prata">{job.title} <span>{new Date(job.createdAt).toLocaleDateString('es-ES', options)}</span></h2>
-							<p>{job.company}</p>
-						</a>
-					</div>
-				))}
+				{jobs && jobs.length > 0
+					? (
+						jobs.map((job) => (
+							<div className="trabajo" key={job.id}>
+								<a href={`/trabajo/${job.slug}`}>
+									<h2 className="prata">{job.title} <span>{new Date(job.createdAt).toLocaleDateString('es-ES', options)}</span></h2>
+									<p>{job.company}</p>
+								</a>
+							</div>
+						))
+					)
+					: (
+						<div>No se han encontrado trabajos</div>
+					)
+				}
 			</div>
 		</div>
 	)
