@@ -2,11 +2,6 @@ import Layout from '../components/Layout'
 import JobsList from '../modules/JobsList';
 import fetch from 'isomorphic-unfetch';
 
-import '../utils/style.css';
-
-// La de trabajo single
-// La de formulario que lleva al pago
-
 const Index = (props) => {
 	const { initialJobs } = props;
 
