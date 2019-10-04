@@ -37,11 +37,13 @@ const Header = (props) => (
 
         <nav className="desktop">
             <div className="container big">
-                <div className="logo">Trabajos a distancia 👏</div>
+				<Link href="/">
+                	<div className="logo">Trabajos a distancia 👏</div>
+				</Link>
 
                 <ul>
                     <li>
-                        <Link href="">
+                        <Link href="/">
                             <a>Inicio</a>
                         </Link>
                     </li>
