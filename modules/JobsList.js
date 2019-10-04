@@ -21,7 +21,7 @@ function JobsList (props) {
 						))
 					)
 					: (
-						<div>No se han encontrado trabajos</div>
+						<div className="empty-message">No se han encontrado trabajos</div>
 					)
 				}
 			</div>
