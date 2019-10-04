@@ -1,13 +1,16 @@
+import Layout from '../components/Layout'
 import Link from 'next/link';
 
-export default function About() {
+const About = (props) => {
 	return (
-		<div>
-			<p>Somos dos losers con ganas de que la investigacion de cat girls siga adelante</p>
+		<Layout>
+			<p>This is the about page</p>
 
             <Link href="/">
                 <a>Homepage</a>
             </Link>
-		</div>
-	);
-}
+		</Layout>
+	)
+};
+
+export default About;
