@@ -1,11 +1,32 @@
+import Layout from '../../components/Layout'
 
 function SingleJob(props) {
 	const { job } = props;
+	// Options to format the date from the database, taken from (https://stackoverflow.com/questions/3552461/how-to-format-a-javascript-date)
+	const options = { year: 'numeric', month: 'short', day: 'numeric' };
+
 	return (
-		<div>
-			<h1>{job.title}</h1>
-			<h2>{job.company}</h2>
-		</div>
+		<Layout>
+			<div className="anuncio">
+				<div className="container">
+					<div class="content">
+						<p class="date"> {new Date(job.createdAt).toLocaleDateString('es-ES', options)} </p>
+						<h1 class="prata">{job.title}</h1>
+
+						<div class="description">
+							{/* <?php the_content(); ?> <!-- Page Content --> */}
+						</div>
+					</div>
+
+					<div class="sidebar">
+						{/* <!-- Logo if there's any -->
+						<!-- company name -->
+						<!-- button to apply -->
+						<!-- view all jobs button --> */}
+					</div>
+				</div>
+			</div>
+		</Layout>
 	)
 }
 
