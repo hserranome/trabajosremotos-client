@@ -12,22 +12,22 @@ const Header = (props) => (
 
         <nav className="mobile bottom">
             <ul>
-                <li class="inicio">
+                <li className="inicio">
                     <Link activeClassName="active" href="/">
                         <a>Inicio</a>
                     </Link>
                 </li>
-                <li class="categorias">
+                <li className="categorias">
                     <Link activeClassName="active" href="/categorias">
                         <a>Categorias</a>
                     </Link>
                 </li>
-                <li class="publicar">
+                <li className="publicar">
                     <Link activeClassName="active" href="/publicar">
                         <a>Publicar</a>
                     </Link>
                 </li>
-                <li class="blog">
+                <li className="blog">
                     <Link activeClassName="active" href="/blog">
                         <a>Blog</a>
                     </Link>
