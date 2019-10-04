@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Layout from '../components/Layout'
-import { createForm } from 'rc-form';
 
 const Publicar = () => {
 	const [values, setValues] = useState({});
