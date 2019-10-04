@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Layout from '../components/Layout'
+import Head from 'next/head';
 
 const Publicar = () => {
 	const [values, setValues] = useState({});
@@ -18,6 +19,9 @@ const Publicar = () => {
 
 	return (
 		<Layout>
+			<Head>
+				<title>Publicar - Trabajos remotos</title>
+			</Head>
 			<div className="block nuevo">
 				<div className="container">
 					<form className="publicar-anuncio" onSubmit={handleSubmit}>

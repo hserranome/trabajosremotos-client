@@ -1,4 +1,5 @@
 import Layout from '../../components/Layout'
+import Head from 'next/head';
 
 function SingleJob(props) {
 	const { job } = props;
@@ -7,6 +8,9 @@ function SingleJob(props) {
 
 	return (
 		<Layout>
+			<Head>
+				<title>{`${job.title} en ${job.company} - Trabajos remotos`}</title>
+			</Head>
 			<div className="anuncio">
 				<div className="container">
 					<div class="content">
