@@ -7,15 +7,22 @@ const Publicar = () => {
 	const [price, setPrice] = useState(2);
 
 	useEffect(() => {
+		const publishValues = localStorage.getItem('publishValues');
+		if (publishValues) setValues(JSON.parse(publishValues));
+	}, [])
+
+	useEffect(() => {
 		let thisPrice = 2;
 		if (values.pinned) thisPrice += 8;
 		if (values.featured) thisPrice += 8;
 		if (values.showLogo) thisPrice += 8;
 		setPrice(thisPrice);
+		localStorage.setItem("publishValues", JSON.stringify(values));
 	}, [values])
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		
 	}
 
 	const handleChange = (e) => {
@@ -39,10 +46,11 @@ const Publicar = () => {
 							<p>Puesto de trabajo <span className="required"></span></p>
 							<input 
 								name="title"
+								type="text"
 								placeholder="Nombre del puesto de trabajo"
-								required
 								onChange={handleChange}
 								value={values.title}
+								required
 							/>
 						</label>
 						{/* Description */}
@@ -118,7 +126,7 @@ const Publicar = () => {
 								name="pinned"
 								type="checkbox"
 								onChange={handleChange}
-								value={values.pinned}
+								checked={values.pinned}
 							/>
 							<p>Ancla tu anuncio arriba del todo durante un mes <span>+8€</span></p>
 						</label>
@@ -128,7 +136,7 @@ const Publicar = () => {
 								name="featured"
 								type="checkbox"
 								onChange={handleChange}
-								value={values.featured}
+								checked={values.featured}
 							/>
 							<p>Destaca en amarillo tu anuncio <span>+8€</span></p>
 						</label>
@@ -138,7 +146,7 @@ const Publicar = () => {
 								name="showLogo"
 								type="checkbox"
 								onChange={handleChange}
-								value={values.showLogo}
+								checked={values.showLogo}
 							/>
 							<p>Muestra el logo de tu empresa <span>+8€</span></p>
 						</label>
