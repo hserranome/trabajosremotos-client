@@ -14,7 +14,7 @@ function JobsList (props) {
 						jobs.map((job) => (
 							<div className="trabajo" key={job.id}>
 								<a href={`/trabajo/${job.slug}`}>
-									<h2 className="prata">{job.title} <span>{new Date(job.createdAt).toLocaleDateString('es-ES', options)}</span></h2>
+									<h2>{job.title} <span>{new Date(job.created_at).toLocaleDateString('es-ES', options)}</span></h2>
 									<p>{job.company}</p>
 								</a>
 							</div>
