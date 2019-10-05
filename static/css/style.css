@@ -57,7 +57,7 @@ a{ text-decoration: none; color: inherit; }
 	text-align: left;
 	margin: 0; padding: 0;
 	margin-bottom: .5rem;
-	color: #ad1dca;
+	color: #FF4114;
 }
 /* ----------------------------------- */
 
@@ -198,7 +198,7 @@ form.publicar-anuncio span.required{
 	top: 0;
 	right: -13px;
 	width: 6px; height: 6px;
-	background-color: tomato;
+	background-color: #FF4114;
 	border-radius: 80px;
 }
 form.publicar-anuncio .boton-pagar{
@@ -206,19 +206,20 @@ form.publicar-anuncio .boton-pagar{
 	justify-content: space-between; align-items: center;
 	flex: 0 0 100%;
 	width: 100%;
+	margin-top: 2rem;
 }
 form.publicar-anuncio .boton-pagar p{
 	font-size: 1.4rem;
 	font-weight: 700;
 }
 form.publicar-anuncio .boton-pagar p span{
-	color: #ad1dca;
+	color: #FF4114;
 	font-size: 1.8rem;
 }
 form.publicar-anuncio .submit{
 	color: white;
 	border: none; outline: none;
-	background-color: #ad1dca;
+	background-color: #FF4114;
 	font-weight: 300;
 	border-radius: 4px;
 	min-width: 150px;
@@ -227,6 +228,78 @@ form.publicar-anuncio .submit{
 	padding: 12px;
 }
 form.publicar-anuncio .submit:hover{ cursor: pointer; }
+.custom-checkbox-row input[type="checkbox"] {
+	margin: 0;
+	opacity: 0;
+}
+.custom-checkbox-row {
+	position: relative;
+	margin-bottom: 0 !important;
+}
+.custom-checkbox-row input[type="checkbox"] + p {
+	padding-left: 30px;
+	font-size: 1rem;
+	position: realtive;
+	font-weight: 300;
+	display: inline-block;
+}
+.custom-checkbox-row p span{
+	font-weight: 700;
+	color: #FF4114;
+}
+.custom-checkbox-row input[type="checkbox"] + p::before {
+	border-color: #dddddd;
+	border-radius: 4px;
+	border-style: solid;
+	border-width: 1px;
+	content: "";
+	cursor: pointer;
+	display: inline-block;
+	height: 17px;
+	left: 0;
+	position: absolute;
+	transition: 0.3s linear all;
+	width: 17px;
+}
+.custom-checkbox-row input[type="checkbox"] + p::before {
+	border-color: #dddddd;
+	background-color: #dddddd;
+	border-radius: 0;
+	transform: scale(1);
+}
+.custom-checkbox-row input[type="checkbox"]:checked + p::before {
+	border-color: #dddddd;
+	border-style: dotted;
+	transition: 0.3s linear all;
+}
+.custom-checkbox-row input[type="checkbox"]:checked + p::before {
+	background-color: #FF4114;
+	border-style: solid;
+	transform: scale(1.1);
+	border-color: #FF4114;
+}
+.custom-checkbox-row input[type="checkbox"]:checked + p::after {
+	transform: scale(1);
+	opacity: 1;
+}
+.custom-checkbox-row  input[type="checkbox"]:checked + p::after {
+	color: #FF4114;
+	cursor: pointer;
+	left: 5px;
+	position: absolute;
+	top: 5px;
+	transform: scale(1);
+	transition: 0.3s linear all;
+}
+.custom-checkbox-row  input[type="checkbox"] + p::after {
+	transform: scale(2);
+	opacity: 0;
+}
+.custom-checkbox-row  input[type="checkbox"] + p::after {
+	content: "";
+	transform: scale(0);
+	transition: 0.3s linear all;
+}
 /* ----------------------------------- */
 
 /* Desktop menu */
@@ -299,7 +372,7 @@ nav.mobile.bottom ul{
 	font-size: .8rem;
 }
 nav.mobile.bottom ul li a.active{
-	color: #ad1dca;
+	color: #FF4114;
 }
 nav.mobile.bottom ul li a{
 	position: relative;

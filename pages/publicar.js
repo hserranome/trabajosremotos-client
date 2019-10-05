@@ -1,19 +1,28 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Layout from '../components/Layout'
 import Head from 'next/head';
 
 const Publicar = () => {
 	const [values, setValues] = useState({});
+	const [price, setPrice] = useState(2);
+
+	useEffect(() => {
+		let thisPrice = 2;
+		if (values.pinned) thisPrice += 8;
+		if (values.featured) thisPrice += 8;
+		if (values.showLogo) thisPrice += 8;
+		setPrice(thisPrice);
+	}, [values])
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log(values);
 	}
 
 	const handleChange = (e) => {
 		const { target } = e;
-		const newValues = values;
+		const newValues = { ...values };
 		newValues[target.name] = target.value;
+		if (target.type === 'checkbox') newValues[target.name] = target.checked;
 		setValues(newValues);
 	}
 
@@ -104,26 +113,41 @@ const Publicar = () => {
 							<small>Url con el logo de tu empresa (recomendamos usar .png con fondo transparente)</small>
 						</label>
 						{/* Pinned */}
-						<label>
+						<label className="custom-checkbox-row">
 							<input
 								name="pinned"
 								type="checkbox"
 								onChange={handleChange}
 								value={values.pinned}
 							/>
-							<span>Ancla tu anuncio arribita del todo durante un mes (+1.5k€)</span>
+							<p>Ancla tu anuncio arriba del todo durante un mes <span>+8€</span></p>
 						</label>
 						{/* Featured */}
-						<label>
+						<label className="custom-checkbox-row">
 							<input
 								name="featured"
 								type="checkbox"
 								onChange={handleChange}
 								value={values.featured}
 							/>
-							<span>Destaca en amarillo tu anuncio (+1.5k€)</span>
+							<p>Destaca en amarillo tu anuncio <span>+8€</span></p>
 						</label>
-						<button type="submit" className="submit">Publicar</button>
+						{/* Show Logo */}
+						<label className="custom-checkbox-row">
+							<input
+								name="showLogo"
+								type="checkbox"
+								onChange={handleChange}
+								value={values.showLogo}
+							/>
+							<p>Muestra el logo de tu empresa <span>+8€</span></p>
+						</label>
+
+						<div className="boton-pagar">
+							<p>A pagar: <span>{price}€</span></p>
+							
+							<button type="submit" className="submit">Publicar</button>
+						</div>
 					</form>
 				</div>
 			</div>

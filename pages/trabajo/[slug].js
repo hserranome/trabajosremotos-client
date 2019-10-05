@@ -21,7 +21,9 @@ function SingleJob(props) {
 								<h1 className="prata">{job.title}</h1>
 
 								<div className="description">
-									{/* <?php the_content(); ?> <!-- Page Content --> */}
+									<p>
+										{job.description}
+									</p>
 								</div>
 							</div>
 

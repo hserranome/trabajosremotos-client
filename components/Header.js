@@ -36,7 +36,7 @@ const Header = (props) => (
         </nav>
 
         <nav className="desktop">
-            <div className="container big">
+            <div className="container">
 				<Link href="/">
                 	<div className="logo">Trabajos a distancia 👏</div>
 				</Link>
@@ -53,7 +53,7 @@ const Header = (props) => (
                         </Link>
                     </li>
                     <li>
-                        <Link href="">
+                        <Link href="/categorias">
 							<a>Categorias</a>
                         </Link>
                     </li>
