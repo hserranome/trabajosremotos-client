@@ -22,7 +22,7 @@ const Publicar = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		
+		localStorage.setItem("publishValues", "");
 	}
 
 	const handleChange = (e) => {
