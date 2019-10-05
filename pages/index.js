@@ -2,12 +2,6 @@ import Layout from '../components/Layout'
 import JobsList from '../modules/JobsList';
 import fetch from 'isomorphic-unfetch';
 
-const getJobs = async () => {
-	const res = await fetch('http://localhost:5000/trabajos');
-	const data = await res.json();
-	return data.jobs
-}
-
 const Index = (props) => {
 	const { initialJobs, error } = props;
 
@@ -29,8 +23,11 @@ const Index = (props) => {
 
 Index.getInitialProps = async () => {
 	try {
-		return { initialJobs: await getJobs() };
+		const res = await fetch('http://localhost:5000/trabajos');
+		const data = await res.json();
+		return { initialJobs: data.jobs };
 	} catch (error) {
+		console.log(error)
 		return { error }
 	}
 };
