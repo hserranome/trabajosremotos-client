@@ -23,9 +23,9 @@ const Index = (props) => {
 
 Index.getInitialProps = async () => {
 	try {
-		const res = await fetch('http://localhost:5000/trabajos');
+		const res = await fetch('http://localhost:1337/jobs');
 		const data = await res.json();
-		return { initialJobs: data.jobs };
+		return { initialJobs: data };
 	} catch (error) {
 		console.log(error)
 		return { error }
