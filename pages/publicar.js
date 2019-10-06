@@ -1,16 +1,24 @@
 import { useState, useEffect } from 'react';
 import Layout from '../components/Layout'
 import Head from 'next/head';
+import axios from 'axios';
+const stripe = window.Stripe('pk_test_ggi6CNK5xAQySQxoZfkFVJoZ00FxmHeKgq');
+
+
+const API_URL = process.env.API_URL || 'http://localhost:1337'
 
 const Publicar = () => {
 	const [values, setValues] = useState({});
 	const [price, setPrice] = useState(2);
+	const [submitting, setSubmitting] = useState(false);
 
+	// GET VALUES FROM LOCALSTORAGE
 	useEffect(() => {
 		const publishValues = localStorage.getItem('publishValues');
 		if (publishValues) setValues(JSON.parse(publishValues));
 	}, [])
 
+	// SET PRICE COUNTER
 	useEffect(() => {
 		let thisPrice = 2;
 		if (values.pinned) thisPrice += 8;
@@ -20,11 +28,26 @@ const Publicar = () => {
 		localStorage.setItem("publishValues", JSON.stringify(values));
 	}, [values])
 
-	const handleSubmit = (e) => {
+	// HANDLE SUBMIT
+	const handleSubmit = async (e) => {
 		e.preventDefault();
-		localStorage.setItem("publishValues", "");
+		if (!submitting) {
+			setSubmitting(true);
+			try {
+				const res = await axios.post(`${API_URL}/orders`, values);
+				if (res.status !== 200) return window.alert('Ha ocurrido un error al intentar publicar estwindowe trabajo');
+				const { session_id } = res.data;
+				stripe.redirectToCheckout({ sessionId: session_id })
+
+			} catch (error) {
+				console.error(error)
+				setSubmitting(false);
+				window.alert('Ha ocurrido un error al intentar publicar este trabajo');
+			}
+		}
 	}
 
+	// HANDLE VALUES CHANGES
 	const handleChange = (e) => {
 		const { target } = e;
 		const newValues = { ...values };
@@ -154,7 +177,7 @@ const Publicar = () => {
 						<div className="boton-pagar">
 							<p>A pagar: <span>{price}€</span></p>
 							
-							<button type="submit" className="submit">Publicar</button>
+							<button type="submit" className="submit" disabled={submitting}>Publicar</button>
 						</div>
 					</form>
 				</div>

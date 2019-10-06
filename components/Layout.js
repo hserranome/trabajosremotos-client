@@ -11,6 +11,7 @@ const Layout = (props) => (
 			<title>Trabajos remotos - Tu tablón de empleo remoto exclusivamente en español</title>
 			<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 			<link rel="shortcut icon" href="/static/favicon.ico" />
+			<script src="https://js.stripe.com/v3" />
 		</Head>
 
         <Header />
