@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useSpring, animated } from 'react-spring';
 import Layout from '../components/Layout'
 import Head from 'next/head';
 import axios from 'axios';
@@ -55,6 +56,9 @@ const Publicar = () => {
 		if (target.type === 'checkbox') newValues[target.name] = target.checked;
 		setValues(newValues);
 	}
+
+	// const priceSpring = useSpring({ width: open ? width : 0 })
+
 
 	return (
 		<Layout>
@@ -175,7 +179,11 @@ const Publicar = () => {
 						</label>
 
 						<div className="boton-pagar">
-							<p>A pagar: <span>{price}€</span></p>
+							<p>A pagar: 
+								<span><animated.div>
+									{price}
+								</animated.div>€</span>
+							</p>
 							
 							<button type="submit" className="submit" disabled={submitting}>Publicar</button>
 						</div>
