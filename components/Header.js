@@ -43,23 +43,28 @@ const Header = (props) => (
 
                 <ul>
                     <li>
-                        <Link href="/">
-                            <a>Inicio</a>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/publicar">
-							<a>Publicar</a>
-                        </Link>
-                    </li>
-                    <li>
                         <Link href="/categorias">
 							<a>Categorias</a>
                         </Link>
                     </li>
-					<li>
+                    <li>
 						<Link href="">
 							<a>Blog</a>
+						</Link>
+					</li>
+                    <li>
+                        <Link href="">
+							<a>Anúnciate</a>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="">
+							<a>Sobre nosotros</a>
+                        </Link>
+                    </li>
+					<li>
+						<Link href="/publicar">
+							<a className="main-button">Publicar anuncio</a>
 						</Link>
 					</li>
                     <li>

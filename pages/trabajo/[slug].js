@@ -21,24 +21,24 @@ function SingleJob(props) {
 								<h1 className="prata">{job.title}</h1>
 
 								<div className="description">
-									<p>
-										{job.description}
-									</p>
+									{/* No tiene que ir en un parrafo porque puede tener listas, cabeceras, etc */}
+									{job.description}
+
+									<a className="main-button" href={job.url}>Solicitar trabajo</a>
 								</div>
 							</div>
 
 							<div className="sidebar">
-								{/* <!-- Logo if there's any -->
-								<!-- company name -->
-								<!-- button to apply -->
-								<!-- view all jobs button --> */}
+								<img src={job.logo} alt={'logo ' + job.company} />
+								<h2>{job.company}</h2>
+								<a className="main-button" href={job.url}>Solicitar trabajo</a>
 							</div>
 						</div>
 						)
 						: (
 						<div className="container">
 							<div className="content">
-								<div className="empty-message">No se han encontrado este trabajo</div>
+								<div className="empty-message">No se ha encontrado este trabajo</div>
 							</div>
 						</div>
 						)

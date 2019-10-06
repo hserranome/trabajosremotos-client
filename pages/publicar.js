@@ -134,7 +134,7 @@ const Publicar = () => {
 								onChange={handleChange}
 								value={values.link}
 							/>
-							<small>Debe ser una url o un correo</small>
+							<small>Puede ser una url o un correo</small>
 						</label>
 						{/* Company logo */}
 						<label className="small">
@@ -175,7 +175,7 @@ const Publicar = () => {
 								onChange={handleChange}
 								checked={values.showLogo}
 							/>
-							<p>Muestra el logo de tu empresa <span>+8€</span></p>
+							<p>Muestra el logo de tu empresa en la página principal <span>+8€</span></p>
 						</label>
 
 						<div className="boton-pagar">
@@ -185,7 +185,7 @@ const Publicar = () => {
 								</animated.div>€</span>
 							</p>
 							
-							<button type="submit" className="submit" disabled={submitting}>Publicar</button>
+							<button type="submit" className="main-button big" disabled={submitting}>Publicar anuncio</button>
 						</div>
 					</form>
 				</div>

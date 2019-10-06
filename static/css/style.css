@@ -34,6 +34,23 @@ a{ text-decoration: none; color: inherit; }
 	box-sizing: border-box;
 }
 .container.big{ max-width: 1170px; }
+
+.main-button{
+	color: white;
+	border: none; outline: none;
+	background-color: #FF4114;
+	font-weight: 700;
+	border-radius: 2px;
+	/* min-width: 150px; */
+	font-size: .8rem;
+	box-sizing: border-box;
+	padding: 8px 24px;
+}
+.main-button.big{ font-size: 1.1rem; }
+.main-button:hover{ 
+	cursor: pointer; 
+	box-shadow: 0 4px 16px rgba(0,1,31,0.2);
+}
 /* ----------------------------------- */
 
 /* Hero section on some pages */
@@ -211,23 +228,15 @@ form.publicar-anuncio .boton-pagar{
 form.publicar-anuncio .boton-pagar p{
 	font-size: 1.4rem;
 	font-weight: 700;
+	display: flex;
+	align-items: flex-end;
 }
 form.publicar-anuncio .boton-pagar p span{
 	color: #FF4114;
+	margin-left: .5rem;
 	font-size: 1.8rem;
+	display: flex;
 }
-form.publicar-anuncio .submit{
-	color: white;
-	border: none; outline: none;
-	background-color: #FF4114;
-	font-weight: 300;
-	border-radius: 4px;
-	min-width: 150px;
-	font-size: 1.2rem;
-	box-sizing: border-box;
-	padding: 12px;
-}
-form.publicar-anuncio .submit:hover{ cursor: pointer; }
 .custom-checkbox-row input[type="checkbox"] {
 	margin: 0;
 	opacity: 0;
@@ -462,6 +471,10 @@ nav.mobile.bottom ul li.publicar a.active::before{ background-image: url('/stati
 	.anuncio .container .sidebar{
 		flex: 0 0 30%;
 		display: block;
+		background-color: #f8f9fa;
+		padding: 2rem 1rem;
+		border-radius: 2px;
+		box-shadow: 0 1px 5px rgba(0,0,0,0.15);
 	}
 
 	nav.mobile{ display: none; }
