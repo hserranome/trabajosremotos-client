@@ -24,14 +24,14 @@ function SingleJob(props) {
 									{/* No tiene que ir en un parrafo porque puede tener listas, cabeceras, etc */}
 									{job.description}
 
-									<a className="main-button" href={job.url}>Solicitar trabajo</a>
+									<a target="_blank" className="main-button" href={job.link}>Solicitar trabajo</a>
 								</div>
 							</div>
 
 							<div className="sidebar">
-								<img src={job.logo} alt={'logo ' + job.company} />
+								{job.logo ? <div className="img"><img src={job.logo} alt={'logo ' + job.company} /></div> : ''}
 								<h2>{job.company}</h2>
-								<a className="main-button" href={job.url}>Solicitar trabajo</a>
+								<a target="_blank" className="main-button" href={job.link}>Solicitar trabajo</a>
 							</div>
 						</div>
 						)
@@ -55,6 +55,8 @@ SingleJob.getInitialProps = async ({ query }) => {
 		const res = await fetch(`http://localhost:1337/jobs?slug=${slug}`);
 		const jobs = await res.json();
 		const job = jobs[0];
+		// comprobar que es un email y cambiar el valor xddd
+		job.link = job.link.includes('@') ? `mailto:${job.link}` : job.link;
 		return { job };
 	} catch (error) {
 		console.error(error)

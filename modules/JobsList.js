@@ -12,7 +12,8 @@ function JobsList (props) {
 				{jobs && jobs.length > 0
 					? (
 						jobs.map((job) => (
-							<div className="trabajo" key={job.id}>
+							<div className={`trabajo ${job.featured ? 'featured' : ''}`} key={job.id}>
+								{job.logo ? <div className="img"><img src={job.logo} alt={'logo ' + job.company} /></div> : ''}
 								<a href={`/trabajo/${job.slug}`}>
 									<h2>{job.title} <span>{new Date(job.created_at).toLocaleDateString('es-ES', options)}</span></h2>
 									<p>{job.company}</p>

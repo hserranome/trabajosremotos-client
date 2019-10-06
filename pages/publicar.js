@@ -4,6 +4,8 @@ import Layout from '../components/Layout'
 import Head from 'next/head';
 import axios from 'axios';
 const stripe = window.Stripe('pk_test_ggi6CNK5xAQySQxoZfkFVJoZ00FxmHeKgq');
+import { Editor } from 'react-draft-wysiwyg';
+import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
 
 const API_URL = process.env.API_URL || 'http://localhost:1337'
@@ -83,7 +85,12 @@ const Publicar = () => {
 						{/* Description */}
 						<label>
 							<p>Descripción <span className="required"></span></p>	
+							<Editor
+								// editorState={editorState}
+								onEditorStateChange={e => console.log(e)}
+							/>
 						</label>
+						{/* Email */}
 						<label>
 							<p>Correo electrónico <span className="required"></span></p>
 							<input
@@ -129,7 +136,7 @@ const Publicar = () => {
 							<p>Enlace para solicitar el trabajo <span className="required"></span></p>
 							<input
 								name="link"
-								type="url"
+								type="text"
 								required
 								onChange={handleChange}
 								value={values.link}
@@ -177,7 +184,7 @@ const Publicar = () => {
 							/>
 							<p>Muestra el logo de tu empresa en la página principal <span>+8€</span></p>
 						</label>
-
+						{/* Payment info */}
 						<div className="boton-pagar">
 							<p>A pagar: 
 								<span><animated.div>
