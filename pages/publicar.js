@@ -3,9 +3,7 @@ import { useSpring, animated } from 'react-spring';
 import Layout from '../components/Layout'
 import Head from 'next/head';
 import axios from 'axios';
-const stripe = window.Stripe('pk_test_ggi6CNK5xAQySQxoZfkFVJoZ00FxmHeKgq');
 import { Editor } from 'react-draft-wysiwyg';
-import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
 
 const API_URL = process.env.API_URL || 'http://localhost:1337'
@@ -14,11 +12,13 @@ const Publicar = () => {
 	const [values, setValues] = useState({});
 	const [price, setPrice] = useState(2);
 	const [submitting, setSubmitting] = useState(false);
+	const [stripe, setStripe] = useState(undefined);
 
 	// GET VALUES FROM LOCALSTORAGE
 	useEffect(() => {
 		const publishValues = localStorage.getItem('publishValues');
 		if (publishValues) setValues(JSON.parse(publishValues));
+		if (!stripe) setStripe(window.Stripe('pk_test_ggi6CNK5xAQySQxoZfkFVJoZ00FxmHeKgq'));
 	}, [])
 
 	// SET PRICE COUNTER
