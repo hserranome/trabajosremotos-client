@@ -1,9 +1,11 @@
-import Footer from './Footer';
-import Header from './Header';
-import Head from 'next/head';
-import ReactGA from 'react-ga';
-import '../static/css/style.css';
 import React from 'react';
+import ReactGA from 'react-ga';
+import Head from 'next/head';
+import '../static/css/style.css';
+import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+
+import Header from './Header';
+import Footer from './Footer';
 
 export default class Layout extends React.Component{
 	componentDidMount(){
