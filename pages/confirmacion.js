@@ -5,7 +5,6 @@ import Head from 'next/head'
 
 import Layout from '../components/Layout';
 
-
 const Confirmation = (props) => {
 	const { result, query } = props;
 
