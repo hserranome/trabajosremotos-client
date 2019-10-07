@@ -58,7 +58,7 @@ const Header = (props) => (
                         </Link>
                     </li>
                     <li>
-                        <Link href="">
+                        <Link href="/sobrenosotros">
 							<a>Sobre nosotros</a>
                         </Link>
                     </li>

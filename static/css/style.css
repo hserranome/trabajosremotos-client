@@ -106,7 +106,6 @@ a{ text-decoration: none; color: inherit; }
 
 /* List of jobs */
 .trabajos{
-	padding-top: 2rem; padding-bottom: 2rem;
 	display: flex; flex-flow: column wrap;
 	justify-content: flex-end; align-items: flex-start;
 }
@@ -182,7 +181,6 @@ a{ text-decoration: none; color: inherit; }
 /* ----------------------------------- */
 
 /* Submit new job listing form */
-.nuevo{ margin-top: 2rem; margin-bottom: 2rem; }
 form.publicar-anuncio{
 	display: flex; flex-flow: row wrap;
 	justify-content: space-between; align-items: flex-start;
@@ -315,6 +313,12 @@ form.publicar-anuncio .boton-pagar p span{
 }
 /* ----------------------------------- */
 
+/* About us */
+.about .container{
+	text-align: left;
+}
+/* ----------------------------------- */
+
 /* Desktop menu */
 nav.desktop{
 	display: none;
@@ -412,10 +416,6 @@ nav.mobile.bottom ul li.publicar a.active::before{ background-image: url('/stati
 /* ----------------------------------- */
 
 /* Single job listing */
-.anuncio{
-	margin-top: 2rem;
-	margin-bottom: 2rem;
-}
 .anuncio .container{
 	display: flex; flex-flow: row wrap;
 	justify-content: space-between; align-items: flex-start;
@@ -480,6 +480,10 @@ nav.mobile.bottom ul li.publicar a.active::before{ background-image: url('/stati
 .anuncio .container .content .description li{ margin-bottom: 1rem; }
 /* ----------------------------------- */
 
+/* Contenedores que tienen margen */
+.trabajos, .nuevo, .anuncio, .about{ margin-top: 2rem; margin-bottom: 2rem; }
+/* ----------------------------------- */
+
 /* Tablets */
 @media only screen and (min-width : 48em) {	
 	body{ padding-top: 96px; padding-bottom: 0; }
@@ -511,7 +515,8 @@ nav.mobile.bottom ul li.publicar a.active::before{ background-image: url('/stati
 	form.publicar-anuncio label.small{ flex: 0 0 49%; }
 
 
-	.trabajos, .nuevo, .anuncio{ padding-top: 4rem; padding-bottom: 4rem; }
+	.trabajos, .nuevo, .anuncio, .about{ padding-top: 3rem; padding-bottom: 3rem; }
+
 	.trabajos .trabajo{ width: calc(100% - 32px); float: right; }
 	.trabajos .trabajo a{ padding: 1rem 3.5rem; }
 	.trabajos .trabajo h2{ font-size: 1.6rem; }
