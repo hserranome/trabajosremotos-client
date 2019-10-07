@@ -7,9 +7,13 @@ import React from 'react';
 
 export default class Layout extends React.Component{
 	componentDidMount(){
-		// Initialize google analytics
+		// Comprobamos si ya esta google analytics o no para evitar duplicados
 		ReactGA.initialize('UA-108296865-1');
 		ReactGA.pageview(window.location.pathname + window.location.search);
+		// if (!window.GA_INITIALIZED) {
+		// 	// Si no esta, iniciamos
+		// 	window.GA_INITIALIZED = true
+		//   }
 	}
 
 	render(){
