@@ -311,6 +311,9 @@ form.publicar-anuncio .boton-pagar p span{
 	transform: scale(0);
 	transition: 0.3s linear all;
 }
+.publication-editor {
+	width: 100%;
+}
 /* ----------------------------------- */
 
 /* About us */

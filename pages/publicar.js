@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import { useSpring, animated } from 'react-spring';
+import { useSpring, animated, config  } from 'react-spring';
 import Layout from '../components/Layout'
 import Head from 'next/head';
 import axios from 'axios';
-import { Editor } from 'react-draft-wysiwyg';
+import SimpleMDE from "react-simplemde-editor";
 
 
 const API_URL = process.env.API_URL || 'http://localhost:1337'
@@ -13,15 +13,16 @@ const Publicar = () => {
 	const [price, setPrice] = useState(2);
 	const [submitting, setSubmitting] = useState(false);
 	const [stripe, setStripe] = useState(undefined);
+	const priceSpr = useSpring({ price, config: { ...config.stiff, clamp: true } });
 
-	// GET VALUES FROM LOCALSTORAGE
+	// ON FIRST LOAD, GET VALUES FROM LOCALSTORAGE
 	useEffect(() => {
 		const publishValues = localStorage.getItem('publishValues');
 		if (publishValues) setValues(JSON.parse(publishValues));
 		if (!stripe) setStripe(window.Stripe('pk_test_ggi6CNK5xAQySQxoZfkFVJoZ00FxmHeKgq'));
 	}, [])
 
-	// SET PRICE COUNTER
+	// ON VALUE CHANGE, SET PRICE COUNTER AND SAVE TO LOCALSTORAGE
 	useEffect(() => {
 		let thisPrice = 2;
 		if (values.pinned) thisPrice += 8;
@@ -59,7 +60,6 @@ const Publicar = () => {
 		setValues(newValues);
 	}
 
-	// const priceSpring = useSpring({ width: open ? width : 0 })
 
 
 	return (
@@ -85,10 +85,15 @@ const Publicar = () => {
 						{/* Description */}
 						<label>
 							<p>Descripción <span className="required"></span></p>	
-							<Editor
-								// editorState={editorState}
-								onEditorStateChange={e => console.log(e)}
-							/>
+							{/* <SimpleMDE
+								className="publication-editor"
+								onChange={(description) => setValues({ ...values, description })}
+								initialValue={values.description}
+								value={values.description}
+								options={{
+									spellChecker: false
+								}}
+							/>	 */}
 						</label>
 						{/* Email */}
 						<label>
@@ -187,9 +192,9 @@ const Publicar = () => {
 						{/* Payment info */}
 						<div className="boton-pagar">
 							<p>A pagar: 
-								<span><animated.div>
-									{price}
-								</animated.div>€</span>
+								<span>
+									<animated.div>{priceSpr.price.interpolate(val => Math.floor(val))}</animated.div>€
+								</span>
 							</p>
 							
 							<button type="submit" className="main-button big" disabled={submitting}>Publicar anuncio</button>

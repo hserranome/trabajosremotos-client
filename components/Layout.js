@@ -2,7 +2,8 @@ import React from 'react';
 import ReactGA from 'react-ga';
 import Head from 'next/head';
 import '../static/css/style.css';
-import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+import 'easymde/dist/easymde.min.css';
+
 
 import Header from './Header';
 import Footer from './Footer';
@@ -23,9 +24,9 @@ export default class Layout extends React.Component{
 			<div>
 				<Head>
 					<title>Trabajos remotos - Tu tablón de empleo remoto exclusivamente en español</title>
-					<meta name="viewport" content="initial-scale=1.0, width=device-width" />
-					<link rel="shortcut icon" href="/static/favicon.ico" />
-					<script src="https://js.stripe.com/v3" />
+					<meta name='viewport' content='initial-scale=1.0, width=device-width' />
+					<link rel='shortcut icon' href='/static/favicon.ico' />
+					<script src='https://js.stripe.com/v3' />
 				</Head>
 		
 				<Header />
