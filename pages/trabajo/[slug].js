@@ -1,5 +1,7 @@
-import Layout from '../../components/Layout'
 import Head from 'next/head';
+import Markdown from 'markdown-to-jsx';
+
+import Layout from '../../components/Layout'
 
 function SingleJob(props) {
 	const { job } = props;
@@ -21,9 +23,7 @@ function SingleJob(props) {
 								<h1 className="prata">{job.title}</h1>
 
 								<div className="description">
-									{/* No tiene que ir en un parrafo porque puede tener listas, cabeceras, etc */}
-									{job.description}
-
+									<Markdown>{job.description}</Markdown>
 									<a target="_blank" className="main-button" href={job.link}>Solicitar trabajo</a>
 								</div>
 							</div>
