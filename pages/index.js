@@ -24,7 +24,9 @@ const Index = (props) => {
 Index.getInitialProps = async () => {
 	try {
 		const res = await fetch('http://localhost:1337/jobs');
-		const data = await res.json();
+		let data = await res.json();
+		const options = { year: 'numeric', month: 'short', day: 'numeric' };
+		data = data.map((job) => ({ ...job, created_at: new Date(job.created_at).toLocaleDateString('es-ES', options) }))
 		return { initialJobs: data };
 	} catch (error) {
 		console.log(error)

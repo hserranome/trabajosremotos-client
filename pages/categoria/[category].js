@@ -29,8 +29,13 @@ const CategoryList = (props) => {
 CategoryList.getInitialProps = async ({ query }) => {
 	const { category } = query;
 	try {
-		return { initialJobs: await getJobsByCategory(category) };
+		let jobs = await getJobsByCategory(category);
+		const options = { year: 'numeric', month: 'short', day: 'numeric' };
+		jobs = jobs.map((job) => ({ ...job, created_at: new Date(job.created_at).toLocaleDateString('es-ES', options) }))
+		console.log(jobs)
+		return { initialJobs: jobs };
 	} catch (error) {
+		console.error(error)
 		return { error }
 	}
 };

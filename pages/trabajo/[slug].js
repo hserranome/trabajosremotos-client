@@ -18,7 +18,7 @@ function SingleJob(props) {
 						? (
 						<div className="container">
 							<div className="content">
-								<p className="date"> {new Date(job.created_at).toLocaleDateString('es-ES', options)} </p>
+								<p className="date">{job.created_at}</p>
 								<h1 className="prata">{job.title}</h1>
 
 								<div className="description">
@@ -58,7 +58,9 @@ SingleJob.getInitialProps = async ({ query }) => {
 		const jobs = await res.json();
 		const job = jobs[0];
 		// comprobar que es un email y cambiar el valor xddd
+		const options = { year: 'numeric', month: 'short', day: 'numeric' };
 		job.link = job.link.includes('@') ? `mailto:${job.link}` : job.link;
+		job.created_at = new Date(job.created_at).toLocaleDateString('es-ES', options);
 		return { job };
 	} catch (error) {
 		console.error(error)
