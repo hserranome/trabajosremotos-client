@@ -23,7 +23,10 @@ function SingleJob(props) {
 								<h1 className="prata">{job.title}</h1>
 
 								<div className="description">
-									<Markdown>{job.description}</Markdown>
+									{job.description
+										?<Markdown>{job.description}</Markdown>
+										: ''
+									}
 									<a target="_blank" className="main-button" href={job.link}>Solicitar trabajo</a>
 								</div>
 							</div>
