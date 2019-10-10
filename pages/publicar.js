@@ -4,6 +4,7 @@ import Layout from '../components/Layout'
 import Head from 'next/head';
 import axios from 'axios';
 import SimpleMDE from "react-simplemde-editor";
+import Spinner from '../components/Spinner';
 
 
 const API_URL = process.env.API_URL || 'http://localhost:1337'
@@ -197,7 +198,14 @@ const Publicar = () => {
 								</span>
 							</p>
 							
-							<button type="submit" className="main-button big" disabled={submitting}>Publicar anuncio</button>
+							<button
+								type="submit"
+								className="main-button big"
+								disabled={submitting}
+							>
+								Publicar anuncio
+								{submitting ? <Spinner /> : null}
+							</button>
 						</div>
 					</form>
 				</div>
