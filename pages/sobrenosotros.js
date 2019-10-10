@@ -1,10 +1,8 @@
-import Layout from '../components/Layout'
-import Link from 'next/link';
 import Head from 'next/head';
 
 const About = (props) => {
 	return (
-		<Layout>
+		<div>
 			<Head>
 				<title>Sobre nosotros - Trabajos remotos</title>
 			</Head>
@@ -15,7 +13,7 @@ const About = (props) => {
 					<p>Trabajos remotos es un proyecto de <a href="https://hserrano.me/" target="_blank">HJ</a> y <a href="https://mascarell.me/" target="_blank">Mascarell</a>.</p>
 				</div>
 			</div>
-		</Layout>
+		</div>
 	)
 };
 

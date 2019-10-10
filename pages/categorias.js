@@ -1,4 +1,3 @@
-import Layout from '../components/Layout'
 import CategoryList from '../modules/CategoryList';
 import fetch from 'isomorphic-unfetch';
 
@@ -7,11 +6,7 @@ const API_URL = process.env.API_URL || 'http://localhost:1337'
 const Categories = (props) => {
     const { categories, error } = props;
     
-	return (
-		<Layout>
-            <CategoryList categories={categories} error={error} />
-		</Layout>
-	)
+	return <CategoryList categories={categories} error={error} />;
 };
 
 Categories.getInitialProps = async () => {

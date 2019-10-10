@@ -22,14 +22,14 @@ const Confirmation = (props) => {
 	}, []);
 
 	return (
-		<Layout>
+		<div>
 			<Head>			
 				<title>Confirmación - Trabajos remotos</title>
 			</Head>
 			<div>
 				<p>Resultado</p>
 			</div>
-		</Layout>
+		</div>
 	)
 };
 

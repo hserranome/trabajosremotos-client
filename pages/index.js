@@ -6,7 +6,7 @@ const Index = (props) => {
 	const { initialJobs, error } = props;
 
 	return (
-		<Layout>
+		<div>
 			<div className="hero">
 				<div className="container">
 					<h1>Trabajos remotos</h1>
@@ -17,7 +17,7 @@ const Index = (props) => {
 			<div className="trabajos">
 				<JobsList initialJobs={initialJobs} error={error} />
 			</div>
-		</Layout>
+		</div>
 	)
 };
 

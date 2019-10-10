@@ -64,7 +64,7 @@ const Publicar = () => {
 
 
 	return (
-		<Layout>
+		<div>
 			<Head>
 				<title>Publicar - Trabajos remotos</title>
 			</Head>
@@ -211,7 +211,7 @@ const Publicar = () => {
 					</form>
 				</div>
 			</div>
-		</Layout>
+		</div>
 	);
 }
 

@@ -1,13 +1,8 @@
 import Link from './ActiveLink';
-import React, { useState, useEffect } from 'react';
-import fetch from 'isomorphic-unfetch';
-
-const API_URL = process.env.API_URL || 'http://localhost:1337'
 
 const Header = (props) => {
-    const { categories, error } = props;
-    const [cats, setCategory] = useState(categories || []);
-
+    const { categories } = props;
+    
     return (
         <div>
             <nav className="mobile top">
@@ -56,9 +51,9 @@ const Header = (props) => {
                                 </a>
                             </Link>
                             <ul className="dropdown">
-                                {cats && cats.length > 0
+                                {categories && categories.length > 0
                                     ? (
-                                        cats.map((cat) => (
+                                        categories.map((cat) => (
                                             <li key={`/categoria/${cat.slug}`}>
                                                 <Link href={`/categoria/${cat.slug}`}>
                                                     <a>{`${cat.name}`}</a>
@@ -100,15 +95,5 @@ const Header = (props) => {
     )
 }
 
-Header.getInitialProps = async () => {
-	try {
-		const res = await fetch(`${API_URL}/categories`);
-        const data = await res.json();
-		return { categories: data };
-	} catch (error) {
-		console.error(error)
-		return { error }
-	}
-};
 
 export default Header;

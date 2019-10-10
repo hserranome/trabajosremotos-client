@@ -4,15 +4,14 @@ import Link from 'next/link'
 const API_URL = process.env.API_URL || 'http://localhost:1337'
 
 function CategoryList (props) {
-	const { categories } = props;
-	const [cats, setCategory] = useState(categories || []);
+	const [categories] = useState(props.categories || []);
 
 	return (
 		<div className="container">
 			<div className="trabajos">
-				{cats && cats.length > 0
+				{categories && categories.length > 0
 					? (
-						cats.map((cat) => (
+						categories.map((cat) => (
                             <div key={`/categoria/${cat.slug}`} className="trabajo categoria">
                                 <Link href={`/categoria/${cat.slug}`}>
                                     <a>

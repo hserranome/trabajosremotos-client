@@ -381,6 +381,20 @@ nav.desktop .container ul li a{
 	font-weight: 600;
 	font-size: .9rem;
 }
+nav.desktop ul.dropdown{
+	position: absolute;
+	display: flex; flex-flow: column wrap;
+	padding: 1rem;
+	background-color: white;
+	box-shadow: 0 1px 4px 0 rgba(0,0,0,.12);
+	width: 150px;
+	border-radius: 2px;
+}
+nav.desktop ul.dropdown li{
+	width: 100%;
+	text-align: left;
+	margin-
+}
 /* ----------------------------------- */
 
 /* Mobile menu */

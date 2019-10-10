@@ -1,13 +1,12 @@
 import Head from 'next/head';
 import Markdown from 'markdown-to-jsx';
 
-import Layout from '../../components/Layout'
 
 function SingleJob(props) {
 	const { job } = props;
 	const options = { year: 'numeric', month: 'short', day: 'numeric' };
 	return (
-		<Layout>
+		<div>
 			<Head>
 				{job
 					? (<title>{`${job.title} en ${job.company} - Trabajos remotos`}</title>)
@@ -48,7 +47,7 @@ function SingleJob(props) {
 					}
 
 			</div>
-		</Layout>
+		</div>
 	)
 }
 
