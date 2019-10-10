@@ -79,22 +79,22 @@ const Publicar = () => {
 								type="text"
 								placeholder="Nombre del puesto de trabajo"
 								onChange={handleChange}
-								value={values.title}
+								value={values.title || ''}
 								required
 							/>
 						</label>
 						{/* Description */}
 						<label>
 							<p>Descripción <span className="required"></span></p>	
-							{/* <SimpleMDE
+							<SimpleMDE
 								className="publication-editor"
+								id="publication-editor"
 								onChange={(description) => setValues({ ...values, description })}
-								initialValue={values.description}
-								value={values.description}
+								value={values.description || ''}
 								options={{
 									spellChecker: false
 								}}
-							/>	 */}
+							/>	
 						</label>
 						{/* Email */}
 						<label>
@@ -104,7 +104,7 @@ const Publicar = () => {
 								type="email"
 								required
 								onChange={handleChange}
-								value={values.email}
+								value={values.email || ''}
 							/>
 							<small>Es privado y solo se usará para enviarte avisos relacionados con tu anuncio.</small>
 						</label>
@@ -115,8 +115,7 @@ const Publicar = () => {
 								name="category"
 								required
 								onChange={handleChange}
-								value={values.category}
-								defaultValue=""
+								value={values.category || ''}
 							>
 								<option value="" disabled>Elige una categoría</option>
 								<option value="programación">Programación</option>
@@ -134,7 +133,7 @@ const Publicar = () => {
 								type="text"
 								required
 								onChange={handleChange}
-								value={values.company}
+								value={values.company || ''}
 							/>
 						</label>
 						{/* Apply link */}
@@ -145,7 +144,7 @@ const Publicar = () => {
 								type="text"
 								required
 								onChange={handleChange}
-								value={values.link}
+								value={values.link || ''}
 							/>
 							<small>Puede ser una url o un correo</small>
 						</label>
@@ -156,7 +155,7 @@ const Publicar = () => {
 								type="url"
 								name="logo"
 								onChange={handleChange}
-								value={values.logo}
+								value={values.logo || ''}
 							/>
 							<small>Url con el logo de tu empresa (recomendamos usar .png con fondo transparente)</small>
 						</label>
@@ -166,7 +165,7 @@ const Publicar = () => {
 								name="pinned"
 								type="checkbox"
 								onChange={handleChange}
-								checked={values.pinned}
+								checked={values.pinned || false}
 							/>
 							<p>Ancla tu anuncio arriba del todo durante un mes <span>+8€</span></p>
 						</label>
@@ -176,7 +175,7 @@ const Publicar = () => {
 								name="featured"
 								type="checkbox"
 								onChange={handleChange}
-								checked={values.featured}
+								checked={values.featured || false}
 							/>
 							<p>Destaca en amarillo tu anuncio <span>+8€</span></p>
 						</label>
@@ -186,7 +185,7 @@ const Publicar = () => {
 								name="showLogo"
 								type="checkbox"
 								onChange={handleChange}
-								checked={values.showLogo}
+								checked={values.showLogo || false}
 							/>
 							<p>Muestra el logo de tu empresa en la página principal <span>+8€</span></p>
 						</label>
@@ -194,7 +193,9 @@ const Publicar = () => {
 						<div className="boton-pagar">
 							<p>A pagar: 
 								<span>
-									<animated.div>{priceSpr.price.interpolate(val => Math.floor(val))}</animated.div>€
+									<animated.span>
+										{priceSpr.price.interpolate(val => Math.floor(val))}
+									</animated.span>€
 								</span>
 							</p>
 							
