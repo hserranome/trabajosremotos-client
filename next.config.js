@@ -1,5 +1,8 @@
 // next.config.js
 const withCSS = require('@zeit/next-css');
+const path = require('path')
+const Dotenv = require('dotenv-webpack')
+require('dotenv').config()
 
 function HACK_removeMinimizeOptionFromCssLoaders(config) {
 	console.warn(
@@ -19,6 +22,13 @@ function HACK_removeMinimizeOptionFromCssLoaders(config) {
 module.exports = withCSS({
 	webpack(config) {
 		HACK_removeMinimizeOptionFromCssLoaders(config);
+		config.plugins = [
+			...config.plugins,
+			new Dotenv({
+				path: path.join(__dirname, '.env'),
+				systemvars: true
+			})
+		]
 		return config;
 	},
 });
