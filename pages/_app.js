@@ -2,9 +2,9 @@ import React from 'react';
 import App from 'next/app';
 import fetch from 'isomorphic-unfetch';
 
+import { API_URL } from '../utils';
 import Layout from '../components/Layout';
 
-const API_URL = process.env.API_URL || 'http://localhost:1337';
 
 class MyApp extends App {
 	static async getInitialProps({ Component, router, ctx }) {

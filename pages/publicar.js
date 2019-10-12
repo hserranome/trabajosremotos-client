@@ -6,8 +6,8 @@ import axios from 'axios';
 import SimpleMDE from "react-simplemde-editor";
 import Spinner from '../components/Spinner';
 
+import { API_URL } from '../utils';
 
-const API_URL = process.env.API_URL || 'http://localhost:1337'
 
 const Publicar = () => {
 	const [values, setValues] = useState({});

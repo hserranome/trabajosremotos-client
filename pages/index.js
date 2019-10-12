@@ -2,6 +2,9 @@ import Layout from '../components/Layout'
 import JobsList from '../modules/JobsList';
 import fetch from 'isomorphic-unfetch';
 
+import { API_URL } from '../utils';
+
+
 const Index = (props) => {
 	const { initialJobs, error } = props;
 
@@ -23,7 +26,7 @@ const Index = (props) => {
 
 Index.getInitialProps = async () => {
 	try {
-		const res = await fetch('http://localhost:1337/jobs');
+		const res = await fetch(`${API_URL}/jobs`);
 		let data = await res.json();
 		const options = { year: 'numeric', month: 'short', day: 'numeric' };
 		data = data.map((job) => ({ ...job, created_at: new Date(job.created_at).toLocaleDateString('es-ES', options) }))

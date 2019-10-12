@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link'
 
-const API_URL = process.env.API_URL || 'http://localhost:1337'
+import { API_URL } from '../utils';
+
 
 function CategoryList (props) {
 	const [categories] = useState(props.categories || []);

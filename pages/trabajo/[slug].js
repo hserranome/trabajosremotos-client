@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Markdown from 'markdown-to-jsx';
 
+import { API_URL } from '../../utils';
+
 
 function SingleJob(props) {
 	const { job } = props;
@@ -54,7 +56,7 @@ function SingleJob(props) {
 SingleJob.getInitialProps = async ({ query }) => {
 	try {
 		const { slug } = query;
-		const res = await fetch(`http://localhost:1337/jobs?slug=${slug}`);
+		const res = await fetch(`${API_URL}/jobs?slug=${slug}`);
 		const jobs = await res.json();
 		const job = jobs[0];
 		// comprobar que es un email y cambiar el valor xddd

@@ -1,7 +1,8 @@
 import CategoryList from '../modules/CategoryList';
 import fetch from 'isomorphic-unfetch';
 
-const API_URL = process.env.API_URL || 'http://localhost:1337'
+import { API_URL } from '../utils';
+
 
 const Categories = (props) => {
     const { categories, error } = props;
