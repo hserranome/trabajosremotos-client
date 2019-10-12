@@ -1,11 +1,7 @@
 import JobsList from '../../modules/JobsList';
 import fetch from 'isomorphic-unfetch';
 
-const getJobsByCategory = async (category) => {
-	const res = await fetch(`http://localhost:5000/trabajos/category/${category}`);
-	const data = await res.json();
-	return data.jobs
-}
+import { API_URL, getLocalDate } from '../../utils';
 
 const CategoryList = (props) => {
 	const { initialJobs, error } = props;
@@ -26,14 +22,14 @@ const CategoryList = (props) => {
 	)
 };
 
+
 CategoryList.getInitialProps = async ({ query }) => {
 	const { category } = query;
 	try {
-		let jobs = await getJobsByCategory(category);
-		const options = { year: 'numeric', month: 'short', day: 'numeric' };
-		jobs = jobs.map((job) => ({ ...job, created_at: new Date(job.created_at).toLocaleDateString('es-ES', options) }))
-		console.log(jobs)
-		return { initialJobs: jobs };
+		const res = await fetch(`${API_URL}/jobs?category.slug=${category}`);
+		const jobs = await res.json();
+		const initialJobs = jobs.map((job) => ({ ...job, created_at: getLocalDate(job.created_at) }))
+		return { initialJobs };
 	} catch (error) {
 		console.error(error)
 		return { error }
