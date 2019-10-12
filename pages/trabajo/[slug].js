@@ -1,12 +1,11 @@
 import Head from 'next/head';
 import Markdown from 'markdown-to-jsx';
 
-import { API_URL } from '../../utils';
+import { API_URL, getLocalDate } from '../../utils';
 
 
 function SingleJob(props) {
 	const { job } = props;
-	const options = { year: 'numeric', month: 'short', day: 'numeric' };
 	return (
 		<div>
 			<Head>
@@ -59,10 +58,8 @@ SingleJob.getInitialProps = async ({ query }) => {
 		const res = await fetch(`${API_URL}/jobs?slug=${slug}`);
 		const jobs = await res.json();
 		const job = jobs[0];
-		// comprobar que es un email y cambiar el valor xddd
-		const options = { year: 'numeric', month: 'short', day: 'numeric' };
 		job.link = job.link.includes('@') ? `mailto:${job.link}` : job.link;
-		job.created_at = new Date(job.created_at).toLocaleDateString('es-ES', options);
+		job.created_at = getLocalDate(job.created_at);
 		return { job };
 	} catch (error) {
 		console.error(error)
