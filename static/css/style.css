@@ -19,7 +19,7 @@ body{
 }
 html{ margin: 0; padding: 0;}
 *, * > *{	transition: .25s linear;}
-
+img { max-width: 100%; }
 /* Some basic styling */
 a{ text-decoration: none; color: inherit; }
 .strong{ font-weight: 600; }
@@ -492,6 +492,7 @@ nav.mobile.bottom ul li.publicar a.active::before{ background-image: url('/stati
 .anuncio .container .content{
 	flex: 0 0 100%;
 	text-align: left;
+	max-width: 100%;
 }
 .anuncio .container .sidebar{
 	flex: 0 0 100%;
