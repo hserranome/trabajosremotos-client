@@ -327,6 +327,9 @@ form.publicar-anuncio .boton-pagar p span{
 .publication-editor textarea {
 	width: 100%;
 }
+.editor-toolbar {
+	border-color: #dedede !important;
+}
 .spinner-container {
 	position: absolute;
 	top: 50%;
