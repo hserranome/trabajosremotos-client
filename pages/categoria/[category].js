@@ -1,6 +1,6 @@
-import JobsList from '../../modules/JobsList';
 import fetch from 'isomorphic-unfetch';
 
+import JobsList from '../../modules/JobsList';
 import { API_URL, getLocalDate } from '../../utils';
 
 const CategoryList = (props) => {
