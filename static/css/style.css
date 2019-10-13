@@ -388,7 +388,7 @@ nav.desktop .container ul li a{
 }
 nav.desktop ul.dropdown{
 	position: absolute;
-	display: flex; flex-flow: column wrap;
+	display: none; flex-flow: column wrap;
 	padding: 1rem;
 	background-color: white;
 	box-shadow: 0 1px 4px 0 rgba(0,0,0,.12);
@@ -398,6 +398,7 @@ nav.desktop ul.dropdown{
 	z-index: 9999;
 	margin-top: 2rem;
 }
+nav.desktop .dropdown-parent:hover ul.dropdown{ display: flex; }
 nav.desktop ul.dropdown::after{
 	content: '';
 	position: absolute;
@@ -405,9 +406,6 @@ nav.desktop ul.dropdown::after{
 	bottom: 0;
 	width: 100%;
 	height: 2rem;
-}
-nav.desktop ul.dropdown:hover{
-	background-color: tomato;
 }
 nav.desktop ul.dropdown li{
 	width: 100%;
@@ -540,6 +538,7 @@ nav.mobile.bottom ul li.publicar a.active::before{ background-image: url('/stati
 	margin-bottom: 2rem;
 	box-sizing: border-box;
 }
+.anuncio .container .content img{ max-width: 100%; }
 .anuncio .container .content .description p, .anuncio .container .content .description ul, .anuncio .container .content .description > div{
 	margin: 0; padding: 0;
 	margin-bottom: 2rem;

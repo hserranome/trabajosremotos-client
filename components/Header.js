@@ -45,8 +45,8 @@ const Header = (props) => {
                     </Link>
 
                     <ul>
-                        <li>
-                            <Link href="/categorias">
+                        <li className="dropdown-parent">
+                            <Link href="">
                                 <a>Categorias
                                 </a>
                             </Link>
