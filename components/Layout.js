@@ -4,7 +4,6 @@ import Head from 'next/head';
 import '../static/css/style.css';
 import 'easymde/dist/easymde.min.css';
 
-
 import Header from './Header';
 import Footer from './Footer';
 
@@ -13,7 +12,7 @@ const Layout = (props) => {
 	useEffect(() => {
 		if (!window.GA_INITIALIZED) {
 			// Si no esta, iniciamos
-			ReactGA.initialize('UA-108296865-1');
+			ReactGA.initialize('UA-108296865-5');
 			window.GA_INITIALIZED = true
 		}
 		ReactGA.pageview(window.location.pathname + window.location.search);

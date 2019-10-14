@@ -34,33 +34,6 @@ a{ text-decoration: none; color: inherit; }
 	box-sizing: border-box;
 }
 .container.big{ max-width: 1170px; }
-
-
-.main-button{
-	color: white;
-	border: none; outline: none;
-	background-color: #FF4114;
-	font-weight: 700;
-	border-radius: 2px;
-	/* min-width: 150px; */
-	font-size: .8rem;
-	box-sizing: border-box;
-	padding: 8px 24px;
-	position: relative;
-}
-.main-button.big{ font-size: 1.1rem; }
-.main-button:hover{ 
-	cursor: pointer; 
-	box-shadow: 0 4px 16px rgba(0,1,31,0.2);
-}
-.main-button[disabled]{
-	color: #FFF7D7;
-	background-color: #FF8366;
-}
-.main-button[disabled]:hover{ 
-	cursor: initial; 
-	box-shadow: none;
-}
 /* ----------------------------------- */
 
 /* Hero section on some pages */
@@ -538,19 +511,52 @@ nav.mobile.bottom ul li.publicar a.active::before{ background-image: url('/stati
 	margin-bottom: 2rem;
 	box-sizing: border-box;
 }
+.anuncio .container .content a{
+	font-weight: 700;
+	background-color: rgba(221,224,244,0.9);
+	transition: .1s linear;
+}
 .anuncio .container .content img{ max-width: 100%; }
-.anuncio .container .content .description p, .anuncio .container .content .description ul, .anuncio .container .content .description > div{
+.anuncio .container .content p, .anuncio .container .content ul, .anuncio .container .content > div{
 	margin: 0; padding: 0;
-	margin-bottom: 2rem;
+	margin-bottom: 1rem;
 	box-sizing: border-box;
 	line-height: 1.6;
 }
-.anuncio .container .content .description ul{ margin-left: 2rem; }
-.anuncio .container .content .description li{ margin-bottom: 1rem; }
+.anuncio .container .content ul{ margin-left: 3rem; }
+.anuncio .container .content li{ margin-bottom: 1rem; }
 /* ----------------------------------- */
 
 /* Contenedores que tienen margen */
 .trabajos, .nuevo, .anuncio, .about{ margin-top: 2rem; margin-bottom: 2rem; }
+/* ----------------------------------- */
+
+/* Main button */
+.main-button{
+	color: white;
+	border: none; outline: none;
+	background-color: #FF4114;
+	font-weight: 700;
+	border-radius: 2px;
+	/* min-width: 150px; */
+	font-size: .8rem;
+	box-sizing: border-box;
+	padding: 8px 24px;
+	position: relative;
+}
+.main-button.big{ font-size: 1.1rem; }
+.main-button:hover{ 
+	cursor: pointer; 
+	box-shadow: 0 4px 16px rgba(0,1,31,0.2);
+}
+.main-button[disabled]{
+	color: #FFF7D7;
+	background-color: #FF8366;
+}
+.main-button[disabled]:hover{ 
+	cursor: initial; 
+	box-shadow: none;
+}
 /* ----------------------------------- */
 
 /* Tablets */
@@ -569,6 +575,7 @@ nav.mobile.bottom ul li.publicar a.active::before{ background-image: url('/stati
 		flex: 0 0 65%;
 		text-align: left;
 	}
+	.anuncio .container .content.fullwidth{ flex: 0 0 100%; }
 	.anuncio .container .sidebar{
 		flex: 0 0 30%;
 		display: block;
