@@ -13,7 +13,7 @@ function Error({ statusCode }) {
 
         <div className="anuncio">
             <div className="container">
-              <div className="content fullwidth">
+              <div className="content fullwidth center">
                 <img src={errorGif} />
                 <p>Psst! Parece que te has perdido, pero siempre puedes volver al <Link href="/"><a>inicio</a></Link> 👍</p>
               </div>

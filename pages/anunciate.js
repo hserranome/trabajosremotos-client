@@ -9,7 +9,7 @@ const Anunciate = (props) => {
 			
 			<div className="anuncio">
 				<div className="container">
-					<div className="content fullwidth center">
+					<div className="content fullwidth">
 						<h4>Anúnciate en Trabajos remotos</h4>
 						<p>
 							Antes de nada, ¡Gracias por interesarte en anunciarte con nosotros! 
