@@ -465,7 +465,7 @@ nav.mobile.bottom ul li.publicar a.active::before{ background-image: url('/stati
 	text-align: left;
 	max-width: 100%;
 }
-.anuncio .container .content.content.fullwidth{
+.anuncio .container .content.content.fullwidth.center{
 	display: flex;
 	flex-flow: column wrap;
 	justify-content: center;
