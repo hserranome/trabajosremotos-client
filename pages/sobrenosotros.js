@@ -10,7 +10,7 @@ const About = (props) => {
 			<div className="anuncio">
 				<div className="container">
 					<div className="content fullwidth">
-						<p><h4>Sobre Trabajos Remotos</h4></p>
+						<h4>Sobre Trabajos Remotos</h4>
 						<p>
 							Trabajos Remotos es un proyecto 
 							de <a href="https://hserrano.me/" target="_blank">HJ</a> y <a href="https://mascarell.me/" target="_blank">Mascarell</a>, 
@@ -21,7 +21,7 @@ const About = (props) => {
 							fuerzas para ayudar a personas hispanohablantes encontrar trabajos a distancia.
 						</p>
 						
-						<p><h4>Sobre HJ</h4></p>
+						<h4>Sobre HJ</h4>
 						<p>
 							Desarrollador de 🏙 Madrid. Hace carry al Overwatch, pero dice que el juego está amañado. También programa, a veces.
 						</p>
@@ -30,7 +30,7 @@ const About = (props) => {
 							<li><a href="https://www.linkedin.com/in/hendy-s-73b532b0/" target="_blank">Linkedin</a></li>
 						</ul>
 
-						<p><h4>Sobre Mascarell</h4></p>
+						<h4>Sobre Mascarell</h4>
 						<p>
 							Desarrollador de 🌴 Tenerife. Siempre está a punto de subir a Champion en Rocket League, pero dice que el juego está amañado. También programa, a veces.
 						</p>
