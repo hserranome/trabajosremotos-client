@@ -465,6 +465,12 @@ nav.mobile.bottom ul li.publicar a.active::before{ background-image: url('/stati
 	text-align: left;
 	max-width: 100%;
 }
+.anuncio .container .content.content.fullwidth{
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center;
+}
 .anuncio .container .sidebar{
 	flex: 0 0 100%;
 	display: none;
@@ -516,7 +522,7 @@ nav.mobile.bottom ul li.publicar a.active::before{ background-image: url('/stati
 	background-color: rgba(221,224,244,0.9);
 	transition: .1s linear;
 }
-.anuncio .container .content img{ max-width: 100%; }
+.anuncio .container .content img{ max-width: 100%; margin-bottom: 2rem;}
 .anuncio .container .content p, .anuncio .container .content ul, .anuncio .container .content > div{
 	margin: 0; padding: 0;
 	margin-bottom: 1rem;

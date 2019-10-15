@@ -2,6 +2,7 @@
 const withCSS = require('@zeit/next-css');
 const path = require('path')
 const Dotenv = require('dotenv-webpack')
+const withImages = require('next-images')
 require('dotenv').config()
 
 function HACK_removeMinimizeOptionFromCssLoaders(config) {
@@ -19,7 +20,7 @@ function HACK_removeMinimizeOptionFromCssLoaders(config) {
 	});
 }
 
-module.exports = withCSS({
+module.exports = withImages(withCSS({
 	webpack(config) {
 		HACK_removeMinimizeOptionFromCssLoaders(config);
 		config.plugins = [
@@ -31,4 +32,4 @@ module.exports = withCSS({
 		]
 		return config;
 	},
-});
+}));

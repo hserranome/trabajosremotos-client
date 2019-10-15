@@ -9,16 +9,16 @@ const Anunciate = (props) => {
 			
 			<div className="anuncio">
 				<div className="container">
-					<div className="content fullwidth">
+					<div className="content fullwidth center">
 						<h4>Anúnciate en Trabajos remotos</h4>
 						<p>
-							Trabajos Remotos es un proyecto 
-							de <a href="https://hserrano.me/" target="_blank">HJ</a> y <a href="https://mascarell.me/" target="_blank">Mascarell</a>, 
-							idea que ambos tuvimos por separado y, en principio, ibamos a desarrollar cada uno por su cuenta.
+							Antes de nada, ¡Gracias por interesarte en anunciarte con nosotros! 
 						</p>
 						<p>
-							Como somos <strike>vagos</strike> programadores y ya habiamos trabajado en otros proyectos juntos, decidimos unir
-							fuerzas para ayudar a personas hispanohablantes encontrar trabajos a distancia.
+							Ofrecemos dos tipos de publicidad, en la newsletter y en la página de inicio.
+							Tenemos packs si quieres anunciarte en ambos sitios, para dudas 
+							y mas información sobre precios, puedes ponerte en 
+							contacto a través de <a href="mailto:contacto@trabajosremotos.es">contacto@trabajosremotos.es</a>
 						</p>
 					</div>
 				</div>

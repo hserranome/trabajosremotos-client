@@ -1,5 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
+
+import errorGif from '../static/images/error.gif';
 
 function Error({ statusCode }) {
   return (
@@ -10,7 +13,10 @@ function Error({ statusCode }) {
 
         <div className="anuncio">
             <div className="container">
-                <p>Test</p>
+              <div className="content fullwidth">
+                <img src={errorGif} />
+                <p>Psst! Parece que te has perdido, pero siempre puedes volver al <Link href="/"><a>inicio</a></Link> 👍</p>
+              </div>
             </div>
         </div>
         
