@@ -7,7 +7,6 @@ import 'easymde/dist/easymde.min.css';
 import Header from './Header';
 import Footer from './Footer';
 
-
 // 👏 CONSISTENCIA 👏 
 const Layout = (props) => {
 	useEffect(() => {
@@ -18,9 +17,8 @@ const Layout = (props) => {
 		}
 		ReactGA.pageview(window.location.pathname + window.location.search);
 
+		// Mailchimp
 		window.dojoRequire(["mojo/signup-forms/Loader"], function (L) { L.start({ "baseUrl": "mc.us4.list-manage.com", "uuid": "3a042d90b01c388c7081ca588", "lid": "591a1153bf", "uniqueMethods": true }) })
-
-
 	}, []);
 
 	return(
