@@ -6,7 +6,7 @@ const Footer = (props) => (
             </div>
 
             <div className="social">
-                <a href="" target="_blank" className="img"><img src="/static/images/twitter.svg" alt="icono twitter" /></a>
+                <a href="https://twitter.com/trabajos_remoto" target="_blank" className="img"><img src="/static/images/twitter.svg" alt="icono twitter" /></a>
             </div>
         </div>
     </div>
