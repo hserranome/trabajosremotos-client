@@ -30,46 +30,52 @@ const Header = (props) => {
                             <a>Publicar</a>
                         </Link>
                     </li>
-                    <li className="blog">
+                    {/* <li className="blog">
                         <Link activeClassName="active" href="/blog">
                             <a>Blog</a>
                         </Link>
-                    </li>
+                    </li> */}
                 </ul>
             </nav>
 
             <nav className="desktop">
                 <div className="container">
                     <Link href="/">
-                        <div className="logo">Trabajos a distancia 👏</div>
+                        <div className="logo"><img src="/static/images/logo.png" /></div>
                     </Link>
 
                     <ul>
                         <li className="dropdown-parent">
-                            <Link href="">
-                                <a>Categorias
-                                </a>
-                            </Link>
+                            <a>Categorias</a>
+                            
                             <ul className="dropdown">
-                                {categories && categories.length > 0
-                                    ? (
-                                        categories.map((cat) => (
-                                            <li key={`/categoria/${cat.slug}`}>
-                                                <Link href={`/categoria/${cat.slug}`}>
-                                                    <a>{`${cat.name}`}</a>
-                                                </Link>
-                                            </li>
-                                        ))
-                                    )
-                                    : ( '' )
-                                }
+                                <li key={`/categoria/programacion`}>
+                                    <Link href={`/categoria/programacion`}>
+                                        <a>Programación</a>
+                                    </Link>
+                                </li>
+                                <li key={`/categoria/diseno`}>
+                                    <Link href={`/categoria/diseno`}>
+                                        <a>Diseño</a>
+                                    </Link>
+                                </li>
+                                <li key={`/categoria/marketing`}>
+                                    <Link href={`/categoria/marketing`}>
+                                        <a>Marketing</a>
+                                    </Link>
+                                </li>
+                                <li key={`/categoria/atencion-al-cliente`}>
+                                    <Link href={`/categoria/atencion-al-cliente`}>
+                                        <a>Atención al cliente</a>
+                                    </Link>
+                                </li>
                             </ul>
                         </li>
-                        <li>
+                        {/* <li>
                             <Link href="">
                                 <a>Blog</a>
                             </Link>
-                        </li>
+                        </li> */}
                         <li>
                             <Link href="/anunciate">
                                 <a>Anúnciate</a>
