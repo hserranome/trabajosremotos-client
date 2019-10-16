@@ -416,7 +416,7 @@ nav.mobile.top form img{
 	transform: scale(.8);
 }
 nav.mobile.top form input{
-	border: none; outline: none;
+	border: none;
 	background-color: transparent;
 	font-size: .8rem;
 	margin-left: 12px;
