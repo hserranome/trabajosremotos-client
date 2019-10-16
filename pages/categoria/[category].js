@@ -26,7 +26,7 @@ const CategoryList = (props) => {
 CategoryList.getInitialProps = async ({ query }) => {
 	const { category } = query;
 	try {
-		const res = await fetch(`${API_URL}/jobs?category.slug=${category}`);
+		const res = await fetch(`${API_URL}/jobs?category.slug=${category}&_sort=pinned:DESC,created_at:desc`);
 		const jobs = await res.json();
 		const initialJobs = jobs.map((job) => ({ ...job, created_at: getLocalDate(job.created_at) }))
 		return { initialJobs };

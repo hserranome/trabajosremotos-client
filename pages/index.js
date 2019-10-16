@@ -25,7 +25,7 @@ const Index = (props) => {
 
 Index.getInitialProps = async () => {
 	try {
-		const res = await fetch(`${API_URL}/jobs`);
+		const res = await fetch(`${API_URL}/jobs?_sort=pinned:DESC,created_at:desc`);
 		let data = await res.json();
 		data = data.map((job) => ({ ...job, created_at: getLocalDate(job.created_at) }))
 		return { initialJobs: data };
