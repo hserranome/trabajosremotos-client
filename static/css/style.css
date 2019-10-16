@@ -64,7 +64,6 @@ a{ text-decoration: none; color: inherit; }
 /* Footer */
 .footer{
 	border-top: 1px solid #dedede;
-	padding-top: 2rem; padding-bottom: 2rem;
 }
 .footer .container{
 	font-size: 1rem;
@@ -344,7 +343,7 @@ nav.desktop .container{
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: space-between; align-items: center;
-	height: 96px; max-height: 96px;
+	height: 64px; max-height: 64px;
 }
 nav.desktop .container ul{
 	margin: 0; padding: 0;
@@ -566,8 +565,8 @@ nav.mobile.bottom ul li.publicar a.active::before{ background-image: url('/stati
 /* ----------------------------------- */
 
 /* Tablets */
-@media only screen and (min-width : 48em) {	
-	body{ padding-top: 96px; padding-bottom: 0; }
+@media only screen and (min-width : 800px) {	
+	body{ padding-bottom: 0; }
 
 	.hero p{
 		text-align: center;
