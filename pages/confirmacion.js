@@ -13,12 +13,19 @@ const Confirmation = (props) => {
 		const res = await axios.get(`${API_URL}/orders?session_id=${session_id}`);
 		if (!res.data || !res.data[0] || !res.data[0].job) {
 			Router.push('/')
+			return false;
 		}
+		return true;
 	}
 
 	// CHECK IF JOB EXISTS
 	useEffect(() => {
-		checkJob();
+		const thisFunction = async () => {
+			const result = await checkJob();
+			console.log(result);
+			if (result) localStorage.clear();
+		}
+		thisFunction();
 	}, []);
 
 	return (
