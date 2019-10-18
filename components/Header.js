@@ -1,8 +1,6 @@
 import Link from './ActiveLink';
 
-const Header = (props) => {
-    const { categories } = props;
-    
+const Header = (props) => {    
     return (
         <div>
             <nav className='mobile top'>
