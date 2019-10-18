@@ -7,10 +7,7 @@ import NProgress from 'nprogress'
 import { API_URL } from '../utils';
 import Layout from '../components/Layout';
 
-Router.events.on('routeChangeStart', url => {
-	console.log(`Loading: ${url}`)
-	NProgress.start()
-})
+Router.events.on('routeChangeStart', () => NProgress.start())
 Router.events.on('routeChangeComplete', () => NProgress.done())
 Router.events.on('routeChangeError', () => NProgress.done())
 
