@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { useSpring, animated, config  } from 'react-spring';
-import Layout from '../components/Layout'
 import Head from 'next/head';
 import axios from 'axios';
 import SimpleMDE from "react-simplemde-editor";
