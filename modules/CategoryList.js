@@ -14,7 +14,10 @@ function CategoryList (props) {
 					? (
 						categories.map((cat) => (
                             <div key={`/categoria/${cat.slug}`} className="trabajo categoria">
-                                <Link href={`/categoria/${cat.slug}`}>
+								<Link 
+									href='/categoria/[category]'
+									as={`/categoria/${cat.slug}`}
+								>
                                     <a>
                                         <img src={`${API_URL}${cat.image.url}`} alt="icono programacion" />
                                         <p>{`${cat.description}`}</p>
