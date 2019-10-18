@@ -391,7 +391,7 @@ nav.mobile{
 	padding: 1rem; box-sizing: border-box;
 	z-index: 999;
 }
-nav.mobile.top{ top: 0; }
+nav.mobile.top{ top: 0; display: none; }
 nav.mobile.bottom{ bottom: 0; }
 nav.mobile.top form{ 
 	display: flex; 
