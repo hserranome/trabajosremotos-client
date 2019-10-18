@@ -20,7 +20,8 @@ const Publicar = () => {
 	useEffect(() => {
 		const publishValues = localStorage.getItem('publishValues');
 		if (publishValues) setValues(JSON.parse(publishValues));
-		if (!stripe) setStripe(window.Stripe('pk_test_ggi6CNK5xAQySQxoZfkFVJoZ00FxmHeKgq'));
+		// if (!stripe) setStripe(window.Stripe('pk_test_ggi6CNK5xAQySQxoZfkFVJoZ00FxmHeKgq'));
+		if (!stripe) setStripe(window.Stripe('process.env.STRIPE_PUBLISHABLE_KEY'));
 	}, [])
 
 	// ON VALUE CHANGE, SET PRICE COUNTER AND SAVE TO LOCALSTORAGE
