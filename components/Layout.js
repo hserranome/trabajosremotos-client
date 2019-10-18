@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import ReactGA from 'react-ga';
 import Head from 'next/head';
-import '../static/css/style.css';
+import '../static/css/style.scss';
 import 'easymde/dist/easymde.min.css';
 import '../static/css/nprogress.css';
 
