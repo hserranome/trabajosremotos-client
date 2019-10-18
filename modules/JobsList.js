@@ -3,7 +3,11 @@ import Link from 'next/link';
 
 function JobsList (props) {
 	const { initialJobs } = props;
-	const [jobs] = useState(initialJobs || []);
+	const [jobs, setJobs] = useState(initialJobs || []);
+
+	useEffect(() => {
+		if (initialJobs !== jobs) setJobs(initialJobs);
+	}, [initialJobs])
 	
 	return (
 		<div className='container'>
