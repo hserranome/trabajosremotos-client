@@ -19,13 +19,6 @@ class MyApp extends App {
 			pageProps = await Component.getInitialProps(ctx)
 		}
 
-		try {
-			const res = await fetch(`${API_URL}/categories`);
-			const data = await res.json();
-			pageProps.categories = data;
-		} catch (error) {
-			pageProps.categories = [];
-		}	
 		return { pageProps }
 	}
 
