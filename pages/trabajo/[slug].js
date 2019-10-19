@@ -6,14 +6,37 @@ import { API_URL, getLocalDate } from '../../utils';
 
 function SingleJob(props) {
 	const { job } = props;
+	const jobDescriptionSEO = `${job.description.substring(1, 50)}...`;
+	
 	return (
 		<div>
-			<Head>
-				{job
-					? (<title>{`${job.title} en ${job.company} - Trabajos remotos`}</title>)
-					: (<title>{`404 - Trabajos remotos`}</title>)
-				}
-			</Head>
+			{job
+				? (
+					<Head>
+						<title>{`${job.title} en ${job.company} - Trabajos remotos`}</title>
+
+						{/* General tags */}
+						<meta name="description" content={jobDescriptionSEO} />
+		
+						{/* OpenGraph tags */}
+						<meta property="og:url" content="" /> {/* TODO -> Estaria bien poder poner la URL para mas SEO */}
+						<meta property="og:title" content={`${job.title} en ${job.company}`} />
+						<meta property="og:description" content={jobDescriptionSEO} />
+		
+						{/* Twitter Card tags */}
+						<meta name="twitter:card" content="summary" />
+						<meta name="twitter:creator" content="@trabajos_remoto" />
+						<meta name="twitter:title" content={`${job.title} en ${job.company}`} />
+						<meta name="twitter:description" content={jobDescriptionSEO} />
+					</Head>
+				)
+				: (
+					<Head>
+						<title>{`404 - Trabajos remotos`}</title>
+					</Head>
+				)
+			}
+		
 			<div className="anuncio">
 					{job 
 						? (
