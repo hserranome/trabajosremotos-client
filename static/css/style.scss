@@ -533,7 +533,7 @@ nav.mobile.bottom ul li.publicar a.active::before{ background-image: url('/stati
 .main-button{
 	color: white;
 	border: none; outline: none;
-	background-color: #FF4114;
+	background-color: #FF4114 !important;
 	font-weight: 700;
 	border-radius: 2px;
 	/* min-width: 150px; */
