@@ -1,5 +1,6 @@
 import CategoryList from '../modules/CategoryList';
 import fetch from 'isomorphic-unfetch';
+import Head from 'next/head';
 
 import { API_URL } from '../utils';
 
@@ -7,7 +8,19 @@ import { API_URL } from '../utils';
 const Categories = (props) => {
     const { categories, error } = props;
     
-	return <CategoryList categories={categories} error={error} />;
+	return (
+		<div>
+			<Head>
+				<title>Trabajos remotos - Categorías</title>
+
+				<meta name="robots" content="all" />
+				<meta property="og:title" content="Trabajos remotos" />
+				<meta name="twitter:title" content="Trabajos remotos" />
+			</Head>
+
+			<CategoryList categories={categories} error={error} />
+		</div>
+	);
 };
 
 Categories.getInitialProps = async () => {

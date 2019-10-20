@@ -5,6 +5,10 @@ const Anunciate = (props) => {
 		<div>
 			<Head>
 				<title>Anúnciate en Trabajos remotos</title>
+
+				<meta name="robots" content="all" />
+				<meta property="og:title" content="Trabajos remotos" />
+				<meta name="twitter:title" content="Trabajos remotos" />
 			</Head>
 			
 			<div className="anuncio">

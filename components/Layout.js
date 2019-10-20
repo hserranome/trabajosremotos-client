@@ -27,12 +27,26 @@ const Layout = (props) => {
 		<div>
 			<Head>
 				<title>Trabajos remotos - Tu tablón de empleo remoto exclusivamente en español</title>
+
+				{/* General tags */}
 				<meta name='viewport' content='initial-scale=1.0, width=device-width' />
-				{/* Favicon */}
+				<meta name="description" content="La plataforma para encontrar trabajos online de manera sencilla." />
+
+				{/* OpenGraph tags */}
+				<meta content="website" property="og:type" />
+				<meta content="es_ES" property="og:locale" />
+				<meta content="Trabajos Remotos" property="og:site_name" />
+				<meta property="og:description" content="La plataforma para encontrar trabajos online de manera sencilla." />
+
+				{/* Twitter Card tags */}
+				<meta name="twitter:card" content="summary" />
+				<meta name="twitter:site" content="@trabajos_remoto" />
+				<meta name="twitter:creator" content="@trabajos_remoto" />
+				<meta name="twitter:description" content="La plataforma para encontrar trabajos online de manera sencilla." />
+
 				<link rel='shortcut icon' href='/static/favicon.ico' />
-				{/* Stripe */}
+				
 				<script src='https://js.stripe.com/v3' />
-				{/* Mailchimp */}
 				<script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
 			</Head>
 	

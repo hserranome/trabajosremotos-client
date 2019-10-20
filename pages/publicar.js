@@ -73,8 +73,13 @@ const Publicar = () => {
 	return (
 		<div>
 			<Head>
-				<title>Publicar - Trabajos remotos</title>
+				<title>Publicar nuevo trabajo - Trabajos remotos</title>
+
+				<meta name="robots" content="all" />
+				<meta property="og:title" content="Trabajos remotos" />
+				<meta name="twitter:title" content="Trabajos remotos" />
 			</Head>
+			
 			<div className="block nuevo">
 				<div className="container">
 					<form className="publicar-anuncio" onSubmit={handleSubmit}>

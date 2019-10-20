@@ -13,26 +13,18 @@ function SingleJob(props) {
 			{job
 				? (
 					<Head>
-						<title>{`${job.title} en ${job.company} - Trabajos remotos`}</title>
+						<title>{`${job.title} en ${job.company}`}</title>
 
-						{/* General tags */}
-						<meta name="description" content={jobDescriptionSEO} />
-		
-						{/* OpenGraph tags */}
-						<meta property="og:url" content="" /> {/* TODO -> Estaria bien poder poner la URL para mas SEO */}
+						<meta name="robots" content="all" />
 						<meta property="og:title" content={`${job.title} en ${job.company}`} />
-						<meta property="og:description" content={jobDescriptionSEO} />
-		
-						{/* Twitter Card tags */}
-						<meta name="twitter:card" content="summary" />
-						<meta name="twitter:creator" content="@trabajos_remoto" />
 						<meta name="twitter:title" content={`${job.title} en ${job.company}`} />
-						<meta name="twitter:description" content={jobDescriptionSEO} />
 					</Head>
 				)
 				: (
 					<Head>
 						<title>{`404 - Trabajos remotos`}</title>
+
+						<meta name="googlebot" content="noindex" />
 					</Head>
 				)
 			}

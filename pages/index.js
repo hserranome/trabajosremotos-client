@@ -1,5 +1,6 @@
 import JobsList from '../modules/JobsList';
 import fetch from 'isomorphic-unfetch';
+import Head from 'next/head';
 
 import { API_URL, getLocalDate } from '../utils';
 
@@ -9,6 +10,14 @@ const Index = (props) => {
 
 	return (
 		<div>
+			<Head>
+				<title>Trabajos remotos - Tu tablón de empleo remoto exclusivamente en español</title>
+
+				<meta name="robots" content="all" />
+				<meta property="og:title" content="Trabajos remotos" />
+				<meta name="twitter:title" content="Trabajos remotos" />
+			</Head>
+
 			<div className="hero">
 				<div className="container">
 					<h1>Trabajos remotos</h1>
