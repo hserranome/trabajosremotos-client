@@ -16,7 +16,13 @@ function JobsList (props) {
 					? (
 						jobs.map((job) => (
 							<div className={`trabajo ${job.featured ? 'featured' : ''}`} key={job.id}>
-								{job.logo ? <div className='img'><img src={job.logo} alt={'logo ' + job.company} /></div> : ''}
+								{job.logo && job.showLogo 
+									? (
+										<div className='img'>
+											<img src={job.logo} alt={'logo ' + job.company} />
+										</div>
+									) 
+									: ''}
 								<Link 
 									href='/trabajo/[slug]'
 									as={`/trabajo/${job.slug}`}
