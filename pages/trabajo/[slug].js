@@ -42,14 +42,14 @@ function SingleJob(props) {
 										?<Markdown>{job.description}</Markdown>
 										: ''
 									}
-									<a target="_blank" className="main-button" href={job.link}>Solicitar trabajo</a>
+									<a target="_blank" rel="noopener" className="main-button" href={job.link}>Solicitar trabajo</a>
 								</div>
 							</div>
 
 							<div className="sidebar">
 								{job.logo ? <div className="img"><img src={job.logo} alt={'logo ' + job.company} /></div> : ''}
 								<h2>{job.company}</h2>
-								<a target="_blank" className="main-button" href={job.link}>Solicitar trabajo</a>
+								<a target="_blank" rel="noopener" className="main-button" href={job.link}>Solicitar trabajo</a>
 							</div>
 						</div>
 						)
