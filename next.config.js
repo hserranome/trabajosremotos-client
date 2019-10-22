@@ -1,10 +1,11 @@
 // next.config.js
-const path = require('path')
-const Dotenv = require('dotenv-webpack')
+const webpack = require('webpack');
+const path = require('path');
+const Dotenv = require('dotenv-webpack');
 const withCSS = require('@zeit/next-css');
 const withSass = require('@zeit/next-sass');
-const withImages = require('next-images')
-const withOffline = require('next-offline')
+const withImages = require('next-images');
+const withOffline = require('next-offline');
 
 require('dotenv').config()
 
