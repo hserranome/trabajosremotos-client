@@ -1,5 +1,4 @@
 // next.config.js
-const webpack = require('webpack');
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
 const withCSS = require('@zeit/next-css');
@@ -36,8 +35,6 @@ module.exports = withImages(withOffline(
 						systemvars: true
 					})
 				]
-					config.plugins = config.plugins.filter((plugin) => (plugin.constructor.name !== 'UglifyJsPlugin'))
-					config.plugins.push(new webpack.optimize.UglifyJsPlugin())
 				return config;
 			},
 		}
