@@ -22,6 +22,7 @@
 		"markdown-to-jsx": "^6.10.3",
 		"next": "^9.0.7",
 		"next-images": "^1.2.0",
+		"next-offline": "^4.0.6",
 		"node-sass": "^4.12.0",
 		"nprogress": "^0.2.0",
 		"react": "^16.10.1",
@@ -30,5 +31,6 @@
 		"react-simplemde-editor": "^4.1.0",
 		"react-spring": "^8.0.27",
 		"stripe": "^7.9.1"
-	}
+	},
+	"devDependencies": {}
 }

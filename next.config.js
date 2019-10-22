@@ -1,9 +1,11 @@
 // next.config.js
-const withCSS = require('@zeit/next-css');
-const withSass = require('@zeit/next-sass');
 const path = require('path')
 const Dotenv = require('dotenv-webpack')
+const withCSS = require('@zeit/next-css');
+const withSass = require('@zeit/next-sass');
 const withImages = require('next-images')
+const withOffline = require('next-offline')
+
 require('dotenv').config()
 
 function HACK_removeMinimizeOptionFromCssLoaders(config) {
@@ -21,16 +23,22 @@ function HACK_removeMinimizeOptionFromCssLoaders(config) {
 	});
 }
 
-module.exports = withImages(withSass(withCSS({
-	webpack(config) {
-		HACK_removeMinimizeOptionFromCssLoaders(config);
-		config.plugins = [
-			...config.plugins,
-			new Dotenv({
-				path: path.join(__dirname, '.env'),
-				systemvars: true
-			})
-		]
-		return config;
-	},
-})));
+module.exports = withImages(withOffline(
+	withSass(withCSS(
+		{
+			webpack(config) {
+				HACK_removeMinimizeOptionFromCssLoaders(config);
+				config.plugins = [
+					...config.plugins,
+					new Dotenv({
+						path: path.join(__dirname, '.env'),
+						systemvars: true
+					})
+				]
+					config.plugins = config.plugins.filter((plugin) => (plugin.constructor.name !== 'UglifyJsPlugin'))
+					config.plugins.push(new webpack.optimize.UglifyJsPlugin())
+				return config;
+			},
+		}
+	))
+));
