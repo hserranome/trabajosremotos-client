@@ -7,6 +7,7 @@ import { API_URL, getLocalDate } from '../../utils';
 function SingleJob(props) {
 	const { job } = props;
 	const jobDescriptionSEO = `${job.description.substring(1, 50)}...`;
+	const trabajosRemotosLogo = 'https://trabajosremotos.es/static/images/logo.png';
 	
 	return (
 		<div>
@@ -17,7 +18,9 @@ function SingleJob(props) {
 
 						<meta name="robots" content="all" />
 						<meta property="og:title" content={`${job.title} en ${job.company}`} />
+						<meta property="og:image" content={job.logo ? job.logo : trabajosRemotosLogo} />
 						<meta name="twitter:title" content={`${job.title} en ${job.company}`} />
+						<meta name="twitter:image" content={job.logo ? job.logo : trabajosRemotosLogo} />
 					</Head>
 				)
 				: (

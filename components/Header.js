@@ -79,6 +79,14 @@ const Header = (props) => {
                                         <a>Atención al cliente</a>
                                     </Link>
                                 </li>
+                                <li key='/categoria/otros'>
+									<Link 
+										href='/categoria/[category]' 
+										as='/categoria/otros'
+									>
+                                        <a>Otros</a>
+                                    </Link>
+                                </li>
                             </ul>
                         </li>
                         {/* <li>
