@@ -13,9 +13,8 @@ const CategoryList = (props) => {
 			<Head>
 				<title>Trabajos remotos {categoryFinalName}</title>
 
-				<meta name="robots" content="all" />
-				<meta property="og:title" content={`Trabajos remotos ${categoryFinalName}`} />
-				<meta name="twitter:title" content={`Trabajos remotos ${categoryFinalName}`} />
+				<meta property="og:title" content={`Trabajos remotos ${categoryFinalName}`} key="trabajos-title-og" />
+				<meta name="twitter:title" content={`Trabajos remotos ${categoryFinalName}`} key="trabajos-title-twitter" />
 			</Head>
 
 			<div className="hero">

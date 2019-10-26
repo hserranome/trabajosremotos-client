@@ -12,10 +12,6 @@ const Categories = (props) => {
 		<div>
 			<Head>
 				<title>Trabajos remotos - Categorías</title>
-
-				<meta name="robots" content="all" />
-				<meta property="og:title" content="Trabajos remotos" />
-				<meta name="twitter:title" content="Trabajos remotos" />
 			</Head>
 
 			<CategoryList categories={categories} error={error} />

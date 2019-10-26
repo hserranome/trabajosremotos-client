@@ -17,10 +17,10 @@ function SingleJob(props) {
 						<title>{`${job.title} en ${job.company}`}</title>
 
 						<meta name="robots" content="all" />
-						<meta property="og:title" content={`${job.title} en ${job.company}`} />
-						<meta property="og:image" content={job.logo ? job.logo : trabajosRemotosLogo} />
-						<meta name="twitter:title" content={`${job.title} en ${job.company}`} />
-						<meta name="twitter:image" content={job.logo ? job.logo : trabajosRemotosLogo} />
+						<meta property="og:title" content={`${job.title} en ${job.company}`} key="trabajos-title-og" />
+						<meta property="og:image" content={job.logo ? job.logo : trabajosRemotosLogo} key="trabajos-logo-og" />
+						<meta name="twitter:title" content={`${job.title} en ${job.company}`} key="trabajos-title-twitter" />
+						<meta name="twitter:image" content={job.logo ? job.logo : trabajosRemotosLogo} key="trabajos-image-twitter" />
 					</Head>
 				)
 				: (
