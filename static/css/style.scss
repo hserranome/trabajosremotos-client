@@ -25,6 +25,7 @@ a{ text-decoration: none; color: inherit; }
 	box-sizing: border-box;
 }
 .container.big{ max-width: 1170px; }
+.container.small{ max-width: 700px; }
 /* ----------------------------------- */
 
 /* Hero section on some pages */
@@ -573,6 +574,7 @@ nav.mobile.bottom ul li.publicar a.active::before{ background-image: url('/stati
 		flex: 0 0 65%;
 		text-align: left;
 	}
+	.anuncio .container.small .content{ flex: 0 0 100%; }
 	.anuncio .container .content.fullwidth{ flex: 0 0 100%; }
 	.anuncio .container .sidebar{
 		flex: 0 0 30%;

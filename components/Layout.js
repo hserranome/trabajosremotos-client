@@ -38,16 +38,12 @@ const Layout = (props) => {
 				<meta property="og:title" content="Trabajos remotos" key="trabajos-title-og" />
 				<meta content="es_ES" property="og:locale" />
 				<meta content="Trabajos Remotos" property="og:site_name" />
-				<meta property="og:description" content="La plataforma para encontrar trabajos online de manera sencilla." />
-				<meta property="og:image" content="https://trabajosremotos.es/static/images/logo.png" key="trabajos-logo-og"/>
 
 				{/* Twitter Card tags */}
 				<meta name="twitter:title" content="Trabajos remotos" key="trabajos-title-twitter" />
 				<meta name="twitter:card" content="summary" />
 				<meta name="twitter:site" content="@trabajos_remoto" />
 				<meta name="twitter:creator" content="@trabajos_remoto" />
-				<meta name="twitter:description" content="La plataforma para encontrar trabajos online de manera sencilla." />
-				<meta name="twitter:image" content="https://trabajosremotos.es/static/images/logo.png" key="trabajos-logo-twitter" />
 
 				<link rel='shortcut icon' href='/static/favicon.ico' />
 				

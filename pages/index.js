@@ -12,6 +12,9 @@ const Index = (props) => {
 		<div>
 			<Head>
 				<title>Trabajos remotos - Tu tablón de empleo remoto exclusivamente en español</title>
+
+				<meta property="og:description" content="La plataforma para encontrar trabajos online de manera sencilla." />
+				<meta name="twitter:description" content="La plataforma para encontrar trabajos online de manera sencilla." />
 			</Head>
 
 			<div className="hero">

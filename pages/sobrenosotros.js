@@ -5,6 +5,9 @@ const About = (props) => {
 		<div>
 			<Head>
 				<title>Sobre nosotros - Trabajos remotos</title>
+
+				<meta property="og:description" content="La plataforma para encontrar trabajos online de manera sencilla." />
+				<meta name="twitter:description" content="La plataforma para encontrar trabajos online de manera sencilla." />
 			</Head>
 			
 			<div className="anuncio">
