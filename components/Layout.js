@@ -2,7 +2,10 @@ import React, { useEffect } from 'react';
 import ReactGA from 'react-ga';
 import Head from 'next/head';
 
-import { GlobalStyle } from  '../utils/styles';
+import '../static/css/style.scss';
+import '../static/css/easymde.min.css';
+import '../static/css/nprogress.css';
+
 import Header from './Header';
 import Footer from './Footer';
 
@@ -20,7 +23,7 @@ const Layout = (props) => {
 		window.dojoRequire(["mojo/signup-forms/Loader"], function (L) { L.start({ "baseUrl": "mc.us4.list-manage.com", "uuid": "3a042d90b01c388c7081ca588", "lid": "591a1153bf", "uniqueMethods": true }) })
 	}, []);
 
-	return(
+	return (
 		<div>
 			<Head>
 				<title>Trabajos remotos - Tu tablón de empleo remoto exclusivamente en español</title>
@@ -43,13 +46,13 @@ const Layout = (props) => {
 				<meta name="twitter:creator" content="@trabajos_remoto" />
 
 				<link rel='shortcut icon' href='/static/favicon.ico' />
-				
+
 				<script src='https://js.stripe.com/v3' />
 				<script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
 			</Head>
-			<GlobalStyle />
+
 			<Header {...props} />
-				{props.children}
+			{props.children}
 			<Footer />
 		</div>
 	)
