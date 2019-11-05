@@ -2,6 +2,10 @@ import React, { useEffect } from 'react';
 import ReactGA from 'react-ga';
 import Head from 'next/head';
 
+import '../static/css/style.scss';
+import '../static/css/easymde.min.css';
+import '../static/css/nprogress.css';
+
 import Header from './Header';
 import Footer from './Footer';
 
