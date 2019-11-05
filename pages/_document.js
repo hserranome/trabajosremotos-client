@@ -1,5 +1,8 @@
 import Document, { Head, Main, NextScript } from 'next/document'
 import flush from 'styled-jsx/server'
+import '../static/css/style.scss';
+import 'easymde/dist/easymde.min.css';
+import '../static/css/nprogress.css';
 
 export default class MyDocument extends Document {
   static getInitialProps({ renderPage }) {
