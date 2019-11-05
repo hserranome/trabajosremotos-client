@@ -1,10 +1,12 @@
 import React from 'react';
 import App from 'next/app';
 import Router from 'next/router';
-import fetch from 'isomorphic-unfetch';
 import NProgress from 'nprogress'
 
-import { API_URL } from '../utils';
+import '../static/css/style.scss';
+import '../static/css/easymde.min.css';
+import '../static/css/nprogress.css';
+
 import Layout from '../components/Layout';
 
 Router.events.on('routeChangeStart', () => NProgress.start())
