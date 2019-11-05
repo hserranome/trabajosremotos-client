@@ -2,10 +2,7 @@ import React, { useEffect } from 'react';
 import ReactGA from 'react-ga';
 import Head from 'next/head';
 
-import '../static/css/style.scss';
-import '../static/css/easymde.min.css';
-import '../static/css/nprogress.css';
-
+import { GlobalStyle } from  '../utils/styles';
 import Header from './Header';
 import Footer from './Footer';
 
@@ -50,7 +47,7 @@ const Layout = (props) => {
 				<script src='https://js.stripe.com/v3' />
 				<script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
 			</Head>
-	
+			<GlobalStyle />
 			<Header {...props} />
 				{props.children}
 			<Footer />
