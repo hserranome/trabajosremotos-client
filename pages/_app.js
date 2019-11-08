@@ -2,8 +2,8 @@ import React from 'react';
 import App from 'next/app';
 import Router from 'next/router';
 import NProgress from 'nprogress'
+import GlobalStyle from '../utils/styles';
 
-import '../static/css/style.scss';
 import '../static/css/easymde.min.css';
 import '../static/css/nprogress.css';
 
@@ -29,6 +29,7 @@ class MyApp extends App {
 		
         return (
 			<div>
+				<GlobalStyle />
 				<Layout {...pageProps}>
 					<Component {...pageProps} />
 				</Layout>
