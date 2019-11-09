@@ -544,7 +544,7 @@ export const GlobalStyle = createGlobalStyle`
 	.main-button{
 		color: white;
 		border: none; outline: none;
-		background-color: #FF4114;
+		background-color: #FF4114 !important;
 		font-weight: 700;
 		border-radius: 2px;
 		/* min-width: 150px; */
