@@ -90,7 +90,7 @@ const Header = (props) => {
                             </ul>
                         </li>
                         {/* <li>
-                            <Link href=''>
+                            <Link href='/blog'>
                                 <a>Blog</a>
                             </Link>
                         </li> */}
