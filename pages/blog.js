@@ -5,7 +5,7 @@ import { API_URL } from '../utils';
 const Blog = ({ posts }) => {
 	return (
 		<div>
-			{/* <Head>
+			<Head>
 				<title>Blog - Trabajos remotos</title>
 			</Head>
 			<GridContainer>
@@ -86,7 +86,7 @@ const Blog = ({ posts }) => {
 						<PostTitle>{post.title}</PostTitle>
 					</a>
 				)) : null}
-			</GridContainer> */}
+			</GridContainer>
 		</div>
 	)
 };
