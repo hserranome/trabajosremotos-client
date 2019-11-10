@@ -89,11 +89,11 @@ const Header = (props) => {
                                 </li>
                             </ul>
                         </li>
-                        {/* <li>
+                        <li>
                             <Link href='/blog'>
                                 <a>Blog</a>
                             </Link>
-                        </li> */}
+                        </li>
                         <li>
                             <Link href='/anunciate'>
                                 <a>Anúnciate</a>
