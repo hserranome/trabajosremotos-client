@@ -28,11 +28,11 @@ const Header = (props) => {
                             <a>Publicar</a>
                         </Link>
                     </li>
-                    {/* <li className='blog'>
+                    <li className='blog'>
                         <Link activeClassName='active' href='/blog'>
                             <a>Blog</a>
                         </Link>
-                    </li> */}
+                    </li>
                 </ul>
             </nav>
 
