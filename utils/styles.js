@@ -584,7 +584,11 @@ export const GlobalStyle = createGlobalStyle`
 			flex: 0 0 65%;
 			text-align: left;
 		}
-		.anuncio .container .content.fullwidth{ flex: 0 0 100%; }
+		.anuncio .container .content.fullwidth{ 
+			flex: 0 0 70%; 
+			margin: 0 auto;
+
+		}
 		.anuncio .container .sidebar{
 			flex: 0 0 30%;
 			display: block;

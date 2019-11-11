@@ -37,12 +37,12 @@ function SingleBlogPost(props) {
 				{publicacion
 					? (
 						<div className="container small">
-							<div className="content">
+							<div className="content fullwidth">
 								<p className="date">{publicacion.created_at}</p>
 								<h1 className="prata">{publicacion.title}</h1>
 
 								<div className="description">
-									{publicacion.description
+									{publicacion.content
 										? <Markdown>{publicacion.content}</Markdown>
 										: ''
 									}
