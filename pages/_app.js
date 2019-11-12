@@ -3,6 +3,7 @@ import App from 'next/app';
 import Router from 'next/router';
 import NProgress from 'nprogress'
 import GlobalStyle from '../utils/styles';
+import { CookiesProvider } from 'react-cookie';
 
 import '../static/css/easymde.min.css';
 import '../static/css/nprogress.css';
@@ -28,12 +29,12 @@ class MyApp extends App {
 		const { Component, pageProps } = this.props;
 		
         return (
-			<div>
+			<CookiesProvider>
 				<GlobalStyle />
 				<Layout {...pageProps}>
 					<Component {...pageProps} />
 				</Layout>
-			</div>
+			</CookiesProvider>
         )
 	}
 }

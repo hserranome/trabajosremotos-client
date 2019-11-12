@@ -1,13 +1,18 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactGA from 'react-ga';
 import Head from 'next/head';
+import Link from './ActiveLink';
+import { useCookies } from 'react-cookie';
 
 import Header from './Header';
 import Footer from './Footer';
 
 // 👏 CONSISTENCIA 👏 
 const Layout = (props) => {
-	useEffect(() => {
+	const [cookies, setCookie] = useCookies(['acceptCookies']);
+	const [loaded, setLoaded] = useState(false); 
+	
+	useEffect(() => {		
 		if (!window.GA_INITIALIZED) {
 			// Si no esta, iniciamos
 			ReactGA.initialize('UA-108296865-5');
@@ -17,7 +22,15 @@ const Layout = (props) => {
 
 		// Mailchimp
 		window.dojoRequire(["mojo/signup-forms/Loader"], function (L) { L.start({ "baseUrl": "mc.us4.list-manage.com", "uuid": "3a042d90b01c388c7081ca588", "lid": "591a1153bf", "uniqueMethods": true }) })
+
+		window.addEventListener('load', () => {
+			setLoaded(true);
+		});
 	}, []);
+
+	function changeCookie(newValue) {
+		setCookie('acceptCookies', newValue, { path: '/' });
+	}
 
 	return (
 		<div>
@@ -48,8 +61,15 @@ const Layout = (props) => {
 			</Head>
 
 			<Header {...props} />
-			{props.children}
+				{props.children}
 			<Footer />
+			
+			{cookies.acceptCookies !== 'true' && loaded && (<div className="aviso-cookies active">
+				Esta web usa cookies para una mejor experiencia
+				de navegación. <Link href="/cookies"><a>Política de privacidad</a></Link>
+
+				<button onClick={() => changeCookie('true')}>Ok! 👍</button>
+			</div>)}
 		</div>
 	)
 }

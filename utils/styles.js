@@ -38,6 +38,57 @@ export const GlobalStyle = createGlobalStyle`
 	.container.big{ max-width: 1170px; }
 	/* ----------------------------------- */
 
+	/* Cookie message */
+	.aviso-cookies{
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		z-index: 10000;
+		background-color: white;
+		padding: 1rem;
+		box-sizing: border-box;
+		width: 100%;
+		font-size: .9rem;
+		border-top: 1px solid #eee;
+
+		button{
+			display: block;
+			width: 100%;
+			margin-top: 1rem;
+			font-size: 1rem;
+			font-weight: 600;
+			border: none;
+			background-color: #FF4114;
+			padding: .5rem 0px;
+			color: white;
+			border-radius: 6px;
+			text-shadow: 1px 1px 1px rgba(0,0,0,.25);
+			border: 1px solid #eee;
+			outline: none;
+
+			&:hover{
+				cursor: pointer;
+			}
+			&.cancel{
+				color: #444;
+				background-color: white;
+			}
+		}
+		a{
+			font-weight: 700;
+			background-color: rgba(221,224,244,0.9);
+			transition: .1s linear;
+		}
+		@media only screen and (min-width : 425px) {
+			max-width: 275px;
+			box-shadow: 0 6px 40px rgba(0,0,0,.3);
+			border-radius: 6px;
+			bottom: 1rem;
+			border-top: none;
+			left: 1rem;
+		}
+	}
+
 	/* Hero section on some pages */
 	.hero{
 		max-width: 100%;
@@ -525,7 +576,7 @@ export const GlobalStyle = createGlobalStyle`
 		background-color: rgba(221,224,244,0.9);
 		transition: .1s linear;
 	}
-	.anuncio .container .content img{ max-width: 100%; margin-bottom: 2rem;}
+	.anuncio .container .content img{ max-width: 100%; }
 	.anuncio .container .content p, .anuncio .container .content ul, .anuncio .container .content > div{
 		margin: 0; padding: 0;
 		margin-bottom: 1rem;

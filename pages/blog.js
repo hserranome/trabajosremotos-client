@@ -37,7 +37,6 @@ Blog.getInitialProps = async () => {
 		const res = await fetch(`${API_URL}/posts`);
 		let data = await res.json();
 		data = data.map((job) => ({ ...job, created_at: getLocalDate(job.created_at) }))
-		console.log(data);
 		return { posts: data };
 	} catch (error) {
 		console.log(error)
@@ -70,7 +69,8 @@ const PostTitle = styled.h2`
     -webkit-box-orient: vertical;
 	font-size: 20px;
 `;
-const PostDate = styled.p`
+const PostDate = styled.div`
+	margin-top: 1rem;
 	font-size: 12px;
 	text-transform: uppercase;
 	font-weight: 600;
