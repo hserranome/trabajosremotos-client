@@ -40,7 +40,7 @@ function SingleJob(props) {
 						<div className="container">
 							<div className="content">
 								<p className="date">{job.created_at}</p>
-								<h1 className="prata">{job.title}</h1>
+								<h1>{job.title}</h1>
 
 								<div className="description">
 									{job.description

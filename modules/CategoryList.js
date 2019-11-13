@@ -21,7 +21,7 @@ function CategoryList (props) {
                                     <a>
                                         <img src={`${API_URL}${cat.image.url}`} alt="icono programacion" />
                                         <p>{`${cat.description}`}</p>
-                                        <h2 className="prata">{`${cat.name}`}</h2>
+                                        <h2>{`${cat.name}`}</h2>
                                     </a>
                                 </Link>
                             </div>

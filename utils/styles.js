@@ -511,8 +511,12 @@ export const GlobalStyle = createGlobalStyle`
 
 	/* Single job listing */
 	.anuncio .container{
-		display: flex; flex-flow: row wrap;
+		display: flex; flex-flow: column-reverse wrap;
 		justify-content: space-between; align-items: flex-start;
+
+		@media only screen and (min-width : 800px) {
+			flex-flow: row wrap;
+		}
 	}
 	.anuncio .container .content{
 		flex: 0 0 100%;
@@ -527,8 +531,17 @@ export const GlobalStyle = createGlobalStyle`
 	}
 	.anuncio .container .sidebar{
 		flex: 0 0 100%;
-		display: none;
+		display: block;
 		position: relative;
+		margin: 0 auto;
+		margin-bottom: 2rem;
+	}
+	.anuncio .container .sidebar a{
+		display: none;
+
+		@media only screen and (min-width : 800px) {
+			display: inline-block;
+		}
 	}
 	.anuncio .container .sidebar .img{
 		margin: 0 auto;
@@ -552,11 +565,6 @@ export const GlobalStyle = createGlobalStyle`
 	.anuncio .container .sidebar h2{
 		margin-top: 0;
 	}
-	.anuncio .container .content p.date{
-		text-transform: uppercase;
-		color: #838383;
-		margin: 0; padding: 0;
-	}
 	.anuncio .container .content > h1{
 		margin: 0; padding: 0;
 		margin-top: .5rem;
@@ -570,6 +578,18 @@ export const GlobalStyle = createGlobalStyle`
 		margin: 0; padding: 0;
 		margin-bottom: 2rem;
 		box-sizing: border-box;
+	}
+	.anuncio.blog .container .content .description > img{
+		margin-bottom: 1rem;
+	}
+	.anuncio.blog .container .content .description h1,
+	.anuncio.blog .container .content .description h2,
+	.anuncio.blog .container .content .description h3,
+	.anuncio.blog .container .content .description h4,
+	.anuncio.blog .container .content .description h5,
+	.anuncio.blog .container .content .description h6{
+		font-size: 1.4rem;
+		margin-bottom: 1.5rem;
 	}
 	.anuncio .container .content a{
 		font-weight: 700;
@@ -586,6 +606,35 @@ export const GlobalStyle = createGlobalStyle`
 	.anuncio .container .content ul{ margin-left: 3rem; }
 	.anuncio .container .content li{ margin-bottom: 1rem; }
 	/* ----------------------------------- */
+
+	/* Blog styles */
+	.blog-title{
+		width: 100%;
+		max-width: 960px;
+		text-align: left;
+		padding: 1rem;
+		margin: 0 auto;
+		padding-bottom: 0;
+
+		h1{
+			margin: 0;
+			padding: 0;
+			font-size: 1.4rem;
+			margin-bottom: .5rem;
+		}
+		p.date{
+			text-transform: uppercase;
+			color: #838383;
+			margin: 0; padding: 0;
+		}
+		@media only screen and (min-width : 800px) {
+			text-align: center;
+
+			h1{
+				font-size: 2rem;
+			}
+		}
+	}
 
 	/* Contenedores que tienen margen */
 	.trabajos, .nuevo, .anuncio, .about{ margin-top: 2rem; margin-bottom: 2rem; }

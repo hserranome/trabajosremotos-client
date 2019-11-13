@@ -33,19 +33,23 @@ function SingleBlogPost(props) {
 				)
 			}
 
-			<div className="anuncio">
+			<div className="anuncio blog">
 				{publicacion
 					? (
-						<div className="container small">
-							<div className="content fullwidth">
+						<div>
+							<div className="blog-title">
+								<h1>{publicacion.title}</h1>
 								<p className="date">{publicacion.created_at}</p>
-								<h1 className="prata">{publicacion.title}</h1>
-
-								<div className="description">
-									{publicacion.content
-										? <Markdown>{publicacion.content}</Markdown>
-										: ''
-									}
+							</div>
+							<div className="container small">
+								<div className="content fullwidth">
+									<div className="description">
+										<img className="blog-thumbnail" src={`https://api.trabajosremotos.es${publicacion.thumbnail.url}`} alt={publicacion.thumbnail_alt} title={publicacion.thumbnail_title} />
+										{publicacion.content
+											? <Markdown>{publicacion.content}</Markdown>
+											: ''
+										}
+									</div>
 								</div>
 							</div>
 						</div>
@@ -70,6 +74,7 @@ SingleBlogPost.getInitialProps = async ({ query }) => {
 		const res = await fetch(`${API_URL}/posts?slug=${slug}`);
 		const publicacions = await res.json();
 		const publicacion = publicacions[0];
+		console.log(publicacion);
 		publicacion.created_at = getLocalDate(publicacion.created_at);
 		return { publicacion };
 	} catch (error) {

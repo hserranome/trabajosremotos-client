@@ -65,8 +65,8 @@ const Layout = (props) => {
 			<Footer />
 			
 			{cookies.acceptCookies !== 'true' && loaded && (<div className="aviso-cookies active">
-				Esta web usa cookies para una mejor experiencia
-				de navegación. <Link href="/cookies"><a>Política de privacidad</a></Link>
+				Al seguir navegando por esta web aceptas
+				nuestra <Link href="/cookies"><a>política de privacidad</a></Link>.
 
 				<button onClick={() => changeCookie('true')}>Ok! 👍</button>
 			</div>)}

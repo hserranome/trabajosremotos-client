@@ -3,13 +3,13 @@ import Link from './ActiveLink';
 const Header = (props) => {    
     return (
         <div>
-            <nav className='mobile top'>
+            {/* <nav className='mobile top'>
                 <form method='get' id='searchform' action=''>
                     <img src='/static/images/search.svg' alt='icono de busqueda' />
                     <input type='hidden' name='post_type' value='trabajos-remotos' />
                     <input type='text' className='field' name='s' id='s' placeholder='Encuentra tu próximo trabajo' />
                 </form>
-            </nav>
+            </nav> */}
 
             <nav className='mobile bottom'>
                 <ul>
