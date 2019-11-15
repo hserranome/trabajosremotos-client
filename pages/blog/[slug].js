@@ -17,10 +17,10 @@ function SingleBlogPost(props) {
 
 						<meta name="robots" content="all" />
 						<meta property="og:title" content={`${publicacion.seo_title} | Trabajosremotos.es`} key="trabajos-title-og" />
-						<meta property="og:image" content={publicacion.thumbnail ? publicacion.thumbnail : trabajosRemotosLogo} key="trabajos-logo-og" />
+						<meta property="og:image" content={publicacion.thumbnail ? `https://api.trabajosremotos.es${publicacion.thumbnail.url}` : trabajosRemotosLogo} key="trabajos-logo-og" />
 						<meta property="og:description" content={publicacion.meta_description} />
 						<meta name="twitter:title" content={`${publicacion.seo_title} | Trabajosremotos.es`} key="trabajos-title-twitter" />
-						<meta name="twitter:image" content={publicacion.thumbnail ? publicacion.thumbnail : trabajosRemotosLogo} key="trabajos-image-twitter" />
+						<meta name="twitter:image" content={publicacion.thumbnail ? `https://api.trabajosremotos.es${publicacion.thumbnail.url}` : trabajosRemotosLogo} key="trabajos-image-twitter" />
 						<meta name="twitter:description" content={publicacion.meta_description} />
 					</Head>
 				)
