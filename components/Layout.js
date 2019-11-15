@@ -29,7 +29,13 @@ const Layout = (props) => {
 	}, []);
 
 	function changeCookie(newValue) {
-		setCookie('acceptCookies', newValue, { path: '/' });
+		let date = new Date();
+		// default is 3 months.
+		let days = 90;
+		// Get unix milliseconds at current time plus number of days
+		date.setTime(+ date + (days * 86400000)); //24 * 60 * 60 * 1000
+
+		setCookie('acceptCookies', newValue, { path: '/', expires: date });
 	}
 
 	return (
