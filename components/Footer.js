@@ -1,8 +1,13 @@
+import Link from './ActiveLink';
+
 const Footer = (props) => (
     <div className="footer">
         <div className="container">
             <div className="copy">
                 <p className="strong">&copy; 2019</p>
+				<p><Link href="/anunciate"><a>Anúnciate</a></Link></p>
+				<p><Link href="/sobrenosotros"><a>Sobre nosotros</a></Link></p>
+				<p><Link href="/cookies"><a>Política de cookies</a></Link></p>
             </div>
 
             <div className="social">

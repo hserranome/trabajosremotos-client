@@ -62,7 +62,6 @@ export const GlobalStyle = createGlobalStyle`
 			padding: .5rem 0px;
 			color: white;
 			border-radius: 6px;
-			text-shadow: 1px 1px 1px rgba(0,0,0,.25);
 			border: 1px solid #eee;
 			outline: none;
 
@@ -120,8 +119,13 @@ export const GlobalStyle = createGlobalStyle`
 	}
 	.footer .container{
 		font-size: 1rem;
-		display: flex; flex-flow: row nowrap;
-		justify-content: space-between; align-items: center;
+		display: flex;
+		flex-flow: row nowrap;
+	 	justify-content: space-between; align-items: flex-start;
+
+		@media only screen and (min-width : 800px) {
+			align-items: center;
+		}
 	}
 	.footer .container .social{
 		display: flex; flex-flow: row nowrap;
@@ -137,6 +141,34 @@ export const GlobalStyle = createGlobalStyle`
 		background-color: #f3f3f3;
 	}
 	.footer .container .img img{ max-width: 50%; }
+	.footer .container .copy{
+		display: flex;
+		flex-flow: column wrap;
+		text-align: left;
+		box-sizing: border-box;
+
+		@media only screen and (min-width : 800px) {
+			flex-flow: row nowrap;
+		}
+		p {
+			margin: 0;
+			box-sizing: border-box;
+			padding: 0;
+			text-align: left;
+			margin-bottom: .75rem;
+
+			@media only screen and (min-width : 800px) {
+				margin-bottom: 0;
+			}
+			a {
+				font-size: .9rem;
+
+				@media only screen and (min-width : 800px) {
+					margin-left: 1rem;
+				}
+			}
+		}
+	}
 	/* ----------------------------------- */
 
 	/* List of jobs */

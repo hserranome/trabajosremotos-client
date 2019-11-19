@@ -95,16 +95,6 @@ const Header = (props) => {
                             </Link>
                         </li>
                         <li>
-                            <Link href='/anunciate'>
-                                <a>Anúnciate</a>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href='/sobrenosotros'>
-                                <a>Sobre nosotros</a>
-                            </Link>
-                        </li>
-                        <li>
                             <Link href='/publicar'>
                                 <a className='main-button'>Publicar anuncio</a>
                             </Link>
