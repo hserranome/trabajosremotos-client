@@ -156,7 +156,11 @@ export const GlobalStyle = createGlobalStyle`
 			padding: 0;
 			text-align: left;
 			margin-bottom: .75rem;
+			opacity: .65;
 
+			&:first-child{
+				opacity: 1;
+			}
 			@media only screen and (min-width : 800px) {
 				margin-bottom: 0;
 			}
