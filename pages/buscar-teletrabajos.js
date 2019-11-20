@@ -35,7 +35,7 @@ Search.getInitialProps = async ({ query }) => {
 	try {
 		const { filtro } = query;
 
-		const res = await fetch(`${API_URL}/jobs?_contains=${filtro.replace(' ', '%20')}`);
+		const res = await fetch(`${API_URL}/jobs?title_contains=${filtro.replace(' ', '%20')}`);
 		// const res = await fetch(`${API_URL}/jobs?_limit=2`);
 		let data = await res.json();
 		console.log(data);
