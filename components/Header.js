@@ -1,15 +1,27 @@
 import Link from './ActiveLink';
+import slugify from 'slugify';
+import Router from 'next/router';
 
 const Header = (props) => {    
+	const handleSearch = (event) => {
+		event.preventDefault();
+
+		let query = slugify(document.querySelector('#searchQuery').value, { remove: /[*+~.()'"!:@]/g });
+
+		Router.push({
+			pathname: '/buscar-teletrabajos',
+			query: { filtro: query }
+		})
+	}
+	
     return (
         <div>
-            {/* <nav className='mobile top'>
-                <form method='get' id='searchform' action=''>
+            <nav className='mobile top'>
+                <form method='get' id='searchform' onSubmit={(event) => handleSearch(event)}>
                     <img src='/static/images/search.svg' alt='icono de busqueda' />
-                    <input type='hidden' name='post_type' value='trabajos-remotos' />
-                    <input type='text' className='field' name='s' id='s' placeholder='Encuentra tu próximo trabajo' />
+                    <input type='text' className='field' id="searchQuery" placeholder='Encuentra tu próximo trabajo' />
                 </form>
-            </nav> */}
+            </nav>
 
             <nav className='mobile bottom'>
                 <ul>
