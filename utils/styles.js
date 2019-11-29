@@ -499,6 +499,7 @@ export const GlobalStyle = createGlobalStyle`
 		width: 100%;
 		padding: 1rem;
 		margin: 0;
+		z-index: 99999;
 		background: #f8f9fa;
     	box-shadow: 0 2px 2px rgba(0,0,0,0.15);
 
