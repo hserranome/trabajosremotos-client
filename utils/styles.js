@@ -26,7 +26,6 @@ export const GlobalStyle = createGlobalStyle`
 	a{ text-decoration: none; color: inherit; }
 	.strong{ font-weight: 600; }
 
-	.prata{ font-family: 'Prata', serif; font-weight: 300; }
 
 	.container{
 		width: 100%; max-width: 960px;
@@ -476,6 +475,51 @@ export const GlobalStyle = createGlobalStyle`
 		margin-bottom: 1rem;
 	}
 	nav.desktop ul.dropdown li:last-child{ margin-bottom: 0; }
+	nav.desktop .search{ 
+		margin-right: 1rem; 
+		position: relative; 
+
+		img{
+			width: 18px; 
+			top: 3px; 
+			position: relative;
+		}
+		&:hover{
+			cursor: pointer;
+		}
+	}
+	/* ----------------------------------- */
+	
+	/* Desktop search bar */
+	.search-desktop{
+		display: none;
+		position: fixed;
+		top: 65px;
+		left: 0;
+		width: 100%;
+		padding: 1rem;
+		margin: 0;
+		background: #f8f9fa;
+    	box-shadow: 0 2px 2px rgba(0,0,0,0.15);
+
+		.container{
+			margin: 0 auto;
+			padding: 0;
+			text-align: left;
+
+			input{
+				border: none;
+				background: none;
+				width: 100%;
+				font-size: 14px;
+				outline: none;
+				color: #4d5154;
+			}
+		}
+		&.active{
+			display: block;
+		}
+	}
 	/* ----------------------------------- */
 
 	/* Mobile menu */
@@ -509,6 +553,7 @@ export const GlobalStyle = createGlobalStyle`
 		background-color: transparent;
 		font-size: .8rem;
 		margin-left: 12px;
+		outline: none;
 		flex: 1;
 	}
 	nav.mobile.bottom ul{
