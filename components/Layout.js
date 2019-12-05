@@ -21,7 +21,7 @@ const Layout = (props) => {
 		ReactGA.pageview(window.location.pathname + window.location.search);
 
 		// Mailchimp
-		window.dojoRequire(["mojo/signup-forms/Loader"], function (L) { L.start({ "baseUrl": "mc.us4.list-manage.com", "uuid": "3a042d90b01c388c7081ca588", "lid": "591a1153bf", "uniqueMethods": true }) })
+		// window.dojoRequire(["mojo/signup-forms/Loader"], function (L) { L.start({ "baseUrl": "mc.us4.list-manage.com", "uuid": "3a042d90b01c388c7081ca588", "lid": "591a1153bf", "uniqueMethods": true }) })
 
 		window.addEventListener('load', () => {
 			setLoaded(true);
@@ -63,7 +63,7 @@ const Layout = (props) => {
 				<link rel='shortcut icon' href='/static/favicon.ico' />
 
 				<script src='https://js.stripe.com/v3' />
-				<script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
+				{/* <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script> */}
 			</Head>
 
 			<Header {...props} />

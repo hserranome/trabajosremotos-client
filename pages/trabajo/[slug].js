@@ -23,6 +23,25 @@ function SingleJob(props) {
 						<meta name="twitter:title" content={`${job.title} en ${job.company}`} key="trabajos-title-twitter" />
 						<meta name="twitter:image" content={job.logo ? job.logo : trabajosRemotosLogo} key="trabajos-image-twitter" />
 						<meta name="twitter:description" content={jobDescriptionSEO} />
+
+						{/* Schema to show jobs on google searches */}
+						<script type='application/ld+json' dangerouslySetInnerHTML={{ __html: `
+							{ 
+								"@context" : "https://schema.org/",
+								"@type" : "JobPosting",
+								"title" : "${job.title}",
+								"jobLocationType": "TELECOMMUTE",
+								"description" : "</p>${job.jobDescriptionSEO}</p>",
+								"datePosted" : "${job.schemaDatePosted}",
+								"validThrough" : "${job.schemaValidThrough}",
+								"employmentType" : "FULL_TIME",
+								"hiringOrganization":{
+									"@type" : "Organization",
+									"name" : "${job.company}",
+									"logo" : "${job.logo ? job.logo : trabajosRemotosLogo}"
+								}
+							}
+						` }} />
 					</Head>
 				)
 				: (
@@ -41,6 +60,8 @@ function SingleJob(props) {
 							<div className="content">
 								<p className="date">{job.created_at}</p>
 								<h1>{job.title}</h1>
+								<h1>{job.schemaDatePosted}</h1>
+								<h1>{job.schemaValidThrough}</h1>
 
 								<div className="description">
 									{job.description
@@ -79,7 +100,13 @@ SingleJob.getInitialProps = async ({ query }) => {
 		const jobs = await res.json();
 		const job = jobs[0];
 		job.link = job.link.includes('@') ? `mailto:${job.link}` : job.link;
+
+		// Dates to show schema.org job listing
+		job.schemaDatePosted = job.created_at;
+		const dateValidThrough = new Date(job.created_at).setDate(new Date().getDate() + 30);
+		job.schemaValidThrough = new Date(dateValidThrough).toUTCString();
 		job.created_at = getLocalDate(job.created_at);
+
 		return { job };
 	} catch (error) {
 		console.error(error)
