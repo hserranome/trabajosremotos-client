@@ -60,8 +60,6 @@ function SingleJob(props) {
 							<div className="content">
 								<p className="date">{job.created_at}</p>
 								<h1>{job.title}</h1>
-								<h1>{job.schemaDatePosted}</h1>
-								<h1>{job.schemaValidThrough}</h1>
 
 								<div className="description">
 									{job.description
