@@ -4,6 +4,7 @@ import LazyLoad from 'react-lazyload';
 
 import { API_URL, getLocalDate } from '../../utils';
 
+export const config = { amp: true };
 
 function SingleJob(props) {
 	const { job } = props;
