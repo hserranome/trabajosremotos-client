@@ -12,7 +12,7 @@ const Footer = (props) => (
             </div>
 
             <div className="social">
-                <a href="https://twitter.com/trabajos_remoto" target="_blank" className="img">
+				<a href="https://twitter.com/trabajos_remoto" rel="noopener" target="_blank" className="img">
 					<LazyLoad once>
 						<img src="/static/images/twitter.svg" alt="icono twitter" />
 					</LazyLoad>
