@@ -1,6 +1,7 @@
 import Link from './ActiveLink';
 import slugify from 'slugify';
 import Router from 'next/router';
+import LazyLoad from 'react-lazyload';
 
 const Header = (props) => {    
 	const handleSearch = (event) => {
@@ -18,7 +19,9 @@ const Header = (props) => {
         <div>
             <nav className='mobile top'>
                 <form method='get' id='searchform' onSubmit={(event) => handleSearch(event)}>
-                    <img src='/static/images/search.svg' alt='icono de busqueda' />
+					<LazyLoad once>
+                    	<img src='/static/images/search.svg' alt='icono de busqueda' />
+					</LazyLoad>
                     <input type='text' className='field' id="searchQuery" placeholder='Encuentra tu próximo trabajo' />
                 </form>
             </nav>

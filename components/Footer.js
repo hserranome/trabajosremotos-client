@@ -1,4 +1,5 @@
 import Link from './ActiveLink';
+import LazyLoad from 'react-lazyload';
 
 const Footer = (props) => (
     <div className="footer">
@@ -11,7 +12,11 @@ const Footer = (props) => (
             </div>
 
             <div className="social">
-                <a href="https://twitter.com/trabajos_remoto" target="_blank" className="img"><img src="/static/images/twitter.svg" alt="icono twitter" /></a>
+                <a href="https://twitter.com/trabajos_remoto" target="_blank" className="img">
+					<LazyLoad once>
+						<img src="/static/images/twitter.svg" alt="icono twitter" />
+					</LazyLoad>
+				</a>
             </div>
         </div>
     </div>

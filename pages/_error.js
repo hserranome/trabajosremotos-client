@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import LazyLoad from 'react-lazyload';
 
 import errorGif from '../static/images/error.gif';
 
@@ -14,7 +15,9 @@ function Error({ statusCode }) {
         <div className="anuncio">
             <div className="container">
               <div className="content fullwidth center">
-                <img src={errorGif} />
+				<LazyLoad once>
+                	<img src={errorGif} />
+				</LazyLoad>
                 <p>Psst! Parece que te has perdido, pero siempre puedes volver al <Link href="/"><a>inicio</a></Link> 👍</p>
               </div>
             </div>

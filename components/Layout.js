@@ -62,7 +62,7 @@ const Layout = (props) => {
 
 				<link rel='shortcut icon' href='/static/favicon.ico' />
 
-				<script src='https://js.stripe.com/v3' />
+				<script src='https://js.stripe.com/v3' defer />
 				<script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
 			</Head>
 
