@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Markdown from 'markdown-to-jsx';
+import LazyLoad from 'react-lazyload';
 
 import { API_URL, getLocalDate } from '../../utils';
 
@@ -71,7 +72,16 @@ function SingleJob(props) {
 							</div>
 
 							<div className="sidebar">
-								{job.logo ? <div className="img"><img src={job.logo} alt={'logo ' + job.company} /></div> : ''}
+								{job.logo ? (
+									<div className="img">
+										<LazyLoad once>
+											<img
+												src={job.logo}
+												alt={'logo ' + job.company}
+											/>
+										</LazyLoad>
+									</div>
+								) : ''}
 								<h2>{job.company}</h2>
 								<a target="_blank" rel="noopener" className="main-button" href={job.link}>Solicitar trabajo</a>
 							</div>

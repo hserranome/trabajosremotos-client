@@ -13,6 +13,23 @@ const About = (props) => {
 			<div className="anuncio">
 				<div className="container">
 					<div className="content fullwidth">
+						<h4>Contacto</h4>
+						<p>
+							Para cualquier duda sobre la publicación de anuncios, partnerships y demás, puedes mandarnos
+							un correo a <a href="mailto:contacto@trabajosremotos.es">contacto@trabajosremotos.es</a>.
+						</p>
+
+						<h4>Anúnciate en Trabajos remotos</h4>
+						<p>
+							Antes de nada, ¡Gracias por interesarte en anunciarte con nosotros!
+						</p>
+						<p>
+							Ofrecemos publicidad en diferentes sitios de la página web.
+							Desde el listado de trabajos al blog, para dudas
+							y mas información sobre precios, puedes ponerte en
+							contacto a través de <a href="mailto:contacto@trabajosremotos.es">contacto@trabajosremotos.es</a>
+						</p>
+
 						<h4>Sobre Trabajos Remotos</h4>
 						<p>
 							Trabajos Remotos es un proyecto 

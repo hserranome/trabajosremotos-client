@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import LazyLoad from 'react-lazyload';
 
 function JobsList (props) {
 	const { initialJobs } = props;
@@ -19,7 +20,9 @@ function JobsList (props) {
 								{job.logo && job.showLogo 
 									? (
 										<div className='img'>
-											<img src={job.logo} alt={'logo ' + job.company} />
+											<LazyLoad once>
+												<img src={job.logo} alt={'logo ' + job.company} />
+											</LazyLoad>
 										</div>
 									) 
 									: ''}

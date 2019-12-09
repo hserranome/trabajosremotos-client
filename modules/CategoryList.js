@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link'
+import LazyLoad from 'react-lazyload';
 
 import { API_URL } from '../utils';
 
@@ -19,7 +20,12 @@ function CategoryList (props) {
 									as={`/categoria/${cat.slug}`}
 								>
                                     <a>
-                                        <img src={`${API_URL}${cat.image.url}`} alt="icono programacion" />
+										<LazyLoad once>
+                                        	<img
+												src={`${API_URL}${cat.image.url}`}
+												alt="icono programacion"
+											/>
+										</LazyLoad>
                                         <p>{`${cat.description}`}</p>
                                         <h2>{`${cat.name}`}</h2>
                                     </a>

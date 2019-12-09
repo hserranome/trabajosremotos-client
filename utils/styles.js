@@ -9,7 +9,7 @@ export const GlobalStyle = createGlobalStyle`
 
 
 	*/
-	@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600|Prata&display=swap');
+	@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600');
 
 	body{
 		padding: 0; margin: 0 auto;
@@ -36,6 +36,20 @@ export const GlobalStyle = createGlobalStyle`
 	}
 	.container.big{ max-width: 1170px; }
 	/* ----------------------------------- */
+
+	.sr-only {
+		border: 0 !important;
+		clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
+		-webkit-clip-path: inset(50%) !important;
+			clip-path: inset(50%) !important;  /* 2 */
+		height: 1px !important;
+		margin: -1px !important;
+		overflow: hidden !important;
+		padding: 0 !important;
+		position: absolute !important;
+		width: 1px !important;
+		white-space: nowrap !important;            /* 3 */
+	}
 
 	/* Cookie message */
 	.aviso-cookies{

@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Markdown from 'markdown-to-jsx';
+import LazyLoad from 'react-lazyload';
 
 import { API_URL, getLocalDate } from '../../utils';
 
@@ -44,7 +45,14 @@ function SingleBlogPost(props) {
 							<div className="container small">
 								<div className="content fullwidth">
 									<div className="description">
-										<img className="blog-thumbnail" src={`https://api.trabajosremotos.es${publicacion.thumbnail.url}`} alt={publicacion.thumbnail_alt} title={publicacion.thumbnail_title} />
+										<LazyLoad once>
+											<img
+												className="blog-thumbnail"
+												src={`https://api.trabajosremotos.es${publicacion.thumbnail.url}`}
+												alt={publicacion.thumbnail_alt}
+												title={publicacion.thumbnail_title}
+											/>
+										</LazyLoad>
 										{publicacion.content
 											? <Markdown>{publicacion.content}</Markdown>
 											: ''
