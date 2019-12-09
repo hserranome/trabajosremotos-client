@@ -12,9 +12,9 @@ const Footer = (props) => (
             </div>
 
             <div className="social">
-				<a href="https://twitter.com/trabajos_remoto" rel="noopener" target="_blank" className="img">
+				<a href="https://twitter.com/trabajos_remoto" aria-label="Twitter" rel="noopener" target="_blank" className="img">
 					<LazyLoad once>
-						<img src="/static/images/twitter.svg" alt="icono twitter" />
+						<img src="/static/images/twitter.svg" alt="Icono Twitter" />
 					</LazyLoad>
 				</a>
             </div>
