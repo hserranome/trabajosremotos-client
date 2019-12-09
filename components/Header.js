@@ -67,13 +67,15 @@ const Header = (props) => {
 					<LazyLoad once>
                     	<img src='/static/images/search.svg' alt='icono de busqueda' />
 					</LazyLoad>
-                    <input type='text' className='field' id="searchQuery" placeholder='Encuentra tu próximo trabajo' />
+					<label class="sr-only" for="searchQuery">Encuentra tu próximo trabajo</label>
+					<input type='text' className='field' id="searchQuery" placeholder='Encuentra tu próximo trabajo' />
                 </form>
             </nav>
 
 			<div className="search-desktop">
 				<div className="container">
 					<form method='get' id='searchformdesktop' onSubmit={(event) => handleSearchDesktop(event)}>
+						<label class="sr-only" for="searchQueryDesktop">Encuentra tu próximo trabajo</label>
 						<input autoComplete='off' type='text' className='field' id="searchQueryDesktop" placeholder='Encuentra tu próximo trabajo' />
 					</form>
 				</div>
