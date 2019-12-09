@@ -18,8 +18,8 @@ const Anunciate = (props) => {
 							Antes de nada, ¡Gracias por interesarte en anunciarte con nosotros! 
 						</p>
 						<p>
-							Ofrecemos dos tipos de publicidad, en la newsletter y en la página web.
-							Tenemos packs si quieres anunciarte en ambos sitios, para dudas 
+							Ofrecemos publicidad en diferentes sitios de la página web.
+							Desde el listado de trabajos al blog, para dudas 
 							y mas información sobre precios, puedes ponerte en 
 							contacto a través de <a href="mailto:contacto@trabajosremotos.es">contacto@trabajosremotos.es</a>
 						</p>

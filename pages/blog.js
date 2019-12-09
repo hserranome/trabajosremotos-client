@@ -34,7 +34,7 @@ export default Blog;
 
 Blog.getInitialProps = async () => {
 	try {
-		const res = await fetch(`${API_URL}/posts`);
+		const res = await fetch(`${API_URL}/posts?_sort=created_at:DESC`);
 		let data = await res.json();
 		data = data.map((job) => ({ ...job, created_at: getLocalDate(job.created_at) }))
 		return { posts: data };

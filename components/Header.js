@@ -1,22 +1,67 @@
+import React, { useEffect, useState } from 'react';
 import Link from './ActiveLink';
 import slugify from 'slugify';
 import Router from 'next/router';
 import LazyLoad from 'react-lazyload';
 
-const Header = (props) => {    
+const Header = (props) => {
+	useEffect(() => {
+		window.addEventListener('click', (event) => {
+			const target = event.target; 
+			const wrapper = target.closest('.search-desktop');
+			const wrapperRef = document.querySelector('.search-desktop');
+
+			if (!target.classList.contains('search')) {
+				if (wrapperRef.classList.contains('active')) {
+					if (wrapper === null) {
+						wrapperRef.classList.remove('active');
+					}
+				}
+			}
+		});
+	}, []);
+
 	const handleSearch = (event) => {
 		event.preventDefault();
+		const input = document.querySelector('#searchQuery');
 
-		let query = slugify(document.querySelector('#searchQuery').value, { remove: /[*+~.()'"!:@]/g });
+		let query = slugify(input.value, { remove: /[*+~.()'"!:@]/g });
 
 		Router.push({
 			pathname: '/buscar-teletrabajos',
 			query: { filtro: query }
 		})
+
+		// Despues de buscar un filtro reseteamos el input
+		input.value = '';
+	}
+
+	const handleSearchDesktop = (event) => {
+		event.preventDefault();
+		const input = document.querySelector('#searchQueryDesktop');
+		const wrapper = document.querySelector('.search-desktop');
+
+		let query = slugify(input.value, { remove: /[*+~.()'"!:@]/g });
+
+		Router.push({
+			pathname: '/buscar-teletrabajos',
+			query: { filtro: query }
+		})
+
+		// Despues de buscar un filtro reseteamos el input y en el caso de escritorio, le quitamos la clase active para cerrarlo
+		input.value = '';
+		wrapper.classList.remove('active');
+	}
+
+	const openDesktopSearch = (event) => {
+		event.stopPropagation();
+		const wrapper = document.querySelector('.search-desktop');
+
+		wrapper.classList.toggle('active');
 	}
 	
     return (
-        <div>
+		<div>
             <nav className='mobile top'>
                 <form method='get' id='searchform' onSubmit={(event) => handleSearch(event)}>
 					<LazyLoad once>
@@ -25,6 +70,14 @@ const Header = (props) => {
                     <input type='text' className='field' id="searchQuery" placeholder='Encuentra tu próximo trabajo' />
                 </form>
             </nav>
+
+			<div className="search-desktop">
+				<div className="container">
+					<form method='get' id='searchformdesktop' onSubmit={(event) => handleSearchDesktop(event)}>
+						<input autoComplete='off' type='text' className='field' id="searchQueryDesktop" placeholder='Encuentra tu próximo trabajo' />
+					</form>
+				</div>
+			</div>
 
             <nav className='mobile bottom'>
                 <ul>
@@ -109,13 +162,15 @@ const Header = (props) => {
                                 <a>Blog</a>
                             </Link>
                         </li>
+						<li>
+							<div className='search' onClick={openDesktopSearch}>
+								<img src='/static/images/search-thick.svg' alt='icono de busqueda' />
+							</div>
+						</li>
                         <li>
                             <Link href='/publicar'>
                                 <a className='main-button'>Publicar anuncio</a>
                             </Link>
-                        </li>
-                        <li>
-                            <div className='search'></div>
                         </li>
                     </ul>
                 </div>
