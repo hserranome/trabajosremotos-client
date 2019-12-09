@@ -67,7 +67,7 @@ const Header = (props) => {
 					<LazyLoad once>
                     	<img src='/static/images/search.svg' alt='icono de busqueda' />
 					</LazyLoad>
-					<label class="sr-only" for="searchQuery">Encuentra tu próximo trabajo</label>
+					<label className="sr-only" for="searchQuery">Encuentra tu próximo trabajo</label>
 					<input type='text' className='field' id="searchQuery" placeholder='Encuentra tu próximo trabajo' />
                 </form>
             </nav>
