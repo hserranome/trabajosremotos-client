@@ -12,7 +12,12 @@ const Footer = (props) => (
             <div className="social">
                 <a href="mailto:contacto@trabajosremotos.es" className="img">
 					<LazyLoad once>
-						<img src="/static/images/mail.svg" alt="icono twitter" />
+						<img src="/static/images/mail.svg" alt="icono correo" />
+					</LazyLoad>
+				</a>
+				<a href="https://instagram.com/trabajos_remotos" rel="noopener" target="_blank" className="img">
+					<LazyLoad once>
+						<img src="/static/images/instagram.svg" alt="icono instagram" />
 					</LazyLoad>
 				</a>
 				<a href="https://twitter.com/trabajos_remoto" rel="noopener" target="_blank" className="img">

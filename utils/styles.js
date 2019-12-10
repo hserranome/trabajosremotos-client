@@ -654,9 +654,9 @@ export const GlobalStyle = createGlobalStyle`
 	.anuncio .container .sidebar .img img{
 		position: absolute;
 		top: 50%; transform: translateY(-50%);
-		width: 64px; max-width: 64px;
-		height: 64px; max-height: 64px;
-		left: 15px;
+		width: 100%; max-width: 100%;
+		height: 100%; max-height: 100%;
+		left: 0;
 	}
 	.anuncio .container .sidebar h2{
 		margin-top: 0;
