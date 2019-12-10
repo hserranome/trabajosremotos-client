@@ -3,10 +3,12 @@ import Markdown from 'markdown-to-jsx';
 import LazyLoad from 'react-lazyload';
 
 import { API_URL, getLocalDate } from '../../utils';
+import Error from '../_error';
 
 
 function SingleBlogPost(props) {
 	const { publicacion } = props;
+	if (!publicacion) return <Error />
 	const trabajosRemotosLogo = 'https://trabajosremotos.es/static/images/logo.png';
 
 	return (
@@ -81,8 +83,10 @@ SingleBlogPost.getInitialProps = async ({ query }) => {
 		const { slug } = query;
 		const res = await fetch(`${API_URL}/posts?slug=${slug}`);
 		const publicacions = await res.json();
+		if (!publicacions || publicacions.length === 0) {
+			return { publicacion: null }
+		}
 		const publicacion = publicacions[0];
-		console.log(publicacion);
 		publicacion.created_at = getLocalDate(publicacion.created_at);
 		return { publicacion };
 	} catch (error) {
