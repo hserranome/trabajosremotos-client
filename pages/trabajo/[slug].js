@@ -3,10 +3,13 @@ import Markdown from 'markdown-to-jsx';
 import LazyLoad from 'react-lazyload';
 
 import { API_URL, getLocalDate } from '../../utils';
+import Error from '../_error';
 
 
 function SingleJob(props) {
 	const { job } = props;
+	if (!job) return <Error />
+
 	const jobDescriptionSEO = `${job.description.substring(1, 50)}...`;
 	const trabajosRemotosLogo = 'https://trabajosremotos.es/static/images/logo.png';
 	
@@ -106,9 +109,13 @@ SingleJob.getInitialProps = async ({ query }) => {
 		const { slug } = query;
 		const res = await fetch(`${API_URL}/jobs?slug=${slug}`);
 		const jobs = await res.json();
+		if (!jobs || jobs.length === 0) {
+			return { job: null };
+		}
+
 		const job = jobs[0];
 		job.link = job.link.includes('@') ? `mailto:${job.link}` : job.link;
-
+		
 		// Dates to show schema.org job listing
 		job.schemaDatePosted = job.created_at;
 		const dateValidThrough = new Date(job.created_at).setDate(new Date().getDate() + 30);
