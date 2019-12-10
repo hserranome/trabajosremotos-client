@@ -9,7 +9,7 @@ export const GlobalStyle = createGlobalStyle`
 
 
 	*/
-	@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600|Prata&display=swap');
+	@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600');
 
 	body{
 		padding: 0; margin: 0 auto;
@@ -206,17 +206,29 @@ export const GlobalStyle = createGlobalStyle`
 		background-color: rgba(255,213,0,0.2); 
 		border-color: rgba(255,213,0,0.2);
 	}
-	.trabajos .trabajo a{
+	.trabajos .trabajo .a{
 		display: block;
 		padding: 1rem;
 		position: relative;
 	}
+	.trabajos .trabajo .a:hover{
+		cursor: pointer;
+	}
 	.trabajos .trabajo.categoria a{
 		padding-left: 4rem;
 	}
+	.trabajos .trabajo .hidden{
+		display: none;
+	}
+	.trabajos .trabajo.active .hidden{
+		display: initial;
+	}
+	.trabajos .trabajo.active .hidden > div{
+		margin-top: 2rem;
+	}
 	.trabajos .trabajo .img{
 		position: absolute;
-		top: 50%; transform: translateY(-50%);
+		top: 12px;
 		width: 64px; max-width: 64px;
 		height: 64px; max-height: 64px;
 		display: none; flex-flow: row wrap; justify-content: center; align-items: center;
@@ -654,9 +666,9 @@ export const GlobalStyle = createGlobalStyle`
 	.anuncio .container .sidebar .img img{
 		position: absolute;
 		top: 50%; transform: translateY(-50%);
-		width: 64px; max-width: 64px;
-		height: 64px; max-height: 64px;
-		left: 15px;
+		width: 100%; max-width: 100%;
+		height: 100%; max-height: 100%;
+		left: 0;
 	}
 	.anuncio .container .sidebar h2{
 		margin-top: 0;
@@ -803,7 +815,7 @@ export const GlobalStyle = createGlobalStyle`
 		.trabajos, .nuevo, .anuncio, .about{ padding-top: 1rem; padding-bottom: 1rem; }
 
 		.trabajos .trabajo{ width: calc(100% - 32px); float: right; }
-		.trabajos .trabajo a{ padding: 1rem 3.5rem; }
+		.trabajos .trabajo .a{ padding: 1rem 3.5rem; }
 		.trabajos .trabajo h2{ font-size: 1.6rem; }
 		.trabajos .trabajo h2 span, .trabajos .trabajo p{ font-size: 1rem; }
 		.trabajos .trabajo .img{ display: flex; }

@@ -164,6 +164,11 @@ const Header = (props) => {
                                 <a>Blog</a>
                             </Link>
                         </li>
+                        <li>
+                            <Link href='/sobrenosotros'>
+                                <a>Sobre nosotros</a>
+                            </Link>
+                        </li>
 						<li>
 							<div className='search' onClick={openDesktopSearch}>
 								<img src='/static/images/search-thick.svg' alt='icono de busqueda' />
