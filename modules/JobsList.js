@@ -14,21 +14,39 @@ function JobsList (props) {
 
 	useEffect(() => {
 		if (initialJobs !== jobs) setJobs(initialJobs);
-		setBaseUrl(document.location.pathname);
+		if (!baseUrl) setBaseUrl(document.location.pathname);
 	}, [initialJobs])
 
-	const handleClick = (jobID, url) => {
+	// from -> https://stackoverflow.com/questions/49820013/javascript-scrollintoview-smooth-scroll-and-offset
+	const scrollToTargetAdjusted = (id) => {
+		const element = document.getElementById(id);
+		const offset = 80;
+		const bodyRect = document.body.getBoundingClientRect().top;
+		const elementRect = element.getBoundingClientRect().top;
+		const elementPosition = elementRect - bodyRect;
+		const offsetPosition = elementPosition - offset;
+
+		window.scrollTo({
+			top: offsetPosition,
+			behavior: 'smooth'
+		});
+	}
+
+	const handleClick = async (jobID, url) => {
 		if (activeJob === jobID) {
-			setActiveJob(null);
+			await setActiveJob(null);
 			history.pushState({
 				id: 'homepage'
 			}, document.title, `${WEB_URL}${baseUrl}`);
 		} else {
-			setActiveJob(jobID);
+			await setActiveJob(jobID);
 			history.pushState({
 				id: 'homepage'
 			}, document.title, `${WEB_URL}${url}`);
 		}
+
+		scrollToTargetAdjusted(jobID);
+// document.getElementById(jobID).scrollIntoView({ behavior: "smooth", block: "start" });
 	}
 
 	return (
@@ -40,6 +58,7 @@ function JobsList (props) {
 							<div 
 								className={`trabajo ${job.featured ? 'featured' : ''}`}
 								key={job.id}
+								id={job.id}
 							>
 								<div className="a">
 									<div onClick={() => handleClick(job.id, `/trabajo/${job.slug}`)}>
