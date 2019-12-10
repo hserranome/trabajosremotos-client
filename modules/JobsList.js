@@ -3,16 +3,18 @@ import Link from 'next/link';
 import Markdown from 'markdown-to-jsx';
 import LazyLoad from 'react-lazyload';
 
-import { WEB_URL } from '../utils';
 import { createDeflateRaw } from 'zlib';
+import { WEB_URL } from '../utils';
 
 function JobsList (props) {
 	const { initialJobs } = props;
 	const [jobs, setJobs] = useState(initialJobs || []);
 	const [activeJob, setActiveJob] = useState(null);
+	const [baseUrl, setBaseUrl] = useState(null);
 
 	useEffect(() => {
 		if (initialJobs !== jobs) setJobs(initialJobs);
+		setBaseUrl(document.location.pathname);
 	}, [initialJobs])
 
 	const handleClick = (jobID, url) => {
@@ -20,7 +22,7 @@ function JobsList (props) {
 			setActiveJob(null);
 			history.pushState({
 				id: 'homepage'
-			}, document.title, `${WEB_URL}`);
+			}, document.title, `${WEB_URL}${baseUrl}`);
 		} else {
 			setActiveJob(jobID);
 			history.pushState({
@@ -60,7 +62,7 @@ function JobsList (props) {
 											<div>
 												<Markdown className="hidden-content">{job.description ? job.description : ''}</Markdown>
 												<div />
-												<a target="_blank" rel="noopener" className="main-button" href={job.link}>Solicitar trabajo</a>
+												<a target="_blank" rel="noopener" className="main-button" href={job.link.includes('@') ? `mailto:${job.link}` : job.link}>Solicitar trabajo</a>
 											</div>
 										)
 										: null
