@@ -186,6 +186,50 @@ export const GlobalStyle = createGlobalStyle`
 			}
 		}
 	}
+
+	/* Job description */
+	.description{
+		margin-top: 2rem;
+	}
+	.description h1, .description h2, .description h3, .description h4, .description h5, .description h6{
+		font-weight: 600;
+		font-size: 1.1rem;
+		margin: 0; padding: 0;
+		margin-bottom: 2rem;
+		box-sizing: border-box;
+	}
+	.description > img{
+		margin-bottom: 1rem;
+	}
+	.description h1,
+	.description h2,
+	.description h3,
+	.description h4,
+	.description h5,
+	.description h6{
+		font-size: 1.4rem;
+		margin-bottom: 1.5rem;
+	}
+	.description p{
+		margin: 0;
+		padding: 0;
+		margin-bottom: 1rem !important;
+		box-sizing: border-box;
+		line-height: 1.6;
+		color: black !important;
+	}
+	.description ul{
+		margin: 0;
+		padding: 0;
+		margin-bottom: 1rem;
+		box-sizing: border-box;
+		margin-left: 3rem;
+		line-height: 1.6;
+
+		li{
+			margin-bottom: 1rem;
+		}
+	}
 	/* ----------------------------------- */
 
 	/* List of jobs */
@@ -211,20 +255,11 @@ export const GlobalStyle = createGlobalStyle`
 		padding: 1rem;
 		position: relative;
 	}
-	.trabajos .trabajo .a:hover{
+	.trabajos .trabajo .a > div:first-child:hover{
 		cursor: pointer;
 	}
 	.trabajos .trabajo.categoria a{
 		padding-left: 4rem;
-	}
-	.trabajos .trabajo .hidden{
-		display: none;
-	}
-	.trabajos .trabajo.active .hidden{
-		display: initial;
-	}
-	.trabajos .trabajo.active .hidden > div{
-		margin-top: 2rem;
 	}
 	.trabajos .trabajo .img{
 		position: absolute;
@@ -676,28 +711,6 @@ export const GlobalStyle = createGlobalStyle`
 	.anuncio .container .content > h1{
 		margin: 0; padding: 0;
 		margin-top: .5rem;
-	}
-	.anuncio .container .content .description{
-		margin-top: 2rem;
-	}
-	.anuncio .container .content .description h1, .anuncio .container .content .description h2, .anuncio .container .content .description h3, .anuncio .container .content .description h4, .anuncio .container .content .description h5, .anuncio .container .content .description h6{
-		font-weight: 600;
-		font-size: 1.1rem;
-		margin: 0; padding: 0;
-		margin-bottom: 2rem;
-		box-sizing: border-box;
-	}
-	.anuncio.blog .container .content .description > img{
-		margin-bottom: 1rem;
-	}
-	.anuncio.blog .container .content .description h1,
-	.anuncio.blog .container .content .description h2,
-	.anuncio.blog .container .content .description h3,
-	.anuncio.blog .container .content .description h4,
-	.anuncio.blog .container .content .description h5,
-	.anuncio.blog .container .content .description h6{
-		font-size: 1.4rem;
-		margin-bottom: 1.5rem;
 	}
 	.anuncio .container .content a{
 		font-weight: 700;
