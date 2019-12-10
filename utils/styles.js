@@ -228,6 +228,11 @@ export const GlobalStyle = createGlobalStyle`
 
 		li{
 			margin-bottom: 1rem;
+			font-size: .8rem;
+
+			@media only screen and (min-width : 800px) {
+				font-size: 1rem;
+			}
 		}
 	}
 	/* ----------------------------------- */
@@ -553,16 +558,19 @@ export const GlobalStyle = createGlobalStyle`
 	
 	/* Desktop search bar */
 	.search-desktop{
-		display: none;
+		transition: all 0.15s;
+		display: block;
 		position: fixed;
 		top: 65px;
 		left: 0;
 		width: 100%;
-		padding: 1rem;
+		padding: 0 1rem;
+		height: 0px;
 		margin: 0;
 		z-index: 99999;
 		background: #f8f9fa;
     	box-shadow: 0 2px 2px rgba(0,0,0,0.15);
+		overflow: hidden;
 
 		.container{
 			margin: 0 auto;
@@ -579,7 +587,8 @@ export const GlobalStyle = createGlobalStyle`
 			}
 		}
 		&.active{
-			display: block;
+			height: 19px;
+			padding: 1rem;
 		}
 	}
 	/* ----------------------------------- */
