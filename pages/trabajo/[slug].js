@@ -1,14 +1,22 @@
+import { useEffect } from 'react';
 import Head from 'next/head';
 import Markdown from 'markdown-to-jsx';
 import LazyLoad from 'react-lazyload';
 
 import { API_URL, getLocalDate } from '../../utils';
 import Error from '../_error';
+import addVisitedJob from '../../utils/addVisitedJob';
 
 
 function SingleJob(props) {
 	const { job } = props;
 	if (!job) return <Error />
+
+	useEffect(() => {
+		if (job && job.id) {
+			addVisitedJob(job.id);
+		}
+	}, []);
 
 	const jobDescriptionSEO = `${job.description.substring(1, 50)}...`;
 	const trabajosRemotosLogo = 'https://trabajosremotos.es/static/images/logo.png';

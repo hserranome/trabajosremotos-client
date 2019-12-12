@@ -35,6 +35,10 @@ export const GlobalStyle = createGlobalStyle`
 		box-sizing: border-box;
 	}
 	.container.big{ max-width: 1170px; }
+	.visited {
+		transition: opacity 0.15s;
+		opacity: 0.5;
+	}
 	/* ----------------------------------- */
 
 	.sr-only {
