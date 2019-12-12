@@ -50,7 +50,7 @@ function SingleJob(props) {
 								"hiringOrganization":{
 									"@type" : "Organization",
 									"name" : "${job.company}",
-									"logo" : "${job.logo ? job.logo : trabajosRemotosLogo}"
+									"logo" : "${job.logo ? job.logo : null}"
 								}
 							}
 						` }} />
