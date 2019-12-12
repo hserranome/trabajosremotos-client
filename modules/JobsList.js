@@ -48,7 +48,10 @@ function JobsList (props) {
 		scrollToTargetAdjusted(jobId);
 	}
 
-	let visitedJobs = JSON.parse(localStorage.getItem("visitedJobs"));
+	let visitedJobs = null;
+	if (typeof window !== 'undefined') {
+		visitedJobs = JSON.parse(localStorage.getItem("visitedJobs"));
+	}
 	if (!visitedJobs) visitedJobs = [];
 
 	return (
