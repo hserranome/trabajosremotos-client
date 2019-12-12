@@ -144,7 +144,9 @@ export const GlobalStyle = createGlobalStyle`
 		display: flex; flex-flow: row nowrap;
 	}
 	.footer .container .img{
-		width: 50px; height: 50px;
+		width: 40px;
+		opacity: 0.75;
+		height: 50px;
 		display: flex; justify-content: center; align-items: center;
 		margin-left: 1rem;
 		border-radius: 50px;
