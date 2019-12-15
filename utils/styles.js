@@ -144,7 +144,7 @@ export const GlobalStyle = createGlobalStyle`
 		display: flex; flex-flow: row nowrap;
 	}
 	.footer .container .img{
-		width: 50px; height: 50px;
+		width: 30px; height: 30px;
 		display: flex; justify-content: center; align-items: center;
 		margin-left: 1rem;
 		border-radius: 50px;
@@ -846,6 +846,9 @@ export const GlobalStyle = createGlobalStyle`
 			font-size: 1rem;
 			display: flex; flex-flow: row nowrap;
 			justify-content: space-between; align-items: center;
+		}
+		.footer .container .img{
+			width: 40px; height: 40px;
 		}
 	}
 	/* ----------------------------------- */
