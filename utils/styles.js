@@ -853,6 +853,9 @@ export const GlobalStyle = createGlobalStyle`
 			display: flex; flex-flow: row nowrap;
 			justify-content: space-between; align-items: center;
 		}
+		.footer .container .img{
+			width: 40px; height: 40px;
+		}
 	}
 	/* ----------------------------------- */
 
