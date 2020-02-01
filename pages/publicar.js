@@ -178,7 +178,7 @@ const Publicar = () => {
 								onChange={handleChange}
 								checked={values.pinned || false}
 							/>
-							<p>Ancla tu anuncio arriba del todo durante un mes <span>+8€</span></p>
+							<p>Ancla tu anuncio arriba del todo durante dos semanas <span>+8€</span></p>
 						</label>
 						{/* Featured */}
 						<label className="custom-checkbox-row">
