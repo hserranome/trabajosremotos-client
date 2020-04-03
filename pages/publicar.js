@@ -10,7 +10,7 @@ import { API_URL } from '../utils';
 
 const Publicar = () => {
 	const [values, setValues] = useState({});
-	const [price, setPrice] = useState(2);
+	const [price, setPrice] = useState(0);
 	const [submitting, setSubmitting] = useState(false);
 	const [stripe, setStripe] = useState(undefined);
 	const priceSpr = useSpring({ price, config: { ...config.stiff, clamp: true } });
@@ -25,7 +25,7 @@ const Publicar = () => {
 
 	// ON VALUE CHANGE, SET PRICE COUNTER AND SAVE TO LOCALSTORAGE
 	useEffect(() => {
-		let thisPrice = 2;
+		let thisPrice = 0;
 		if (values.pinned) thisPrice += 8;
 		if (values.featured) thisPrice += 8;
 		if (values.showLogo) thisPrice += 8;
