@@ -26,8 +26,10 @@ function CategoryList (props) {
 												alt="icono programacion"
 											/>
 										</LazyLoad>
-                                        <p>{`${cat.description}`}</p>
-                                        <h2>{`${cat.name}`}</h2>
+                                        <div className="categoria contenido">
+											<p>{`${cat.description}`}</p>
+											<h2>{`${cat.name}`}</h2>
+										</div>
                                     </a>
                                 </Link>
                             </div>
