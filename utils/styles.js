@@ -270,25 +270,26 @@ export const GlobalStyle = createGlobalStyle`
 		cursor: pointer;
 	}
 	.trabajos .trabajo.categoria a{
-		padding-left: 4rem;
+		padding: 1rem 1rem;
+		display: flex;
+		align-items: center;
 	}
 	.trabajos .trabajo .img{
 		position: absolute;
 		top: 12px;
+		display: none; flex-flow: row wrap; justify-content: center; align-items: center;
 		width: 64px; max-width: 64px;
 		height: 64px; max-height: 64px;
-		display: none; flex-flow: row wrap; justify-content: center; align-items: center;
 		background-color: white; border: 1px solid #dedede;
 		border-radius: 50px;
 		left: -32px;
 		overflow: hidden;
 	}
 	.trabajos .trabajo.categoria img{
-		position: absolute;
-		top: 50%; transform: translateY(-50%);
 		width: 32px; max-width: 32px;
 		height: 32px; max-height: 32px;
-		left: 15px;
+		margin-left: 0.5rem;
+		margin-right: 1.5rem;
 	}
 	.trabajos .trabajo .img img{ max-width: 64px; width: 64px; }
 	.trabajos .trabajo h2{
