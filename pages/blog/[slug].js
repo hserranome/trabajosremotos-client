@@ -9,7 +9,7 @@ import Error from '../_error';
 function SingleBlogPost(props) {
 	const { publicacion } = props;
 	if (!publicacion) return <Error />
-	const trabajosRemotosLogo = 'https://trabajosremotos.es/static/images/logo.png';
+	const trabajosRemotosLogo = 'https://www.trabajosremotos.es/static/images/logo.png';
 
 	return (
 		<div>

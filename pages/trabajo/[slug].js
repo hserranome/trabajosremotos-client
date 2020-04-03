@@ -11,7 +11,7 @@ function SingleJob(props) {
 	if (!job) return <Error />
 
 	const jobDescriptionSEO = `${job.description.substring(1, 50)}...`;
-	const trabajosRemotosLogo = 'https://trabajosremotos.es/static/images/logo.png';
+	const trabajosRemotosLogo = 'https://www.trabajosremotos.es/static/images/logo.png';
 	
 	return (
 		<div>
