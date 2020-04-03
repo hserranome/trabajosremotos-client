@@ -39,22 +39,25 @@ const Publicar = () => {
 		if (!submitting) {
 			setSubmitting(true);
 
-			// Check if the logo URL is HTTPS secured
-			if(values.logo.split('://')[0] === 'https'){
-				try {
-					const res = await axios.post(`${API_URL}/orders`, values);
-					if (res.status !== 200) return window.alert('Ha ocurrido un error al intentar publicar este trabajo');
-					const { session_id } = res.data;
-					stripe.redirectToCheckout({ sessionId: session_id });
-				} catch (error) {
-					console.error(error)
-					setSubmitting(false);
-					window.alert('Ha ocurrido un error al intentar publicar este trabajo');
-				}
-			} else {
-				console.error('Logo url must be HTTPS');
-				setSubmitting(false);
+			// Check if the logo URL exists and is HTTPS secured
+			if(values.logo && values.logo.split('://')[0] !== 'https'){
 				window.alert('La url del logo debe ser HTTPS');
+				return setSubmitting(false);	
+			}
+
+			try {
+				const res = await axios.post(`${API_URL}/orders`, values);
+				if (res.status !== 200) return window.alert('Ha ocurrido un error al intentar publicar este trabajo');
+				const { session_id } = res.data;
+				if (!session_id.startsWith("Cs_")) {
+					window.location.replace(`/confirmacion?session_id=${session_id}`);
+				} else {
+					stripe.redirectToCheckout({ sessionId: session_id });
+				}
+			} catch (error) {
+				console.error(error)
+				setSubmitting(false);
+				window.alert('Ha ocurrido un error al intentar publicar este trabajo');
 			}
 		}
 	}
