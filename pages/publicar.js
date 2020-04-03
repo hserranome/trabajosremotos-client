@@ -78,8 +78,8 @@ const Publicar = () => {
 			<Head>
 				<title>Publicar nuevo trabajo - Trabajos remotos</title>
 
-				<meta property="og:description" content="La plataforma para encontrar trabajos online de manera sencilla." />
-				<meta name="twitter:description" content="La plataforma para encontrar trabajos online de manera sencilla." />
+				<meta property="og:description" content="La plataforma para encontrar trabajos remotos online de manera sencilla." />
+				<meta name="twitter:description" content="La plataforma para encontrar trabajos remotos online de manera sencilla." />
 			</Head>
 			
 			<div className="block nuevo">

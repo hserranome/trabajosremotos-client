@@ -6,8 +6,8 @@ const About = (props) => {
 			<Head>
 				<title>Sobre nosotros - Trabajos remotos</title>
 
-				<meta property="og:description" content="La plataforma para encontrar trabajos online de manera sencilla." />
-				<meta name="twitter:description" content="La plataforma para encontrar trabajos online de manera sencilla." />
+				<meta property="og:description" content="La plataforma para encontrar trabajos remotos online de manera sencilla." />
+				<meta name="twitter:description" content="La plataforma para encontrar trabajos remotos online de manera sencilla." />
 			</Head>
 			
 			<div className="anuncio">
@@ -23,7 +23,7 @@ const About = (props) => {
 						<h4>Sobre Trabajos Remotos</h4>
 						<p>
 							Trabajos Remotos es un proyecto 
-							de <a rel="noopener" target="_blank" href="https://hserrano.me/">HJ</a> y <a rel="noopener" href="https://mascarell.me/" target="_blank">Mascarell</a> que busca
+							de <a rel="noopener" target="_blank" href="https://hserrano.me/">HJ</a> y <a rel="noopener" href="https://mascarell.github.io/mascarell/" target="_blank">Mascarell</a> que busca
 							ayudar a personas hispanohablantes encontrar trabajos a distancia.
 						</p>
 					</div>

@@ -45,7 +45,7 @@ const Layout = (props) => {
 
 				{/* General tags */}
 				<meta name='viewport' content='initial-scale=1.0, width=device-width' />
-				<meta name="description" content="La plataforma para encontrar trabajos online de manera sencilla." />
+				<meta name="description" content="La plataforma para encontrar trabajos remotos online de manera sencilla." />
 				<meta name="robots" content="all" />
 
 				{/* OpenGraph tags */}

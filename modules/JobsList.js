@@ -3,8 +3,8 @@ import Link from 'next/link';
 import Markdown from 'markdown-to-jsx';
 import LazyLoad from 'react-lazyload';
 
-import { createDeflateRaw } from 'zlib';
 import { WEB_URL } from '../utils';
+import addVisitedJob from '../utils/addVisitedJob';
 
 function JobsList (props) {
 	const { initialJobs } = props;
@@ -17,8 +17,8 @@ function JobsList (props) {
 		if (!baseUrl) setBaseUrl(document.location.pathname);
 	}, [initialJobs])
 
-	// from -> https://stackoverflow.com/questions/49820013/javascript-scrollintoview-smooth-scroll-and-offset
 	const scrollToTargetAdjusted = (id) => {
+		// from -> https://stackoverflow.com/questions/49820013/javascript-scrollintoview-smooth-scroll-and-offset
 		const element = document.getElementById(id);
 		const offset = 80;
 		const bodyRect = document.body.getBoundingClientRect().top;
@@ -32,22 +32,27 @@ function JobsList (props) {
 		});
 	}
 
-	const handleClick = async (jobID, url) => {
-		if (activeJob === jobID) {
+	const handleClick = async (jobId, url) => {
+		if (activeJob === jobId) {
 			await setActiveJob(null);
 			history.pushState({
 				id: 'homepage'
 			}, document.title, `${WEB_URL}${baseUrl}`);
 		} else {
-			await setActiveJob(jobID);
+			await setActiveJob(jobId);
 			history.pushState({
 				id: 'homepage'
 			}, document.title, `${WEB_URL}${url}`);
+			addVisitedJob(jobId)
 		}
-
-		scrollToTargetAdjusted(jobID);
-// document.getElementById(jobID).scrollIntoView({ behavior: "smooth", block: "start" });
+		scrollToTargetAdjusted(jobId);
 	}
+
+	let visitedJobs = null;
+	if (typeof window !== 'undefined') {
+		visitedJobs = JSON.parse(localStorage.getItem("visitedJobs"));
+	}
+	if (!visitedJobs) visitedJobs = [];
 
 	return (
 		<div className='container'>
@@ -61,7 +66,13 @@ function JobsList (props) {
 								id={job.id}
 							>
 								<div className="a">
-									<div onClick={() => handleClick(job.id, `/trabajo/${job.slug}`)}>
+									<div
+										className={
+											visitedJobs.includes(job.id)
+												? 'visited' : null
+										}
+										onClick={() => handleClick(job.id, `/trabajo/${job.slug}`)}
+									>
 										{job.logo && job.showLogo
 											? (
 												<div className='img'>
