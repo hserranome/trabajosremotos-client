@@ -20,7 +20,7 @@ const CategoryList = (props) => {
 			<div className="hero">
 				<div className="container">
 					<h1>Trabajos remotos</h1>
-					<p className="prata">La plataforma para encontrar trabajos online de manera sencilla.</p>
+					<p className="prata">La plataforma para encontrar trabajos remotos online de manera sencilla.</p>
 				</div>
 			</div>
 
