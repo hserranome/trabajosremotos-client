@@ -18,7 +18,7 @@ function SingleJob(props) {
 		}
 	}, []);
 
-	const jobDescriptionSEO = `${job.description.substring(1, 50)}...`;
+	const jobDescriptionSEO = `${job.description.substring(0, 50)}...`;
 	const trabajosRemotosLogo = 'https://www.trabajosremotos.es/static/images/logo.png';
 	
 	return (
@@ -43,7 +43,7 @@ function SingleJob(props) {
 								"@type" : "JobPosting",
 								"title" : "${job.title}",
 								"jobLocationType": "TELECOMMUTE",
-								"description" : "</p>${job.jobDescriptionSEO}</p>",
+								"description" : "${job.jobDescriptionSEO}",
 								"datePosted" : "${job.schemaDatePosted}",
 								"validThrough" : "${job.schemaValidThrough}",
 								"employmentType" : "FULL_TIME",
@@ -122,7 +122,7 @@ SingleJob.getInitialProps = async ({ query }) => {
 		}
 
 		const job = jobs[0];
-		job.link = job.link.includes('@') ? `mailto:${job.link}` : job.link;
+		job.link = job.link.includes('@') ? `mailto:${job.link}` : `${job.link}?ref=trabajosremotos`;
 		
 		// Dates to show schema.org job listing
 		job.schemaDatePosted = job.created_at;

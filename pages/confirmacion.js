@@ -44,7 +44,13 @@ const Confirmation = (props) => {
 						<p>
 							Las nuevas ofertas de trabajo pueden tardar en aparecer en la web unos 
 							minutos. Para cualquier cambio que quieras realizar puedes enviarnos
-							un correo a <a href="mailto:contacto@trabajosremotos.es">contacto@trabajosremotos.es</a>
+							un correo a <a href="mailto:contacto@trabajosremotos.es">contacto@trabajosremotos.es</a>.
+						</p>
+						<p>
+							Las ofertas de trabajo que se publican de manera gratuita no aparecerán en la 
+							web hasta que sean aprobadas manualmente para evitar spam. En caso de que tengas
+							dudas por que tu trabajo no ha sido aprobado, puedes mandarnos 
+							un correo a <a href="mailto:contacto@trabajosremotos.es">contacto@trabajosremotos.es</a>.
 						</p>
 					</div>
 				</div>
