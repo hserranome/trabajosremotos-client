@@ -7,6 +7,7 @@ import Spinner from '../components/Spinner';
 
 import { API_URL } from '../utils';
 
+const STRIPE_KEY = process.env.STRIPE_KEY || 'pk_test_ggi6CNK5xAQySQxoZfkFVJoZ00FxmHeKgq';
 
 const Publicar = () => {
 	const [values, setValues] = useState({});
@@ -19,8 +20,7 @@ const Publicar = () => {
 	useEffect(() => {
 		const publishValues = localStorage.getItem('publishValues');
 		if (publishValues) setValues(JSON.parse(publishValues));
-		// if (!stripe) setStripe(window.Stripe('pk_test_ggi6CNK5xAQySQxoZfkFVJoZ00FxmHeKgq'));
-		if (!stripe) setStripe(window.Stripe('process.env.STRIPE_PUBLISHABLE_KEY'));
+		if (!stripe) setStripe(window.Stripe(STRIPE_KEY));
 	}, [])
 
 	// ON VALUE CHANGE, SET PRICE COUNTER AND SAVE TO LOCALSTORAGE
