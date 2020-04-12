@@ -15,6 +15,8 @@ const Index = (props) => {
 
 				<meta property="og:description" content="La plataforma para encontrar trabajos remotos online de manera sencilla." />
 				<meta name="twitter:description" content="La plataforma para encontrar trabajos remotos online de manera sencilla." />
+				<meta name="robots" content="index,follow" />
+    			<meta name="googlebot" content="index,follow" />
 			</Head>
 
 			<div className="hero">

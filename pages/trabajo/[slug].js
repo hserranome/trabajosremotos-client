@@ -35,6 +35,8 @@ function SingleJob(props) {
 						<meta name="twitter:title" content={`${job.title} en ${job.company}`} key="trabajos-title-twitter" />
 						<meta name="twitter:image" content={job.logo ? job.logo : trabajosRemotosLogo} key="trabajos-image-twitter" />
 						<meta name="twitter:description" content={jobDescriptionSEO} />
+						<meta name="robots" content="index,follow" />
+						<meta name="googlebot" content="index,follow" />
 
 						{/* Schema to show jobs on google searches */}
 						<script type='application/ld+json' dangerouslySetInnerHTML={{ __html: `
