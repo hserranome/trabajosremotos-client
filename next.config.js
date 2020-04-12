@@ -5,6 +5,7 @@ const withCSS = require('@zeit/next-css');
 const withSass = require('@zeit/next-sass');
 const withImages = require('next-images');
 const withOffline = require('next-offline');
+const withSourceMaps = require('@zeit/next-source-maps');
 
 require('dotenv').config()
 
@@ -24,19 +25,19 @@ function HACK_removeMinimizeOptionFromCssLoaders(config) {
 }
 
 module.exports = withImages(withOffline(
-	withSass(withCSS(
-		{
-			webpack(config) {
-				HACK_removeMinimizeOptionFromCssLoaders(config);
-				config.plugins = [
-					...config.plugins,
-					new Dotenv({
-						path: path.join(__dirname, '.env'),
-						systemvars: true
-					})
-				]
-				return config;
-			},
-		}
+		withSass(withCSS(
+			{
+				webpack(config) {
+					HACK_removeMinimizeOptionFromCssLoaders(config);
+					config.plugins = [
+						...config.plugins,
+						new Dotenv({
+							path: path.join(__dirname, '.env'),
+							systemvars: true
+						})
+					]
+					return config;
+				},
+			}
+		))
 	))
-));
