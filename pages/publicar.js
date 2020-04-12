@@ -49,10 +49,10 @@ const Publicar = () => {
 				const res = await axios.post(`${API_URL}/orders`, values);
 				if (res.status !== 200) return window.alert('Ha ocurrido un error al intentar publicar este trabajo');
 				const { session_id } = res.data;
-				if (!session_id.startsWith("Cs_")) {
-					window.location.replace(`/confirmacion?session_id=${session_id}`);
-				} else {
+				if (session_id.startsWith("cs_")) {
 					stripe.redirectToCheckout({ sessionId: session_id });
+				} else {
+					window.location.replace(`/confirmacion?session_id=${session_id}`);
 				}
 			} catch (error) {
 				console.error(error)
