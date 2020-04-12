@@ -11,7 +11,7 @@ import '../static/css/nprogress.css';
 
 import Layout from '../components/Layout';
 
-// Sentry.init({ dsn: "https://ac20f57b88b54d819e761b537545aa93@o376610.ingest.sentry.io/5197584" });
+Sentry.init({ dsn: "https://ac20f57b88b54d819e761b537545aa93@o376610.ingest.sentry.io/5197584" });
 
 Router.events.on('routeChangeStart', () => NProgress.start())
 Router.events.on('routeChangeComplete', () => NProgress.done())
@@ -28,17 +28,17 @@ class MyApp extends App {
 		return { pageProps }
 	}
 
-	// componentDidCatch(error, errorInfo) {
-	// 	Sentry.withScope((scope) => {
-	// 		Object.keys(errorInfo).forEach((key) => {
-	// 			scope.setExtra(key, errorInfo[key]);
-	// 		});
+	componentDidCatch(error, errorInfo) {
+		Sentry.withScope((scope) => {
+			Object.keys(errorInfo).forEach((key) => {
+				scope.setExtra(key, errorInfo[key]);
+			});
 
-	// 		Sentry.captureException(error);
-	// 	});
+			Sentry.captureException(error);
+		});
 
-	// 	super.componentDidCatch(error, errorInfo);
-	// }
+		super.componentDidCatch(error, errorInfo);
+	}
 
 	render () {
 		const { Component, pageProps } = this.props;

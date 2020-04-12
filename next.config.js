@@ -24,7 +24,7 @@ function HACK_removeMinimizeOptionFromCssLoaders(config) {
 	});
 }
 
-module.exports = withImages(withOffline(
+module.exports = withSourceMaps(withImages(withOffline(
 		withSass(withCSS(
 			{
 				webpack(config) {
@@ -40,4 +40,4 @@ module.exports = withImages(withOffline(
 				},
 			}
 		))
-	))
+	)))
