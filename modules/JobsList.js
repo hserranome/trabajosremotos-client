@@ -66,7 +66,7 @@ function JobsList (props) {
 								id={job.id}
 							>
 								{/* This href is just so google knows there's more things on the website, with the div alone google doesnt know how to get to that page, so it doesnt index it */}
-								<a href={`https://trabajosremotos.es/${job.logo}`} style={{ display: 'none' }}>{job.title}</a>
+								<a href={`https://trabajosremotos.es/${job.slug}`} style={{ display: 'none' }}>{job.title}</a>
 								<div className="a">
 									<div
 										className={
