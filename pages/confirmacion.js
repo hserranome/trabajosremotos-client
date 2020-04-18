@@ -11,10 +11,10 @@ const Confirmation = (props) => {
 	const checkJob = async () => {
 		const { session_id } = query;
 		const res = await axios.get(`${API_URL}/orders?session_id=${session_id}`);
-		if (!res.data || !res.data[0] || !res.data[0].job) {
-			Router.push('/')
-			return false;
-		}
+		// if (!res.data || !res.data[0] || !res.data[0].job) {
+		// 	Router.push('/')
+		// 	return false;
+		// }
 		return true;
 	}
 
