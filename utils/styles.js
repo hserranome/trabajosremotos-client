@@ -562,6 +562,59 @@ export const GlobalStyle = createGlobalStyle`
 		}
 	}
 	/* ----------------------------------- */
+
+	/*  JobsList Loader. */
+	.blink-wrapper {
+		    width: 100%;
+		margin-top: 50px;
+		margin-bottom: -50px;
+	}
+	.blink {
+		display: inline-block;
+		border-radius: 50px;
+		width: 30px;
+		height: 30px;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		
+		&:before,
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(255, 65, 20, 0.15);
+			border-radius: 50px;
+			opacity: 0;
+		}
+		
+		&:before {
+			transform: scale(1);
+			animation: blink 1.6s infinite linear;
+		}
+		
+		&:after {
+			animation: blink 1.6s 1.2s infinite linear;
+		}
+	}
+	@keyframes blink {
+	0% {
+		opacity: 0;
+		transform: scale(0.4);
+	}
+	33.33333% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(2);
+	}
+	}
+	/* ----------------------------------- */
 	
 	/* Desktop search bar */
 	.search-desktop{

@@ -5,7 +5,7 @@ import JobsList from '../../modules/JobsList';
 import { API_URL, getLocalDate } from '../../utils';
 
 const CategoryList = (props) => {
-	const { initialJobs, error, categoryName } = props;
+	const { initialJobs, error, categoryName, query } = props;
 	const categoryFinalName = categoryName !== 'none' ? `de ${categoryName}` : '';
 
 	return (
@@ -25,7 +25,7 @@ const CategoryList = (props) => {
 			</div>
 
 			<div className="trabajos">
-				<JobsList initialJobs={initialJobs} error={error} />
+				<JobsList initialJobs={initialJobs} error={error} query={query} />
 			</div>
 		</div>
 	)
@@ -34,12 +34,13 @@ const CategoryList = (props) => {
 
 CategoryList.getInitialProps = async ({ query }) => {
 	const { category } = query;
+	const thisQuery = `/jobs?category.slug=${category}&_sort=pinned:DESC,created_at:desc&_limit=40`;
 	try {
-		const res = await fetch(`${API_URL}/jobs?category.slug=${category}&_sort=pinned:DESC,created_at:desc`);
+		const res = await fetch(`${API_URL}${thisQuery}`);
 		const jobs = await res.json();
 		const categoryName = jobs.length > 0 ? jobs[0].category.name : 'none';
 		const initialJobs = jobs.map((job) => ({ ...job, created_at: getLocalDate(job.created_at) }))
-		return { initialJobs, categoryName };
+		return { initialJobs, categoryName, query: thisQuery };
 	} catch (error) {
 		console.error(error)
 		return { error }

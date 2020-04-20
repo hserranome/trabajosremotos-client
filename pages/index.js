@@ -4,6 +4,8 @@ import Head from 'next/head';
 
 import { API_URL, getLocalDate } from '../utils';
 
+const query = '/jobs?_sort=pinned:DESC,created_at:desc&_limit=40';
+
 
 const Index = (props) => {
 	const { initialJobs, error } = props;
@@ -16,7 +18,7 @@ const Index = (props) => {
 				<meta property="og:description" content="La plataforma para encontrar trabajos remotos online de manera sencilla." />
 				<meta name="twitter:description" content="La plataforma para encontrar trabajos remotos online de manera sencilla." />
 				<meta name="robots" content="index,follow" />
-    			<meta name="googlebot" content="index,follow" />
+				<meta name="googlebot" content="index,follow" />
 			</Head>
 
 			<div className="hero">
@@ -25,9 +27,9 @@ const Index = (props) => {
 					<p className="prata">La plataforma para encontrar trabajos remotos online de manera sencilla.</p>
 				</div>
 			</div>
-			
+
 			<div className="trabajos">
-				<JobsList initialJobs={initialJobs} error={error} />
+				<JobsList initialJobs={initialJobs} error={error} query={query} />
 			</div>
 		</div>
 	)
@@ -35,7 +37,7 @@ const Index = (props) => {
 
 Index.getInitialProps = async () => {
 	try {
-		const res = await fetch(`${API_URL}/jobs?_sort=pinned:DESC,created_at:desc`);
+		const res = await fetch(`${API_URL}${query}`);
 		let data = await res.json();
 		data = data.map((job) => ({ ...job, created_at: getLocalDate(job.created_at) }))
 		return { initialJobs: data };

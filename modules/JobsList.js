@@ -1,16 +1,28 @@
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
+import fetch from 'isomorphic-unfetch';
+import InfiniteScroll from 'react-infinite-scroller';
 import Markdown from 'markdown-to-jsx';
 import LazyLoad from 'react-lazyload';
 
-import { WEB_URL } from '../utils';
+import { WEB_URL, API_URL, getLocalDate } from '../utils';
 import addVisitedJob from '../utils/addVisitedJob';
 
-function JobsList (props) {
-	const { initialJobs } = props;
+function JobsList(props) {
+	const { initialJobs, query } = props;
 	const [jobs, setJobs] = useState(initialJobs || []);
 	const [activeJob, setActiveJob] = useState(null);
 	const [baseUrl, setBaseUrl] = useState(null);
+	const [hasMore, setHasMore] = useState(true);
+
+	const loadMore = async () => {
+		const res = await fetch(`${API_URL}${query}&_start=${jobs.length}`);
+		let data = await res.json();
+		data = data.map((job) => ({ ...job, created_at: getLocalDate(job.created_at) }))
+		if (data.length === 0) {
+			setHasMore(false);
+		}
+		setJobs([...jobs, ...data]);
+	}
 
 	useEffect(() => {
 		if (initialJobs !== jobs) setJobs(initialJobs);
@@ -56,11 +68,21 @@ function JobsList (props) {
 
 	return (
 		<div className='container'>
-			<div className='trabajos'>
+			<InfiniteScroll
+				pageStart={0}
+				className='trabajos'
+				loadMore={loadMore}
+				hasMore={hasMore}
+				loader={
+					<div className="blink-wrapper">
+						<div className="blink"></div>
+					</div>
+				}
+			>
 				{jobs && jobs.length > 0
 					? (
 						jobs.map((job) => (
-							<div 
+							<div
 								className={`trabajo ${job.featured ? 'featured' : ''}`}
 								key={job.id}
 								id={job.id}
@@ -89,7 +111,7 @@ function JobsList (props) {
 											<p>{job.company}</p>
 										</div>
 									</div>
-									{activeJob === job.id 
+									{activeJob === job.id
 										? (
 											<div className="description">
 												<Markdown>{job.description ? job.description : ''}</Markdown>
@@ -104,10 +126,10 @@ function JobsList (props) {
 						))
 					)
 					: (
-						<div className='empty-message'>No se han encontrado trabajos</div>
+						<div key="empty-div" className='empty-message'>No se han encontrado trabajos</div>
 					)
 				}
-			</div>
+			</InfiniteScroll>
 		</div>
 	)
 }
