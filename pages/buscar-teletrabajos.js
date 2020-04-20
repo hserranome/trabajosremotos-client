@@ -4,7 +4,7 @@ import Head from 'next/head';
 
 import { API_URL, getLocalDate } from '../utils';
 
-
+// HJ buen lead dev bro, temtem up
 const Search = (props) => {
 	const { initialJobs, error, query } = props;
 
