@@ -1,2 +1,3 @@
+Sitemap: http://trabajosremotos.es/sitemap.xml
 User-agent: *
-Allow: /
+Allow: /*
