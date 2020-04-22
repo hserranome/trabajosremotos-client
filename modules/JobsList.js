@@ -15,13 +15,17 @@ function JobsList(props) {
 	const [hasMore, setHasMore] = useState(true);
 
 	const loadMore = async () => {
-		const res = await fetch(`${API_URL}${query}&_start=${jobs.length}`);
-		let data = await res.json();
-		data = data.map((job) => ({ ...job, created_at: getLocalDate(job.created_at) }))
-		if (data.length === 0) {
-			setHasMore(false);
+		try {
+			const res = await fetch(`${API_URL}${query}&_start=${jobs.length}`);
+			let data = await res.json();
+			data = data.map((job) => ({ ...job, created_at: getLocalDate(job.created_at) }))
+			if (data.length === 0) {
+				setHasMore(false);
+			}
+			setJobs([...jobs, ...data]);
+		} catch (error) {
+			console.error('Error en loadMore() -> JobList.js');
 		}
-		setJobs([...jobs, ...data]);
 	}
 
 	useEffect(() => {

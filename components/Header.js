@@ -169,6 +169,11 @@ const Header = (props) => {
                                 <a>Sobre nosotros</a>
                             </Link>
                         </li>
+                        <li>
+							<a rel="noopener" target="_blank" href='https://t.me/trabajosremotos'>
+                                <a>Telegram</a>
+                            </a>
+                        </li>
 						<li>
 							<div className='search' onClick={openDesktopSearch}>
 								<img src='/static/images/search-thick.svg' alt='icono de busqueda' />
