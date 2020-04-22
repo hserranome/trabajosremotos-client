@@ -109,7 +109,7 @@ const Header = (props) => {
             <nav className='desktop'>
                 <div className='container'>
                     <Link href='/'>
-                        <div className='logo'><img src='/static/images/logo.png' /></div>
+                        <div className='logo'><img src='/static/images/logo.jpg' /></div>
                     </Link>
 
                     <ul>
