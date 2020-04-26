@@ -713,12 +713,11 @@ export const GlobalStyle = createGlobalStyle`
 	nav.mobile.bottom ul li.blog a::before{ background-image: url('/static/images/blog.svg'); }
 	nav.mobile.bottom ul li.inicio a::before{ background-image: url('/static/images/home.svg'); }
 	nav.mobile.bottom ul li.categorias a::before{ background-image: url('/static/images/list.svg'); }
-	nav.mobile.bottom ul li.publicar a::before{ background-image: url('/static/images/add.svg'); }
+	nav.mobile.bottom ul li.publicar a::before{ background-image: url('/static/images/telegram.svg'); }
 	/* Same icons with accent color */
 	nav.mobile.bottom ul li.blog a.active::before{ background-image: url('/static/images/blog-accent.svg'); }
 	nav.mobile.bottom ul li.inicio a.active::before{ background-image: url('/static/images/home-accent.svg'); }
 	nav.mobile.bottom ul li.categorias a.active::before{ background-image: url('/static/images/list-accent.svg'); }
-	nav.mobile.bottom ul li.publicar a.active::before{ background-image: url('/static/images/add-accent.svg'); }
 	/* ----------------------------------- */
 
 	/* Single job listing */

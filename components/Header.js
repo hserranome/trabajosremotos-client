@@ -94,9 +94,7 @@ const Header = (props) => {
                         </Link>
                     </li>
                     <li className='publicar'>
-                        <Link activeClassName='active' href='/publicar'>
-                            <a>Publicar</a>
-                        </Link>
+						<a href="https://t.me/trabajosremotos" target="_blank" rel="noopener">Telegram</a>
                     </li>
                     <li className='blog'>
                         <Link activeClassName='active' href='/blog'>
