@@ -5,7 +5,7 @@ const Footer = (props) => (
     <div className="footer">
         <div className="container">
             <div className="copy">
-				<p className="strong">&copy; <a style={{marginLeft: 0}} rel="noopener" target="_blank" href="https://www.mango.moe">Mango Milkshake</a></p>
+				<p className="strong">&copy; <a style={{marginLeft: 0}} rel="noopener" target="_blank" href="https://www.mango.moe?ref=trabajos">Mango Milkshake</a></p>
 				<p><Link href="/cookies"><a>Política de cookies</a></Link></p>
             </div>
 
