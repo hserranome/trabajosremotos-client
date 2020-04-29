@@ -46,14 +46,19 @@ CategoryList.getInitialProps = async ({ query }) => {
 		const categoryName = jobs.length > 0 ? jobs[0].category.name : 'none';
 		const initialJobs = jobs.map((job) => ({ ...job, created_at: getLocalDate(job.created_at) }))
 
-		const resAds = await fetch(`${API_URL}/advertisements?Active=true`);
-		let advertisements = await resAds.json();
-		// Get random index
-		let randInd = Math.floor(Math.random() * advertisements.length);
-		// Put ad into array
-		initialJobs.splice(5, 0, advertisements[randInd]);
-		// Remove element from ads
-		advertisements.splice(randInd, 1);
+		let advertisements = [];
+		if (!initialJobs || initialJobs.length === 0) {
+			initialJobs = [];
+		} else {
+			const resAds = await fetch(`${API_URL}/advertisements?Active=true`);
+			advertisements = await resAds.json();
+			// Get random index
+			let randInd = Math.floor(Math.random() * advertisements.length);
+			// Put ad into array
+			initialJobs.splice(5, 0, advertisements[randInd]);
+			// Remove element from ads
+			advertisements.splice(randInd, 1);
+		}
 
 		return { initialJobs, categoryName, query: thisQuery, advertisements };
 	} catch (error) {
