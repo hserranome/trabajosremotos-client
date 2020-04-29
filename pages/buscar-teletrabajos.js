@@ -6,7 +6,7 @@ import { API_URL, getLocalDate } from '../utils';
 
 // HJ buen lead dev bro, temtem up
 const Search = (props) => {
-	const { initialJobs, error, query } = props;
+	const { initialJobs, error, query, advertisements } = props;
 
 	return (
 		<div>
@@ -25,7 +25,12 @@ const Search = (props) => {
 			</div>
 
 			<div className="trabajos">
-				<JobsList initialJobs={initialJobs} error={error} query={query} />
+				<JobsList
+					initialJobs={initialJobs}
+					error={error}
+					query={query}
+					advertisements={advertisements}
+				/>
 			</div>
 		</div>
 	)
@@ -42,7 +47,17 @@ Search.getInitialProps = async ({ query }) => {
 		let data = await res.json();
 		console.log(data);
 		data = data.map((job) => ({ ...job, created_at: getLocalDate(job.created_at) }))
-		return { initialJobs: data, query: thisQuery };
+
+		const resAds = await fetch(`${API_URL}/advertisements?Active=true`);
+		let advertisements = await resAds.json();
+		// Get random index
+		let randInd = Math.floor(Math.random() * advertisements.length);
+		// Put ad into array
+		data.splice(5, 0, advertisements[randInd]);
+		// Remove element from ads
+		advertisements.splice(randInd, 1);
+
+		return { initialJobs: data, query: thisQuery, advertisements };
 	} catch (error) {
 		console.error(error)
 		return { error }

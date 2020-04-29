@@ -8,7 +8,7 @@ import { WEB_URL, API_URL, getLocalDate } from '../utils';
 import addVisitedJob from '../utils/addVisitedJob';
 
 function JobsList(props) {
-	const { initialJobs, query } = props;
+	const { initialJobs, query, advertisements } = props;
 	const [jobs, setJobs] = useState(initialJobs || []);
 	const [activeJob, setActiveJob] = useState(null);
 	const [baseUrl, setBaseUrl] = useState(null);
@@ -21,6 +21,13 @@ function JobsList(props) {
 			data = data.map((job) => ({ ...job, created_at: getLocalDate(job.created_at) }))
 			if (data.length === 0) {
 				setHasMore(false);
+			} else {
+				// Get random index
+				let randInd = Math.floor(Math.random() * advertisements.length);
+				// Put ad into array
+				data.splice(5, 0, advertisements[randInd]);
+				// Remove element from ads
+				advertisements.splice(randInd, 1);
 			}
 			setJobs([...jobs, ...data]);
 		} catch (error) {
@@ -29,7 +36,9 @@ function JobsList(props) {
 	}
 
 	useEffect(() => {
-		if (initialJobs !== jobs) setJobs(initialJobs);
+		if (initialJobs !== jobs) {
+			setJobs(initialJobs)
+		};
 		if (!baseUrl) setBaseUrl(document.location.pathname);
 	}, [initialJobs])
 
@@ -69,7 +78,7 @@ function JobsList(props) {
 		visitedJobs = JSON.parse(localStorage.getItem("visitedJobs"));
 	}
 	if (!visitedJobs) visitedJobs = [];
-
+	console.log(jobs)
 	return (
 		<div className='container'>
 			<InfiniteScroll
@@ -85,49 +94,68 @@ function JobsList(props) {
 			>
 				{jobs && jobs.length > 0
 					? (
-						jobs.map((job) => (
-							<div
-								className={`trabajo ${job.featured ? 'featured' : ''}`}
-								key={job.id}
-								id={job.id}
-							>
-								{/* This href is just so google knows there's more things on the website, with the div alone google doesnt know how to get to that page, so it doesnt index it */}
-								<a href={`https://trabajosremotos.es/trabajo/${job.slug}`} style={{ display: 'none' }}>{job.title}</a>
-								<div className="a">
-									<div
-										className={
-											visitedJobs.includes(job.id)
-												? 'visited' : null
-										}
-										onClick={() => handleClick(job.id, `/trabajo/${job.slug}`)}
-									>
-										{job.logo && job.showLogo
+						jobs.map((job) => job.company
+							? (
+								<div
+									className={`trabajo ${job.featured ? 'featured' : ''}`}
+									key={job.id}
+									id={job.id}
+								>
+									{/* This href is just so google knows there's more things on the website, with the div alone google doesnt know how to get to that page, so it doesnt index it */}
+									<a href={`https://trabajosremotos.es/trabajo/${job.slug}`} style={{ display: 'none' }}>{job.title}</a>
+									<div className="a">
+										<div
+											className={
+												visitedJobs.includes(job.id)
+													? 'visited' : null
+											}
+											onClick={() => handleClick(job.id, `/trabajo/${job.slug}`)}
+										>
+											{job.logo && job.showLogo
+												? (
+													<div className='img'>
+														<LazyLoad once>
+															<img src={job.logo} alt={'logo ' + job.company} />
+														</LazyLoad>
+													</div>
+												)
+												: ''}
+											<div>
+												<h2>{job.title} <span>{job.pinned ? '📌' : ''} {job.created_at}</span></h2>
+												<p>{job.company}</p>
+											</div>
+										</div>
+										{activeJob === job.id
 											? (
-												<div className='img'>
-													<LazyLoad once>
-														<img src={job.logo} alt={'logo ' + job.company} />
-													</LazyLoad>
+												<div className="description">
+													<Markdown>{job.description ? job.description : ''}</Markdown>
+													<div />
+													<a target="_blank" rel="noopener" className="main-button" href={job.link.includes('@') ? `mailto:${job.link}` : job.link}>Solicitar trabajo</a>
 												</div>
 											)
-											: ''}
+											: null
+										}
+									</div>
+								</div>
+							)
+							: (
+								<a
+									className={`trabajo`}
+									key={job.id}
+									id={job.id}
+									href={job.URL}
+								>
+									<div className="a">
 										<div>
-											<h2>{job.title} <span>{job.pinned ? '📌' : ''} {job.created_at}</span></h2>
-											<p>{job.company}</p>
+											<div>
+												<h2>{job.Title} <span>AD</span></h2>
+												<p>{job.Subtitle}</p>
+											</div>
 										</div>
 									</div>
-									{activeJob === job.id
-										? (
-											<div className="description">
-												<Markdown>{job.description ? job.description : ''}</Markdown>
-												<div />
-												<a target="_blank" rel="noopener" className="main-button" href={job.link.includes('@') ? `mailto:${job.link}` : job.link}>Solicitar trabajo</a>
-											</div>
-										)
-										: null
-									}
-								</div>
-							</div>
-						))
+								</a>
+							)
+						)
 					)
 					: (
 						<div key="empty-div" className='empty-message'>No se han encontrado trabajos</div>
