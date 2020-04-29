@@ -255,6 +255,7 @@ export const GlobalStyle = createGlobalStyle`
 		border: 1px solid #dedede;
 		padding: 0; margin: 0;
 		margin-bottom: 1rem;
+		box-sizing: border-box;
 		position: relative;
 	}
 	.trabajos .trabajo.featured{ 
@@ -923,7 +924,7 @@ export const GlobalStyle = createGlobalStyle`
 	}
 
 	.trabajo.anuncio{
-		border: 4px solid dashed !important;
+		border: 4px dashed rgb(222, 222, 222) !important;
 	}
 `;
 export default GlobalStyle;
