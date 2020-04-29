@@ -45,7 +45,6 @@ Search.getInitialProps = async ({ query }) => {
 		const res = await fetch(`${API_URL}${thisQuery}`);
 		// const res = await fetch(`${API_URL}/jobs?_limit=2`);
 		let data = await res.json();
-		console.log(data);
 		data = data.map((job) => ({ ...job, created_at: getLocalDate(job.created_at) }))
 
 		const resAds = await fetch(`${API_URL}/advertisements?Active=true`);
