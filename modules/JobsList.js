@@ -39,6 +39,9 @@ function JobsList(props) {
 		if (initialJobs !== jobs) {
 			setJobs(initialJobs)
 		};
+		if (!initialJobs || initialJobs.length === 0) {
+			setHasMore(false);
+		}
 		if (!baseUrl) setBaseUrl(document.location.pathname);
 	}, [initialJobs])
 
