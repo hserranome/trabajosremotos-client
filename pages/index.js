@@ -55,8 +55,6 @@ Index.getInitialProps = async () => {
 		data.splice(5, 0, advertisements[randInd]);
 		// Remove element from ads
 		advertisements.splice(randInd, 1);
-w
-		console.log(data);
 		return { initialJobs: data, advertisements };
 	} catch (error) {
 		console.log(error)
