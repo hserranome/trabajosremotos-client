@@ -8,7 +8,7 @@ import { WEB_URL, API_URL, getLocalDate } from '../utils';
 import addVisitedJob from '../utils/addVisitedJob';
 
 function JobsList(props) {
-	const { initialJobs, query, advertisements } = props;
+	const { initialJobs, query } = props;
 	const [jobs, setJobs] = useState(initialJobs || []);
 	const [activeJob, setActiveJob] = useState(null);
 	const [baseUrl, setBaseUrl] = useState(null);
@@ -81,7 +81,6 @@ function JobsList(props) {
 		visitedJobs = JSON.parse(localStorage.getItem("visitedJobs"));
 	}
 	if (!visitedJobs) visitedJobs = [];
-	console.log(jobs)
 	return (
 		<div className='container'>
 			<InfiniteScroll
@@ -90,7 +89,7 @@ function JobsList(props) {
 				loadMore={loadMore}
 				hasMore={hasMore}
 				loader={
-					<div className="blink-wrapper">
+					<div key="blink-lol" className="blink-wrapper">
 						<div className="blink"></div>
 					</div>
 				}
@@ -143,7 +142,7 @@ function JobsList(props) {
 							)
 							: (
 								<a
-									className={`trabajo`}
+									className={`trabajo anuncio`}
 									key={job.id}
 									id={job.id}
 									href={job.URL}

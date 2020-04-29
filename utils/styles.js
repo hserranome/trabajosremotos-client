@@ -255,6 +255,7 @@ export const GlobalStyle = createGlobalStyle`
 		border: 1px solid #dedede;
 		padding: 0; margin: 0;
 		margin-bottom: 1rem;
+		box-sizing: border-box;
 		position: relative;
 	}
 	.trabajos .trabajo.featured{ 
@@ -920,6 +921,10 @@ export const GlobalStyle = createGlobalStyle`
 	::selection{
 		background-color: rgba(245, 224, 106, 0.959);
 		color: black;
+	}
+
+	.trabajo.anuncio{
+		border: 4px dashed rgb(222, 222, 222) !important;
 	}
 `;
 export default GlobalStyle;
