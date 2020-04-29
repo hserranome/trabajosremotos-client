@@ -47,14 +47,19 @@ Search.getInitialProps = async ({ query }) => {
 		let data = await res.json();
 		data = data.map((job) => ({ ...job, created_at: getLocalDate(job.created_at) }))
 
-		const resAds = await fetch(`${API_URL}/advertisements?Active=true`);
-		let advertisements = await resAds.json();
-		// Get random index
-		let randInd = Math.floor(Math.random() * advertisements.length);
-		// Put ad into array
-		data.splice(5, 0, advertisements[randInd]);
-		// Remove element from ads
-		advertisements.splice(randInd, 1);
+		let advertisements = [];
+		if (!data || data.length === 0) {
+			data = [];
+		} else {
+			const resAds = await fetch(`${API_URL}/advertisements?Active=true`);
+			advertisements = await resAds.json();
+			// Get random index
+			let randInd = Math.floor(Math.random() * advertisements.length);
+			// Put ad into array
+			data.splice(5, 0, advertisements[randInd]);
+			// Remove element from ads
+			advertisements.splice(randInd, 1);
+		}
 
 		return { initialJobs: data, query: thisQuery, advertisements };
 	} catch (error) {
