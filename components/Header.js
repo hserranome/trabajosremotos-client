@@ -169,7 +169,7 @@ const Header = (props) => {
                         </li>
                         <li>
 							<a rel="noopener" target="_blank" href='https://t.me/trabajosremotos'>
-                                <a>Telegram</a>
+                                Telegram
                             </a>
                         </li>
 						<li>

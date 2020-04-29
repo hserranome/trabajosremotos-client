@@ -921,5 +921,9 @@ export const GlobalStyle = createGlobalStyle`
 		background-color: rgba(245, 224, 106, 0.959);
 		color: black;
 	}
+
+	.trabajo.anuncio{
+		border: 4px solid dashed !important;
+	}
 `;
 export default GlobalStyle;
