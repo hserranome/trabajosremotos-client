@@ -47,8 +47,8 @@ CategoryList.getInitialProps = async ({ query }) => {
 		const initialJobs = jobs.map((job) => ({ ...job, created_at: getLocalDate(job.created_at) }))
 
 		let advertisements = [];
-		if (!data || data.length === 0) {
-			data = [];
+		if (!initialJobs || initialJobs.length === 0) {
+			initialJobs = [];
 		} else {
 			const resAds = await fetch(`${API_URL}/advertisements?Active=true`);
 			advertisements = await resAds.json();
