@@ -21,6 +21,13 @@ function JobsList(props) {
 			data = data.map((job) => ({ ...job, created_at: getLocalDate(job.created_at) }))
 			if (data.length === 0) {
 				setHasMore(false);
+			} else if (advertisements && advertisements.length > 0) {
+				// Get random index
+				let randInd = Math.floor(Math.random() * advertisements.length);
+				// Put ad into array
+				data.splice(5, 0, advertisements[randInd]);
+				// Remove element from ads
+				advertisements.splice(randInd, 1);
 			}
 			setJobs([...jobs, ...data]);
 		} catch (error) {

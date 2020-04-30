@@ -42,25 +42,10 @@ Search.getInitialProps = async ({ query }) => {
 		const thisQuery = `/jobs?title_contains=${filtro.replace(' ', '%20')}&_limit=40`;
 
 		const res = await fetch(`${API_URL}${thisQuery}`);
-		// const res = await fetch(`${API_URL}/jobs?_limit=2`);
 		let data = await res.json();
 		data = data.map((job) => ({ ...job, created_at: getLocalDate(job.created_at) }))
 
-		let advertisements = [];
-		if (!data || data.length === 0) {
-			data = [];
-		} else {
-			const resAds = await fetch(`${API_URL}/advertisements?Active=true`);
-			advertisements = await resAds.json();
-			// Get random index
-			let randInd = Math.floor(Math.random() * advertisements.length);
-			// Put ad into array
-			data.splice(5, 0, advertisements[randInd]);
-			// Remove element from ads
-			advertisements.splice(randInd, 1);
-		}
-
-		return { initialJobs: data, query: thisQuery, advertisements };
+		return { initialJobs: data, query: thisQuery };
 	} catch (error) {
 		console.error(error)
 		return { error }
