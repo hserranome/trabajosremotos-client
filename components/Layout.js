@@ -82,6 +82,9 @@ const Layout = (props) => {
 
 				<script src='https://js.stripe.com/v3' defer />
 				{/* <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script> */}
+
+				{/* Buy me a coffee */}
+				<script data-name="BMC-Widget" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="trabajosremotos" data-description="¡Apoya a trabajosremotos!" data-message="" data-color="#FF813F" data-position="right" data-x_margin="18" data-y_margin="18"></script>
 			</Head>
 
 			<Header {...props} />
