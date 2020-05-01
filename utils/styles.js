@@ -858,8 +858,13 @@ export const GlobalStyle = createGlobalStyle`
 	}
 	/* ----------------------------------- */
 
+	
+	#bmc-wbtn{ bottom: 72px !important; }
+	
 	/* Tablets */
 	@media only screen and (min-width : 800px) {	
+		#bmc-wbtn{ bottom: 18px !important; }
+
 		body{ padding-bottom: 0; }
 
 		.hero p{
