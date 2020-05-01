@@ -8,7 +8,7 @@ const query = '/jobs?_sort=pinned:DESC,created_at:desc&_limit=40';
 
 
 const Index = (props) => {
-	const { initialJobs, error, advertisements } = props;
+	const { initialJobs, error } = props;
 
 	return (
 		<div>
@@ -33,7 +33,6 @@ const Index = (props) => {
 					initialJobs={initialJobs}
 					error={error}
 					query={query}
-					advertisements={advertisements}
 				/>
 			</div>
 		</div>
@@ -44,23 +43,8 @@ Index.getInitialProps = async () => {
 	try {
 		const res = await fetch(`${API_URL}${query}`);
 		let data = await res.json();
-		data = data.map((job) => ({ ...job, created_at: getLocalDate(job.created_at) }))
-		
-		// let advertisements = [];
-		if (!data || data.length === 0) {
-			data = [];
-		} else {
-			// const resAds = await fetch(`${API_URL}/advertisements?Active=true`);
-			// advertisements = await resAds.json();
-	
-			// // Get random index
-			// let randInd = Math.floor(Math.random() * advertisements.length);
-			// // Put ad into array
-			// data.splice(5, 0, advertisements[randInd]);
-			// // Remove element from ads
-			// advertisements.splice(randInd, 1);
-		}
-		return { initialJobs: data };
+		const initialJobs = data.map((job) => ({ ...job, created_at: getLocalDate(job.created_at) }))
+		return { initialJobs };
 	} catch (error) {
 		console.log(error)
 		return { error }

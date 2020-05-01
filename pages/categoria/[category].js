@@ -5,7 +5,7 @@ import JobsList from '../../modules/JobsList';
 import { API_URL, getLocalDate } from '../../utils';
 
 const CategoryList = (props) => {
-	const { initialJobs, error, categoryName, query, advertisements } = props;
+	const { initialJobs, error, categoryName, query } = props;
 	const categoryFinalName = categoryName !== 'none' ? `de ${categoryName}` : '';
 
 	return (
@@ -29,7 +29,6 @@ const CategoryList = (props) => {
 					initialJobs={initialJobs}
 					error={error}
 					query={query}
-					advertisements={advertisements}
 				/>
 			</div>
 		</div>
@@ -44,7 +43,7 @@ CategoryList.getInitialProps = async ({ query }) => {
 		const res = await fetch(`${API_URL}${thisQuery}`);
 		const jobs = await res.json();
 		const categoryName = jobs.length > 0 ? jobs[0].category.name : 'none';
-		let initialJobs = jobs.map((job) => ({ ...job, created_at: getLocalDate(job.created_at) }))
+		const initialJobs = jobs.map((job) => ({ ...job, created_at: getLocalDate(job.created_at) }))
 
 		return { initialJobs, categoryName, query: thisQuery };
 	} catch (error) {

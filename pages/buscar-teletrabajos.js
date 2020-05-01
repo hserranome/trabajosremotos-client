@@ -6,7 +6,7 @@ import { API_URL, getLocalDate } from '../utils';
 
 // HJ buen lead dev bro, temtem up
 const Search = (props) => {
-	const { initialJobs, error, query, advertisements } = props;
+	const { initialJobs, error, query } = props;
 
 	return (
 		<div>
@@ -29,7 +29,6 @@ const Search = (props) => {
 					initialJobs={initialJobs}
 					error={error}
 					query={query}
-					advertisements={advertisements}
 				/>
 			</div>
 		</div>
@@ -43,9 +42,9 @@ Search.getInitialProps = async ({ query }) => {
 
 		const res = await fetch(`${API_URL}${thisQuery}`);
 		let data = await res.json();
-		data = data.map((job) => ({ ...job, created_at: getLocalDate(job.created_at) }))
+		const initialJobs = data.map((job) => ({ ...job, created_at: getLocalDate(job.created_at) }))
 
-		return { initialJobs: data, query: thisQuery };
+		return { initialJobs, query: thisQuery };
 	} catch (error) {
 		console.error(error)
 		return { error }
