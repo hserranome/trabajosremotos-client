@@ -29,12 +29,13 @@ function SingleJob(props) {
 						<title>{`${job.title} en ${job.company}`}</title>
 
 						<meta name="robots" content="all" />
-						<meta property="og:title" content={`${job.title} en ${job.company}`} key="trabajos-title-og" />
+						<meta property="description" content={`Trabajos remotos | ${jobDescriptionSEO}`} />
+						<meta property="og:title" content={`${job.title} en ${job.company} | Trabajos remotos`} key="trabajos-title-og" />
 						<meta property="og:image" content={job.logo ? job.logo : trabajosRemotosLogo} key="trabajos-logo-og" />
-						<meta property="og:description" content={jobDescriptionSEO} />
-						<meta name="twitter:title" content={`${job.title} en ${job.company}`} key="trabajos-title-twitter" />
+						<meta property="og:description" content={`Trabajos remotos | ${jobDescriptionSEO}`} />
+						<meta name="twitter:title" content={`${job.title} en ${job.company} | Trabajos remotos`} key="trabajos-title-twitter" />
 						<meta name="twitter:image" content={job.logo ? job.logo : trabajosRemotosLogo} key="trabajos-image-twitter" />
-						<meta name="twitter:description" content={jobDescriptionSEO} />
+						<meta name="twitter:description" content={`Trabajos remotos | ${jobDescriptionSEO}`} />
 						<meta name="robots" content="index,follow" />
 						<meta name="googlebot" content="index,follow" />
 

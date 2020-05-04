@@ -23,8 +23,8 @@ const About = (props) => {
 						<h4>Sobre Trabajos Remotos</h4>
 						<p>
 							Trabajos Remotos es un proyecto 
-							de <a rel="noopener" target="_blank" href="https://hserrano.me/">HJ</a> y <a rel="noopener" href="https://mascarell.github.io/mascarell/" target="_blank">Mascarell</a> que busca
-							ayudar a personas hispanohablantes encontrar trabajos a distancia.
+							de <a rel="noopener" href="https://www.mango.moe/" target="_blank">Mango Milkshake</a> que 
+							busca ayudar a personas hispanohablantes encontrar trabajos a distancia.
 						</p>
 					</div>
 				</div>
