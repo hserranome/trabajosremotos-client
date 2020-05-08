@@ -12,7 +12,7 @@ const Blog = ({ posts }) => {
 			</Head>
 			<GridContainer>
 				{posts ? posts.map((post) => (
-					<a key={post.id} href={`/blog/${post.slug}`}>
+					<BlogPost key={post.id} href={`/blog/${post.slug}`}>
 						<PostThumbnail
 							src={post.thumbnail
 									? `${API_URL}${post.thumbnail.url}`
@@ -20,10 +20,10 @@ const Blog = ({ posts }) => {
 								}
 						/>
 						<PostContent>
-							<PostDate><div></div>{post.created_at}</PostDate>
 							<PostTitle className="prata">{post.title}</PostTitle>
+							<PostDate><div></div>{post.created_at}</PostDate>
 						</PostContent>
-					</a>
+					</BlogPost>
 				)) : null}
 			</GridContainer>
 		</div>
@@ -57,34 +57,40 @@ const GridContainer = styled.div`
 const PostThumbnail = styled.img`
 
 `;
+const BlogPost = styled.a`
+	width: 100%;
+	max-width: 100%;
+	border-radius: 12px;
+	overflow: hidden;
+	transition: .1s linear;
+	box-shadow: 0 0.3rem 1.2rem 0 rgba(5,10,15,.08);
+	border: 1px solid #eee;
+	
+	&:hover{
+		transform: translateY(-5px);
+		box-shadow: 0 0.3rem 1.2rem 0 rgba(5,10,15,.15);
+	}
+`;
 const PostContent = styled.div`
 	position: relative;
 	box-sizing: border-box;
-	padding-left: 60px;
+	padding: 1rem;
 `;
 const PostTitle = styled.h2`
 	overflow: hidden;
     display: -webkit-box;
     /* -webkit-line-clamp: 2; */
     -webkit-box-orient: vertical;
-	font-size: 20px;
+	font-size: 18px;
+	margin-top: 0;
+	margin-bottom: 1rem;
+	min-height: 100px;
 `;
 const PostDate = styled.div`
 	margin-top: 1rem;
 	font-size: 12px;
 	text-transform: uppercase;
-	font-weight: 600;
+	font-weight: 400;
 	position: relative;
 	color: #444;
-	
-	div{
-		position: absolute;
-		width: 6px;
-		height: 6px;
-		background-color: #444;
-		border-radius: 50%;
-		top: 50%;
-		left: -30px;
-		transform: translateY(-50%);
-	}
 `;
