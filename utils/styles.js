@@ -534,6 +534,9 @@ export const GlobalStyle = createGlobalStyle`
 		z-index: 9999;
 		margin-top: 1rem;
 	}
+	nav.desktop .dropdown-parent{ 
+		position: relative;
+	}
 	nav.desktop .dropdown-parent:hover ul.dropdown{ display: flex; }
 	nav.desktop ul.dropdown::after{
 		content: '';

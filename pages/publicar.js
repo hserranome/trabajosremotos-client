@@ -133,11 +133,11 @@ const Publicar = () => {
 								value={values.category || ''}
 							>
 								<option value="" disabled>Elige una categoría</option>
-								<option value="programación">Programación</option>
-								<option value="diseno">Diseño</option>
-								<option value="marketing">Marketing</option>
-								<option value="atencion">Atención al cliente</option>
-								<option value="otros">Otros</option>
+								<option value="1">Programación</option>
+								<option value="4">Diseño</option>
+								<option value="2">Marketing</option>
+								<option value="3">Atención al cliente</option>
+								<option value="5">Otros</option>
 							</select>
 						</label>
 						{/* Company name */}

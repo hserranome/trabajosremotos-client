@@ -167,11 +167,27 @@ const Header = (props) => {
                                 <a>Sobre nosotros</a>
                             </Link>
                         </li>
-                        <li>
-							<a rel="noopener" target="_blank" href='https://t.me/trabajosremotos'>
-                                Telegram
-                            </a>
-                        </li>
+						<li className='dropdown-parent'>
+							<a>Redes sociales</a>
+
+							<ul className='dropdown'>
+								<li key='telegram'>
+									<a rel="noopener" target="_blank" href='https://t.me/trabajosremotos'>
+										Telegram
+                            		</a>
+								</li>
+								<li key='twitter'>
+									<a rel="noopener" target="_blank" href='https://twitter.com/trabajos_remoto'>
+										Twitter
+                            		</a>
+								</li>
+								<li key='facebook'>
+									<a rel="noopener" target="_blank" href='https://t.me/trabajosremotos'>
+										Facebook
+                            		</a>
+								</li>
+							</ul>
+						</li>
 						<li>
 							<div className='search' onClick={openDesktopSearch}>
 								<img src='/static/images/search-thick.svg' alt='icono de busqueda' />
