@@ -181,11 +181,11 @@ const Header = (props) => {
 										Twitter
                             		</a>
 								</li>
-								<li key='facebook'>
+								{/* <li key='facebook'>
 									<a rel="noopener" target="_blank" href='https://t.me/trabajosremotos'>
 										Facebook
                             		</a>
-								</li>
+								</li> */}
 							</ul>
 						</li>
 						<li>
