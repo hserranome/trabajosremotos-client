@@ -82,7 +82,9 @@ const Layout = (props) => {
 
 				<script src='https://js.stripe.com/v3' defer />
 
-				{/* <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script> */}
+				<script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+				<script defer src="https://emailoctopus.com/bundles/emailoctopuslist/js/1.4/recaptcha.js"></script>
+				<script defer src="https://emailoctopus.com/bundles/emailoctopuslist/js/1.4/formEmbed.js"></script>
 			</Head>
 
 			<Header {...props} />

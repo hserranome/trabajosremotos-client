@@ -2,6 +2,7 @@ import fetch from 'isomorphic-unfetch';
 import Head from 'next/head';
 
 import JobsList from '../../modules/JobsList';
+import MailForm from '../../components/MailForm';
 import { API_URL, getLocalDate } from '../../utils';
 
 const CategoryList = (props) => {
@@ -25,6 +26,8 @@ const CategoryList = (props) => {
 			</div>
 
 			<div className="trabajos">
+				<MailForm />
+				
 				<JobsList
 					initialJobs={initialJobs}
 					error={error}

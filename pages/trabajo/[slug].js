@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import Head from 'next/head';
 import Markdown from 'markdown-to-jsx';
 import LazyLoad from 'react-lazyload';
+import MailForm from '../../components/MailForm';
 
 import { API_URL, getLocalDate } from '../../utils';
 import Error from '../_error';
@@ -81,8 +82,11 @@ function SingleJob(props) {
 										?<Markdown>{job.description}</Markdown>
 										: ''
 									}
-									<a target="_blank" rel="noopener" className="main-button" href={job.link}>Solicitar trabajo</a>
+
+									
+									<a target="_blank" rel="noopener" className="main-button solicitar" href={job.link}>Solicitar trabajo</a>
 								</div>
+								<MailForm />
 							</div>
 
 							<div className="sidebar">

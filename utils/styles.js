@@ -491,6 +491,17 @@ export const GlobalStyle = createGlobalStyle`
 	}
 	/* ----------------------------------- */
 
+	/* Email Octopus */
+	.email-octopus-form-wrapper{
+		width: 100%;
+		text-align: left;
+
+		@media only screen and (min-width : 768px) {
+			text-align: center;
+		}
+	}
+	/* ----------------------------------- */
+
 	/* Desktop menu */
 	nav.desktop{
 		display: none;
@@ -840,13 +851,18 @@ export const GlobalStyle = createGlobalStyle`
 		background-color: #FF4114 !important;
 		font-weight: 700;
 		border-radius: 2px;
+		display: block;
+		width: auto;
+		max-width: 180px;
+		text-align: center;
 		/* min-width: 150px; */
 		font-size: .8rem;
 		box-sizing: border-box;
 		padding: 8px 24px;
 		position: relative;
 	}
-	.main-button.big{ font-size: 1.1rem; }
+	.main-button.solicitar{ margin-top: 1rem; }
+	.main-button.big{ font-size: 1.1rem; max-width: 250px; }
 	.main-button:hover{ 
 		cursor: pointer; 
 		box-shadow: 0 4px 16px rgba(0,1,31,0.2);

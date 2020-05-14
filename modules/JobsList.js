@@ -125,7 +125,7 @@ function JobsList(props) {
 												<div className="description">
 													<Markdown>{job.description ? job.description : ''}</Markdown>
 													<div />
-													<a target="_blank" rel="noopener" className="main-button" href={job.link.includes('@') ? `mailto:${job.link}` : job.link}>Solicitar trabajo</a>
+													<a target="_blank" rel="noopener" className="main-button solicitar" href={job.link.includes('@') ? `mailto:${job.link}` : job.link}>Solicitar trabajo</a>
 												</div>
 											)
 											: null
