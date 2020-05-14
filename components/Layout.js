@@ -82,9 +82,9 @@ const Layout = (props) => {
 
 				<script src='https://js.stripe.com/v3' defer />
 
-				<script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-				<script defer src="https://emailoctopus.com/bundles/emailoctopuslist/js/1.4/recaptcha.js"></script>
-				<script defer src="https://emailoctopus.com/bundles/emailoctopuslist/js/1.4/formEmbed.js"></script>
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+				<script src="https://emailoctopus.com/bundles/emailoctopuslist/js/1.4/recaptcha.js"></script>
+				<script src="https://emailoctopus.com/bundles/emailoctopuslist/js/1.4/formEmbed.js"></script>
 			</Head>
 
 			<Header {...props} />

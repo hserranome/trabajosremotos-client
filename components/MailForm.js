@@ -10,7 +10,7 @@ const MailForm = (props) => {
 				<p className="email-octopus-error-message"></p>
 
 				<form method="post"
-					action="https://emailoctopus.com/lists/347308e1-960d-11ea-a3d0-06b4694bee2a/members/embedded/1.3s/add"
+					action="https://emailoctopus.com/lists/347308e1-960d-11ea-a3d0-06b4694bee2a/members/embedded/1.3/add"
 					className="email-octopus-form"
 					data-sitekey="6LdYsmsUAAAAAPXVTt-ovRsPIJ_IVhvYBBhGvRV6"
 				>
@@ -26,7 +26,8 @@ const MailForm = (props) => {
 						tabIndex="-1"
 						autoComplete="off" 
 					/>
-					<input type="hidden"
+					<input 
+						type="hidden"
 						name="successRedirectUrl"
 						value="" 
 					/>
