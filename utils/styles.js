@@ -500,6 +500,7 @@ export const GlobalStyle = createGlobalStyle`
 			text-align: center;
 		}
 	}
+	.g-recaptcha{ display: none; }
 	/* ----------------------------------- */
 
 	/* Desktop menu */
