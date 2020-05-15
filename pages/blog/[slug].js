@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Markdown from 'markdown-to-jsx';
 import LazyLoad from 'react-lazyload';
+import MailForm from '../../components/MailForm';
 
 import { API_URL, getLocalDate } from '../../utils';
 import Error from '../_error';
@@ -35,6 +36,8 @@ function SingleBlogPost(props) {
 					</Head>
 				)
 			}
+
+			<MailForm />
 
 			<div className="anuncio blog">
 				{publicacion
