@@ -814,6 +814,7 @@ export const GlobalStyle = createGlobalStyle`
 
 	/* Blog styles */
 	.blog-title{
+		box-sizing: border-box;
 		width: 100%;
 		max-width: 960px;
 		text-align: left;
