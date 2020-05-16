@@ -77,14 +77,22 @@ const PostContent = styled.div`
 	padding: 1rem;
 `;
 const PostTitle = styled.h2`
-	overflow: hidden;
-    display: -webkit-box;
-    /* -webkit-line-clamp: 2; */
-    -webkit-box-orient: vertical;
 	font-size: 18px;
 	margin-top: 0;
 	margin-bottom: 1rem;
-	min-height: 100px;
+
+	white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    @supports (-webkit-line-clamp: 2) {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: initial;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
 `;
 const PostDate = styled.div`
 	margin-top: 1rem;
