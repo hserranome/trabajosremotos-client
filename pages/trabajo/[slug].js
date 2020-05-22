@@ -30,34 +30,15 @@ function SingleJob(props) {
 						<title>{`${job.title} en ${job.company}`}</title>
 
 						<meta name="robots" content="all" />
-						<meta property="description" content={`Trabajos remotos | ${jobDescriptionSEO}`} />
+						<meta property="description" content={`${jobDescriptionSEO} - Teletrabajo`} />
 						<meta property="og:title" content={`${job.title} en ${job.company} | Trabajos remotos`} key="trabajos-title-og" />
 						<meta property="og:image" content={job.logo ? job.logo : trabajosRemotosLogo} key="trabajos-logo-og" />
-						<meta property="og:description" content={`Trabajos remotos | ${jobDescriptionSEO}`} />
+						<meta property="og:description" content={`${jobDescriptionSEO} - Teletrabajo`} />
 						<meta name="twitter:title" content={`${job.title} en ${job.company} | Trabajos remotos`} key="trabajos-title-twitter" />
 						<meta name="twitter:image" content={job.logo ? job.logo : trabajosRemotosLogo} key="trabajos-image-twitter" />
-						<meta name="twitter:description" content={`Trabajos remotos | ${jobDescriptionSEO}`} />
+						<meta name="twitter:description" content={`${jobDescriptionSEO} - Teletrabajo`} />
 						<meta name="robots" content="index,follow" />
 						<meta name="googlebot" content="index,follow" />
-
-						{/* Schema to show jobs on google searches */}
-						<script type='application/ld+json' dangerouslySetInnerHTML={{ __html: `
-							{ 
-								"@context" : "https://schema.org/",
-								"@type" : "JobPosting",
-								"title" : "${job.title}",
-								"jobLocationType": "TELECOMMUTE",
-								"description" : "${job.jobDescriptionSEO}",
-								"datePosted" : "${job.schemaDatePosted}",
-								"validThrough" : "${job.schemaValidThrough}",
-								"employmentType" : "FULL_TIME",
-								"hiringOrganization":{
-									"@type" : "Organization",
-									"name" : "${job.company}",
-									"logo" : "${job.logo ? job.logo : null}"
-								}
-							}
-						` }} />
 					</Head>
 				)
 				: (
