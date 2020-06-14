@@ -44,13 +44,27 @@ const Index = (props) => {
 
 Index.getInitialProps = async () => {
 	try {
+		// Advertisement query
+		const ad = await fetch(`${API_URL}/archives?_sort=active:DESC&_limit=1`);
+		const ads = await ad.json();
+		if (!ads || ads.length === 0) {
+			return { ads: null };
+		}
+		console.log(ads);
+
+		// Jobs query
 		const res = await fetch(`${API_URL}${query}`);
 		let data = await res.json();
-		const initialJobs = data.map((job) => ({ ...job, created_at: getLocalDate(job.created_at) }))
+		const initialJobs = data.map((job) => ({ ...job, created_at: getLocalDate(job.created_at) }));
+
+		// Before returning the jobs, add the advertisement to the array of jobs
+		try { if(ads !== null || ads !== undefined) initialJobs.splice(5, 0, ads[0]) } catch{ console.error('cannot load ads') };
+		console.log(initialJobs[5])
+
 		return { initialJobs };
 	} catch (error) {
-		console.log(error)
-		return { error }
+		console.log(error);
+		return { error };
 	}
 };
 
