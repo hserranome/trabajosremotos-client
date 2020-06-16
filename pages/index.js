@@ -48,8 +48,6 @@ Index.getInitialProps = async () => {
 		const ad = await fetch(`${API_URL}/archives?_sort=active:DESC&_limit=1`);
 		const ads = await ad.json();
 
-		console.log(ads[0].Active);
-
 		// Jobs query
 		const res = await fetch(`${API_URL}${query}`);
 		let data = await res.json();
