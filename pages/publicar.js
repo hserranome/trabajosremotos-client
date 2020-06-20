@@ -7,7 +7,7 @@ import Spinner from '../components/Spinner';
 
 import { API_URL } from '../utils';
 
-const STRIPE_KEY = process.env.STRIPE_KEY || 'process.env.STRIPE_PUBLISHABLE_KEY';
+const STRIPE_KEY = process.env.STRIPE_KEY || 'pk_test_ggi6CNK5xAQySQxoZfkFVJoZ00FxmHeKgq';
 
 const Publicar = () => {
 	const [values, setValues] = useState({});
