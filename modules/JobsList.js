@@ -138,7 +138,7 @@ function JobsList(props) {
 									className={`trabajo anuncio`}
 									key={job.id}
 									id={job.id}
-									href={job.URL}
+									href={job.Url}
 								>
 									<div className="a">
 										<div>
