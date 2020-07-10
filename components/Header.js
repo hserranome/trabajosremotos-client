@@ -94,7 +94,7 @@ const Header = (props) => {
                         </Link>
                     </li>
                     <li className='publicar'>
-						<a href="https://t.me/trabajosremotos" target="_blank" rel="noopener">Telegram</a>
+						<a href="https://t.me/trabajos_remotos" target="_blank" rel="noopener">Telegram</a>
                     </li>
                     <li className='blog'>
                         <Link activeClassName='active' href='/blog'>
@@ -172,7 +172,7 @@ const Header = (props) => {
 
 							<ul className='dropdown'>
 								<li key='telegram'>
-									<a rel="noopener" target="_blank" href='https://t.me/trabajosremotos'>
+									<a rel="noopener" target="_blank" href='https://t.me/trabajos_remotos'>
 										Telegram
                             		</a>
 								</li>
