@@ -25,7 +25,7 @@ const Header = (props) => {
 		event.preventDefault();
 		const input = document.querySelector('#searchQuery');
 
-		let query = slugify(input.value, { remove: /[*+~.()'"!:@]/g });
+		let query = slugify(input.value, { remove: /[*+~./()'"!:@]/g });
 
 		Router.push({
 			pathname: '/buscar-teletrabajos',
@@ -41,7 +41,7 @@ const Header = (props) => {
 		const input = document.querySelector('#searchQueryDesktop');
 		const wrapper = document.querySelector('.search-desktop');
 
-		let query = slugify(input.value, { remove: /[*+~.()'"!:@]/g });
+		let query = slugify(input.value, { remove: /[*+~./()'"!:@]/g });
 
 		Router.push({
 			pathname: '/buscar-teletrabajos',
