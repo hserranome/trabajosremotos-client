@@ -186,6 +186,11 @@ const Header = (props) => {
 										Facebook
                             		</a>
 								</li>
+								<li key='instagram'>
+									<a rel="noopener" target="_blank" href='https://www.instagram.com/trabajos_remoto/'>
+										Instagram
+                            		</a>
+								</li>
 								<li key='linkedin'>
 									<a rel="noopener" target="_blank" href='https://www.linkedin.com/company/trabajosremotos'>
 										Linkedin
