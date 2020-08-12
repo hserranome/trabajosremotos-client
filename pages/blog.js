@@ -55,7 +55,7 @@ const GridContainer = styled.div`
     max-width: 1200px;
 `;
 const PostThumbnail = styled.img`
-
+	min-height: 250px;
 `;
 const BlogPost = styled.a`
 	width: 100%;

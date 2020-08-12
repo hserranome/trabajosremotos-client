@@ -77,12 +77,44 @@ function SingleBlogPost(props) {
 				}
 
 			</div>
+
+			{/* Ad here */}
+			{activeAd
+				? (
+					<div className="trabajos">
+						<a
+							className={`trabajo anuncio`}
+							key={activeAd.id}
+							id={activeAd.id}
+							href={activeAd.URL}
+						>
+							<div className="a">
+								<div>
+									<div>
+										<h2>{activeAd.Title} <span>AD</span></h2>
+										<p>{activeAd.Subtitle}</p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				)
+				: (
+					''
+				)
+			}
 		</div>
 	)
 }
 
 SingleBlogPost.getInitialProps = async ({ query }) => {
 	try {
+		// Advertisement query
+		const ad = await fetch(`${API_URL}/archives?_sort=active:DESC&_limit=1`);
+		const ads = await ad.json();
+		let activeAd;
+		
+		// Blog post normal query
 		const { slug } = query;
 		const res = await fetch(`${API_URL}/posts?slug=${slug}`);
 		const publicacions = await res.json();
@@ -91,7 +123,11 @@ SingleBlogPost.getInitialProps = async ({ query }) => {
 		}
 		const publicacion = publicacions[0];
 		publicacion.created_at = getLocalDate(publicacion.created_at);
-		return { publicacion };
+
+		// Before returning the jobs, add the advertisement to the array of jobs
+		try { if (ads.length !== 0 && ads[0].Active === true) activeAd = ads[0] } catch{ console.error('cannot load ads') };
+		
+		return { publicacion, activeAd };
 	} catch (error) {
 		console.error(error)
 		return { error }
