@@ -113,6 +113,23 @@ export const GlobalStyle = createGlobalStyle`
 		box-sizing: border-box;
 		justify-content: center; align-items: center;
 		border-bottom: 1px solid #dedede;
+		background-size: cover;
+		background-position: center;
+		position: relative;
+		color: white;
+		
+		.container{
+			z-index: 6;
+		}
+		&::before{
+			content: '';
+			position: absolute;
+			top: 0; left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, .4);
+			z-index: 2;
+		}
 	}
 	.hero p{
 		text-align: left;
@@ -126,7 +143,10 @@ export const GlobalStyle = createGlobalStyle`
 		text-align: left;
 		margin: 0; padding: 0;
 		margin-bottom: .5rem;
-		color: #FF4114;
+		color: #87F5FB;
+		font-weight: 600;
+		letter-spacing: 2px;
+		text-transform: uppercase;
 	}
 	/* ----------------------------------- */
 

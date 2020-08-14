@@ -35,6 +35,8 @@ a{ text-decoration: none; color: inherit; }
 	box-sizing: border-box;
 	justify-content: center; align-items: center;
 	border-bottom: 1px solid #dedede;
+	background-size: cover;
+	background-position: center;
 }
 .hero p{
 	text-align: left;

@@ -1,5 +1,6 @@
 import fetch from 'isomorphic-unfetch';
 import Head from 'next/head';
+import heroImg from '../../static/images/hero.jpg';
 
 import JobsList from '../../modules/JobsList';
 import MailForm from '../../components/MailForm';
@@ -18,7 +19,7 @@ const CategoryList = (props) => {
 				<meta name="twitter:title" content={`Trabajos remotos ${categoryFinalName}`} key="trabajos-title-twitter" />
 			</Head>
 
-			<div className="hero">
+			<div className="hero" style={{ backgroundImage: "url(" + `${heroImg}` + ")" }}>
 				<div className="container">
 					<h1>Trabajos remotos</h1>
 					<p className="prata">La plataforma para encontrar trabajos remotos online de manera sencilla.</p>
