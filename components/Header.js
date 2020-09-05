@@ -164,7 +164,7 @@ const Header = (props) => {
                         </li>
                         <li>
                             <Link href='/contacto'>
-                                <a>Sobre nosotros</a>
+                                <a>Contacto</a>
                             </Link>
                         </li>
 						<li className='dropdown-parent'>
