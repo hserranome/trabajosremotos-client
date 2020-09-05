@@ -163,7 +163,7 @@ const Header = (props) => {
                             </Link>
                         </li>
                         <li>
-                            <Link href='/sobrenosotros'>
+                            <Link href='/contacto'>
                                 <a>Sobre nosotros</a>
                             </Link>
                         </li>
