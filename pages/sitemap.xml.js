@@ -46,7 +46,7 @@ const sitemapXml = (blogPosts, jobsList) => {
       <priority>1.00</priority>
     </url>
     <url>
-      <loc>https://www.trabajosremotos.es/sobrenosotros</loc>
+      <loc>https://www.trabajosremotos.es/contacto</loc>
       <priority>0.5</priority>
     </url>
     <url>
