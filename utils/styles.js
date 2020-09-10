@@ -153,61 +153,50 @@ export const GlobalStyle = createGlobalStyle`
 	/* Footer */
 	.footer{
 		border-top: 1px solid #dedede;
-	}
-	.footer .container{
-		font-size: 1rem;
-		display: flex;
-		flex-flow: row nowrap;
-	 	justify-content: space-between; align-items: flex-start;
 
-		@media only screen and (min-width : 800px) {
-			align-items: center;
-		}
-	}
-	.footer .container .social{
-		display: flex; flex-flow: row nowrap;
-	}
-	.footer .container .img{
-		width: 40px;
-		opacity: 0.75;
-		height: 50px;
-		display: flex; justify-content: center; align-items: center;
-		margin-left: 1rem;
-		border-radius: 50px;
-		transition: .1s linear;
-	}
-	.footer .container .img:hover{
-		background-color: #f3f3f3;
-	}
-	.footer .container .img img{ max-width: 50%; }
-	.footer .container .copy{
-		display: flex;
-		flex-flow: column wrap;
-		text-align: left;
-		box-sizing: border-box;
-
-		@media only screen and (min-width : 800px) {
-			flex-flow: row nowrap;
-		}
-		p {
-			margin: 0;
-			box-sizing: border-box;
-			padding: 0;
+		.container{
+			font-size: 1rem;
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: space-between; 
+			align-items: flex-start;
 			text-align: left;
-			margin-bottom: .75rem;
-			opacity: .65;
+			
+			.copy{
+				flex: 0 0 100%;
+				text-align: left;
 
-			&:first-child{
-				opacity: 1;
-			}
-			@media only screen and (min-width : 800px) {
-				margin-bottom: 0;
-			}
-			a {
-				font-size: .9rem;
+				.img{
+					background-color: rgb(242, 242, 242);
+					padding: 1rem;
+					border-radius: 50%;
+					width: 16px;
+					height: 16px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					display: inline-block;
+					margin-right: 6px;
+					transition: .1s linear;
 
+					img{
+						width: 100%;
+						max-width: 20px;
+					}
+
+					&:hover{
+						transform: scale(1.1);
+					}
+				}
+				
+				&:first-child{
+					a {
+						font-weight: 600;
+					}
+				}
+				
 				@media only screen and (min-width : 800px) {
-					margin-left: 1rem;
+					flex: 0 0 25%;
 				}
 			}
 		}
@@ -947,15 +936,6 @@ export const GlobalStyle = createGlobalStyle`
 		.trabajos .trabajo h2{ font-size: 1.6rem; }
 		.trabajos .trabajo h2 span, .trabajos .trabajo p{ font-size: 1rem; }
 		.trabajos .trabajo .img{ display: flex; }
-
-		.footer .container{
-			font-size: 1rem;
-			display: flex; flex-flow: row nowrap;
-			justify-content: space-between; align-items: center;
-		}
-		.footer .container .img{
-			width: 40px; height: 40px;
-		}
 	}
 	/* ----------------------------------- */
 

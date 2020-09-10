@@ -14,13 +14,25 @@ const About = (props) => {
 				<div className="container">
 					<div className="content fullwidth">
 
-						<h4>Contacto y publicidad</h4>
+						<h4>Contacto</h4>
 						<p>
-							Para cualquier duda sobre la publicación de trabajos, precios de publicidad en la 
-							web / newsletter o simplemente para saludar, puedes mandarnos un correo a <a href="mailto:contacto@trabajosremotos.es">contacto@trabajosremotos.es</a>.
+							¿Algo que nos quieras decir? Si tienes algún comentario o idea que compartirnos, puedes enviarnos un correo a <a href="mailto:contacto@trabajosremotos.es">contacto@trabajosremotos.es</a>.
 						</p>
+						<div style={{ marginBottom: '3rem' }}></div>
 
-						<h4>Sobre Trabajos Remotos</h4>
+						<h4>Publicidad</h4>
+						<p>
+							Para cualquier duda sobre precios de publicidad en la web o newsletter, puedes mandarnos un correo a <a href="mailto:publicidad@trabajosremotos.es">publicidad@trabajosremotos.es</a>.
+						</p>
+						<div style={{ marginBottom: '3rem' }}></div>
+
+						<h4>Escribe en nuestro blog</h4>
+						<p>
+							¿Quieres publicar tus artículos en nuestro blog? Puedes mandarlos a <a href="mailto:articulos@trabajosremotos.es">articulos@trabajosremotos.es</a> y nos pondremos en contacto contigo.
+						</p>
+						<div style={{ marginBottom: '3rem' }}></div>
+
+						<h4>Sobre nosotros</h4>
 						<p>
 							Trabajos Remotos es un proyecto 
 							de <a rel="noopener" href="https://www.mango.moe/" target="_blank">Mango Milkshake</a> que 

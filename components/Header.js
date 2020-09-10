@@ -200,7 +200,7 @@ const Header = (props) => {
 						</li>
                         <li>
                             <Link href='/publicar'>
-                                <a className='main-button'>Publicar anuncio</a>
+                                <a className='main-button'>Publicar trabajo</a>
                             </Link>
                         </li>
                     </ul>

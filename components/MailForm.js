@@ -5,7 +5,7 @@ const MailForm = (props) => {
 	return(
 		<div className="email-octopus-form-wrapper">
 			<MailContainer>
-				<h4 className="email-octopus-heading">¿Quieres recibir las últimas ofertas de trabajo todos los lunes?</h4>
+				<h4 className="email-octopus-heading">¿Quieres recibir las últimas ofertas de trabajo todos los martes?</h4>
 				<p className="email-octopus-success-message"></p>
 				<p className="email-octopus-error-message"></p>
 
