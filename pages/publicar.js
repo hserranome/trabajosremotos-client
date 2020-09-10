@@ -219,7 +219,7 @@ const Publicar = () => {
 								className="main-button big"
 								disabled={submitting}
 							>
-								Publicar anuncio
+								Publicar trabajo
 								{submitting ? <Spinner /> : null}
 							</button>
 						</div>
