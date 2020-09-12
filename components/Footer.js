@@ -9,35 +9,27 @@ const Footer = (props) => (
 
 				{/* Social media buttons */}
 				<div className="img">
-					<LazyLoad once>
-						<a rel="noopener" target="_blank" href="https://twitter.com/trabajos_remoto">
-							<img src='/static/images/twitter.svg' alt='icono de twitter' />
-						</a>
-					</LazyLoad>
+					<a rel="noopener" target="_blank" href="https://twitter.com/trabajos_remoto">
+						<img src='/static/images/twitter.svg' alt='icono de twitter' />
+					</a>
 				</div>
 
 				<div className="img">
-					<LazyLoad once>
-						<a rel="noopener" target="_blank" href="https://www.linkedin.com/company/trabajosremotos">
-							<img src='/static/images/linkedin.svg' alt='icono de linkedin' />
-						</a>
-					</LazyLoad>
+					<a rel="noopener" target="_blank" href="https://www.linkedin.com/company/trabajosremotos">
+						<img src='/static/images/linkedin.svg' alt='icono de linkedin' />
+					</a>
 				</div>
 
 				<div className="img">
-					<LazyLoad once>
-						<a rel="noopener" target="_blank" href="https://www.instagram.com/trabajos_remoto/">
-							<img src='/static/images/instagram.svg' alt='icono de instagram' />
-						</a>
-					</LazyLoad>
+					<a rel="noopener" target="_blank" href="https://www.instagram.com/trabajos_remoto/">
+						<img src='/static/images/instagram.svg' alt='icono de instagram' />
+					</a>
 				</div>
 
 				<div className="img">
-					<LazyLoad once>
-						<a rel="noopener" target="_blank" href="https://t.me/trabajos_remotos">
-							<img src='/static/images/telegram.svg' alt='icono de telegram' />
-						</a>
-					</LazyLoad>
+					<a rel="noopener" target="_blank" href="https://t.me/trabajos_remotos">
+						<img src='/static/images/telegram.svg' alt='icono de telegram' />
+					</a>
 				</div>
             </div>
 
