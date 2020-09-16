@@ -507,6 +507,14 @@ export const GlobalStyle = createGlobalStyle`
 
 		h4{
 			margin-top: 0 !important;
+			margin-bottom: .5rem !important;
+			font-size: 16px !important;
+		}
+		button{
+			border: none !important;
+			background-color: #FF4114 !important;
+			font-weight: 700 !important;
+			color: white !important;
 		}
 		@media only screen and (min-width : 768px) {
 			text-align: center;
