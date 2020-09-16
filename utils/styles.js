@@ -505,6 +505,9 @@ export const GlobalStyle = createGlobalStyle`
 		width: 100%;
 		text-align: left;
 
+		h4{
+			margin-top: 0 !important;
+		}
 		@media only screen and (min-width : 768px) {
 			text-align: center;
 		}
@@ -853,6 +856,27 @@ export const GlobalStyle = createGlobalStyle`
 
 	/* Contenedores que tienen margen */
 	.trabajos, .nuevo, .anuncio, .about{ margin-top: 2rem; margin-bottom: 2rem; }
+	.trabajos.notop{ margin-top: 0 !important; }
+	.trabajos.nobottom{ margin-bottom: 0 !important; }
+	/* ----------------------------------- */
+
+	/* Extra text for SEO */
+	.extra .container{
+		text-align: left;
+		display: block;
+		margin: 0 auto;
+		margin-bottom: 2rem;
+
+		a{
+			font-weight: 700;
+			background-color: rgba(221,224,244,0.9);
+			-webkit-transition: .1s linear;
+			transition: .1s linear;
+		}
+		p{
+			line-height: 1.6;
+		}
+	}
 	/* ----------------------------------- */
 
 	/* Main button */

@@ -78,7 +78,7 @@ function JobsList(props) {
 		<div className='container'>
 			<InfiniteScroll
 				pageStart={0}
-				className='trabajos'
+				className='trabajos notop nobottom'
 				loadMore={loadMore}
 				hasMore={hasMore}
 				loader={
