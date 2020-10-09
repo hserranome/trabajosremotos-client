@@ -17,8 +17,8 @@ const Index = (props) => {
 			<Head>
 				<title>Trabajos remotos - Tu tablón de empleo remoto exclusivamente en español</title>
 
-				<meta property="og:description" content="La plataforma para encontrar trabajos remotos online de manera sencilla." />
-				<meta name="twitter:description" content="La plataforma para encontrar trabajos remotos online de manera sencilla." />
+				<meta property="og:description" content="La plataforma para encontrar trabajos remotos online de manera sencilla. ¿A qué esperas para encontrar el teletrabajo de tus sueños?" />
+				<meta name="twitter:description" content="La plataforma para encontrar trabajos remotos online de manera sencilla. ¿A qué esperas para encontrar el teletrabajo de tus sueños?" />
 				<meta name="robots" content="index,follow" />
 				<meta name="googlebot" content="index,follow" />
 			</Head>
