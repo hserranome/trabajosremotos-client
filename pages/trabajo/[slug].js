@@ -110,8 +110,9 @@ SingleJob.getInitialProps = async ({ query }) => {
 			return { job: null };
 		}
 
-		const job = jobs[0];
-		job.link = job.link.includes('@') ? `mailto:${job.link}` : `${job.link}?ref=trabajosremotos`;
+    const job = jobs[0];
+    let emailTemplate = `?body=%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%20-%20El%20Equipo%20de%20Trabajos%20Remotos%20%0A%20trabajosremotos.es`
+		job.link = job.link.includes('@') ? `mailto:${job.link}${emailTemplate}` : `${job.link}?ref=trabajosremotos`;
 		
 		// Dates to show schema.org job listing
 		job.schemaDatePosted = job.created_at;
