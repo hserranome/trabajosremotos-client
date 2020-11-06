@@ -10,6 +10,7 @@ import '../static/css/easymde.min.css';
 import '../static/css/nprogress.css';
 
 import Layout from '../components/Layout';
+import { initGA } from '../utils/analytics';
 
 Sentry.init({ dsn: "https://ac20f57b88b54d819e761b537545aa93@o376610.ingest.sentry.io/5197584" });
 
@@ -26,7 +27,11 @@ class MyApp extends App {
 		}
 
 		return { pageProps }
-	}
+  }
+  
+  componentDidMount() {
+    initGA();
+  }
 
 	componentDidCatch(error, errorInfo) {
 		Sentry.withScope((scope) => {

@@ -13,16 +13,6 @@ const Layout = (props) => {
 	const [loaded, setLoaded] = useState(false); 
 	
 	useEffect(() => {		
-		if (!window.GA_INITIALIZED) {
-			// Si no esta, iniciamos
-			ReactGA.initialize('UA-108296865-5');
-			window.GA_INITIALIZED = true;
-		}
-		ReactGA.pageview(window.location.pathname + window.location.search);
-
-		// Mailchimp
-		// window.dojoRequire(["mojo/signup-forms/Loader"], function (L) { L.start({ "baseUrl": "mc.us4.list-manage.com", "uuid": "3a042d90b01c388c7081ca588", "lid": "591a1153bf", "uniqueMethods": true }) })
-
 		window.addEventListener('load', () => {
 			setLoaded(true);
 		});
