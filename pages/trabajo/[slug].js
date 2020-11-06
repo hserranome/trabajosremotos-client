@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Markdown from 'markdown-to-jsx';
 import LazyLoad from 'react-lazyload';
 import MailForm from '../../components/MailForm';
+import ReactGA from "react-ga";
 
 import { API_URL, getLocalDate } from '../../utils';
 import Error from '../_error';
@@ -65,7 +66,7 @@ function SingleJob(props) {
 									}
 
 									
-									<a target="_blank" rel="noopener" className="main-button solicitar" href={job.link}>Solicitar trabajo</a>
+                  <a target="_blank" rel="noopener" className="main-button solicitar" onClick={() => ReactGA.event({ category: 'Trabajo', action: 'Solicitar trabajo', label: job.slug })} href={job.link}>Solicitar trabajo</a>
 								</div>
 								<MailForm />
 							</div>
@@ -82,7 +83,7 @@ function SingleJob(props) {
 									</div>
 								) : ''}
 								<h2>{job.company}</h2>
-								<a target="_blank" rel="noopener" className="main-button" href={job.link}>Solicitar trabajo</a>
+                <a target="_blank" rel="noopener" onClick={() => ReactGA.event({ category: 'Trabajo', action: 'Solicitar trabajo', label: job.slug })} className="main-button" href={job.link}>Solicitar trabajo</a>
 							</div>
 						</div>
 						)

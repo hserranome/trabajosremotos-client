@@ -3,9 +3,11 @@ import fetch from 'isomorphic-unfetch';
 import InfiniteScroll from 'react-infinite-scroller';
 import Markdown from 'markdown-to-jsx';
 import LazyLoad from 'react-lazyload';
+import ReactGA from "react-ga";
 
 import { WEB_URL, API_URL, getLocalDate } from '../utils';
 import addVisitedJob from '../utils/addVisitedJob';
+import { logPageView } from '../utils/analytics';
 
 function JobsList(props) {
 	const { initialJobs, query } = props;
@@ -65,7 +67,10 @@ function JobsList(props) {
 				id: 'homepage'
 			}, document.title, `${WEB_URL}${url}`);
 			addVisitedJob(jobId)
-		}
+    }
+    // Eventos para google anayltics
+    logPageView();
+
 		scrollToTargetAdjusted(jobId);
 	}
 
@@ -125,7 +130,7 @@ function JobsList(props) {
 												<div className="description">
 													<Markdown>{job.description ? job.description : ''}</Markdown>
 													<div />
-													<a target="_blank" rel="noopener" className="main-button solicitar" href={job.link.includes('@') ? `mailto:${job.link}` : job.link}>Solicitar trabajo</a>
+                          <a target="_blank" rel="noopener" className="main-button solicitar" onClick={() => ReactGA.event({ category: 'Trabajo', action: 'Solicitar trabajo', label: job.slug })} href={job.link.includes('@') ? `mailto:${job.link}` : job.link}>Solicitar trabajo</a>
 												</div>
 											)
 											: null
