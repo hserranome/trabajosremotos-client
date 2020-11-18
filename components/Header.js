@@ -88,11 +88,11 @@ const Header = (props) => {
                             <a>Inicio</a>
                         </Link>
                     </li>
-                    <li className='categorias'>
+                    {/* <li className='categorias'>
                         <Link activeClassName='active' href='/categorias'>
                             <a>Categorias</a>
                         </Link>
-                    </li>
+                    </li> */}
                     <li className='publicar'>
 						<a href="https://t.me/trabajos_remotos" target="_blank" rel="noopener">Telegram</a>
                     </li>
@@ -111,7 +111,7 @@ const Header = (props) => {
                     </Link>
 
                     <ul>
-                        <li className='dropdown-parent'>
+                        {/* <li className='dropdown-parent'>
                             <a>Categorias</a>
                             
                             <ul className='dropdown'>
@@ -156,7 +156,7 @@ const Header = (props) => {
                                     </Link>
                                 </li>
                             </ul>
-                        </li>
+                        </li> */}
                         <li>
                             <Link href='/blog'>
                                 <a>Blog</a>
@@ -189,6 +189,11 @@ const Header = (props) => {
 								<li key='linkedin'>
 									<a rel="noopener" target="_blank" href='https://www.linkedin.com/company/trabajosremotos'>
 										Linkedin
+                            		</a>
+								</li>
+								<li key='facebook'>
+                    <a rel="noopener" target="_blank" href='https://www.facebook.com/trabajosremoto/'>
+										Facebook
                             		</a>
 								</li>
 							</ul>

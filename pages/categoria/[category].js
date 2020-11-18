@@ -2,6 +2,7 @@ import fetch from 'isomorphic-unfetch';
 import Head from 'next/head';
 import heroImg from '../../static/images/hero.jpg';
 import Link from '../../components/ActiveLink';
+import CategoryMenu from '../../components/CategoryMenu';
 
 import JobsList from '../../modules/JobsList';
 import MailForm from '../../components/MailForm';
@@ -35,6 +36,8 @@ const CategoryList = (props) => {
 			</div>
 
 			<div className="trabajos nobottom">
+        <CategoryMenu />
+        
 				<MailForm />
 				
 				<JobsList
