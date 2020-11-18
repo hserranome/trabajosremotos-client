@@ -191,6 +191,11 @@ const Header = (props) => {
 										Linkedin
                             		</a>
 								</li>
+								<li key='facebook'>
+                    <a rel="noopener" target="_blank" href='https://www.facebook.com/trabajosremoto/'>
+										Facebook
+                            		</a>
+								</li>
 							</ul>
 						</li>
 						<li>

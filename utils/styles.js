@@ -176,7 +176,8 @@ export const GlobalStyle = createGlobalStyle`
 					justify-content: center;
 					align-items: center;
 					display: inline-block;
-					margin-right: 6px;
+          margin-right: 6px;
+          margin-bottom: 6px;
 					transition: .1s linear;
 
 					img{
