@@ -251,7 +251,47 @@ export const GlobalStyle = createGlobalStyle`
 			}
 		}
 	}
-	/* ----------------------------------- */
+  /* ----------------------------------- */
+  
+  /* category vertical menu xd */
+  .categories{
+    overflow-x: scroll;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    
+    @media only screen and (min-width : 768px) {
+      overflow-x: initial;
+      justify-content: center;
+      margin-bottom: 2rem;
+		}
+    a{
+      flex: 0 0 auto;
+      padding-right: 20px;
+      display: flex;
+      justify-content: center;
+      flex-flow: column wrap;
+      align-items: center;
+      text-align: center;
+
+      i{
+        font-style: normal;
+        font-size: 20px;
+      }
+      span{
+        font-size: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 12px;
+      }
+    }
+  }
 
 	/* List of jobs */
 	.trabajos{

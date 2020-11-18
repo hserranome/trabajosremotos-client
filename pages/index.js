@@ -1,5 +1,6 @@
 import JobsList from '../modules/JobsList';
 import MailForm from '../components/MailForm';
+import CategoryMenu from '../components/CategoryMenu';
 import fetch from 'isomorphic-unfetch';
 import Head from 'next/head';
 import Link from '../components/ActiveLink';
@@ -31,6 +32,8 @@ const Index = (props) => {
 			</div>
 
 			<div className="trabajos nobottom">
+        <CategoryMenu />
+        
 				<MailForm />
 				
 				<JobsList
