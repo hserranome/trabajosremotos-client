@@ -37,7 +37,7 @@ const CategoryMenu = () => (
       >
         <a>
           <i>🎧</i>
-          <span>Atención al cliente</span>
+          <span>Atención <br/> al cliente</span>
         </a>
       </Link>
       <Link
@@ -47,6 +47,14 @@ const CategoryMenu = () => (
         <a>
           <i>📦</i>
           <span>Otros</span>
+        </a>
+      </Link>
+      <Link
+        href='https://t.me/trabajos_remotos'
+      >
+        <a>
+          <i>📱</i>
+          <span>Grupo de <br/> Telegram</span>
         </a>
       </Link>
       <div style={{marginLeft: '2rem'}}></div>

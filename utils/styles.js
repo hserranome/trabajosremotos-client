@@ -259,7 +259,7 @@ export const GlobalStyle = createGlobalStyle`
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
     max-width: 100%;
     margin: 0;
@@ -272,7 +272,7 @@ export const GlobalStyle = createGlobalStyle`
 		}
     a{
       flex: 0 0 auto;
-      padding-right: 20px;
+      padding-right: 26px;
       display: flex;
       justify-content: center;
       flex-flow: column wrap;
@@ -281,10 +281,10 @@ export const GlobalStyle = createGlobalStyle`
 
       i{
         font-style: normal;
-        font-size: 20px;
+        font-size: 18px;
       }
       span{
-        font-size: 12px;
+        font-size: 10px;
         font-weight: bold;
         text-transform: uppercase;
         letter-spacing: 1px;
