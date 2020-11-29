@@ -18,8 +18,14 @@ const Index = (props) => {
 			<Head>
 				<title>Trabajos remotos - Tu tablón de empleo remoto exclusivamente en español</title>
 
-				<meta property="og:description" content="La plataforma para encontrar trabajos remotos online de manera sencilla. ¿A qué esperas para encontrar el teletrabajo de tus sueños?" />
-				<meta name="twitter:description" content="La plataforma para encontrar trabajos remotos online de manera sencilla. ¿A qué esperas para encontrar el teletrabajo de tus sueños?" />
+				<meta name="robots" content="all" />
+				<meta property="description" content={`La plataforma para encontrar trabajos remotos online de manera sencilla. ¿A qué esperas para encontrar el teletrabajo de tus sueños?`} />
+				<meta property="og:title" content={`Tu tablón de empleo remoto exclusivamente en español`} key="trabajos-title-og" />
+				<meta property="og:image" content="https://api.trabajosremotos.es/uploads/index_picture_209aae9a09.jpeg" key="trabajos-logo-og" />
+				<meta property="og:description" content={`La plataforma para encontrar trabajos remotos online de manera sencilla. ¿A qué esperas para encontrar el teletrabajo de tus sueños?`} />
+				<meta name="twitter:title" content={`Tu tablón de empleo remoto exclusivamente en español`} key="trabajos-title-twitter" />
+				<meta name="twitter:image" content="https://api.trabajosremotos.es/uploads/index_picture_209aae9a09.jpeg" key="trabajos-image-twitter" />
+				<meta name="twitter:description" content={`La plataforma para encontrar trabajos remotos online de manera sencilla. ¿A qué esperas para encontrar el teletrabajo de tus sueños?`} />
 				<meta name="robots" content="index,follow" />
 				<meta name="googlebot" content="index,follow" />
 			</Head>

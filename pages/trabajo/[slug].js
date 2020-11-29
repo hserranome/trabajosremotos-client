@@ -21,7 +21,7 @@ function SingleJob(props) {
 	}, []);
 
 	const jobDescriptionSEO = `${job.description.substring(0, 50)}...`;
-	const trabajosRemotosLogo = 'https://www.trabajosremotos.es/static/images/logo.jpg';
+	const trabajosRemotosLogo = 'https://api.trabajosremotos.es/uploads/index_picture_209aae9a09.jpeg';
 	
 	return (
 		<div>
