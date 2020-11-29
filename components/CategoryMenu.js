@@ -42,6 +42,15 @@ const CategoryMenu = () => (
       </Link>
       <Link
         href='/categoria/[category]'
+        as='/categoria/gamedev'
+      >
+        <a>
+          <i>🎮</i>
+          <span>GameDev</span>
+        </a>
+      </Link>
+      <Link
+        href='/categoria/[category]'
         as='/categoria/otros'
       >
         <a>
@@ -55,6 +64,14 @@ const CategoryMenu = () => (
         <a>
           <i>📱</i>
           <span>Grupo de <br/> Telegram</span>
+        </a>
+      </Link>
+      <Link
+		href='https://notionmango.com/'
+      >
+        <a>
+          <i>📚</i>
+          <span>Plantillas de <br/> Notion</span>
         </a>
       </Link>
       <div style={{marginLeft: '2rem'}}></div>

@@ -88,11 +88,6 @@ const Header = (props) => {
                             <a>Inicio</a>
                         </Link>
                     </li>
-                    {/* <li className='categorias'>
-                        <Link activeClassName='active' href='/categorias'>
-                            <a>Categorias</a>
-                        </Link>
-                    </li> */}
                     <li className='publicar'>
 						<a href="https://t.me/trabajos_remotos" target="_blank" rel="noopener">Telegram</a>
                     </li>
@@ -111,52 +106,6 @@ const Header = (props) => {
                     </Link>
 
                     <ul>
-                        {/* <li className='dropdown-parent'>
-                            <a>Categorias</a>
-                            
-                            <ul className='dropdown'>
-                                <li key='/categoria/programacion'>
-									<Link 
-										href='/categoria/[category]' 
-										as='/categoria/programacion' 
-									>
-                                        <a>Programación</a>
-                                    </Link>
-                                </li>
-                                <li key='/categoria/diseno'>
-									<Link 
-										href='/categoria/[category]'
-										as='/categoria/diseno' 
-									>
-                                        <a>Diseño</a>
-                                    </Link>
-                                </li>
-                                <li key='/categoria/marketing'>
-                                    <Link
-										href='/categoria/[category]' 
-										as='/categoria/marketing'
-									>
-                                        <a>Marketing</a>
-                                    </Link>
-                                </li>
-                                <li key='/categoria/atencion-al-cliente'>
-									<Link 
-										href='/categoria/[category]' 
-										as='/categoria/atencion-al-cliente'
-									>
-                                        <a>Atención al cliente</a>
-                                    </Link>
-                                </li>
-                                <li key='/categoria/otros'>
-									<Link 
-										href='/categoria/[category]' 
-										as='/categoria/otros'
-									>
-                                        <a>Otros</a>
-                                    </Link>
-                                </li>
-                            </ul>
-                        </li> */}
                         <li>
                             <Link href='/blog'>
                                 <a>Blog</a>

@@ -79,6 +79,21 @@ const CategoryList = (props) => {
 							``
 					}
 
+					{/* Trabajos de gamedev */}
+					{
+						categoryTextName === 'GameDev'
+							?
+							<div>
+								<h3>Trabajos remotos de desarrollo de videojuegos</h3>
+
+								<p>
+									Descubre los mejores teletrabajos en la industria de los videojuegos. Seas un desarrollador, un concept artist o modelador 3D. No dejes que tu localización limite la búsqueda de trabajos para encontrar la empresa ideal para ti. 
+								</p>
+							</div>
+							:
+							``
+					}
+
 					{/* Trabajos de diseño */}
 					{
 						categoryTextName === 'Diseño'
