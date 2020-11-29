@@ -108,15 +108,29 @@ export const GlobalStyle = createGlobalStyle`
 	/* Hero section on some pages */
 	.hero{
 		max-width: 100%;
-		min-height: 30vh;
+		min-height: 45vh;
 		display: flex; flex-flow: column wrap;
 		box-sizing: border-box;
 		justify-content: center; align-items: center;
-		border-bottom: 1px solid #dedede;
 		background-size: cover;
 		background-position: center;
 		position: relative;
 		color: white;
+		overflow: hidden;
+
+		.wave{
+			position: absolute;
+			transition: none;
+			bottom: -5px;
+			left: 0;
+			z-index: 20;
+			width: 100vw;
+			fill: white;
+			
+			@media only screen and (min-width : 800px) {
+				bottom: -50px;
+			}
+		}
 		
 		.container{
 			z-index: 6;
