@@ -9,15 +9,16 @@ export const GlobalStyle = createGlobalStyle`
 
 
 	*/
-	@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600');
+	@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap');
 
 	body{
 		padding: 0; margin: 0 auto;
 		left: 0; top: 0;
 		font-weight: 300;
-		font-family: 'Montserrat', sans-serif;
+		font-family: 'Rubik', sans-serif;
 		color: #000;
 		padding-top: 64px; padding-bottom: 64px;
+		font-size: 17px;
 	}
 	html{ margin: 0; padding: 0;}
 	*, * > *{	transition: .25s linear;}
@@ -371,7 +372,6 @@ export const GlobalStyle = createGlobalStyle`
 	}
 	.trabajos .trabajo h2 span{
 		font-size: 1.2rem;
-		font-family: 'Montserrat', sans-serif;
 		color: #838383;
 		font-weight: 400;
 	}
