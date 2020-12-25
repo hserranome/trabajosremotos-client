@@ -4,43 +4,16 @@ import LazyLoad from 'react-lazyload';
 const Footer = (props) => (
     <div className="footer">
       <div className="container">
-        <div className="copy">
-					<h3>&copy; <a style={{marginLeft: 0}} rel="noopener" target="_blank" href="https://www.mango.moe?ref=trabajos">MangoMoe</a></h3>
+        <div className="copy big">
+					<div className="inside">
+						<h4>Trabajos remotos</h4>
 
-					{/* Social media buttons */}
-					<div className="img">
-						<a rel="noopener" target="_blank" href="https://twitter.com/trabajos_remoto">
-							<img src='/static/images/twitter.svg' alt='icono de twitter' />
-						</a>
-					</div>
-
-					<div className="img">
-						<a rel="noopener" target="_blank" href="https://www.linkedin.com/company/trabajosremotos">
-							<img src='/static/images/linkedin.svg' alt='icono de linkedin' />
-						</a>
-					</div>
-
-					<div className="img">
-						<a rel="noopener" target="_blank" href="https://www.instagram.com/trabajos_remoto/">
-							<img src='/static/images/instagram.svg' alt='icono de instagram' />
-						</a>
-					</div>
-
-					<div className="img">
-						<a rel="noopener" target="_blank" href="https://t.me/trabajos_remotos">
-							<img src='/static/images/telegram.svg' alt='icono de telegram' />
-						</a>
-					</div>
-
-					<div className="img">
-						<a rel="noopener" target="_blank" href="https://www.facebook.com/trabajosremoto/">
-							<img src='/static/images/facebook.svg' alt='icono de facebook' />
-						</a>
+						<p>Somos la comunidad hispanohablante más grande para encontrar empleo remoto. 🔥</p>
 					</div>
 				</div>
 
 				{/* Empty copy to have more space */}
-				<div className="copy"></div>
+				<div className="copy small"></div>
 			
 				<div className="copy">
 					<div className="inside">
@@ -68,8 +41,28 @@ const Footer = (props) => (
 			</div>
 
 			<div className="container copyright">
-				<p></p>
-				<p>test</p>
+				<p>&copy; 2020 <a style={{ marginLeft: 0 }} rel="noopener" target="_blank" href="https://www.mango.moe?ref=trabajos">MangoMoe</a></p>
+
+				<div>
+					{/* Social media buttons */}
+					<div className="img">
+						<a rel="noopener" target="_blank" href="https://www.linkedin.com/company/trabajosremotos">
+							<img src='/static/images/linkedin.svg' alt='icono de linkedin' />
+						</a>
+					</div>
+
+					<div className="img">
+						<a rel="noopener" target="_blank" href="https://www.instagram.com/trabajos_remoto/">
+							<img src='/static/images/instagram.svg' alt='icono de instagram' />
+						</a>
+					</div>
+
+					<div className="img">
+						<a rel="noopener" target="_blank" href="https://t.me/trabajos_remotos">
+							<img src='/static/images/telegram.svg' alt='icono de telegram' />
+						</a>
+					</div>
+				</div>
 			</div>
     </div>
 )
