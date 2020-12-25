@@ -2,12 +2,12 @@ import React from 'react';
 import App from 'next/app';
 import Router from 'next/router';
 import NProgress from 'nprogress'
-import GlobalStyle from '../utils/styles';
 import { CookiesProvider } from 'react-cookie';
 import * as Sentry from '@sentry/browser';
 
 import '../static/css/easymde.min.css';
 import '../static/css/nprogress.css';
+import '../static/css/style.scss';
 
 import Layout from '../components/Layout';
 import { initGA } from '../utils/analytics';
@@ -50,7 +50,6 @@ class MyApp extends App {
 		
         return (
 			<CookiesProvider>
-				<GlobalStyle />
 				<Layout {...pageProps}>
 					<Component {...pageProps} />
 				</Layout>

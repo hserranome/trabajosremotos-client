@@ -5,7 +5,7 @@ const Footer = (props) => (
     <div className="footer">
       <div className="container">
         <div className="copy">
-				<h3>&copy; <a style={{marginLeft: 0}} rel="noopener" target="_blank" href="https://www.mango.moe?ref=trabajos">Mango Milkshake</a></h3>
+				<h3>&copy; <a style={{marginLeft: 0}} rel="noopener" target="_blank" href="https://www.mango.moe?ref=trabajos">MangoMoe</a></h3>
 
 				{/* Social media buttons */}
 				<div className="img">
@@ -39,27 +39,33 @@ const Footer = (props) => (
 				</div>
       </div>
 
+			{/* Empty copy to have more space */}
 			<div className="copy"></div>
-        <div className="copy">
-          <h3>Categorías</h3>
-
-          <p><Link href="/categoria/programacion"><a>Programación</a></Link></p>
-          <p><Link href="/categoria/diseno"><a>Diseño</a></Link></p>
-          <p><Link href="/categoria/marketing"><a>Marketing</a></Link></p>
-          <p><Link href="/categoria/atencion-al-cliente"><a>Atención al cliente</a></Link></p>
-          <p><Link href="/categoria/otros"><a>Otros</a></Link></p>
-        </div>
 			
-        <div className="copy">
-          <h3>Sobre nosotros</h3>
+			<div className="copy">
+				<div className="inside">
+					<h4>Empleos remotos</h4>
 
-          <p><Link href="/publicar"><a>Publicar anuncio</a></Link></p>
-          <p><Link href="/contacto"><a>Contacto</a></Link></p>
-          <p><Link href="/cookies"><a>Política de cookies</a></Link></p>
-          <p><Link href="/privacidad"><a>Política de privacidad</a></Link></p>
-          <p><Link href="/terminos"><a>Terminos y condiciones</a></Link></p>
-        </div>
-        </div>
+					<p><Link href="/categoria/programacion"><a>Trabajos de programación</a></Link></p>
+					<p><Link href="/categoria/diseno"><a>Trabajos de diseño</a></Link></p>
+					<p><Link href="/categoria/marketing"><a>Trabajos de marketing</a></Link></p>
+					<p><Link href="/categoria/atencion-al-cliente"><a>Trabajos de atención al cliente</a></Link></p>
+					<p><Link href="/categoria/otros"><a>Otros trabajos</a></Link></p>
+				</div>
+			</div>
+			
+			<div className="copy">
+				<div className="inside">
+					<h4>Sobre nosotros</h4>
+
+					<p><Link href="/contacto"><a>Contacto</a></Link></p>
+					<p><Link href="/publicar"><a>Publicar anuncio</a></Link></p>
+					<p><Link href="/cookies"><a>Política de cookies</a></Link></p>
+					<p><Link href="/privacidad"><a>Política de privacidad</a></Link></p>
+					<p><Link href="/terminos"><a>Terminos y condiciones</a></Link></p>
+				</div>
+			</div>
+			</div>
     </div>
 )
 
