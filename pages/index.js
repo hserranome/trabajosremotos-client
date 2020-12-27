@@ -1,10 +1,11 @@
 import JobsList from '../modules/JobsList';
 import MailForm from '../components/MailForm';
 import CategoryMenu from '../components/CategoryMenu';
+import SearchBar from '../components/SearchBar';
 import fetch from 'isomorphic-unfetch';
 import Head from 'next/head';
 import Link from '../components/ActiveLink';
-import heroImg from '../static/images/hero.jpg';
+import LazyLoad from 'react-lazyload';
 
 import { API_URL, getLocalDate } from '../utils';
 
@@ -30,19 +31,19 @@ const Index = (props) => {
 				<meta name="googlebot" content="index,follow" />
 			</Head>
 
-			<div className="hero" style={{ backgroundImage: "url(" + `${heroImg}` + ")" }}>
+			<div className="hero">
 				<div className="container">
 					<h1>Trabajos remotos</h1>
 					<p className="prata">La plataforma para encontrar trabajos remotos online de manera sencilla.</p>
 				</div>
-
-				<svg viewBox="0 0 1440 120" class="wave"><path d="M1440,21.2101911 L1440,120 L0,120 L0,21.2101911 C120,35.0700637 240,42 360,42 C480,42 600,35.0700637 720,21.2101911 C808.32779,12.416393 874.573633,6.87702029 918.737528,4.59207306 C972.491685,1.8109458 1026.24584,0.420382166 1080,0.420382166 C1200,0.420382166 1320,7.35031847 1440,21.2101911 Z"></path></svg>
 			</div>
 
-			<div className="trabajos nobottom notop">
+			<SearchBar />
+
+			<div className="trabajos nobottom">
         <CategoryMenu />
         
-				<MailForm />
+				{/* <MailForm /> */}
 				
 				<JobsList
 					initialJobs={initialJobs}

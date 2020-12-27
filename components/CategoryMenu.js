@@ -9,7 +9,7 @@ const CategoryMenu = () => (
         as='/categoria/programacion'
       >
         <a>
-          <i>💻</i>
+					<img src='/static/images/programacion.svg' alt='icono de programacion' />
           <span>Programación</span>
         </a>
       </Link>
@@ -18,7 +18,7 @@ const CategoryMenu = () => (
         as='/categoria/diseno'
       >
         <a>
-          <i>🎨</i>
+					<img src='/static/images/diseno.svg' alt='icono de diseno' />
           <span>Diseño</span>
         </a>
       </Link>
@@ -27,7 +27,7 @@ const CategoryMenu = () => (
         as='/categoria/marketing'
       >
         <a>
-          <i>📊</i>
+					<img src='/static/images/marketing.svg' alt='icono de marketing' />
           <span>Marketing</span>
         </a>
       </Link>
@@ -36,7 +36,7 @@ const CategoryMenu = () => (
         as='/categoria/atencion-al-cliente'
       >
         <a>
-          <i>🎧</i>
+					<img src='/static/images/atencion.svg' alt='icono de atencion' />
           <span>Atención <br/> al cliente</span>
         </a>
       </Link>
@@ -45,7 +45,7 @@ const CategoryMenu = () => (
         as='/categoria/gamedev'
       >
         <a>
-          <i>🎮</i>
+					<img src='/static/images/gamedev.svg' alt='icono de gamedev' />
           <span>GameDev</span>
         </a>
       </Link>
@@ -54,7 +54,7 @@ const CategoryMenu = () => (
         as='/categoria/otros'
       >
         <a>
-          <i>📦</i>
+					<img src='/static/images/otros.svg' alt='icono de otros' />
           <span>Otros</span>
         </a>
       </Link>
@@ -62,7 +62,7 @@ const CategoryMenu = () => (
         href='https://t.me/trabajos_remotos'
       >
         <a>
-          <i>📱</i>
+					<img src='/static/images/telegram.svg' alt='icono de telegram' />
           <span>Grupo de <br/> Telegram</span>
         </a>
       </Link>
@@ -70,7 +70,7 @@ const CategoryMenu = () => (
 		href='https://notionmango.com/'
       >
         <a>
-          <i>📚</i>
+					<img src='/static/images/notion.svg' alt='icono de notion' />
           <span>Plantillas de <br/> Notion</span>
         </a>
       </Link>

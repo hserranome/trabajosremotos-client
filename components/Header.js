@@ -1,167 +1,54 @@
 import React, { useEffect, useState } from 'react';
 import Link from './ActiveLink';
-import slugify from 'slugify';
-import Router from 'next/router';
-import LazyLoad from 'react-lazyload';
 
 const Header = (props) => {
-	useEffect(() => {
-		window.addEventListener('click', (event) => {
-			const target = event.target; 
-			const wrapper = target.closest('.search-desktop');
-			const wrapperRef = document.querySelector('.search-desktop');
-
-			if (!target.classList.contains('search')) {
-				if (wrapperRef.classList.contains('active')) {
-					if (wrapper === null) {
-						wrapperRef.classList.remove('active');
-					}
-				}
-			}
-		});
-	}, []);
-
-	const handleSearch = (event) => {
-		event.preventDefault();
-		const input = document.querySelector('#searchQuery');
-
-		let query = slugify(input.value, { remove: /[*+~./()'"!:@]/g });
-
-		Router.push({
-			pathname: '/buscar-teletrabajos',
-			query: { filtro: query }
-		})
-
-		// Despues de buscar un filtro reseteamos el input
-		input.value = '';
-	}
-
-	const handleSearchDesktop = (event) => {
-		event.preventDefault();
-		const input = document.querySelector('#searchQueryDesktop');
-		const wrapper = document.querySelector('.search-desktop');
-
-		let query = slugify(input.value, { remove: /[*+~./()'"!:@]/g });
-
-		Router.push({
-			pathname: '/buscar-teletrabajos',
-			query: { filtro: query }
-		})
-
-		// Despues de buscar un filtro reseteamos el input y en el caso de escritorio, le quitamos la clase active para cerrarlo
-		input.value = '';
-		wrapper.classList.remove('active');
-	}
-
-	const openDesktopSearch = (event) => {
-		event.stopPropagation();
-		const wrapper = document.querySelector('.search-desktop');
-
-		wrapper.classList.toggle('active');
-	}
-	
-    return (
+	return (
 		<div>
-            <nav className='mobile top'>
-                <form method='get' id='searchform' onSubmit={(event) => handleSearch(event)}>
-					<LazyLoad once>
-                    	<img src='/static/images/search.svg' alt='icono de busqueda' />
-					</LazyLoad>
-					<label className="sr-only" htmlFor="searchQuery">Encuentra tu próximo trabajo</label>
-					<input type='text' className='field' id="searchQuery" placeholder='Encuentra tu próximo trabajo' />
-                </form>
-            </nav>
-
-			<div className="search-desktop">
-				<div className="container">
-					<form method='get' id='searchformdesktop' onSubmit={(event) => handleSearchDesktop(event)}>
-						<label className="sr-only" htmlFor="searchQueryDesktop">Encuentra tu próximo trabajo</label>
-						<input autoComplete='off' type='text' className='field' id="searchQueryDesktop" placeholder='Encuentra tu próximo trabajo' />
-					</form>
-				</div>
-			</div>
-
-            <nav className='mobile bottom'>
-                <ul>
-                    <li className='inicio'>
-                        <Link activeClassName='active' href='/'>
-                            <a>Inicio</a>
-                        </Link>
-                    </li>
-                    <li className='publicar'>
+			<nav className='mobile bottom'>
+				<ul>
+					<li className='inicio'>
+						<Link activeClassName='active' href='/'>
+							<a>Inicio</a>
+						</Link>
+					</li>
+					<li className='publicar'>
 						<a href="https://t.me/trabajos_remotos" target="_blank" rel="noopener">Telegram</a>
-                    </li>
-                    <li className='blog'>
-                        <Link activeClassName='active' href='/blog'>
-                            <a>Blog</a>
-                        </Link>
-                    </li>
-                </ul>
-            </nav>
+					</li>
+					<li className='blog'>
+						<Link activeClassName='active' href='/blog'>
+							<a>Blog</a>
+						</Link>
+					</li>
+				</ul>
+			</nav>
 
-            <nav className='desktop'>
-                <div className='container'>
-                    <Link href='/'>
-                        <div className='logo'><img src='/static/images/logo.jpg' /></div>
-                    </Link>
+			<nav className='desktop'>
+				<div className='container'>
+					<Link href='/'>
+						<div className='logo'><img src='/static/images/logo.jpg' /></div>
+					</Link>
 
-                    <ul>
-                        <li>
-                            <Link href='/blog'>
-                                <a>Blog</a>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href='/contacto'>
-                                <a>Contacto</a>
-                            </Link>
-                        </li>
-						<li className='dropdown-parent'>
-							<a>Redes sociales</a>
-
-							<ul className='dropdown'>
-								<li key='telegram'>
-									<a rel="noopener" target="_blank" href='https://t.me/trabajos_remotos'>
-										Telegram
-                            		</a>
-								</li>
-								<li key='twitter'>
-									<a rel="noopener" target="_blank" href='https://twitter.com/trabajos_remoto'>
-										Twitter
-                            		</a>
-								</li>
-								<li key='instagram'>
-									<a rel="noopener" target="_blank" href='https://www.instagram.com/trabajos_remoto/'>
-										Instagram
-                            		</a>
-								</li>
-								<li key='linkedin'>
-									<a rel="noopener" target="_blank" href='https://www.linkedin.com/company/trabajosremotos'>
-										Linkedin
-                            		</a>
-								</li>
-								<li key='facebook'>
-                    <a rel="noopener" target="_blank" href='https://www.facebook.com/trabajosremoto/'>
-										Facebook
-                            		</a>
-								</li>
-							</ul>
+					<ul>
+						<li>
+							<Link href='/blog'>
+								<a>Blog</a>
+							</Link>
 						</li>
 						<li>
-							<div className='search' onClick={openDesktopSearch}>
-								<img src='/static/images/search-thick.svg' alt='icono de busqueda' />
-							</div>
+							<Link href='/contacto'>
+								<a>Contacto</a>
+							</Link>
 						</li>
-                        <li>
-                            <Link href='/publicar'>
-                                <a className='main-button'>Publicar trabajo</a>
-                            </Link>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    )
+						<li>
+							<Link href='/publicar'>
+								<a className='main-button'>Publicar trabajo</a>
+							</Link>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	)
 }
 
 

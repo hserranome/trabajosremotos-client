@@ -59,7 +59,7 @@ const Footer = (props) => (
 
 					<div className="img">
 						<a rel="noopener" target="_blank" href="https://t.me/trabajos_remotos">
-							<img src='/static/images/telegram.svg' alt='icono de telegram' />
+							<img src='/static/images/telegram2.svg' alt='icono de telegram' />
 						</a>
 					</div>
 				</div>
