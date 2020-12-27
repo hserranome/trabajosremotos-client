@@ -34,8 +34,6 @@ const SearchBar = (props) => {
 						<span>designer</span>
 						<span>react</span> 
 						<span>php</span> 
-						<span>developer</span> 
-						<span>designer</span>
 					</p>
 				</div>
 			</div>

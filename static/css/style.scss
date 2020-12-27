@@ -122,8 +122,8 @@
 						margin-bottom: .5rem;
 
 						&:nth-child(1){ margin-left: .5rem; }
-						&:nth-child(1), &:nth-child(7){ color: #3855d8; }
-						&:nth-child(2), &:nth-child(8){ color: #a9d336; }
+						&:nth-child(1){ color: #3855d8; }
+						&:nth-child(2){ color: #a9d336; }
 						&:nth-child(3){ color: #e2b437; }
 						&:nth-child(4){ color: #4993e7; }
 						&:nth-child(5){ color: #86f147; }
@@ -143,7 +143,7 @@
 					border: none;
 					background-color: white;
 					box-sizing: border-box;
-					box-shadow: rgba(5, 10, 15, 0.04) 0px 0.3rem 1.2rem 0px;
+					box-shadow: rgba(5, 10, 15, 0.08) 0px 0.3rem 1.2rem 0px;
 				}
 
 				.search {
@@ -357,6 +357,7 @@
       justify-content: center;
       margin-bottom: 2rem;
 		}
+
     a{
       flex: 0 0 auto;
       padding-right: 30px;
@@ -364,15 +365,22 @@
       justify-content: center;
       flex-flow: column wrap;
       align-items: center;
-      text-align: center;
+			text-align: center;
+			
+			// Last icon no margin, pretty sleppy right now so I will just leave it like this
+			&:nth-child(8){
+				padding-right: 0;
+			}
 
       i{
         font-style: normal;
         font-size: 18px;
 			}
+
 			img{
 				max-width: 28px;
 			}
+
       span{
         font-size: 12px;
         font-weight: 500;
