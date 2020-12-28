@@ -13,13 +13,13 @@ const Blog = ({ posts }) => {
 			<GridContainer className="blog-container">
 				{posts ? posts.map((post) => (
 					<BlogPost key={post.id} href={`/blog/${post.slug}`}>
-						<PostThumbnail
-							src={post.thumbnail
-									? `${API_URL}${post.thumbnail.url}`
-									: null
-								}
-						/>
 						<PostContent>
+							<PostThumbnail
+								src={post.thumbnail
+										? `${API_URL}${post.thumbnail.url}`
+										: null
+									}
+							/>
 							<PostTitle className="prata">{post.title}</PostTitle>
 							<PostDate><div></div>{post.created_at}</PostDate>
 						</PostContent>
@@ -48,27 +48,31 @@ Blog.getInitialProps = async () => {
 const GridContainer = styled.div`
 	display: grid;
     grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
-    grid-column-gap: 50px;
-    grid-row-gap: 50px;
+    grid-column-gap: 25px;
+    grid-row-gap: 25px;
     padding: 60px 20px;
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 960px;
 `;
 const PostThumbnail = styled.img`
-	min-height: 250px;
+	min-height: 150px;
+	width: 100%;
+	min-width: 100%;
+	border-radius: 10px;
+	margin-bottom: 2rem;
 `;
 const BlogPost = styled.a`
 	width: 100%;
 	max-width: 100%;
-	border-radius: 12px;
+	border-radius: 10px;
 	overflow: hidden;
 	transition: .1s linear;
-	box-shadow: 0 0.3rem 1.2rem 0 rgba(5,10,15,.08);
+	background-color: white;
 	border: 1px solid #eee;
 	
 	&:hover{
 		transform: translateY(-5px);
-		box-shadow: 0 0.3rem 1.2rem 0 rgba(5,10,15,.15);
+		box-shadow: 0 0.3rem 1.2rem 0 rgba(5,10,15, .03);
 	}
 `;
 const PostContent = styled.div`
