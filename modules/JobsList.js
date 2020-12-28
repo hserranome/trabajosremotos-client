@@ -144,16 +144,24 @@ function JobsList(props) {
 							)
 							: (
 								<a
-									className={`trabajo anuncio`}
+									className={`trabajo archive`}
 									key={job.id}
 									id={job.id}
 									href={job.Url}
 								>
 									<div className="a">
 										<div>
-											<div>
-												<h2>{job.Title} <span>AD</span></h2>
+											<div className='img'>
+												<LazyLoad once>
+													<img src={`${API_URL}${job.image.url}`} alt={'logo'} />
+												</LazyLoad>
+											</div>
+											<div className="jobInfo">
+												<h2>{job.Title}</h2>
 												<p>{job.Subtitle}</p>
+											</div>
+											<div className="cta desktop">
+												<p>{job.cta}</p>
 											</div>
 										</div>
 									</div>

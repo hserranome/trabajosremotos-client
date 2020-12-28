@@ -412,7 +412,27 @@
     
     &:hover{
       box-shadow: rgba(5, 10, 15, 0.04) 0px 0.3rem 1.2rem 0px;
-    }
+		}
+		
+		&.archive{
+			border: 2px solid #f0f0f0;
+
+			.cta{
+				width: 120px;
+				border: 2px solid #3855d8;
+				margin: 0;
+				padding: .5rem;
+				border-radius: 50px;
+				
+				p{
+					color: #3855d8;
+					font-weight: 500;
+					padding: 0;
+					text-align: center;
+					margin: 0;
+				}
+			}
+		}
 	}
 	.trabajos .trabajo.featured{ 
 		background-color: rgba(255,213,0,0.2); 
@@ -1133,7 +1153,6 @@
 
 		.trabajos, .nuevo, .anuncio, .about{ padding-top: 1rem; padding-bottom: 1rem; }
 
-		.trabajos .trabajo{ width: calc(100% - 32px); float: right; }
 		.trabajos .trabajo h2{ font-size: 1.6rem; }
 		.trabajos .trabajo h2 span, .trabajos .trabajo p{ font-size: 1rem; }
 		.trabajos .trabajo .img{ 
@@ -1155,8 +1174,4 @@
 	::selection{
 		background-color: rgba(245, 224, 106, 0.959);
 		color: black;
-	}
-
-	.trabajo.anuncio{
-		border: 4px dashed rgb(222, 222, 222) !important;
 	}
