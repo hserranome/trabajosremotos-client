@@ -167,7 +167,7 @@
 	/* Hero section on some pages */
 	.hero{
 		max-width: 100%;
-		min-height: 40vh;
+		min-height: 50vh;
 		display: flex; flex-flow: column wrap;
 		box-sizing: border-box;
 		justify-content: center; align-items: center;
@@ -177,20 +177,10 @@
 		color: white;
 		color: #202122;
 		overflow: hidden;
-		background-color: #3e75fc;
-		background-color: #e2f4fa;
+    background-color: #e2f4fa;
 		
 		.container{
-			z-index: 6;
-		}
-		&::before{
-			content: '';
-			position: absolute;
-			top: 0; left: 0;
-			width: 100%;
-			height: 100%;
-			// background-color: rgba(0, 0, 0, .4);
-			z-index: 2;
+      z-index: 6;
 		}
 	}
 	.hero p{
