@@ -111,17 +111,17 @@ const Publicar = () => {
 								}}
 							/>	
 						</label>
-						{/* Email */}
-						<label>
-							<p>Correo electrónico <span className="required"></span></p>
+						{/* Tags */}
+						<label className="small">
+							<p>Etiquetas</p>
 							<input
-								name="email"
-								type="email"
-								required
+								name="tags"
+								type="text"
+								placeholder="React, PHP, Desarrollador"
 								onChange={handleChange}
-								value={values.email || ''}
+								value={values.tags || ''}
 							/>
-							<small>Es privado y solo se usará para enviarte avisos relacionados con tu anuncio.</small>
+							<small>Máximo 8, separadas por comas</small>
 						</label>
 						{/* Category */}
 						<label className="small">
@@ -152,6 +152,29 @@ const Publicar = () => {
 								value={values.company || ''}
 							/>
 						</label>
+						{/* Company logo */}
+						<label className="small">
+							<p>Logo de la empresa</p>
+							<input
+								type="url"
+								name="logo"
+								onChange={handleChange}
+								value={values.logo || ''}
+							/>
+							<small>Url con el logo de tu empresa (recomendamos usar .png con fondo transparente)</small>
+						</label>
+						{/* Email */}
+						<label className="small">
+							<p>Correo electrónico <span className="required"></span></p>
+							<input
+								name="email"
+								type="email"
+								required
+								onChange={handleChange}
+								value={values.email || ''}
+							/>
+							<small>Es privado y solo se usará para enviarte avisos relacionados con tu anuncio.</small>
+						</label>
 						{/* Apply link */}
 						<label className="small">
 							<p>Enlace para solicitar el trabajo <span className="required"></span></p>
@@ -163,17 +186,6 @@ const Publicar = () => {
 								value={values.link || ''}
 							/>
 							<small>Puede ser una url o un correo</small>
-						</label>
-						{/* Company logo */}
-						<label className="small">
-							<p>Logo de la empresa</p>
-							<input
-								type="url"
-								name="logo"
-								onChange={handleChange}
-								value={values.logo || ''}
-							/>
-							<small>Url con el logo de tu empresa (recomendamos usar .png con fondo transparente)</small>
 						</label>
 						{/* Show Logo */}
 						<label className="custom-checkbox-row">
