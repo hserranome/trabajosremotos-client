@@ -11,8 +11,11 @@ const Header = (props) => {
 							<a>Inicio</a>
 						</Link>
 					</li>
-					<li className='publicar'>
+					<li className='tme'>
 						<a href="https://t.me/trabajos_remotos" target="_blank" rel="noopener">Telegram</a>
+					</li>
+					<li className='newsletter'>
+						<a href="https://emailoctopus.com/lists/347308e1-960d-11ea-a3d0-06b4694bee2a/forms/subscribe" target="_blank" rel="noopener">Newsletter</a>
 					</li>
 					<li className='blog'>
 						<Link activeClassName='active' href='/blog'>
@@ -37,6 +40,11 @@ const Header = (props) => {
 						<li>
 							<Link href='/contacto'>
 								<a>Contacto</a>
+							</Link>
+						</li>
+						<li>
+							<Link href='/contacto'>
+								<a href="https://emailoctopus.com/lists/347308e1-960d-11ea-a3d0-06b4694bee2a/forms/subscribe" target="_blank" rel="noopener">Newsletter</a>
 							</Link>
 						</li>
 						<li>

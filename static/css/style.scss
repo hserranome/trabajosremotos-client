@@ -98,9 +98,10 @@
 	// Search bar and tags
 	.bar{
 		background: linear-gradient(to bottom, #3e75fc 0%, #3e75fc 49%, white 50%);
+		background: linear-gradient(to bottom, #e2f4fa 0%, #e2f4fa 49%, white 50%);
 
 		.container{
-			border-radius: 6px;
+			border-radius: 2px;
 			background-color: white;
 			box-shadow: rgba(5, 10, 15, 0.04) 0px 0.3rem 1.2rem 0px;
 			text-align: left;
@@ -153,7 +154,7 @@
 					color: white;
 					box-shadow: none;
 					font-weight: 600;
-					border-radius: 6px;
+					border-radius: 2px;
 
 					&:hover{
 						cursor: pointer;
@@ -174,8 +175,10 @@
 		background-position: center;
 		position: relative;
 		color: white;
+		color: #202122;
 		overflow: hidden;
 		background-color: #3e75fc;
+		background-color: #e2f4fa;
 		
 		.container{
 			z-index: 6;
@@ -888,7 +891,8 @@
 	nav.mobile.bottom ul li.blog a::before{ background-image: url('/static/images/blog.svg'); }
 	nav.mobile.bottom ul li.inicio a::before{ background-image: url('/static/images/home.svg'); }
 	nav.mobile.bottom ul li.categorias a::before{ background-image: url('/static/images/list.svg'); }
-	nav.mobile.bottom ul li.publicar a::before{ background-image: url('/static/images/telegram.svg'); }
+	nav.mobile.bottom ul li.tme a::before{ background-image: url('/static/images/telegram.svg'); }
+	nav.mobile.bottom ul li.newsletter a::before{ background-image: url('/static/images/newsletter.svg'); }
 	/* ----------------------------------- */
 
 	/* Single job listing */
