@@ -25,10 +25,10 @@ const Publicar = () => {
 
 	// ON VALUE CHANGE, SET PRICE COUNTER AND SAVE TO LOCALSTORAGE
 	useEffect(() => {
-		let thisPrice = 0;
-		if (values.pinned) thisPrice += 8;
-		if (values.featured) thisPrice += 8;
-		if (values.showLogo) thisPrice += 8;
+		let thisPrice = 39;
+		if (values.pinned) thisPrice += 29;
+		if (values.featured) thisPrice += 19;
+		if (values.showLogo) thisPrice += 9;
 		setPrice(thisPrice);
 		localStorage.setItem("publishValues", JSON.stringify(values));
 	}, [values])
@@ -80,6 +80,8 @@ const Publicar = () => {
 				<meta property="og:description" content="La plataforma para encontrar trabajos remotos online de manera sencilla." />
 				<meta name="twitter:description" content="La plataforma para encontrar trabajos remotos online de manera sencilla." />
 			</Head>
+
+			<br/><br/><br/>
 			
 			<div className="block nuevo">
 				<div className="container">
@@ -173,15 +175,15 @@ const Publicar = () => {
 							/>
 							<small>Url con el logo de tu empresa (recomendamos usar .png con fondo transparente)</small>
 						</label>
-						{/* Pinned */}
+						{/* Show Logo */}
 						<label className="custom-checkbox-row">
 							<input
-								name="pinned"
+								name="showLogo"
 								type="checkbox"
 								onChange={handleChange}
-								checked={values.pinned || false}
+								checked={values.showLogo || false}
 							/>
-							<p>Ancla tu anuncio arriba del todo durante dos semanas <span>+8€</span></p>
+							<p>Muestra el logo de tu empresa en la página principal <span>+9€</span></p>
 						</label>
 						{/* Featured */}
 						<label className="custom-checkbox-row">
@@ -191,17 +193,17 @@ const Publicar = () => {
 								onChange={handleChange}
 								checked={values.featured || false}
 							/>
-							<p>Destaca en amarillo tu anuncio <span>+8€</span></p>
+							<p>Destaca en amarillo tu anuncio <span>+19€</span></p>
 						</label>
-						{/* Show Logo */}
+						{/* Pinned */}
 						<label className="custom-checkbox-row">
 							<input
-								name="showLogo"
+								name="pinned"
 								type="checkbox"
 								onChange={handleChange}
-								checked={values.showLogo || false}
+								checked={values.pinned || false}
 							/>
-							<p>Muestra el logo de tu empresa en la página principal <span>+8€</span></p>
+							<p>Ancla tu anuncio arriba del todo durante dos semanas <span>+29€</span></p>
 						</label>
 						{/* Payment info */}
 						<div className="boton-pagar">
