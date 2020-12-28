@@ -7,7 +7,11 @@ const SearchBar = (props) => {
 		event.preventDefault();
 		const input = document.querySelector('#searchQuery');
 
-		let query = slugify(input.value, { remove: /[*+~./()'"!:@]/g });
+		let query = slugify(input.value, { 
+			remove: /[*+~./()'"!:@]/g, 
+			locale: 'es',
+			lower: 'true',
+		});
 
 		Router.push({
 			pathname: '/buscar-teletrabajos',

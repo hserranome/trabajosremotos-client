@@ -42,9 +42,9 @@ const Search = (props) => {
 Search.getInitialProps = async ({ query }) => {
 	try {
 		const { filtro } = query;
-		let fil = filtro.replace(' ', '%20')
+		let fil = filtro.replace(' ', '%20').toLowerCase()
 		// const thisQuery = `/jobs?title_contains=${fil}&_limit=40`;
-		const thisQuery = `/jobs?_where[_or][0][title_contains]=${fil}&_where[_or][1][company_contains]=${fil}`;
+		const thisQuery = `/jobs?_where[_or][0][title_contains]=${fil}&_where[_or][1][company_contains]=${fil}&_where[_or][2][tags.name]=${fil}&_where[_or][3][slug_contains]=${fil}`;
 
 		const res = await fetch(`${API_URL}${thisQuery}`);
 		let data = await res.json();
