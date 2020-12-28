@@ -40,6 +40,36 @@ function SingleJob(props) {
 						<meta name="twitter:description" content={`${jobDescriptionSEO} - Teletrabajo`} />
 						<meta name="robots" content="index,follow" />
 						<meta name="googlebot" content="index,follow" />
+
+						{/* Schema to show jobs on google searches */}
+						<script type='application/ld+json' dangerouslySetInnerHTML={{
+							__html: `
+							{ 
+								"@context" : "https://schema.org/",
+								"@type" : "JobPosting",
+								"title" : "${job.title}",
+								"jobLocationType": "TELECOMMUTE",
+								"description" : "${job.jobDescriptionSEO}",
+								"datePosted" : "${job.schemaDatePosted}",
+								"validThrough" : "${job.schemaValidThrough}",
+								"employmentType" : "FULL_TIME",
+								"identifier": {
+									"@type": "PropertyValue",
+									"name": "${job.company}",
+									"value": "${job.slug}"
+								},
+								"applicantLocationRequirements": {
+									"@type": "Country",
+									"name": "Remote 📍"
+								},
+								"hiringOrganization":{
+									"@type" : "Organization",
+									"name" : "${job.company}",
+									"logo" : "${job.logo ? job.logo : undefined}"
+								}
+							}
+						` }} />
+
 					</Head>
 				)
 				: (
