@@ -101,7 +101,7 @@ function JobsList(props) {
 									key={job.id}
 									id={job.id}
 								>
-									{/* This href is just so google knows there's more things on the website, with the div alone google doesnt know how to get to that page, so it doesnt index it */}
+									{/* This href is just so google knows there's more things on the website, with the div alone google doesnt know how to get to that page, so it doesnt index it (or I think thats how it works xd) */}
 									<a href={`https://trabajosremotos.es/trabajo/${job.slug}`} style={{ display: 'none' }}>{job.title}</a>
 									<div className="a">
 										<div
@@ -119,8 +119,12 @@ function JobsList(props) {
 														</LazyLoad>
 													</div>
 												)
-												: ''}
-											<div>
+                        : (
+                          <div className='img'>
+                            <p>{job.company[0]}</p>
+                          </div>
+                        )}
+											<div className="jobInfo">
 												<h2>{job.title} <span>{job.pinned ? '📌' : ''} {job.created_at}</span></h2>
 												<p>{job.company}</p>
 											</div>

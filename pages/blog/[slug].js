@@ -37,8 +37,6 @@ function SingleBlogPost(props) {
 				)
 			}
 
-			<MailForm />
-
 			<div className="anuncio blog">
 				{publicacion
 					? (

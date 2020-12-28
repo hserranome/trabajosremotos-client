@@ -10,7 +10,7 @@ const Blog = ({ posts }) => {
 			<Head>
 				<title>Blog - Trabajos remotos</title>
 			</Head>
-			<GridContainer>
+			<GridContainer className="blog-container">
 				{posts ? posts.map((post) => (
 					<BlogPost key={post.id} href={`/blog/${post.slug}`}>
 						<PostThumbnail

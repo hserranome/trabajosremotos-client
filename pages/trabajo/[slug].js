@@ -64,11 +64,9 @@ function SingleJob(props) {
 										?<Markdown>{job.description}</Markdown>
 										: ''
 									}
-
 									
                   <a target="_blank" rel="noopener" className="main-button solicitar" onClick={() => ReactGA.event({ category: 'Trabajo', action: 'Solicitar trabajo', label: job.slug })} href={job.link}>Solicitar trabajo</a>
 								</div>
-								<MailForm />
 							</div>
 
 							<div className="sidebar">

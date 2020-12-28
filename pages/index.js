@@ -1,11 +1,9 @@
 import JobsList from '../modules/JobsList';
-import MailForm from '../components/MailForm';
 import CategoryMenu from '../components/CategoryMenu';
 import SearchBar from '../components/SearchBar';
 import fetch from 'isomorphic-unfetch';
 import Head from 'next/head';
 import Link from '../components/ActiveLink';
-import LazyLoad from 'react-lazyload';
 
 import { API_URL, getLocalDate } from '../utils';
 
@@ -33,6 +31,7 @@ const Index = (props) => {
 
 			<div className="hero">
 				<div className="container">
+          <div className="desktop"><br /><br /><br /></div>
 					<h1>Trabajos remotos</h1>
 					<p className="prata">La plataforma para encontrar trabajos remotos online de manera sencilla.</p>
 				</div>
@@ -42,8 +41,6 @@ const Index = (props) => {
 
 			<div className="trabajos nobottom">
         <CategoryMenu />
-        
-				{/* <MailForm /> */}
 				
 				<JobsList
 					initialJobs={initialJobs}

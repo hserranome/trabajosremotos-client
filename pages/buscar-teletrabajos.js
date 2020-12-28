@@ -1,6 +1,7 @@
 import JobsList from '../modules/JobsList';
 import fetch from 'isomorphic-unfetch';
 import Head from 'next/head';
+import SearchBar from '../components/SearchBar';
 
 import { API_URL, getLocalDate } from '../utils';
 
@@ -17,12 +18,15 @@ const Search = (props) => {
 				<meta name="twitter:description" content="La plataforma para encontrar trabajos remotos online de manera sencilla." />
 			</Head>
 
-			<div className="hero">
-				<div className="container">
-					<h1>Trabajos remotos</h1>
-					<p className="prata">La plataforma para encontrar trabajos remotos online de manera sencilla.</p>
-				</div>
-			</div>
+      <div className="hero">
+        <div className="container">
+          <div className="desktop"><br /><br /><br /></div>
+          <h1>Trabajos remotos</h1>
+          <p className="prata">La plataforma para encontrar trabajos remotos online de manera sencilla.</p>
+        </div>
+      </div>
+
+      <SearchBar />
 
 			<div className="trabajos">
 				<JobsList
