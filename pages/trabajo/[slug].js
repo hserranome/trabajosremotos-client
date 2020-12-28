@@ -20,8 +20,10 @@ function SingleJob(props) {
 		}
 	}, []);
 
-	const jobDescriptionSEO = `${job.description.substring(0, 50)}...`;
+	const jobDescriptionSEO = `${job.description.substring(0, 100)}...`;
 	const trabajosRemotosLogo = 'https://api.trabajosremotos.es/uploads/index_picture_209aae9a09.jpeg';
+
+	console.log(jobDescriptionSEO)
 	
 	return (
 		<div>
@@ -49,7 +51,7 @@ function SingleJob(props) {
 								"@type" : "JobPosting",
 								"title" : "${job.title}",
 								"jobLocationType": "TELECOMMUTE",
-								"description" : "${job.jobDescriptionSEO}",
+								"description" : "${jobDescriptionSEO}",
 								"datePosted" : "${job.schemaDatePosted}",
 								"validThrough" : "${job.schemaValidThrough}",
 								"employmentType" : "FULL_TIME",
