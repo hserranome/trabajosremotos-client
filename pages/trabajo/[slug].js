@@ -83,37 +83,27 @@ function SingleJob(props) {
 				)
 			}
 		
-			<div className="anuncio">
+			<div className="anuncio blog">
 					{job 
 						? (
-						<div className="container">
-							<div className="content">
-								<p className="date">{job.created_at}</p>
-								<h1>{job.title}</h1>
+						<div>
+							<div className="container small">
+								<div className="content fullwidth">
+									<h1>{job.title}</h1>
+									<p className="company">
+										{job.company}
+										<span>{job.created_at}</span>
+									</p>
 
-								<div className="description">
-									{job.description
-										?<Markdown>{job.description}</Markdown>
-										: ''
-									}
-									
-                  <a target="_blank" rel="noopener" className="main-button solicitar" onClick={() => ReactGA.event({ category: 'Trabajo', action: 'Solicitar trabajo', label: job.slug })} href={job.link}>Solicitar trabajo</a>
-								</div>
-							</div>
-
-							<div className="sidebar">
-								{job.logo ? (
-									<div className="img">
-										<LazyLoad once>
-											<img
-												src={job.logo}
-												alt={'logo ' + job.company}
-											/>
-										</LazyLoad>
+									<div className="description">
+										{job.description
+											?<Markdown>{job.description}</Markdown>
+											: ''
+										}
+										
+										<a target="_blank" rel="noopener" className="main-button solicitar" onClick={() => ReactGA.event({ category: 'Trabajo', action: 'Solicitar trabajo', label: job.slug })} href={job.link}>Solicitar trabajo</a>
 									</div>
-								) : ''}
-								<h2>{job.company}</h2>
-                <a target="_blank" rel="noopener" onClick={() => ReactGA.event({ category: 'Trabajo', action: 'Solicitar trabajo', label: job.slug })} className="main-button" href={job.link}>Solicitar trabajo</a>
+								</div>
 							</div>
 						</div>
 						)
