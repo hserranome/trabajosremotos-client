@@ -15,10 +15,8 @@ const Blog = ({ posts }) => {
 					<BlogPost key={post.id} href={`/blog/${post.slug}`}>
 						<PostContent>
 							<PostThumbnail
-								src={post.thumbnail
-										? `${API_URL}${post.thumbnail.url}`
-										: null
-									}
+								// src={`${API_URL}${post.thumbnail.url}`}
+								style={{ backgroundImage: `url(${API_URL}${post.thumbnail.url})`}}
 							/>
 							<PostTitle className="prata">{post.title}</PostTitle>
 							<PostDate><div></div>{post.created_at}</PostDate>
@@ -54,12 +52,15 @@ const GridContainer = styled.div`
     margin: 0 auto;
     max-width: 960px;
 `;
-const PostThumbnail = styled.img`
-	min-height: 150px;
+const PostThumbnail = styled.div`
+	height: 150px;
 	width: 100%;
 	min-width: 100%;
 	border-radius: 10px;
 	margin-bottom: 2rem;
+	background-color: #ededed;
+	background-position: center;
+	background-size: cover;
 `;
 const BlogPost = styled.a`
 	width: 100%;
