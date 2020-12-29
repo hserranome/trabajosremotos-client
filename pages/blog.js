@@ -83,20 +83,24 @@ const PostContent = styled.div`
 const PostTitle = styled.h2`
 	font-size: 18px;
 	margin-top: 0;
-	margin-bottom: 1rem;
-
+  margin-bottom: 1rem;
+  font-weight: 400;
 	white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
+  text-overflow: ellipsis;
+  overflow: hidden;
 
-    @supports (-webkit-line-clamp: 2) {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: initial;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-    }
+  &:hover{
+    text-decoration: underline;
+  }
+
+  @supports (-webkit-line-clamp: 2) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: initial;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
 `;
 const PostDate = styled.div`
 	margin-top: 1rem;
