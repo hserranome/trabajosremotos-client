@@ -1,29 +1,36 @@
 import Head from 'next/head';
 import fetch from 'isomorphic-unfetch';
-import styled from 'styled-components';
 
 import { API_URL, getLocalDate } from '../utils';
+import PostsList from '../modules/PostsList';
 
-const Blog = ({ posts }) => {
+const query = '/posts?_sort=created_at:desc&_limit=12';
+
+const Blog = (props) => {
+	const { initialJobs, error } = props;
+
 	return (
 		<div>
 			<Head>
-				<title>Blog - Trabajos remotos</title>
+				<title>El blog de Trabajos remotos</title>
+
+				<meta name="robots" content="all" />
+				<meta property="description" content={`Blog de trabajosremotos.es, donde podrás encontrar información sobre el trabajo remoto, consejos, entrevistas y mucho mas.`} />
+				<meta property="og:title" content={`Blog de teletrabajo, productividad y mucho mas`} key="trabajos-title-og" />
+				<meta property="og:image" content="https://api.trabajosremotos.es/uploads/index_picture_209aae9a09.jpeg" key="trabajos-logo-og" />
+				<meta property="og:description" content={`Blog de trabajosremotos.es, donde podrás encontrar información sobre el trabajo remoto, consejos, entrevistas y mucho mas.`} />
+				<meta name="twitter:title" content={`Blog de teletrabajo, productividad y mucho mas`} key="trabajos-title-twitter" />
+				<meta name="twitter:image" content="https://api.trabajosremotos.es/uploads/index_picture_209aae9a09.jpeg" key="trabajos-image-twitter" />
+				<meta name="twitter:description" content={`Blog de trabajosremotos.es, donde podrás encontrar información sobre el trabajo remoto, consejos, entrevistas y mucho mas.`} />
+				<meta name="robots" content="index,follow" />
+				<meta name="googlebot" content="index,follow" />
 			</Head>
-			<GridContainer className="blog-container">
-				{posts ? posts.map((post) => (
-					<BlogPost key={post.id} href={`/blog/${post.slug}`}>
-						<PostContent>
-							<PostThumbnail
-								// src={`${API_URL}${post.thumbnail.url}`}
-								style={{ backgroundImage: `url(${API_URL}${post.thumbnail.url})`}}
-							/>
-							<PostTitle className="prata">{post.title}</PostTitle>
-							<PostDate><div></div>{post.created_at}</PostDate>
-						</PostContent>
-					</BlogPost>
-				)) : null}
-			</GridContainer>
+			
+			<PostsList
+				initialJobs={initialJobs}
+				error={error}
+				query={query}
+			/>
 		</div>
 	)
 };
@@ -32,82 +39,14 @@ export default Blog;
 
 Blog.getInitialProps = async () => {
 	try {
-		const res = await fetch(`${API_URL}/posts?_sort=created_at:DESC`);
+		// Jobs query
+		const res = await fetch(`${API_URL}${query}`);
 		let data = await res.json();
-		data = data.map((job) => ({ ...job, created_at: getLocalDate(job.created_at) }))
-		return { posts: data };
+		const initialJobs = data.map((job) => ({ ...job, created_at: getLocalDate(job.created_at) }));
+
+		return { initialJobs };
 	} catch (error) {
-		console.log(error)
-		return { error }
+		// console.log(error);
+		return { error };
 	}
 };
-
-// Styles
-const GridContainer = styled.div`
-	display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
-    grid-column-gap: 25px;
-    grid-row-gap: 25px;
-    padding: 60px 20px;
-    margin: 0 auto;
-    max-width: 960px;
-`;
-const PostThumbnail = styled.div`
-	height: 150px;
-	width: 100%;
-	min-width: 100%;
-	border-radius: 10px;
-	margin-bottom: 2rem;
-	background-color: #ededed;
-	background-position: center;
-	background-size: cover;
-`;
-const BlogPost = styled.a`
-	width: 100%;
-	max-width: 100%;
-	border-radius: 10px;
-	overflow: hidden;
-	transition: .1s linear;
-	background-color: white;
-	border: 1px solid #eee;
-	
-	&:hover{
-		transform: translateY(-5px);
-		box-shadow: 0 0.3rem 1.2rem 0 rgba(5,10,15, .03);
-	}
-`;
-const PostContent = styled.div`
-	position: relative;
-	box-sizing: border-box;
-	padding: 1rem;
-`;
-const PostTitle = styled.h2`
-	font-size: 18px;
-	margin-top: 0;
-  margin-bottom: 1rem;
-  font-weight: 400;
-	white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-
-  &:hover{
-    text-decoration: underline;
-  }
-
-  @supports (-webkit-line-clamp: 2) {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: initial;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-  }
-`;
-const PostDate = styled.div`
-	margin-top: 1rem;
-	font-size: 12px;
-	text-transform: uppercase;
-	font-weight: 400;
-	position: relative;
-	color: #444;
-`;
