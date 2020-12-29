@@ -334,7 +334,7 @@
 
 		li{
 			margin-bottom: 1rem;
-			font-size: .8rem;
+			font-size: 1.1rem;
 
 			@media only screen and (min-width : 800px) {
 				font-size: 1rem;
@@ -966,42 +966,6 @@
 		justify-content: center;
 		align-items: center;
 	}
-	.anuncio .container .sidebar{
-		flex: 0 0 100%;
-		display: block;
-		position: relative;
-		margin: 0 auto;
-		margin-bottom: 2rem;
-	}
-	.anuncio .container .sidebar a{
-		display: none;
-
-		@media only screen and (min-width : 800px) {
-			display: inline-block;
-		}
-	}
-	.anuncio .container .sidebar .img{
-		margin: 0 auto;
-		position: relative;
-		text-align: center;
-		width: 96px; max-width: 96px;
-		height: 96px; max-height: 96px;
-		display: flex; flex-flow: row wrap; justify-content: center; align-items: center;
-		background-color: white; border: 1px solid #dedede;
-		border-radius: 50px;
-		overflow: hidden;
-		margin-bottom: 1rem;
-	}
-	.anuncio .container .sidebar .img img{
-		position: absolute;
-		top: 50%; transform: translateY(-50%);
-		width: 100%; max-width: 100%;
-		height: 100%; max-height: 100%;
-		left: 0;
-	}
-	.anuncio .container .sidebar h2{
-		margin-top: 0;
-	}
 	.anuncio .container .content > h1{
 		margin: 0; padding: 0;
 		margin-top: .5rem;
@@ -1127,22 +1091,10 @@
 			text-align: center;
 		}
 
-		.anuncio .container .content{
-			flex: 0 0 65%;
-			text-align: left;
-		}
 		.anuncio .container .content.fullwidth{ 
 			flex: 0 0 70%; 
 			margin: 0 auto;
 
-		}
-		.anuncio .container .sidebar{
-			flex: 0 0 30%;
-			display: block;
-			background-color: #f8f9fa;
-			padding: 2rem 1rem;
-			border-radius: 2px;
-			box-shadow: 0 1px 5px rgba(0,0,0,0.15);
 		}
 
 		nav.mobile{ display: none; }
