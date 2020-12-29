@@ -22,7 +22,6 @@ const Confirmation = (props) => {
 	useEffect(() => {
 		const thisFunction = async () => {
 			const result = await checkJob();
-			console.log(result);
 			if (result) localStorage.clear();
 		}
 		thisFunction();
