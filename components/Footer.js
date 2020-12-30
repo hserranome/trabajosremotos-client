@@ -32,6 +32,7 @@ const Footer = (props) => (
 						<h4>Sobre nosotros</h4>
 
 						<p><Link href="/contacto"><a>Contacto</a></Link></p>
+						<p><Link href="/recursos"><a>Recursos</a></Link></p>
 						<p><Link href="/publicar"><a>Publicar anuncio</a></Link></p>
 						<p><Link href="/cookies"><a>Cookies</a></Link></p>
 						<p><Link href="/privacidad"><a>Privacidad</a></Link></p>

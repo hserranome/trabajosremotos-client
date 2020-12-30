@@ -293,6 +293,26 @@
 		}
 	}
 
+	.recursos-hero{
+		border-radius: 8px;
+		padding: 1rem;
+		
+		.content{
+			background-color: #3e74fc0c;
+			padding: 2rem;
+			text-align: left;
+
+		}
+
+		h4, p{
+			margin: 0;
+			padding: 0;
+		}
+		h4{
+			margin-bottom: .5rem;
+		}
+	}
+
 	.company-single{
 		color: #3e75fc;
 		font-weight: 500;
@@ -1029,7 +1049,7 @@
 
 	/* Contenedores que tienen margen */
 	.trabajos, .nuevo, .anuncio, .about{ margin-top: 2rem; margin-bottom: 2rem; }
-	.trabajos.notop{ margin-top: 0 !important; }
+	.notop{ margin-top: 0 !important; }
 	.trabajos.nobottom{ margin-bottom: 0 !important; }
 	/* ----------------------------------- */
 
