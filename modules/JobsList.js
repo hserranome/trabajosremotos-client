@@ -129,6 +129,16 @@ function JobsList(props) {
 												<p>{job.company}</p>
 											</div>
 										</div>
+										{job.tags.length > 0
+											? (
+												<div className="tags">
+													{job.tags.map((value, index) => {
+														if (index < 4)
+															return <a className="tag" href={`${WEB_URL}/etiqueta/${value.slug}`} key={index}>{value.name}</a>
+													})}
+												</div>
+											)
+										: ( undefined )}
 										{activeJob === job.id
 											? (
 												<div className="description">
