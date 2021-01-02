@@ -3,6 +3,8 @@ import slugify from 'slugify';
 import Router from 'next/router';
 
 const SearchBar = (props) => {
+	const { tags } = props
+	
 	const handleSearch = (event) => {
 		event.preventDefault();
 		const input = document.querySelector('#searchQuery');

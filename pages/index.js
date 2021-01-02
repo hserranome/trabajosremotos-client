@@ -85,6 +85,12 @@ Index.getInitialProps = async () => {
 		let data = await res.json();
 		const initialJobs = data.map((job) => ({ ...job, created_at: getLocalDate(job.created_at) }));
 
+		// Tags
+		const tag = await fetch(`${API_URL}/tags?_sort=jobs:DESC&_limit=6`)
+		const tags = await tag.json()
+
+		console.log(tags)
+
 		// Before returning the jobs, add the advertisement to the array of jobs
 		try { if (ads.length !== 0 && ads[0].Active === true) initialJobs.splice(5, 0, ads[0]) } catch{ console.error('cannot load ads') };
 
