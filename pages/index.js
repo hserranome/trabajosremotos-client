@@ -86,7 +86,7 @@ Index.getInitialProps = async () => {
 		const initialJobs = data.map((job) => ({ ...job, created_at: getLocalDate(job.created_at) }));
 
 		// Tags
-		const tag = await fetch(`${API_URL}/tags?_sort=jobs:DESC&_limit=6`)
+		const tag = await fetch(`${API_URL}/tags/popular`)
 		const tags = await tag.json()
 
 		console.log(tags)
