@@ -85,10 +85,6 @@ Index.getInitialProps = async () => {
 		let data = await res.json();
 		const initialJobs = data.map((job) => ({ ...job, created_at: getLocalDate(job.created_at) }));
 
-		// Tags
-		const tag = await fetch(`${API_URL}/tags/popular`)
-		const tags = await tag.json()
-
 		console.log(tags)
 
 		// Before returning the jobs, add the advertisement to the array of jobs

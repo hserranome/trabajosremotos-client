@@ -2,6 +2,8 @@ import React from "react";
 import slugify from 'slugify';
 import Router from 'next/router';
 
+import { WEB_URL } from '../utils';
+
 const SearchBar = (props) => {
 	const { tags } = props
 	
@@ -34,12 +36,12 @@ const SearchBar = (props) => {
 
 				<div className="tags">
 					<p>Etiquetas populares: 
-						<span>react</span> 
-						<span>php</span> 
-						<span>developer</span> 
-						<span>designer</span>
-						<span>react</span> 
-						<span>php</span> 
+						<span><a href={`${WEB_URL}/etiqueta/seo`}>seo</a></span> 
+						<span><a href={`${WEB_URL}/etiqueta/react`}>react</a></span> 
+						<span><a href={`${WEB_URL}/etiqueta/javascript`}>javascript</a></span> 
+						<span><a href={`${WEB_URL}/etiqueta/diseno`}>diseño</a></span>
+						<span><a href={`${WEB_URL}/etiqueta/redes-sociales`}>redes sociales</a></span> 
+						<span><a href={`${WEB_URL}/etiqueta/photoshop`}>photoshop</a></span> 
 					</p>
 				</div>
 			</div>
