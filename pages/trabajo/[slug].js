@@ -99,7 +99,7 @@ function SingleJob(props) {
 											: ''
 										}
 										
-										<a target="_blank" rel="noopener" className="main-button solicitar" onClick={() => ReactGA.event({ category: 'Trabajo', action: 'Solicitar trabajo', label: job.slug })} href={job.link}>Solicitar trabajo</a>
+										<a target="_blank" rel="noopener" className="main-button solicitar umami--click--solicitar-trabajo" href={job.link}>Solicitar trabajo</a>
 									</div>
 								</div>
 							</div>

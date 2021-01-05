@@ -82,10 +82,6 @@ const Cookies = (props) => {
                         <h4>COOKIES DE TERCEROS.</h4>
 
                         <p>
-                            Esta página web utiliza servicios de terceros para recopilar información con fines estadísticos y de uso de la web. Se usan cookies de Google Analytics para mejorar la publicidad que se incluye en el sitio web. Son utilizadas para recopilar información sobre como el usuario interactua con la web.
-                        </p>
-
-                        <p>
                             Nuestro sitio incluye otras funcionalidades proporcionadas por terceros. Usted puede fácilmente compartir el contenido en redes sociales como Facebook, Twitter o Google +, con los botones que hemos incluido a tal efecto.
                         </p>
 

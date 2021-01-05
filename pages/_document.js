@@ -39,7 +39,9 @@ export default class MyDocument extends Document {
 	render() {
 		return (
 			<Html lang="es">
-				<Head />
+			<Head>
+				<script async defer data-website-id="12f8100f-0cfd-4078-9abb-87fa575870dd" src="https://analytics.mango.moe/umami.js"></script>
+			</Head>
 				<body>
 					<Main />
 					<NextScript />
