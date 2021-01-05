@@ -770,7 +770,7 @@
 		background-color: transparent;
 	}
 	nav.desktop .logo:hover{ cursor :pointer; }
-	nav.desktop img{ max-height: 44px; }
+	nav.desktop img{ max-height: 40px; border-radius: 50%; }
 	nav.desktop .container{
 		display: flex;
 		flex-flow: row nowrap;
