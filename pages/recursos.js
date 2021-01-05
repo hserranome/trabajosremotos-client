@@ -17,10 +17,10 @@ const Recursos = (props) => {
 				<meta name="robots" content="all" />
 				<meta property="description" content={`Recursos para trabajadores remotos, aplicaciones, tips y consejos para hacer tu jornada remota mas amena.`} />
 				<meta property="og:title" content={`Recursos para trabajadores remotos`} key="trabajos-title-og" />
-				<meta property="og:image" content="https://api.trabajosremotos.es/uploads/index_picture_209aae9a09.jpeg" key="trabajos-logo-og" />
+				<meta property="og:image" content="https://api.trabajosremotos.es/uploads/Frame_2_7b94d3392d.jpeg" key="trabajos-logo-og" />
 				<meta property="og:description" content={`Recursos para trabajadores remotos, aplicaciones, tips y consejos para hacer tu jornada remota mas amena.`} />
 				<meta name="twitter:title" content={`Recursos para trabajadores remotos`} key="trabajos-title-twitter" />
-				<meta name="twitter:image" content="https://api.trabajosremotos.es/uploads/index_picture_209aae9a09.jpeg" key="trabajos-image-twitter" />
+				<meta name="twitter:image" content="https://api.trabajosremotos.es/uploads/Frame_2_7b94d3392d.jpeg" key="trabajos-image-twitter" />
 				<meta name="twitter:description" content={`Recursos para trabajadores remotos, aplicaciones, tips y consejos para hacer tu jornada remota mas amena.`} />
 				<meta name="robots" content="index,follow" />
 				<meta name="googlebot" content="index,follow" />

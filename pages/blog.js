@@ -17,10 +17,10 @@ const Blog = (props) => {
 				<meta name="robots" content="all" />
 				<meta property="description" content={`Blog de trabajosremotos.es, donde podrás encontrar información sobre el trabajo remoto, consejos, entrevistas y mucho mas.`} />
 				<meta property="og:title" content={`Blog de teletrabajo, productividad y mucho mas`} key="trabajos-title-og" />
-				<meta property="og:image" content="https://api.trabajosremotos.es/uploads/index_picture_209aae9a09.jpeg" key="trabajos-logo-og" />
+				<meta property="og:image" content="https://api.trabajosremotos.es/uploads/Frame_2_7b94d3392d.jpeg" key="trabajos-logo-og" />
 				<meta property="og:description" content={`Blog de trabajosremotos.es, donde podrás encontrar información sobre el trabajo remoto, consejos, entrevistas y mucho mas.`} />
 				<meta name="twitter:title" content={`Blog de teletrabajo, productividad y mucho mas`} key="trabajos-title-twitter" />
-				<meta name="twitter:image" content="https://api.trabajosremotos.es/uploads/index_picture_209aae9a09.jpeg" key="trabajos-image-twitter" />
+				<meta name="twitter:image" content="https://api.trabajosremotos.es/uploads/Frame_2_7b94d3392d.jpeg" key="trabajos-image-twitter" />
 				<meta name="twitter:description" content={`Blog de trabajosremotos.es, donde podrás encontrar información sobre el trabajo remoto, consejos, entrevistas y mucho mas.`} />
 				<meta name="robots" content="index,follow" />
 				<meta name="googlebot" content="index,follow" />
