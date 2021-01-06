@@ -160,7 +160,7 @@ function JobsList(props) {
 										<div>
 											<div className='img'>
 												<LazyLoad once>
-													<img src={`${API_URL}${job.image.url}`} alt={'logo'} />
+													<img src={`${API_URL}${job?.image?.url}`} alt={'logo'} />
 												</LazyLoad>
 											</div>
 											<div className="jobInfo">
