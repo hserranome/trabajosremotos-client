@@ -74,6 +74,7 @@ const Index = (props) => {
 
 Index.getInitialProps = async () => {
 	const thisQuery = `/jobs?_sort=pinned:DESC,created_at:desc&_limit=40`;
+	
 	try {
 		// Advertisement query
 		const ad = await fetch(`${API_URL}/archives?_sort=active:DESC&_limit=1`);

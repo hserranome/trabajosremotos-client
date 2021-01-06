@@ -138,5 +138,6 @@ const PostDescription = styled.p`
 	font-size: 1rem;
 	font-weight: 400;
 	position: relative;
+	min-height: 180px;
 	color: #444;
 `;

@@ -17,9 +17,6 @@ function JobsList(props) {
 
 	const loadMore = async () => {
 		try {
-			console.log(query)
-			console.log(jobs.length)
-			console.log(initialJobs)
 			const res = await fetch(`${API_URL}${query}&_start=${jobs.length}`);
 			let data = await res.json();
 			const nextJobs = data.map((job) => ({ ...job, created_at: getLocalDate(job.created_at) }))
