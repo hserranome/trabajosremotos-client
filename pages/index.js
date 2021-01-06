@@ -7,10 +7,8 @@ import Link from '../components/ActiveLink';
 
 import { WEB_URL, API_URL, getLocalDate } from '../utils';
 
-const query = '/jobs?_sort=pinned:DESC,created_at:desc&_limit=40';
-
 const Index = (props) => {
-	const { initialJobs, error } = props;
+	const { initialJobs, error, query } = props;
 
 	return (
 		<div>
@@ -75,25 +73,26 @@ const Index = (props) => {
 };
 
 Index.getInitialProps = async () => {
+	const thisQuery = `/jobs?_sort=pinned:DESC,created_at:desc&_limit=2`;
 	try {
 		// Advertisement query
 		const ad = await fetch(`${API_URL}/archives?_sort=active:DESC&_limit=1`);
 		const ads = await ad.json();
 
 		// Jobs query
-		const res = await fetch(`${API_URL}${query}`);
-		let data = await res.json();
-		const initialJobs = data.map((job) => ({ ...job, created_at: getLocalDate(job.created_at) }));
+		const res = await fetch(`${API_URL}${thisQuery}`);
+		const jobs = await res.json();
 
-		console.log(tags)
+		// Format date and sort jobs
+		const initialJobs = jobs.map((job) => ({ ...job, created_at: getLocalDate(job.created_at) }));
 
 		// Before returning the jobs, add the advertisement to the array of jobs
-		try { if (ads.length !== 0 && ads[0].Active === true) initialJobs.splice(5, 0, ads[0]) } catch{ console.error('cannot load ads') };
+		try { if (ads.length !== 0 && ads[0].Active === true) initialJobs.splice(5, 0, ads[0]) } catch { console.error('cannot load ads') };
 
-		return { initialJobs };
+		return { initialJobs, query: thisQuery };
 	} catch (error) {
-		// console.log(error);
-		return { error };
+		console.error(error)
+		return { error }
 	}
 };
 

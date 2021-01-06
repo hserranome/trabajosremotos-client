@@ -168,6 +168,8 @@ CategoryList.getInitialProps = async ({ query }) => {
 		
 		// add category name to the query
 		const categoryName = jobs.length > 0 ? jobs[0].category.name : 'none';
+
+		// Format date and sort jobs
 		const initialJobs = jobs.map((job) => ({ ...job, created_at: getLocalDate(job.created_at) }));
 
 		// Before returning the jobs, add the advertisement to the array of jobs
