@@ -4,27 +4,27 @@ import { WEB_URL } from '../utils';
 const CategoryMenu = () => (
 	<div className="container">
 		<div className="categories">
-			<a href={`${WEB_URL}categoria/programacion`} >
+			<a href={`${WEB_URL}/categoria/programacion`} >
 				<img src='/static/images/programacion.svg' alt='icono de programacion' />
 				<span>Programación</span>
 			</a>
-			<a href={`${WEB_URL}categoria/diseno`}>
+			<a href={`${WEB_URL}/categoria/diseno`}>
 				<img src='/static/images/diseno.svg' alt='icono de diseno' />
 				<span>Diseño</span>
 			</a>
-			<a href={`${WEB_URL}categoria/marketing`}>
+			<a href={`${WEB_URL}/categoria/marketing`}>
 				<img src='/static/images/marketing.svg' alt='icono de marketing' />
 				<span>Marketing</span>
 			</a>
-			<a href={`${WEB_URL}categoria/atencion-al-cliente`}>
+			<a href={`${WEB_URL}/categoria/atencion-al-cliente`}>
 				<img src='/static/images/atencion.svg' alt='icono de atencion' />
 				<span>Atención <br /> al cliente</span>
 			</a>
-			<a href={`${WEB_URL}categoria/gamedev`}>
+			<a href={`${WEB_URL}/categoria/gamedev`}>
 				<img src='/static/images/gamedev.svg' alt='icono de gamedev' />
 				<span>GameDev</span>
 			</a>
-			<a href={`${WEB_URL}categoria/otros`}>
+			<a href={`${WEB_URL}/categoria/otros`}>
 				<img src='/static/images/otros.svg' alt='icono de otros' />
 				<span>Otros</span>
 			</a>
