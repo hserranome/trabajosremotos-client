@@ -26,7 +26,15 @@ class MyApp extends App {
 		}
 
 		return { pageProps }
-  }
+	}
+	
+	componentDidMount() {
+		try {
+			console.log("%c(┬┬﹏┬┬)", "color: red; font-family:monospace; font-size: 20px");
+			console.log("%cCeci siempre gana.", "color: blue; font-family:monospace; font-size: 20px");
+			console.log("%c༼ つ ◕_◕ ༽つ", "color: green; font-family:monospace; font-size: 20px");
+		} catch (error) { }
+	}
   
 	componentDidCatch(error, errorInfo) {
 		Sentry.withScope((scope) => {
