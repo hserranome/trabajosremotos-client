@@ -5,7 +5,7 @@ import fetch from 'isomorphic-unfetch';
 import Head from 'next/head';
 import Link from '../components/ActiveLink';
 
-import { API_URL, getLocalDate } from '../utils';
+import { WEB_URL, API_URL, getLocalDate } from '../utils';
 
 const query = '/jobs?_sort=pinned:DESC,created_at:desc&_limit=40';
 
@@ -54,11 +54,11 @@ const Index = (props) => {
 					<div>
 						<h3>Misión de Trabajos Remotos</h3>
 
-						<p>Trabajos remotos nace en 2019 para ayudar a todas aquellas personas que quieren dar el paso al teletrabajo y no saben por donde empezar, publicando ofertas de trabajos remotos de manera frecuente y dando información en nuestro <Link href="/blog"><a>blog</a></Link>.</p>
+						<p>Trabajos remotos nace en 2019 para ayudar a todas aquellas personas que quieren dar el paso al teletrabajo y no saben por donde empezar, publicando ofertas de trabajos remotos de manera frecuente y dando información en nuestro <a href={`${WEB_URL}/blog`}>blog</a>.</p>
 
 						<h3>Situación actual del teletrabajo</h3>
 
-						<p>Cada vez más empresas están buscando perfiles remotos para sus nuevas contrataciones, no sólo por la situación actual si no por los <Link href="/blog/que-es-el-teletrabajo-o-trabajo-en-remoto"><a>beneficios</a></Link> que el teletrabajo tiene.</p>
+						<p>Cada vez más empresas están buscando perfiles remotos para sus nuevas contrataciones, no sólo por la situación actual si no por los <a href={`${WEB_URL}/blog/que-es-el-teletrabajo-o-trabajo-en-remoto`}>beneficios</a> que el teletrabajo tiene.</p>
 
 						<p>La demanda de teletrabajo ha ido creciendo con los años y estamos en un punto en el cual es cada vez más normal pedir el trabajo en remoto como beneficio en un nuevo puesto de trabajo.</p>
 
