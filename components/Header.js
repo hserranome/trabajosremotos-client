@@ -18,8 +18,8 @@ const Header = (props) => {
 						<a href="https://emailoctopus.com/lists/347308e1-960d-11ea-a3d0-06b4694bee2a/forms/subscribe" target="_blank" rel="noopener">Newsletter</a>
 					</li> */}
 					<li className='newsletter'>
-						<Link activeClassName='active' href='/recursos'>
-							<a>Recursos</a>
+						<Link activeClassName='active' href='/contacto'>
+							<a>Contacto</a>
 						</Link>
 					</li>
 					<li className='blog'>
