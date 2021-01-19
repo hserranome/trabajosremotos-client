@@ -22,7 +22,7 @@ const About = (props) => {
 
 						<h4>Publicidad</h4>
 						<p>
-							Para cualquier duda sobre precios de publicidad en la web o newsletter, puedes mandarnos un correo a <a href="mailto:publicidad@trabajosremotos.es">publicidad@trabajosremotos.es</a>.
+							Para cualquier duda sobre precios de publicidad en la web, telegram o nuestras redes sociales, puedes mandarnos un correo a <a href="mailto:publicidad@trabajosremotos.es">publicidad@trabajosremotos.es</a>.
 						</p>
 						<div style={{ marginBottom: '3rem' }}></div>
 
