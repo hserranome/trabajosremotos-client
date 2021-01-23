@@ -47,7 +47,7 @@ function RecursosList(props) {
 				}
 			>
 				{jobs ? jobs.map((job) => (
-					<BlogPost key={job.id} target="_blank" href={`${job.Url}?ref=trabajosremotos`}>
+          <BlogPost className="umami--click--abrir-recurso" key={job.id} target="_blank" href={`${job.Url}?ref=trabajosremotos`}>
 						<PostContent>
 							<PostThumbnail
 								src={`${API_URL}${job.Logo[0].url}`}
