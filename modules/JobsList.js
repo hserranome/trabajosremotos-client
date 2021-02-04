@@ -19,7 +19,7 @@ function JobsList(props) {
 		try {
 			const res = await fetch(`${API_URL}${query}&_start=${jobs.length}`);
 			let data = await res.json();
-			const nextJobs = data.map((job) => ({ ...job, created_at: getLocalDate(job.created_at) }))
+			const nextJobs = data.map((job) => ({ ...job, created_at_formatted: getLocalDate(job.created_at) }))
 			if (nextJobs.length === 0) {
 				setHasMore(false);
 			}
@@ -122,7 +122,7 @@ function JobsList(props) {
                           </div>
                         )}
 											<div className="jobInfo">
-												<h2>{job.title} <span>{job.pinned ? '📌' : ''} {job.created_at}</span></h2>
+												<h2>{job.title} <span>{job.pinned ? '📌' : ''} {job.created_at_formatted}</span></h2>
 												<p>{job.company}</p>
 											</div>
 										</div>
@@ -141,7 +141,12 @@ function JobsList(props) {
 												<div className="description">
 													<Markdown>{job.description ? job.description : ''}</Markdown>
 													<div />
-													<a target="_blank" rel="noopener" className="main-button solicitar umami--click--solicitar-trabajo"  href={job.link.includes('@') ? `mailto:${job.link}?body=%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%20-%20El%20Equipo%20de%20Trabajos%20Remotos%20%0A%20trabajosremotos.es` : job.link}>Solicitar trabajo</a>
+													{console.log(job)}
+													{
+														new Date(job.created_at).setDate(new Date().getDate() + 30) >= new Date()
+															? (<a target="_blank" rel="noopener" className="main-button solicitar umami--click--solicitar-trabajo"  href={job.link.includes('@') ? `mailto:${job.link}?body=%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%20-%20El%20Equipo%20de%20Trabajos%20Remotos%20%0A%20trabajosremotos.es` : job.link}>Solicitar trabajo</a>)
+															: (<span className="main-button solicitar disabled">Trabajo caducado</span>)
+													}
 												</div>
 											)
 											: null

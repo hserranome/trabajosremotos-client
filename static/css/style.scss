@@ -1124,6 +1124,12 @@
 		cursor: initial; 
 		box-shadow: none;
 	}
+	.main-button.disabled {
+		cursor: not-allowed;
+		box-shadow: none;
+		color: white;
+		background-color: gray !important;
+	}
 	/* ----------------------------------- */
 
 	

@@ -11,7 +11,7 @@ import addVisitedJob from '../../utils/addVisitedJob';
 
 
 function SingleJob(props) {
-	const { job } = props;
+	const { job, isJobValid } = props;
 	if (!job) return <Error />
 
 	useEffect(() => {
@@ -22,7 +22,7 @@ function SingleJob(props) {
 
 	const jobDescriptionSEO = `${job.description.substring(0, 100)}...`;
 	const trabajosRemotosLogo = 'https://api.trabajosremotos.es/uploads/Frame_2_7b94d3392d.jpeg';
-	
+
 	return (
 		<div>
 			{job
@@ -80,39 +80,52 @@ function SingleJob(props) {
 					</Head>
 				)
 			}
-		
+
 			<div className="anuncio blog">
-					{job 
-						? (
+				{job
+					? (
 						<div>
 							<div className="container small">
 								<div className="content fullwidth">
 									<h1>{job.title}</h1>
 									<p className="company-single">
 										{job.company}
-										<span>{job.created_at}</span>
+										<span>{job.created_at_formatted}</span>
 									</p>
 
 									<div className="description">
 										{job.description
-											?<Markdown>{job.description}</Markdown>
+											? <Markdown>{job.description}</Markdown>
 											: ''
 										}
-										
-										<a target="_blank" rel="noopener" className="main-button solicitar umami--click--solicitar-trabajo" href={job.link}>Solicitar trabajo</a>
+										{
+											isJobValid ? (
+												<a
+													target="_blank" rel="noopener"
+													className="main-button solicitar umami--click--solicitar-trabajo"
+													href={job.link}
+												>
+													Solicitar trabajo
+												</a>
+											) : (
+													<span className="main-button solicitar disabled">
+														Trabajo caducado
+													</span>
+												)
+										}
 									</div>
 								</div>
 							</div>
 						</div>
-						)
-						: (
+					)
+					: (
 						<div className="container">
 							<div className="content">
 								<div className="empty-message">No se ha encontrado este trabajo</div>
 							</div>
 						</div>
-						)
-					}
+					)
+				}
 
 			</div>
 		</div>
@@ -128,17 +141,20 @@ SingleJob.getInitialProps = async ({ query }) => {
 			return { job: null };
 		}
 
-    const job = jobs[0];
-    let emailTemplate = `?body=%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%20-%20El%20Equipo%20de%20Trabajos%20Remotos%20%0A%20trabajosremotos.es`
+		const job = jobs[0];
+		let emailTemplate = `?body=%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%20-%20El%20Equipo%20de%20Trabajos%20Remotos%20%0A%20trabajosremotos.es`
 		job.link = job.link.includes('@') ? `mailto:${job.link}${emailTemplate}` : `${job.link}?ref=trabajosremotos`;
-		
+
 		// Dates to show schema.org job listing
 		job.schemaDatePosted = job.created_at;
-		const dateValidThrough = new Date(job.created_at).setDate(new Date().getDate() + 30);
+		job.dateValidThrough = new Date(job.created_at).setDate(new Date().getDate() + 30);
 		job.schemaValidThrough = new Date(dateValidThrough).toUTCString();
-		job.created_at = getLocalDate(job.created_at);
+		job.created_at_formatted = getLocalDate(job.created_at);
 
-		return { job };
+		const actualDate = new Date();
+		const isJobValid = job.dateValidThrough >= actualDate
+
+		return { job, isJobValid };
 	} catch (error) {
 		console.error(error)
 		return { error }

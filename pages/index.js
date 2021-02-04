@@ -85,7 +85,7 @@ Index.getInitialProps = async () => {
 		const jobs = await res.json();
 
 		// Format date and sort jobs
-		const initialJobs = jobs.map((job) => ({ ...job, created_at: getLocalDate(job.created_at) }));
+		const initialJobs = jobs.map((job) => ({ ...job, created_at_formatted: getLocalDate(job.created_at) }));
 
 		// Before returning the jobs, add the advertisement to the array of jobs
 		try { if (ads.length !== 0 && ads[0].Active === true) initialJobs.splice(5, 0, ads[0]) } catch { console.error('cannot load ads') };
