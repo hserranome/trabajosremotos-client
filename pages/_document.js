@@ -40,7 +40,7 @@ export default class MyDocument extends Document {
 		return (
 			<Html lang="es">
 			<Head>
-				<script async defer data-website-id="12f8100f-0cfd-4078-9abb-87fa575870dd" src="https://analytics.mango.moe/umami.js"></script>
+					{process.env.NODE_ENV == 'production' ? <script async defer data-website-id="12f8100f-0cfd-4078-9abb-87fa575870dd" src="https://analytics.mango.moe/umami.js"></script> : null}
 			</Head>
 				<body>
 					<Main />
