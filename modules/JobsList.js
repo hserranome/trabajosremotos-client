@@ -3,7 +3,6 @@ import fetch from 'isomorphic-unfetch';
 import InfiniteScroll from 'react-infinite-scroller';
 import Markdown from 'markdown-to-jsx';
 import LazyLoad from 'react-lazyload';
-import ReactGA from "react-ga";
 
 import { WEB_URL, API_URL, getLocalDate } from '../utils';
 import addVisitedJob from '../utils/addVisitedJob';
@@ -151,7 +150,7 @@ function JobsList(props) {
 							)
 							: (
 								<a
-									className={`trabajo archive`}
+									className={`trabajo archive umami--click--anuncio-lista-${job.id}`}
 									key={job.id}
 									id={job.id}
 									href={job.Url}
