@@ -4,6 +4,7 @@ import Markdown from 'markdown-to-jsx';
 import LazyLoad from 'react-lazyload';
 import MailForm from '../../components/MailForm';
 import ReactGA from "react-ga";
+import fetch from 'isomorphic-unfetch';
 
 import { API_URL, getLocalDate } from '../../utils';
 import Error from '../_error';
