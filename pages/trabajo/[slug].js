@@ -147,7 +147,8 @@ SingleJob.getInitialProps = async ({ query }) => {
 
 		// Dates to show schema.org job listing
 		job.schemaDatePosted = job.created_at;
-		job.dateValidThrough = new Date(job.created_at).setDate(new Date().getDate() + 30);
+		const dateValidThrough = new Date(job.created_at).setDate(new Date().getDate() + 30);
+		job.dateValidThrough = dateValidThrough
 		job.schemaValidThrough = new Date(dateValidThrough).toUTCString();
 		job.created_at_formatted = getLocalDate(job.created_at);
 
