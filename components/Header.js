@@ -34,6 +34,8 @@ class Header extends React.Component {
 		let overlay = document.querySelector('.overlay');
 		let menu = document.querySelector('.b-container');
 
+		document.body.style.overflow = 'visible';
+
 		try {
 			// close the menu
 			menu.classList.remove('open');
@@ -160,6 +162,33 @@ class Header extends React.Component {
 								<li>
 									<a href={`${WEB_URL}/categoria/otros`}>
 										Otros
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div className="submenu-container submenu-social-media">
+								<a onClick={() => this.openSubmenu('submenu-social-media')}>Redes sociales</a>
+
+								<div className="plusButton">
+									<span></span>
+									<span></span>
+								</div>
+							</div>
+							<ul className="submenu submenu-social-media">
+								<li>
+									<a href={`https://t.me/trabajos_remotos`} >
+										Telegram
+									</a>
+								</li>
+								<li>
+									<a href={`https://www.linkedin.com/company/trabajosremotos`}>
+										LinkedIn
+									</a>
+								</li>
+								<li>
+									<a href={`https://www.instagram.com/trabajos_remoto/`}>
+										Instagram
 									</a>
 								</li>
 							</ul>
