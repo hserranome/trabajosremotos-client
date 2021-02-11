@@ -1031,19 +1031,30 @@
 		display: table;
 		clear: both;
 		content: '';
-		margin-bottom: 2rem;
-		font-size: 18px;
+		margin-bottom: 1.25rem;
+		font-size: 15px;
 		text-decoration: none;
 		color: #202122;
+		width: 100%;
 	}
 	.overlay .links a.main-button{
 		color: white;
 		display: block;
 		max-width: 100%;
 	}
-	.overlay .links li ul{
+	.overlay .links li .submenu{
 		list-style: none;
+		max-height: 0;
+		transition: .5s linear;
+		opacity: 0;
+		pointer-events: none;
 		font-size: 16px;
+		margin: 0;
+	}
+	.overlay .links li .submenu.open{
+		max-height: 500px;
+		opacity: 1;
+		pointer-events: initial;
 	}
 
 	/* Mobile menu */
@@ -1063,6 +1074,52 @@
 		left: 50%;
 		transform: translateX(-50%);
 		z-index: 999;
+	} 
+
+	/* Create the "+" shape by positioning the spans absolutely */
+	.submenu-container{
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		align-items: center;
+		margin-bottom: 1.25rem;
+	}
+	.submenu-container a:first-of-type{
+		margin: 0;
+	}
+	.submenu-container .plusButton {
+		color: #0d0d0e;
+		width: 30px;
+		height: 30px;
+		border: 0;
+		font-size: .8em;
+		position: relative;
+	}
+	.submenu-container .plusButton span {
+		position: absolute;
+		transition: 300ms;
+		background: #0d0d0e;
+		border-radius: 2px;
+	}
+	.submenu-container .plusButton span:first-child {
+		top: 25%;
+		bottom: 25%;
+		width: 10%;
+		left: 45%;
+	}
+	.submenu-container .plusButton span:last-child {
+		left: 25%;
+		right: 25%;
+		height: 10%;
+		top: 45%;
+	}
+	/* Morph the shape when the .plusButton is hovered over */
+	.submenu-container.open .plusButton span {
+		transform: rotate(90deg);
+	}
+	.submenu-container.open .plusButton span:last-child {
+		left: 50%;
+		right: 50%;
 	}
 
   /* Single job listing */

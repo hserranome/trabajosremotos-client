@@ -7,6 +7,8 @@ class Header extends React.Component {
 		super(props);
 
 		this.handleMobileMenu = this.handleMobileMenu.bind(this);
+		this.closeMenu = this.closeMenu.bind(this);
+		this.openSubmenu = this.openSubmenu.bind(this);
 	}
 
 	handleMobileMenu() {
@@ -25,6 +27,31 @@ class Header extends React.Component {
 			// When the menu is closed, we enable again the scroll on the site
 			document.body.style.overflow = 'visible';
 			overlay.classList.remove('open');
+		}
+	}
+
+	closeMenu() {
+		let overlay = document.querySelector('.overlay');
+		let menu = document.querySelector('.b-container');
+
+		try {
+			// close the menu
+			menu.classList.remove('open');
+			overlay.classList.remove('open');
+		} catch (error) {
+			console.error('cant close the menu')
+		}
+	}
+
+	openSubmenu(submenu) {
+		try {
+			let sub = [...document.querySelectorAll(`.${submenu}`)]
+
+			sub.forEach(element => {
+				element.classList.toggle('open')
+			})
+		} catch (error) {
+			console.error(error)
 		}
 	}
 
@@ -85,19 +112,26 @@ class Header extends React.Component {
 				{/* Overlay when menu on mobile is open */}
 				<div className="overlay">
 					<div className="links">
-						<li>
+						<li onClick={this.closeMenu}>
 							<Link href='/'>
 								<a>Trabajos remotos</a>
 							</Link>
 						</li>
-						<li>
+						<li onClick={this.closeMenu}>
 							<Link href='/blog'>
 								<a>Blog</a>
 							</Link>
 						</li>
-						{/* <li>
-							<a>Categorias</a>
-							<ul>
+						<li>
+							<div className="submenu-container submenu-categories">
+								<a onClick={() => this.openSubmenu('submenu-categories')}>Categorias</a>
+
+								<div className="plusButton">
+									<span></span>
+									<span></span>
+								</div>
+							</div>
+							<ul className="submenu submenu-categories">
 								<li>
 									<a href={`${WEB_URL}/categoria/programacion`} >
 										Programación
@@ -129,18 +163,18 @@ class Header extends React.Component {
 									</a>
 								</li>
 							</ul>
-						</li> */}
-						<li>
+						</li>
+						<li onClick={this.closeMenu}>
 							<Link href='/recursos'>
 								<a>Recursos</a>
 							</Link>
 						</li>
-						<li>
+						<li onClick={this.closeMenu}>
 							<Link href='/contacto'>
 								<a>Contacto</a>
 							</Link>
 						</li>
-						<li>
+						<li onClick={this.closeMenu}>
 							<Link href='/publicar'>
 								<a className='main-button'>Publicar trabajo</a>
 							</Link>
@@ -152,7 +186,7 @@ class Header extends React.Component {
 					<div className="nav">
 						{/* Logo */}
 						<Link href='/'>
-							<div className='logo'><img src='/static/images/logo-big.jpg' /></div>
+							<div onClick={this.closeMenu} className='logo'><img src='/static/images/logo-big.jpg' /></div>
 						</Link>
 
 						{/* Burger menu for mobile */}
