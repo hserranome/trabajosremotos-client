@@ -71,7 +71,7 @@ TagList.getInitialProps = async ({ query }) => {
 		const initialJobs = jobs.map((job) => ({ ...job, created_at_formatted: getLocalDate(job.created_at) }));
 
 		// Before returning the jobs, add the advertisement to the array of jobs
-		try { if (ads.length !== 0 && ads[0].Active === true) initialJobs.splice(5, 0, ads[0]) } catch { console.error('cannot load ads') };
+		try { if (ads.length !== 0 && ads[0].Active === true) initialJobs.splice(3, 0, ads[0]) } catch { console.error('cannot load ads') };
 
 		return { initialJobs, tag: tagName[0].name, query: thisQuery };
 	} catch (error) {
