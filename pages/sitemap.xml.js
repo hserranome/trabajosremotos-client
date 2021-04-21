@@ -46,11 +46,47 @@ const sitemapXml = (blogPosts, jobsList) => {
       <priority>1.00</priority>
     </url>
     <url>
+      <loc>https://www.trabajosremotos.es/categoria/programacion</loc>
+      <priority>0.8</priority>
+    </url>
+    <url>
+      <loc>https://www.trabajosremotos.es/categoria/diseno</loc>
+      <priority>0.8</priority>
+    </url>
+    <url>
+      <loc>https://www.trabajosremotos.es/categoria/marketing</loc>
+      <priority>0.8</priority>
+    </url>
+    <url>
+      <loc>https://www.trabajosremotos.es/categoria/otros</loc>
+      <priority>0.8</priority>
+    </url>
+    <url>
+      <loc>https://www.trabajosremotos.es/categoria/atencion-al-cliente</loc>
+      <priority>0.8</priority>
+    </url>
+    <url>
       <loc>https://www.trabajosremotos.es/contacto</loc>
       <priority>0.5</priority>
     </url>
     <url>
       <loc>https://www.trabajosremotos.es/blog</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>https://www.trabajosremotos.es/recursos</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>https://www.trabajosremotos.es/publicar</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>https://www.trabajosremotos.es/privacidad</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>https://www.trabajosremotos.es/terminos</loc>
       <priority>0.5</priority>
     </url>
     <url>
