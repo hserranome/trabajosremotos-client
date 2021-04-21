@@ -15,6 +15,14 @@ const Layout = (props) => {
 	useEffect(() => {		
 		window.addEventListener('load', () => {
 			setLoaded(true);
+
+			// Initialize Google Analytics with react-ga
+			if (!window.GA_INITIALIZED) {
+				// Si no esta, iniciamos
+				ReactGA.initialize('UA-108296865-1');
+				window.GA_INITIALIZED = true
+			}
+			ReactGA.pageview(window.location.pathname + window.location.search);
 		});
 	}, []);
 
