@@ -8,7 +8,7 @@ import Error from '../_error';
 
 
 function SingleBlogPost(props) {
-	const { publicacion } = props;
+	const { publicacion, randomAd } = props;
 	if (!publicacion) return <Error />
 	const trabajosRemotosLogo = 'https://www.trabajosremotos.es/static/images/logo.png';
 
@@ -63,6 +63,29 @@ function SingleBlogPost(props) {
 									</div>
 								</div>
 							</div>
+
+							<div className='container'>
+								<div className='trabajos notop nobottom' style={{ width: '100%' }}>
+									<a className={`trabajo archive`} key={randomAd.id} id={randomAd.id} href={randomAd.Url} >
+										<div className="a">
+											<div>
+												<div className='img'>
+													<LazyLoad once>
+														<img src={`${API_URL}${randomAd?.image?.url}`} alt={'logo'} />
+													</LazyLoad>
+												</div>
+												<div className="jobInfo">
+													<h2>{randomAd.Title}</h2>
+													<p>{randomAd.Subtitle}</p>
+												</div>
+												<div className="cta desktop">
+													<p>{randomAd.cta}</p>
+												</div>
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
 						</div>
 					)
 					: (
@@ -90,8 +113,13 @@ SingleBlogPost.getInitialProps = async ({ query }) => {
 		}
 		const publicacion = publicacions[0];
 		publicacion.created_at = getLocalDate(publicacion.created_at);
+
+		// Advertisement query
+		const ad = await fetch(`${API_URL}/archives?_sort=active:DESC`)
+		const ads = await ad.json()
+		const randomAd = ads[Math.floor(Math.random() * ads.length)]
 		
-		return { publicacion };
+		return { publicacion, randomAd };
 	} catch (error) {
 		console.error(error)
 		return { error }

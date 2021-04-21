@@ -1,28 +1,28 @@
-import { useEffect } from 'react';
-import Head from 'next/head';
-import Markdown from 'markdown-to-jsx';
-import LazyLoad from 'react-lazyload';
-import MailForm from '../../components/MailForm';
-import ReactGA from "react-ga";
-import fetch from 'isomorphic-unfetch';
+import { useEffect } from 'react'
+import Head from 'next/head'
+import Markdown from 'markdown-to-jsx'
+import LazyLoad from 'react-lazyload'
+import MailForm from '../../components/MailForm'
+import ReactGA from "react-ga"
+import fetch from 'isomorphic-unfetch'
 
-import { API_URL, getLocalDate } from '../../utils';
-import Error from '../_error';
-import addVisitedJob from '../../utils/addVisitedJob';
+import { API_URL, getLocalDate } from '../../utils'
+import Error from '../_error'
+import addVisitedJob from '../../utils/addVisitedJob'
 
 
 function SingleJob(props) {
-	const { job, isJobValid } = props;
+	const { job, isJobValid, randomAd } = props
 	if (!job) return <Error />
 
 	useEffect(() => {
 		if (job && job.id) {
-			addVisitedJob(job.id);
+			addVisitedJob(job.id)
 		}
-	}, []);
+	}, [])
 
-	const jobDescriptionSEO = `${job.description.substring(0, 100)}...`;
-	const trabajosRemotosLogo = 'https://api.trabajosremotos.es/uploads/Frame_2_7b94d3392d.jpeg';
+	const jobDescriptionSEO = `${job.description.substring(0, 100)}...`
+	const trabajosRemotosLogo = 'https://api.trabajosremotos.es/uploads/Frame_2_7b94d3392d.jpeg'
 
 	return (
 		<div>
@@ -117,6 +117,29 @@ function SingleJob(props) {
 									</div>
 								</div>
 							</div>
+
+							<div className='container'>
+								<div className='trabajos notop nobottom' style={{width: '100%'}}>
+									<a className={`trabajo archive`} key={randomAd.id} id={randomAd.id} href={randomAd.Url} >
+										<div className="a">
+											<div>
+												<div className='img'>
+													<LazyLoad once>
+														<img src={`${API_URL}${randomAd?.image?.url}`} alt={'logo'} />
+													</LazyLoad>
+												</div>
+												<div className="jobInfo">
+													<h2>{randomAd.Title}</h2>
+													<p>{randomAd.Subtitle}</p>
+												</div>
+												<div className="cta desktop">
+													<p>{randomAd.cta}</p>
+												</div>
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
 						</div>
 					)
 					: (
@@ -135,32 +158,37 @@ function SingleJob(props) {
 
 SingleJob.getInitialProps = async ({ query }) => {
 	try {
-		const { slug } = query;
-		const res = await fetch(`${API_URL}/jobs?slug=${slug}`);
-		const jobs = await res.json();
+		const { slug } = query
+		const res = await fetch(`${API_URL}/jobs?slug=${slug}`)
+		const jobs = await res.json()
 		if (!jobs || jobs.length === 0) {
-			return { job: null };
+			return { job: null }
 		}
 
-		const job = jobs[0];
+		const job = jobs[0]
 		let emailTemplate = `?body=%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%20-%20El%20Equipo%20de%20Trabajos%20Remotos%20%0A%20trabajosremotos.es`
-		job.link = job.link.includes('@') ? `mailto:${job.link}${emailTemplate}` : `${job.link}?ref=trabajosremotos`;
+		job.link = job.link.includes('@') ? `mailto:${job.link}${emailTemplate}` : `${job.link}?ref=trabajosremotos`
 
 		// Dates to show schema.org job listing
-		job.schemaDatePosted = job.created_at;
-		const dateValidThrough = new Date(job.created_at).setDate(new Date().getDate() + 30);
+		job.schemaDatePosted = job.created_at
+		const dateValidThrough = new Date(job.created_at).setDate(new Date().getDate() + 30)
 		job.dateValidThrough = dateValidThrough
-		job.schemaValidThrough = new Date(dateValidThrough).toUTCString();
-		job.created_at_formatted = getLocalDate(job.created_at);
+		job.schemaValidThrough = new Date(dateValidThrough).toUTCString()
+		job.created_at_formatted = getLocalDate(job.created_at)
 
-		const actualDate = new Date();
+		const actualDate = new Date()
 		const isJobValid = job.dateValidThrough >= actualDate
 
-		return { job, isJobValid };
+		// Advertisement query
+		const ad = await fetch(`${API_URL}/archives?_sort=active:DESC`)
+		const ads = await ad.json()
+		const randomAd = ads[Math.floor(Math.random() * ads.length)]
+
+		return { job, isJobValid, randomAd }
 	} catch (error) {
 		console.error(error)
 		return { error }
 	}
-};
+}
 
-export default SingleJob;
+export default SingleJob
