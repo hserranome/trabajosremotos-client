@@ -19,7 +19,7 @@ const Layout = (props) => {
 			// Initialize Google Analytics with react-ga
 			if (!window.GA_INITIALIZED) {
 				// Si no esta, iniciamos
-				ReactGA.initialize('UA-108296865-1');
+				ReactGA.initialize('G-6Q8LEBSWBY');
 				window.GA_INITIALIZED = true
 			}
 			ReactGA.pageview(window.location.pathname + window.location.search);
