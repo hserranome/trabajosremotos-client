@@ -59,6 +59,7 @@ TagList.getInitialProps = async ({ query }) => {
 		// Advertisement query
 		const ad = await fetch(`${API_URL}/archives?_sort=active:DESC&_limit=1`);
 		const ads = await ad.json();
+		const randomAd = ads[Math.floor(Math.random() * ads.length)];
 
 		// Jobs query
 		const res = await fetch(`${API_URL}${thisQuery}`);
@@ -71,7 +72,7 @@ TagList.getInitialProps = async ({ query }) => {
 		const initialJobs = jobs.map((job) => ({ ...job, created_at_formatted: getLocalDate(job.created_at) }));
 
 		// Before returning the jobs, add the advertisement to the array of jobs
-		try { if (ads.length !== 0 && ads[0].Active === true) initialJobs.splice(3, 0, ads[0]) } catch { console.error('cannot load ads') };
+		try { if (ads.length !== 0 && randomAd.Active === true) initialJobs.splice(3, 0, randomAd) } catch { console.error('cannot load ads') };
 
 		return { initialJobs, tag: tagName[0].name, query: thisQuery };
 	} catch (error) {
