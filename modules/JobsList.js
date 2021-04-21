@@ -143,7 +143,7 @@ function JobsList(props) {
 													{console.log(job)}
 													{
 														new Date(job.created_at).setDate(new Date().getDate() + 30) >= new Date()
-															? (<a target="_blank" rel="noopener" className="main-button solicitar umami--click--solicitar-trabajo"  href={job.link.includes('@') ? `mailto:${job.link}?body=%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%20-%20El%20Equipo%20de%20Trabajos%20Remotos%20%0A%20trabajosremotos.es` : job.link}>Solicitar trabajo</a>)
+															? (<a target="_blank" rel="noopener" className="main-button solicitar"  href={job.link.includes('@') ? `mailto:${job.link}?body=%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%20-%20El%20Equipo%20de%20Trabajos%20Remotos%20%0A%20trabajosremotos.es` : job.link}>Solicitar trabajo</a>)
 															: (<span className="main-button solicitar disabled">Trabajo caducado</span>)
 													}
 												</div>
@@ -155,7 +155,7 @@ function JobsList(props) {
 							)
 							: (
 								<a
-									className={`trabajo archive umami--click--anuncio-lista-${job.id}`}
+									className={`trabajo archive`}
 									key={job.id}
 									id={job.id}
 									href={job.Url}

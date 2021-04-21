@@ -103,7 +103,7 @@ function SingleJob(props) {
 											isJobValid ? (
 												<a
 													target="_blank" rel="noopener"
-													className="main-button solicitar umami--click--solicitar-trabajo"
+													className="main-button solicitar"
 													href={job.link}
 												>
 													Solicitar trabajo
