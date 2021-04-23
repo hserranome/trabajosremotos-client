@@ -16,15 +16,12 @@ const Layout = (props) => {
 		window.addEventListener('load', () => {
 			setLoaded(true);
 
-			// Initialize Google Analytics with react-ga if we're on production
-			if (process.env.NODE_ENV != 'development') {
-				if (!window.GA_INITIALIZED) {
-					// Si no esta, iniciamos
-					ReactGA.initialize('G-6Q8LEBSWBY');
-					window.GA_INITIALIZED = true
-				}
-				ReactGA.pageview(window.location.pathname + window.location.search);
+			if (!window.GA_INITIALIZED) {
+				// Si no esta, iniciamos
+				ReactGA.initialize('G-6Q8LEBSWBY');
+				window.GA_INITIALIZED = true
 			}
+			ReactGA.pageview(window.location.pathname + window.location.search);
 		});
 	}, []);
 
