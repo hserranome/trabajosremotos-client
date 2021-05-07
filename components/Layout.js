@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import ReactGA from 'react-ga';
 import Head from 'next/head';
 import Link from './ActiveLink';
 import { useCookies } from 'react-cookie';
@@ -15,13 +14,6 @@ const Layout = (props) => {
 	useEffect(() => {		
 		window.addEventListener('load', () => {
 			setLoaded(true);
-
-			if (!window.GA_INITIALIZED) {
-				// Si no esta, iniciamos
-				ReactGA.initialize('G-6Q8LEBSWBY');
-				window.GA_INITIALIZED = true
-			}
-			ReactGA.pageview(window.location.pathname + window.location.search);
 		});
 	}, []);
 
