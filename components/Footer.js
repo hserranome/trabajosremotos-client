@@ -5,7 +5,7 @@ import { WEB_URL } from '../utils';
 const Footer = (props) => (
 	<div className="footer">
 		<div className="container">
-			<div className="copy big">
+			<div className="copy">
 				<div className="inside">
 					<h4>Trabajos remotos</h4>
 
@@ -14,7 +14,13 @@ const Footer = (props) => (
 			</div>
 
 			{/* Empty copy to have more space */}
-			<div className="copy small"></div>
+			<div className="copy">
+				<div className="inside">
+					<h4>Recursos</h4>
+
+					<p><a target="_blank" href={`https://analytics.mango.moe/share/5a8g1BjG/trabajosremotos.es`}>Analíticas</a></p>
+				</div>
+			</div>
 
 			<div className="copy">
 				<div className="inside">
