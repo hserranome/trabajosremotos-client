@@ -115,6 +115,11 @@ class Header extends React.Component {
 							</Link>
 						</li>
 						<li>
+							<Link href='/contacto'>
+								<a href="https://emailoctopus.com/lists/347308e1-960d-11ea-a3d0-06b4694bee2a/forms/subscribe" target="_blank" rel="noopener">Newsletter</a>
+							</Link>
+						</li>
+						<li>
 							<div className="submenu-container submenu-categories">
 								<a onClick={() => this.openSubmenu('submenu-categories')}>Categorias</a>
 
