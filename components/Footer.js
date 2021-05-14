@@ -5,7 +5,7 @@ import { WEB_URL } from '../utils';
 const Footer = (props) => (
 	<div className="footer">
 		<div className="container">
-			<div className="copy big">
+			<div className="copy">
 				<div className="inside">
 					<h4>Trabajos remotos</h4>
 
@@ -14,7 +14,16 @@ const Footer = (props) => (
 			</div>
 
 			{/* Empty copy to have more space */}
-			<div className="copy small"></div>
+			<div className="copy">
+				<div className="inside">
+					<h4>Recursos</h4>
+
+					<p><a href="https://emailoctopus.com/lists/347308e1-960d-11ea-a3d0-06b4694bee2a/forms/subscribe" target="_blank" rel="noopener">Newsletter</a></p>
+					<p><a href={`${WEB_URL}/blog`}>Blog</a></p>
+					<p><a href={`${WEB_URL}/recursos`}>Recursos</a></p>
+					{/* <p><a target="_blank" href={`https://analytics.mango.moe/share/5a8g1BjG/trabajosremotos.es`}>Analíticas</a></p> */}
+				</div>
+			</div>
 
 			<div className="copy">
 				<div className="inside">
@@ -33,7 +42,6 @@ const Footer = (props) => (
 					<h4>Sobre nosotros</h4>
 
 					<p><a href={`${WEB_URL}/contacto`}>Contacto</a></p>
-					<p><a href={`${WEB_URL}/recursos`}>Recursos</a></p>
 					<p><a href={`${WEB_URL}/publicar`}>Publicar anuncio</a></p>
 					<p><a href={`${WEB_URL}/cookies`}>Cookies</a></p>
 					<p><a href={`${WEB_URL}/privacidad`}>Privacidad</a></p>

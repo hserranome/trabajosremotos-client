@@ -67,34 +67,24 @@ class Header extends React.Component {
 						</Link>
 
 						<ul>
-							{/* <li className="dropdown-parent">
+							<li className="dropdown-parent">
 							<a>Comunidad</a>
 							<ul className="dropdown">
-								<li>
-									<Link href='/blog'>
-										<a>Blog</a>
-									</Link>
-								</li>
 								<li>
 									<Link href='/recursos'>
 										<a>Recursos</a>
 									</Link>
 								</li>
 								<li>
-									<Link href='/contacto'>
+									<Link href=''>
 										<a href="https://emailoctopus.com/lists/347308e1-960d-11ea-a3d0-06b4694bee2a/forms/subscribe" target="_blank" rel="noopener">Newsletter</a>
 									</Link>
 								</li>
 							</ul>
-						</li> */}
+						</li>
 							<li>
 								<Link href='/blog'>
 									<a>Blog</a>
-								</Link>
-							</li>
-							<li>
-								<Link href='/recursos'>
-									<a>Recursos</a>
 								</Link>
 							</li>
 							<li>
@@ -122,6 +112,11 @@ class Header extends React.Component {
 						<li onClick={this.closeMenu}>
 							<Link href='/blog'>
 								<a>Blog</a>
+							</Link>
+						</li>
+						<li>
+							<Link href=''>
+								<a href="https://emailoctopus.com/lists/347308e1-960d-11ea-a3d0-06b4694bee2a/forms/subscribe" target="_blank" rel="noopener">Newsletter</a>
 							</Link>
 						</li>
 						<li>
