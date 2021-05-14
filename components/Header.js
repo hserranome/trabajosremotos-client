@@ -67,14 +67,9 @@ class Header extends React.Component {
 						</Link>
 
 						<ul>
-							{/* <li className="dropdown-parent">
+							<li className="dropdown-parent">
 							<a>Comunidad</a>
 							<ul className="dropdown">
-								<li>
-									<Link href='/blog'>
-										<a>Blog</a>
-									</Link>
-								</li>
 								<li>
 									<Link href='/recursos'>
 										<a>Recursos</a>
@@ -86,15 +81,10 @@ class Header extends React.Component {
 									</Link>
 								</li>
 							</ul>
-						</li> */}
+						</li>
 							<li>
 								<Link href='/blog'>
 									<a>Blog</a>
-								</Link>
-							</li>
-							<li>
-								<Link href='/recursos'>
-									<a>Recursos</a>
 								</Link>
 							</li>
 							<li>
