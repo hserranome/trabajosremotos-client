@@ -76,7 +76,7 @@ class Header extends React.Component {
 									</Link>
 								</li>
 								<li>
-									<Link href='/contacto'>
+									<Link href=''>
 										<a href="https://emailoctopus.com/lists/347308e1-960d-11ea-a3d0-06b4694bee2a/forms/subscribe" target="_blank" rel="noopener">Newsletter</a>
 									</Link>
 								</li>
@@ -115,7 +115,7 @@ class Header extends React.Component {
 							</Link>
 						</li>
 						<li>
-							<Link href='/contacto'>
+							<Link href=''>
 								<a href="https://emailoctopus.com/lists/347308e1-960d-11ea-a3d0-06b4694bee2a/forms/subscribe" target="_blank" rel="noopener">Newsletter</a>
 							</Link>
 						</li>
