@@ -34,7 +34,7 @@ const Recursos = (props) => {
 			<div className="container recursos-hero">
 				<div className="content">
 					<h4>¿Crees que falta algún recurso o quieres poner el tuyo?</h4>
-					<p>Puedes enviarnos un correo a <a href="mailto:contacto@trabajosremotos.es">contacto@trabajosremotos.es</a> y lo pondremos 🎉</p>
+					<p>Puedes enviarnos un correo a <a href="mailto:trabajosremotos@mango.moe">trabajosremotos@mango.moe</a> y lo pondremos 🎉</p>
 				</div>
 			</div>
 

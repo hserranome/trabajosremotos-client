@@ -16,7 +16,7 @@ const About = (props) => {
 
 						<h4>Contacto</h4>
 						<p>
-							¿Algo que nos quieras decir? Si tienes algún comentario o idea que compartirnos, puedes enviarnos un correo a <a href="mailto:contacto@trabajosremotos.es">contacto@trabajosremotos.es</a>.
+							¿Algo que nos quieras decir? Si tienes algún comentario o idea que compartirnos, puedes enviarnos un correo a <a href="mailto:trabajosremotos@mango.moe">trabajosremotos@mango.moe</a>.
 						</p>
 						<div style={{ marginBottom: '3rem' }}></div>
 
