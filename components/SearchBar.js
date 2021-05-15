@@ -11,26 +11,30 @@ const SearchBar = (props) => {
 		event.preventDefault();
 		const input = document.querySelector('#searchQuery');
 
-		let query = slugify(input.value, { 
-			remove: /[*+~./()'"!:@]/g, 
-			locale: 'es',
-			lower: 'true',
-		});
-
-		Router.push({
-			pathname: '/buscar-teletrabajos',
-			query: { filtro: query }
-		})
-
-		// Despues de buscar un filtro reseteamos el input
-		input.value = '';
+		let search = input.value
+		
+		if(search.length > 0) {
+			let query = slugify(input.value, { 
+				remove: /[*+~./()'"!:@]/g, 
+				locale: 'es',
+				lower: 'true',
+			});
+	
+			Router.push({
+				pathname: '/buscar-teletrabajos',
+				query: { filtro: query }
+			})
+	
+			// Despues de buscar un filtro reseteamos el input
+			input.value = '';
+		}
 	}
 	
 	return (
 		<div className="bar">
 			<div className="container">
 				<form method='get' id='searchform' onSubmit={(event) => handleSearch(event)}>
-					<input type='text' className='field' id="searchQuery" placeholder='Buscar trabajo' />
+					<input type='text' className='field' id="searchQuery" minlength='1' placeholder='Escribe aquí el trabajo que quieres buscar' />
 					<input className='search' type='submit' value='Buscar' />
 				</form>
 
