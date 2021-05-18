@@ -11,6 +11,24 @@ class Header extends React.Component {
 		this.openSubmenu = this.openSubmenu.bind(this);
 	}
 
+	componentDidMount() {
+		window.addEventListener('scroll', this.handleScroll);
+	}
+
+	componentWillUnmount() {
+		window.removeEventListener('scroll', this.handleScroll);
+	}
+
+	handleScroll(event) {
+		let scrollY = window.scrollY
+		let menuDesktop = document.querySelector('nav.desktop')
+
+		if(scrollY > 0)
+			menuDesktop.classList.add('active')
+		else
+			menuDesktop.classList.remove('active')
+	}
+	
 	handleMobileMenu() {
 		let menu = document.querySelector('.b-container');
 		let overlay = document.querySelector('.overlay');

@@ -770,6 +770,14 @@
 		width: 100%; max-width: 100%;
 		z-index: 9999;
 		background-color: transparent;
+		transition: .25s linear;
+		border-color: transparent;
+
+		&.active{
+			position: fixed;
+			background-color: white;
+			border-bottom: 1px solid #eee;
+		}
 	}
 	.logo:hover{ cursor :pointer; }
 	.logo img{ max-height: 40px; border-radius: 50%; }
