@@ -228,7 +228,7 @@ const Publicar = () => {
 							
 							<button
 								type="submit"
-								className="main-button big"
+								className="main-button big umami--click--publicar-trabajo"
 								disabled={submitting}
 							>
 								Publicar trabajo
