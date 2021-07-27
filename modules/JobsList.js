@@ -80,7 +80,10 @@ function JobsList(props) {
 
 	let visitedJobs = null;
 	if (typeof window !== "undefined") {
-		visitedJobs = JSON.parse(localStorage.getItem("visitedJobs"));
+		try {
+			visitedJobs = JSON.parse(localStorage.getItem("visitedJobs"));
+		}
+		catch (e) {}
 	}
 	if (!visitedJobs) visitedJobs = [];
 	return (
