@@ -66,7 +66,7 @@ function SingleBlogPost(props) {
 
 							<div className='container'>
 								<div className='trabajos notop nobottom' style={{ width: '100%' }}>
-									<a className={`trabajo archive`} key={randomAd.id} id={randomAd.id} href={randomAd.Url} >
+									<a className={`trabajo archive umami--click-anuncios`} key={randomAd.id} id={randomAd.id} href={randomAd.Url} >
 										<div className="a">
 											<div>
 												<div className='img'>
