@@ -1,10 +1,10 @@
-import Head from 'next/head';
-import fetch from 'isomorphic-unfetch';
+import Head from "next/head";
+import fetch from "isomorphic-unfetch";
 
-import { API_URL, getLocalDate } from '../utils';
-import PostsList from '../modules/PostsList';
+import { API_URL, getLocalDate } from "../utils";
+import PostsList from "../modules/PostsList";
 
-const query = '/posts?_sort=created_at:desc&_limit=12';
+const query = "/posts?_sort=created_at:desc&_limit=12";
 
 const Blog = (props) => {
 	const { initialJobs, error } = props;
@@ -15,24 +15,41 @@ const Blog = (props) => {
 				<title>El blog de Trabajos remotos</title>
 
 				<meta name="robots" content="all" />
-				<meta property="description" content={`Blog de trabajosremotos.es, donde podrás encontrar información sobre el trabajo remoto, consejos, entrevistas y mucho mas.`} />
+				<meta
+					property="description"
+					content={`Blog de trabajosremotos.es, donde podrás encontrar información sobre el trabajo remoto, consejos, entrevistas y mucho mas.`}
+				/>
 				<meta property="og:title" content={`Blog de teletrabajo, productividad y mucho mas`} key="trabajos-title-og" />
-				<meta property="og:image" content="https://api.trabajosremotos.es/uploads/Frame_2_7b94d3392d.jpeg" key="trabajos-logo-og" />
-				<meta property="og:description" content={`Blog de trabajosremotos.es, donde podrás encontrar información sobre el trabajo remoto, consejos, entrevistas y mucho mas.`} />
-				<meta name="twitter:title" content={`Blog de teletrabajo, productividad y mucho mas`} key="trabajos-title-twitter" />
-				<meta name="twitter:image" content="https://api.trabajosremotos.es/uploads/Frame_2_7b94d3392d.jpeg" key="trabajos-image-twitter" />
-				<meta name="twitter:description" content={`Blog de trabajosremotos.es, donde podrás encontrar información sobre el trabajo remoto, consejos, entrevistas y mucho mas.`} />
+				<meta
+					property="og:image"
+					content="https://api.trabajosremotos.es/uploads/Frame_2_7b94d3392d.jpeg"
+					key="trabajos-logo-og"
+				/>
+				<meta
+					property="og:description"
+					content={`Blog de trabajosremotos.es, donde podrás encontrar información sobre el trabajo remoto, consejos, entrevistas y mucho mas.`}
+				/>
+				<meta
+					name="twitter:title"
+					content={`Blog de teletrabajo, productividad y mucho mas`}
+					key="trabajos-title-twitter"
+				/>
+				<meta
+					name="twitter:image"
+					content="https://api.trabajosremotos.es/uploads/Frame_2_7b94d3392d.jpeg"
+					key="trabajos-image-twitter"
+				/>
+				<meta
+					name="twitter:description"
+					content={`Blog de trabajosremotos.es, donde podrás encontrar información sobre el trabajo remoto, consejos, entrevistas y mucho mas.`}
+				/>
 				<meta name="robots" content="index,follow" />
 				<meta name="googlebot" content="index,follow" />
 			</Head>
-			
-			<PostsList
-				initialJobs={initialJobs}
-				error={error}
-				query={query}
-			/>
+
+			<PostsList initialJobs={initialJobs} error={error} query={query} />
 		</div>
-	)
+	);
 };
 
 export default Blog;
@@ -46,7 +63,6 @@ Blog.getInitialProps = async () => {
 
 		return { initialJobs };
 	} catch (error) {
-		// console.log(error);
 		return { error };
 	}
 };
