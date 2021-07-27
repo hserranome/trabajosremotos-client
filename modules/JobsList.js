@@ -80,7 +80,11 @@ function JobsList(props) {
 
 	let visitedJobs = null;
 	if (typeof window !== "undefined") {
-		visitedJobs = JSON.parse(localStorage.getItem("visitedJobs"));
+		try {
+			visitedJobs = JSON.parse(localStorage.getItem("visitedJobs"));
+		} catch (e) {
+			console.error(e);
+		}
 	}
 	if (!visitedJobs) visitedJobs = [];
 	return (
@@ -96,80 +100,21 @@ function JobsList(props) {
 					</div>
 				}
 			>
-				{jobs && jobs.length > 0
-					? (
-						jobs.map((job) => job.company
-							? (
-								<div
-									className={`trabajo ${job.featured ? 'featured' : ''}`}
-									key={job.id}
-									id={job.id}
-								>
-									{/* This href is just so google knows there's more things on the website, with the div alone google doesnt know how to get to that page, so it doesnt index it (or I think thats how it works xd) */}
-									<a href={`https://trabajosremotos.es/trabajo/${job.slug}`} style={{ display: 'none' }}>{job.title}</a>
-									<div className="a">
-										<div
-											className={
-												visitedJobs.includes(job.id)
-													? 'visited' : null
-											}
-											onClick={() => handleClick(job.id, `/trabajo/${job.slug}`)}
-										>
-											{job.logo && job.showLogo
-												? (
-													<div className='img'>
-														<LazyLoad once>
-															<img src={job.logo} alt={'logo ' + job.company} />
-														</LazyLoad>
-													</div>
-												)
-                        : (
-                          <div className='img'>
-                            <p>{job.company[0]}</p>
-                          </div>
-                        )}
-											<div className="jobInfo">
-												<h2>{job.title} <span>{job.pinned ? '📌' : ''} {job.created_at_formatted}</span></h2>
-												<p>{job.company}</p>
-											</div>
-										</div>
-										{job.tags.length > 0
-											? (
-												<div className="tags">
-													{job.tags.map((value, index) => {
-														if (index < 4)
-															return <a className="tag" href={`${WEB_URL}/etiqueta/${value.slug}`} key={index}>{value.name}</a>
-													})}
-												</div>
-											)
-										: ( undefined )}
-										{activeJob === job.id
-											? (
-												<div className="description">
-													<Markdown>{job.description ? job.description : ''}</Markdown>
-													<div />
-													{
-														new Date(job.created_at).setDate(new Date().getDate() + 30) >= new Date()
-															? (<a target="_blank" rel="noopener" className="main-button solicitar umami--click--solicitar-trabajo"  href={job.link.includes('@') ? `mailto:${job.link}?body=%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%20-%20El%20Equipo%20de%20Trabajos%20Remotos%20%0A%20trabajosremotos.es` : job.link}>Solicitar trabajo</a>)
-															: (<span className="main-button solicitar disabled umami--click--solicitar-trabajo-caducado">Trabajo caducado</span>)
-													}
-												</div>
-											)
-											: null
-										}
-									</div>
-								</div>
-							)
-							: (
-								<a
-									className={`trabajo archive umami--click--anuncios`}
-									key={job.id}
-									id={job.id}
-									href={job.Url}
-								>
-									<div className="a">
-										<div>
-											<div className='img'>
+				{jobs && jobs.length > 0 ? (
+					jobs.map((job) =>
+						job.company ? (
+							<div className={`trabajo ${job.featured ? "featured" : ""}`} key={job.id} id={job.id}>
+								{/* This href is just so google knows there's more things on the website, with the div alone google doesnt know how to get to that page, so it doesnt index it (or I think thats how it works xd) */}
+								<a href={`https://trabajosremotos.es/trabajo/${job.slug}`} style={{ display: "none" }}>
+									{job.title}
+								</a>
+								<div className="a">
+									<div
+										className={visitedJobs.includes(job.id) ? "visited" : null}
+										onClick={() => handleClick(job.id, `/trabajo/${job.slug}`)}
+									>
+										{job.logo && job.showLogo ? (
+											<div className="img">
 												<LazyLoad once>
 													<img src={job.logo} alt={"logo " + job.company} />
 												</LazyLoad>
@@ -209,7 +154,7 @@ function JobsList(props) {
 												<a
 													target="_blank"
 													rel="noopener"
-													className="main-button solicitar"
+													className="main-button solicitar umami--click--solicitar-trabajo"
 													href={
 														job.link.includes("@")
 															? `mailto:${job.link}?body=%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%20-%20El%20Equipo%20de%20Trabajos%20Remotos%20%0A%20trabajosremotos.es`
@@ -219,14 +164,16 @@ function JobsList(props) {
 													Solicitar trabajo
 												</a>
 											) : (
-												<span className="main-button solicitar disabled">Trabajo caducado</span>
+												<span className="main-button solicitar disabled umami--click--solicitar-trabajo-caducado">
+													Trabajo caducado
+												</span>
 											)}
 										</div>
 									) : null}
 								</div>
 							</div>
 						) : (
-							<a className={`trabajo archive`} key={job.id} id={job.id} href={job.Url}>
+							<a className={`trabajo archive umami--click--anuncios`} key={job.id} id={job.id} href={job.Url}>
 								<div className="a">
 									<div>
 										<div className="img">
