@@ -22,7 +22,7 @@ const About = (props) => {
 
 						<h4>Sobre nosotros</h4>
 						<p>
-							Trabajos Remotos es un proyecto de <a rel="noopener" href="https://mascarell.me" target="_blank">Mascarell</a> y <a rel="noopener" href="https://hserrano.me" target="_blank">HJ</a> que busca ayudar a personas hispanohablantes encontrar trabajos a distancia.
+							Trabajos Remotos es un proyecto de <a rel="noopener" href="https://mascarell.me" target="_blank">Mascarell</a> y <a rel="noopener" href="https://mango.moe" target="_blank">HJ</a> que busca ayudar a personas hispanohablantes encontrar trabajos a distancia.
 						</p>
 					</div>
 				</div>
