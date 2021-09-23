@@ -53,8 +53,8 @@ const Confirmation = (props) => {
 						</p>
 						<p>
 							Las ofertas de trabajo que se publican aparecerán en la web una vez sean aprobadas manualmente. En caso de
-							que tengas dudas sobre tu publicación, puedes mandarnos un correo a{" "}
-							<a href="mailto:trabajosremotos@mango.moe">trabajosremotos@mango.moe</a>.
+							no ser aprobada, se te reembolsará el importe. Si tienes dudas sobre tu publicación, puedes mandarnos un
+							correo a <a href="mailto:trabajosremotos@mango.moe">trabajosremotos@mango.moe</a>.
 						</p>
 					</div>
 				</div>
