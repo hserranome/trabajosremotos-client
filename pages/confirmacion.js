@@ -1,9 +1,9 @@
-import { useEffect } from 'react';
-import Router, { withRouter } from 'next/router'
-import axios from 'axios';
-import Head from 'next/head'
+import { useEffect } from "react";
+import Router, { withRouter } from "next/router";
+import axios from "axios";
+import Head from "next/head";
 
-import { API_URL } from '../utils';
+import { API_URL } from "../utils";
 
 const Confirmation = (props) => {
 	const { result, query } = props;
@@ -16,50 +16,55 @@ const Confirmation = (props) => {
 		// 	return false;
 		// }
 		return true;
-	}
+	};
 
 	// CHECK IF JOB EXISTS
 	useEffect(() => {
 		const thisFunction = async () => {
 			const result = await checkJob();
 			if (result) localStorage.clear();
-		}
+		};
 		thisFunction();
 	}, []);
 
 	return (
 		<div>
-			<Head>			
+			<Head>
 				<title>Confirmación - Trabajos remotos</title>
 
-				<meta property="og:description" content="La plataforma para encontrar trabajos remotos online de manera sencilla." />
-				<meta name="twitter:description" content="La plataforma para encontrar trabajos remotos online de manera sencilla." />
+				<meta
+					property="og:description"
+					content="La plataforma para encontrar trabajos remotos online de manera sencilla."
+				/>
+				<meta
+					name="twitter:description"
+					content="La plataforma para encontrar trabajos remotos online de manera sencilla."
+				/>
 			</Head>
-			
+
 			<div className="anuncio">
 				<div className="container">
 					<div className="content fullwidth">
 						<h4>🎉 ¡Gracias por confiar en Trabajos Remotos para buscar tu próximo empleado!</h4>
 						<p>
-							Las nuevas ofertas de trabajo pueden tardar en aparecer en la web unos 
-							minutos. Para cualquier cambio que quieras realizar puedes enviarnos
-							un correo a <a href="mailto:trabajosremotos@mango.moe">trabajosremotos@mango.moe</a>.
+							Las nuevas ofertas de trabajo pueden tardar en aparecer en la web como maxímo 12 horas. Para cualquier
+							cambio que quieras realizar puedes enviarnos un correo a{" "}
+							<a href="mailto:trabajosremotos@mango.moe">trabajosremotos@mango.moe</a>.
 						</p>
 						<p>
-							Las ofertas de trabajo que se publican de manera gratuita no aparecerán en la 
-							web hasta que sean aprobadas manualmente para evitar spam. En caso de que tengas
-							dudas por que tu trabajo no ha sido aprobado, puedes mandarnos 
-							un correo a <a href="mailto:trabajosremotos@mango.moe">trabajosremotos@mango.moe</a>.
+							Las ofertas de trabajo que se publican aparecerán en la web una vez sean aprobadas manualmente. En caso de
+							no ser aprobada, se te reembolsará el importe. Si tienes dudas sobre tu publicación, puedes mandarnos un
+							correo a <a href="mailto:trabajosremotos@mango.moe">trabajosremotos@mango.moe</a>.
 						</p>
 					</div>
 				</div>
 			</div>
 		</div>
-	)
+	);
 };
 
 Confirmation.getInitialProps = ({ query }) => {
-	return { query }
-}
+	return { query };
+};
 
 export default withRouter(Confirmation);
