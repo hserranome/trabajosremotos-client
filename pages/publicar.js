@@ -80,9 +80,16 @@ const Publicar = () => {
 				<meta name="twitter:description" content="La plataforma para encontrar trabajos remotos online de manera sencilla." />
 			</Head>
 
-			<br/><br/><br/>
+			<div className="container recursos-hero" style={{ marginTop: '6rem' }}>
+				<div className="content">
+					<h4>¿Quieres ver las analíticas de nuestra web antes de publicar?</h4>
+					<p>
+						Puedes en este <a href={`https://analytics.mango.moe/share/5a8g1BjG/trabajosremotos.es`} target="_blank" rel="noopener" style={{ textDecoration: 'underline' }}>enlace</a> 🎉
+					</p>
+				</div>
+			</div>
 			
-			<div className="block nuevo">
+			<div className="block nuevo" style={{ marginTop: 0}}>
 				<div className="container">
 					<form className="publicar-anuncio" onSubmit={handleSubmit}>
 						{/* Title */}
