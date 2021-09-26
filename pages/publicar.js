@@ -21,9 +21,9 @@ const Publicar = () => {
 		const publishValues = localStorage.getItem("publishValues");
 		if (publishValues) setValues(JSON.parse(publishValues));
 		if (!stripe) {
-			if (window.Stripe && typeof window.Stripe == Function) {
+			try {
 				setStripe(window.Stripe(STRIPE_KEY));
-			}
+			} catch (e) {}
 		}
 	}, []);
 
