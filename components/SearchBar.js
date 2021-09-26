@@ -34,7 +34,7 @@ const SearchBar = (props) => {
 		<div className="bar">
 			<div className="container">
 				<form method='get' id='searchform' onSubmit={(event) => handleSearch(event)}>
-					<input type='text' className='field' id="searchQuery" minlength='1' placeholder='Escribe aquí el trabajo que quieres buscar' />
+					<input type='text' className='field' id="searchQuery" minLength='1' placeholder='Escribe aquí el trabajo que quieres buscar' />
 					<input className='search' type='submit' value='Buscar' />
 				</form>
 
