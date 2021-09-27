@@ -6,6 +6,7 @@ import SimpleMDE from "react-simplemde-editor";
 import Spinner from "../components/Spinner";
 
 import { API_URL } from "../utils";
+import { FacebookChat } from "../components/FacebookChat";
 
 const STRIPE_KEY = process.env.STRIPE_KEY || "pk_test_ggi6CNK5xAQySQxoZfkFVJoZ00FxmHeKgq";
 
