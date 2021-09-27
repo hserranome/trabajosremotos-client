@@ -90,7 +90,7 @@ const Publicar = () => {
 					content="La plataforma para encontrar trabajos remotos online de manera sencilla."
 				/>
 			</Head>
-			<FacebookChat />
+			{/* <FacebookChat /> */}
 			<div className="container recursos-hero" style={{ marginTop: "6rem" }}>
 				<div className="content">
 					{/* <h4>¿Quieres ver las analíticas de nuestra web antes de publicar?</h4>
