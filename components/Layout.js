@@ -5,7 +5,6 @@ import { useCookies } from "react-cookie";
 
 import Header from "./Header";
 import Footer from "./Footer";
-import MessengerChat from "./MessengerChat";
 
 // 👏 CONSISTENCIA 👏
 const Layout = (props) => {
