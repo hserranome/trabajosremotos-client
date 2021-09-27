@@ -2,11 +2,10 @@ import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import Link from "./ActiveLink";
 import { useCookies } from "react-cookie";
-import MessengerCustomerChat from "react-messenger-customer-chat";
 
 import Header from "./Header";
 import Footer from "./Footer";
-import { Facebook1 } from "../utils/facebookChat";
+import MessengerChat from "./MessengerChat";
 
 // 👏 CONSISTENCIA 👏
 const Layout = (props) => {
@@ -81,7 +80,7 @@ const Layout = (props) => {
 			<Header {...props} />
 			{props.children}
 			<Footer />
-			<Facebook1 />
+			<MessengerChat pageId="100263141703500" ref="fb-msgr" />
 			{cookies.acceptCookies !== "true" && loaded && (
 				<div className="aviso-cookies active">
 					Al seguir navegando por esta web aceptas nuestra{" "}
