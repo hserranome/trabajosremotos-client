@@ -6,6 +6,7 @@ import MessengerCustomerChat from "react-messenger-customer-chat";
 
 import Header from "./Header";
 import Footer from "./Footer";
+import { Facebook1 } from "../utils/facebookChat";
 
 // 👏 CONSISTENCIA 👏
 const Layout = (props) => {
@@ -76,12 +77,11 @@ const Layout = (props) => {
 				<script src="https://emailoctopus.com/bundles/emailoctopuslist/js/1.4/recaptcha.js"></script>
 				<script src="https://emailoctopus.com/bundles/emailoctopuslist/js/1.4/formEmbed.js"></script>
 			</Head>
-			<MessengerCustomerChat pageId="100263141703500" htmlRef={window.location.pathname} />
 
 			<Header {...props} />
 			{props.children}
 			<Footer />
-
+			<Facebook1 />
 			{cookies.acceptCookies !== "true" && loaded && (
 				<div className="aviso-cookies active">
 					Al seguir navegando por esta web aceptas nuestra{" "}
