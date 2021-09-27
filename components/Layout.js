@@ -1,18 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import Head from 'next/head';
-import Link from './ActiveLink';
-import { useCookies } from 'react-cookie';
+import React, { useEffect, useState } from "react";
+import Head from "next/head";
+import Link from "./ActiveLink";
+import { useCookies } from "react-cookie";
+import MessengerCustomerChat from "react-messenger-customer-chat";
 
-import Header from './Header';
-import Footer from './Footer';
+import Header from "./Header";
+import Footer from "./Footer";
 
-// 👏 CONSISTENCIA 👏 
+// 👏 CONSISTENCIA 👏
 const Layout = (props) => {
-	const [cookies, setCookie] = useCookies(['acceptCookies']);
-	const [loaded, setLoaded] = useState(false); 
-	
-	useEffect(() => {		
-		window.addEventListener('load', () => {
+	const [cookies, setCookie] = useCookies(["acceptCookies"]);
+	const [loaded, setLoaded] = useState(false);
+
+	useEffect(() => {
+		window.addEventListener("load", () => {
 			setLoaded(true);
 		});
 	}, []);
@@ -22,9 +23,9 @@ const Layout = (props) => {
 		// default is 3 months.
 		let days = 90;
 		// Get unix milliseconds at current time plus number of days
-		date.setTime(+ date + (days * 86400000)); //24 * 60 * 60 * 1000
+		date.setTime(+date + days * 86400000); //24 * 60 * 60 * 1000
 
-		setCookie('acceptCookies', newValue, { path: '/', expires: date });
+		setCookie("acceptCookies", newValue, { path: "/", expires: date });
 	}
 
 	return (
@@ -33,7 +34,7 @@ const Layout = (props) => {
 				<title>Trabajos remotos - Tu tablón de empleo remoto exclusivamente en español</title>
 
 				{/* General tags */}
-				<meta name='viewport' content='initial-scale=1.0, width=device-width' />
+				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 				<meta name="description" content="La plataforma para encontrar trabajos remotos online de manera sencilla." />
 				<meta name="robots" content="all" />
 
@@ -62,32 +63,36 @@ const Layout = (props) => {
 				<link rel="icon" type="image/png" sizes="32x32" href="/static/favicons/favicon-32x32.png" />
 				<link rel="icon" type="image/png" sizes="96x96" href="/static/favicons/favicon-96x96.png" />
 				<link rel="icon" type="image/png" sizes="16x16" href="/static/favicons/favicon-16x16.png" />
-				<link rel='shortcut icon' href='/static/favicons/favicon.ico' />
+				<link rel="shortcut icon" href="/static/favicons/favicon.ico" />
 				<meta name="msapplication-TileColor" content="#ffffff" />
 				<meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
 				<meta name="theme-color" content="#FFFFFF" />
 
 				<link rel="manifest" href="/static/manifest.json" />
 
-				<script src='https://js.stripe.com/v3' defer />
+				<script src="https://js.stripe.com/v3" defer />
 
 				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 				<script src="https://emailoctopus.com/bundles/emailoctopuslist/js/1.4/recaptcha.js"></script>
 				<script src="https://emailoctopus.com/bundles/emailoctopuslist/js/1.4/formEmbed.js"></script>
 			</Head>
+			<MessengerCustomerChat pageId="100263141703500" htmlRef={window.location.pathname} />
 
 			<Header {...props} />
-				{props.children}
+			{props.children}
 			<Footer />
-			
-			{cookies.acceptCookies !== 'true' && loaded && (<div className="aviso-cookies active">
-				Al seguir navegando por esta web aceptas
-				nuestra <Link href="/cookies"><a>política de privacidad</a></Link>.
 
-				<button onClick={() => changeCookie('true')}>Ok! 👍</button>
-			</div>)}
+			{cookies.acceptCookies !== "true" && loaded && (
+				<div className="aviso-cookies active">
+					Al seguir navegando por esta web aceptas nuestra{" "}
+					<Link href="/cookies">
+						<a>política de privacidad</a>
+					</Link>
+					.<button onClick={() => changeCookie("true")}>Ok! 👍</button>
+				</div>
+			)}
 		</div>
-	)
-}
+	);
+};
 
 export default Layout;
