@@ -80,7 +80,6 @@ const Layout = (props) => {
 			<Header {...props} />
 			{props.children}
 			<Footer />
-			<MessengerChat pageId="100263141703500" ref="fb-msgr" />
 			{cookies.acceptCookies !== "true" && loaded && (
 				<div className="aviso-cookies active">
 					Al seguir navegando por esta web aceptas nuestra{" "}
