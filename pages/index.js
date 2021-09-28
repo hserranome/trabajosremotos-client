@@ -3,9 +3,9 @@ import CategoryMenu from "../components/CategoryMenu";
 import SearchBar from "../components/SearchBar";
 import fetch from "isomorphic-unfetch";
 import Head from "next/head";
-import Link from "../components/ActiveLink";
 
 import { WEB_URL, API_URL, getLocalDate } from "../utils";
+import ActiveLink from "../components/ActiveLink";
 
 const Index = (props) => {
 	const { initialJobs, error, query } = props;
@@ -57,7 +57,7 @@ const Index = (props) => {
 
 			<div className="trabajos nobottom">
 				<CategoryMenu />
-
+				<PublishBanner />
 				<JobsList initialJobs={initialJobs} error={error} query={query} />
 			</div>
 
@@ -162,6 +162,31 @@ export const Header = () => {
 					>
 						¡Únete a nuestra newsletter!
 					</a>
+				</div>
+			</div>
+		</div>
+	);
+};
+
+export const PublishBanner = () => {
+	return (
+		<div style={{ padding: "0 1rem", overflow: "hidden" }} class="container">
+			<div
+				class="flex flex-col lg:flex-row items-center justify-between rounded-xl overflow-hidden w-full mx-auto py-4 px-10 z-20"
+				style={{ backgroundColor: "#e2f4fa" }}
+			>
+				<h2 class="text-l text-black">
+					<span class="font-extrabold">👉 ¿Contratando en remoto?</span>{" "}
+					<span class="font-semibold">
+						Alcanza a más de <span className="accent-text font-bold">10.000</span> trabajadores en remoto
+					</span>
+				</h2>
+				<div className="pt-2 lg:pt-0">
+					<button class="main-button outline">
+						<ActiveLink href="/publicar">
+							<span>Publica un trabajo</span>
+						</ActiveLink>
+					</button>
 				</div>
 			</div>
 		</div>
