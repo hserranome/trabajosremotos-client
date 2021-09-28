@@ -203,7 +203,7 @@ const Publicar = () => {
 						<label className="custom-checkbox-row">
 							<input name="showLogo" type="checkbox" onChange={handleChange} checked={values.showLogo || false} />
 							<p>
-								Muestra el logo de tu empresa en la página principal <span>+9€</span>
+								Muestra el logo de tu empresa a la izquierda de la oferta en la página principal <span>+9€</span>
 							</p>
 						</label>
 						{/* Featured */}
