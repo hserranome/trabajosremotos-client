@@ -216,26 +216,24 @@ a {
 	.container {
 		z-index: 6;
 	}
-
-	p {
-		text-align: left;
-		margin: 0;
-		padding: 0;
-		margin-bottom: 0.5rem;
-		font-size: 1.2rem;
-	}
-
-	h1 {
-		font-weight: 400;
-		font-size: 1rem;
-		text-align: left;
-		margin: 0;
-		padding: 0;
-		margin-bottom: 0.5rem;
-		// color: #2e2e2e;
-		letter-spacing: 2px;
-		text-transform: uppercase;
-	}
+}
+.hero-title {
+	font-weight: 400;
+	font-size: 1rem;
+	text-align: left;
+	margin: 0;
+	padding: 0;
+	margin-bottom: 0.5rem;
+	// color: #2e2e2e;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+.hero-subtitle {
+	text-align: left;
+	margin: 0;
+	padding: 0;
+	margin-bottom: 0.5rem;
+	font-size: 1.2rem;
 }
 /* ----------------------------------- */
 
@@ -1406,11 +1404,11 @@ nav.desktop .search {
 		padding-bottom: 0;
 	}
 
-	.hero p {
+	.hero-subtitle {
 		text-align: center;
 		font-size: 2.2rem;
 	}
-	.hero h1 {
+	.hero-title {
 		text-align: center;
 	}
 
