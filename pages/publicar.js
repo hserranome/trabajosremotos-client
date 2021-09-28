@@ -93,19 +93,7 @@ const Publicar = () => {
 			<FacebookChat />
 			<div className="container recursos-hero" style={{ marginTop: "6rem" }}>
 				<div className="content">
-					<h4>¿Quieres ver las analíticas de nuestra web antes de publicar?</h4>
-					<p>
-						Puedes en este{" "}
-						<a
-							href={`https://analytics.mango.moe/share/5a8g1BjG/trabajosremotos.es`}
-							target="_blank"
-							rel="noopener"
-							style={{ textDecoration: "underline" }}
-						>
-							enlace
-						</a>{" "}
-						🎉
-					</p>
+					<Statistic />
 				</div>
 			</div>
 
@@ -203,7 +191,7 @@ const Publicar = () => {
 						<label className="custom-checkbox-row">
 							<input name="showLogo" type="checkbox" onChange={handleChange} checked={values.showLogo || false} />
 							<p>
-								Muestra el logo de tu empresa en la página principal <span>+9€</span>
+								Muestra el logo de tu empresa a la izquierda de la oferta en la página principal <span>+9€</span>
 							</p>
 						</label>
 						{/* Featured */}
@@ -242,3 +230,61 @@ const Publicar = () => {
 };
 
 export default Publicar;
+
+const Statistic = () => {
+	return (
+		<div className="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 pt-8 pb-8">
+			<div className="grid gap-24 row-gap-8 lg:grid-cols-5">
+				<div className="grid gap-8 lg:col-span-2">
+					<div>
+						<h4 className="mb-2 text-lg font-bold">Publica tu oferta en trabajosremotos.es</h4>
+						<p className="text-gray-700">
+							La oferta permanecerá activa durante 30 días. Después, la publicación seguirá visible, pero no se podrá
+							postular a ella.
+						</p>
+						<br />
+						<p className="text-gray-700">
+							¿Quieres ver las analíticas de nuestra web antes de publicar? Puedes en este{" "}
+							<a
+								href={`https://analytics.mango.moe/share/5a8g1BjG/trabajosremotos.es`}
+								target="_blank"
+								rel="noopener"
+								style={{ textDecoration: "underline" }}
+							>
+								enlace
+							</a>{" "}
+							🎉
+						</p>
+					</div>
+				</div>
+				<div className="grid border divide-y rounded lg:col-span-3 sm:grid-cols-2 sm:divide-y-0 sm:divide-x">
+					<div className="flex flex-col justify-between p-10">
+						<div>
+							<p className="text-lg font-semibold text-gray-800 sm:text-base">Visitantes mensuales</p>
+							<p className="text-2xl font-bold accent-text sm:text-2xl">~10.000</p>
+						</div>
+						<div>
+							<p className="text-lg font-semibold text-gray-800 sm:text-base">Usuarios en Telegram</p>
+							<p className="text-2xl font-bold accent-text sm:text-2xl">+1.000</p>
+						</div>
+					</div>
+					<div className="flex flex-col justify-between p-10">
+						<div>
+							<p className="text-lg font-semibold text-gray-800 sm:text-base">Seguidores en LinkedIn</p>
+							<p className="text-2xl font-bold accent-text sm:text-2xl">+1.200</p>
+						</div>
+						<div>
+							<p className="text-lg font-semibold text-gray-800 sm:text-base">Seguidores en Instagram</p>
+							<p className="text-2xl font-bold accent-text sm:text-2xl">+850</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div className="pt-8">
+				<p className="text-gray-700">
+					Al publicar vuestra oferta la mostraremos tambien en el resto de nuestros canales.
+				</p>
+			</div>
+		</div>
+	);
+};
