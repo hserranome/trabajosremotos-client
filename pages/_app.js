@@ -5,8 +5,6 @@ import NProgress from "nprogress";
 import { CookiesProvider } from "react-cookie";
 import * as Sentry from "@sentry/browser";
 
-import "../static/css/easymde.min.css";
-import "../static/css/nprogress.css";
 import "../static/css/style.scss";
 
 import Layout from "../components/Layout";
