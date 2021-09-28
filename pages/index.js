@@ -170,19 +170,19 @@ export const Header = () => {
 
 export const PublishBanner = () => {
 	return (
-		<div style={{ padding: "0 1rem", overflow: "hidden" }} class="container">
+		<div style={{ padding: "0 1rem", overflow: "hidden" }} className="container">
 			<div
-				class="flex flex-col lg:flex-row items-center justify-between rounded-xl overflow-hidden w-full mx-auto py-4 px-10 z-20"
+				className="flex flex-col lg:flex-row items-center justify-between rounded-xl overflow-hidden w-full mx-auto py-4 px-10 z-20"
 				style={{ backgroundColor: "#e2f4fa" }}
 			>
-				<h2 class="text-l text-black">
-					<span class="font-extrabold">👉 ¿Contratando en remoto?</span>{" "}
-					<span class="font-semibold">
+				<h2 className="text-l text-black">
+					<span className="font-extrabold">👉 ¿Contratando en remoto?</span>{" "}
+					<span className="font-semibold">
 						Alcanza a más de <span className="accent-text font-bold">10.000</span> trabajadores en remoto
 					</span>
 				</h2>
 				<div className="pt-2 lg:pt-0">
-					<button class="main-button outline">
+					<button className="main-button outline">
 						<ActiveLink href="/publicar">
 							<span>Publica un trabajo</span>
 						</ActiveLink>
