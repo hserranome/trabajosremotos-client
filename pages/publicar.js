@@ -93,7 +93,7 @@ const Publicar = () => {
 			<FacebookChat />
 			<div className="container recursos-hero" style={{ marginTop: "6rem" }}>
 				<div className="content">
-					{/* <h4>¿Quieres ver las analíticas de nuestra web antes de publicar?</h4>
+					<h4>¿Quieres ver las analíticas de nuestra web antes de publicar?</h4>
 					<p>
 						Puedes en este{" "}
 						<a
@@ -105,7 +105,7 @@ const Publicar = () => {
 							enlace
 						</a>{" "}
 						🎉
-					</p> */}
+					</p>
 				</div>
 			</div>
 
