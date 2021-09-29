@@ -149,7 +149,7 @@ export const Header = () => {
 				<h1 className="hero-title">Trabajos remotos</h1>
 				<p className="hero-subtitle">La plataforma para encontrar trabajos remotos online de manera sencilla.</p>
 			</div>
-			<div className="text-center">
+			<div className="text-center pb-2">
 				<div>
 					<p className="max-w-md mx-auto text-xs text-gray-600 sm:text-sm mb-3">
 						¿Quieres recibir las últimas ofertas de trabajo todos los martes?
