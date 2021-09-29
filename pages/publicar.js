@@ -217,7 +217,7 @@ const Publicar = () => {
 								</span>
 							</p>
 
-							<button type="submit" className="main-button big umami--click--publicar-trabajo" disabled={submitting}>
+							<button type="submit" className="main-button big" disabled={submitting}>
 								Publicar trabajo
 								{submitting ? <Spinner /> : null}
 							</button>

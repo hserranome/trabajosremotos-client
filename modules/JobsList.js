@@ -171,7 +171,7 @@ function JobsList(props) {
 								</div>
 							</div>
 						) : (
-							<a className={`trabajo archive umami--click--anuncios`} key={job.id} id={job.id} href={job.Url}>
+							<a className={`trabajo archive umami--click--click-anuncio`} key={job.id} id={job.id} href={job.Url}>
 								<div className="a">
 									<div>
 										<div className="img">

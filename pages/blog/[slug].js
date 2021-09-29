@@ -1,128 +1,134 @@
-import Head from 'next/head';
-import Markdown from 'markdown-to-jsx';
-import LazyLoad from 'react-lazyload';
-import MailForm from '../../components/MailForm';
+import Head from "next/head";
+import Markdown from "markdown-to-jsx";
+import LazyLoad from "react-lazyload";
+import MailForm from "../../components/MailForm";
 
-import { API_URL, getLocalDate } from '../../utils';
-import Error from '../_error';
-
+import { API_URL, getLocalDate } from "../../utils";
+import Error from "../_error";
 
 function SingleBlogPost(props) {
 	const { publicacion, randomAd } = props;
-	if (!publicacion) return <Error />
-	const trabajosRemotosLogo = 'https://www.trabajosremotos.es/static/images/logo.png';
+	if (!publicacion) return <Error />;
+	const trabajosRemotosLogo = "https://www.trabajosremotos.es/static/images/logo.png";
 
 	return (
 		<div>
-			{publicacion
-				? (
-					<Head>
-						<title>{`${publicacion.seo_title}`}</title>
+			{publicacion ? (
+				<Head>
+					<title>{`${publicacion.seo_title}`}</title>
 
-						<meta name="robots" content="all" />
-						<meta property="og:title" content={`${publicacion.seo_title}`} key="trabajos-title-og" />
-						<meta property="og:image" content={publicacion.thumbnail ? `https://api.trabajosremotos.es${publicacion.thumbnail.url}` : trabajosRemotosLogo} key="trabajos-logo-og" />
-						<meta property="og:description" content={publicacion.meta_description} />
-						<meta name="twitter:title" content={`${publicacion.seo_title}`} key="trabajos-title-twitter" />
-						<meta name="twitter:image" content={publicacion.thumbnail ? `https://api.trabajosremotos.es${publicacion.thumbnail.url}` : trabajosRemotosLogo} key="trabajos-image-twitter" />
-						<meta name="twitter:description" content={publicacion.meta_description} />
-					</Head>
-				)
-				: (
-					<Head>
-						<title>{`404 - Trabajos remotos`}</title>
+					<meta name="robots" content="all" />
+					<meta property="og:title" content={`${publicacion.seo_title}`} key="trabajos-title-og" />
+					<meta
+						property="og:image"
+						content={
+							publicacion.thumbnail ? `https://api.trabajosremotos.es${publicacion.thumbnail.url}` : trabajosRemotosLogo
+						}
+						key="trabajos-logo-og"
+					/>
+					<meta property="og:description" content={publicacion.meta_description} />
+					<meta name="twitter:title" content={`${publicacion.seo_title}`} key="trabajos-title-twitter" />
+					<meta
+						name="twitter:image"
+						content={
+							publicacion.thumbnail ? `https://api.trabajosremotos.es${publicacion.thumbnail.url}` : trabajosRemotosLogo
+						}
+						key="trabajos-image-twitter"
+					/>
+					<meta name="twitter:description" content={publicacion.meta_description} />
+				</Head>
+			) : (
+				<Head>
+					<title>{`404 - Trabajos remotos`}</title>
 
-						<meta name="googlebot" content="noindex" />
-					</Head>
-				)
-			}
+					<meta name="googlebot" content="noindex" />
+				</Head>
+			)}
 
 			<div className="anuncio blog">
-				{publicacion
-					? (
-						<div>
-							<div className="blog-title">
-								<h1>{publicacion.title}</h1>
-								<p className="date">{publicacion.created_at}</p>
-							</div>
-							<div className="container small">
-								<div className="content fullwidth">
-									<div className="description">
-										<LazyLoad once>
-											<img
-												className="blog-thumbnail"
-												src={`https://api.trabajosremotos.es${publicacion.thumbnail.url}`}
-												alt={publicacion.thumbnail_alt}
-												title={publicacion.thumbnail_title}
-											/>
-										</LazyLoad>
-										{publicacion.content
-											? <Markdown>{publicacion.content}</Markdown>
-											: ''
-										}
-									</div>
+				{publicacion ? (
+					<div>
+						<div className="blog-title">
+							<h1>{publicacion.title}</h1>
+							<p className="date">{publicacion.created_at}</p>
+						</div>
+						<div className="container small">
+							<div className="content fullwidth">
+								<div className="description">
+									<LazyLoad once>
+										<img
+											className="blog-thumbnail"
+											src={`https://api.trabajosremotos.es${publicacion.thumbnail.url}`}
+											alt={publicacion.thumbnail_alt}
+											title={publicacion.thumbnail_title}
+										/>
+									</LazyLoad>
+									{publicacion.content ? <Markdown>{publicacion.content}</Markdown> : ""}
 								</div>
 							</div>
+						</div>
 
-							<div className='container'>
-								<div className='trabajos notop nobottom' style={{ width: '100%' }}>
-									<a className={`trabajo archive umami--click-anuncios`} key={randomAd.id} id={randomAd.id} href={randomAd.Url} >
-										<div className="a">
-											<div>
-												<div className='img'>
-													<LazyLoad once>
-														<img src={`${API_URL}${randomAd?.image?.url}`} alt={'logo'} />
-													</LazyLoad>
-												</div>
-												<div className="jobInfo">
-													<h2>{randomAd.Title}</h2>
-													<p>{randomAd.Subtitle}</p>
-												</div>
-												<div className="cta desktop">
-													<p>{randomAd.cta}</p>
-												</div>
+						<div className="container">
+							<div className="trabajos notop nobottom" style={{ width: "100%" }}>
+								<a
+									className={`trabajo archive umami--click--click-anuncio`}
+									key={randomAd.id}
+									id={randomAd.id}
+									href={randomAd.Url}
+								>
+									<div className="a">
+										<div>
+											<div className="img">
+												<LazyLoad once>
+													<img src={`${API_URL}${randomAd?.image?.url}`} alt={"logo"} />
+												</LazyLoad>
+											</div>
+											<div className="jobInfo">
+												<h2>{randomAd.Title}</h2>
+												<p>{randomAd.Subtitle}</p>
+											</div>
+											<div className="cta desktop">
+												<p>{randomAd.cta}</p>
 											</div>
 										</div>
-									</a>
-								</div>
+									</div>
+								</a>
 							</div>
 						</div>
-					)
-					: (
-						<div className="container">
-							<div className="content">
-								<div className="empty-message">No se ha encontrado este artículo</div>
-							</div>
+					</div>
+				) : (
+					<div className="container">
+						<div className="content">
+							<div className="empty-message">No se ha encontrado este artículo</div>
 						</div>
-					)
-				}
-
+					</div>
+				)}
 			</div>
 		</div>
-	)
+	);
 }
 
 SingleBlogPost.getInitialProps = async ({ query }) => {
-	try {		
+	try {
 		// Blog post normal query
 		const { slug } = query;
 		const res = await fetch(`${API_URL}/posts?slug=${slug}`);
 		const publicacions = await res.json();
 		if (!publicacions || publicacions.length === 0) {
-			return { publicacion: null }
+			return { publicacion: null };
 		}
 		const publicacion = publicacions[0];
 		publicacion.created_at = getLocalDate(publicacion.created_at);
 
 		// Advertisement query
-		const ad = await fetch(`${API_URL}/archives?_sort=active:DESC`)
-		const ads = await ad.json()
-		const randomAd = ads[Math.floor(Math.random() * ads.length)]
-		
+		const ad = await fetch(`${API_URL}/archives?_sort=active:DESC`);
+		const ads = await ad.json();
+		const randomAd = ads[Math.floor(Math.random() * ads.length)];
+
 		return { publicacion, randomAd };
 	} catch (error) {
-		console.error(error)
-		return { error }
+		console.error(error);
+		return { error };
 	}
 };
 
