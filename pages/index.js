@@ -6,6 +6,7 @@ import Head from "next/head";
 
 import { WEB_URL, API_URL, getLocalDate } from "../utils";
 import ActiveLink from "../components/ActiveLink";
+import analytics from "../utils/analytics";
 
 const Index = (props) => {
 	const { initialJobs, error, query } = props;
@@ -159,6 +160,9 @@ export const Header = () => {
 						target="_blank"
 						className="inline-flex shadow-md focus:shadow-outline tracking-wide focus:outline-none items-center justify-center w-full h-12 px-6 mb-4 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none cursor:pointer"
 						style={{ backgroundColor: "#ff4114" }}
+						onClick={() => {
+							analytics.trackEvent("newsletter-cta", analytics.eventTypes["click-on-cta"]);
+						}}
 					>
 						¡Únete a nuestra newsletter!
 					</a>
@@ -182,7 +186,12 @@ export const PublishBanner = () => {
 					</span>
 				</h2>
 				<div className="pt-2 lg:pt-0">
-					<button className="main-button outline">
+					<button
+						className="main-button outline"
+						onClick={() => {
+							analytics.trackEvent("publish-cta", analytics.eventTypes["click-on-cta"]);
+						}}
+					>
 						<ActiveLink href="/publicar">
 							<span>Publica un trabajo</span>
 						</ActiveLink>

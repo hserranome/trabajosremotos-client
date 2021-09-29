@@ -6,6 +6,7 @@ import LazyLoad from "react-lazyload";
 
 import { WEB_URL, API_URL, getLocalDate } from "../utils";
 import addVisitedJob from "../utils/addVisitedJob";
+import analytics from "../utils/analytics";
 
 function JobsList(props) {
 	const { initialJobs, query } = props;
@@ -53,7 +54,7 @@ function JobsList(props) {
 		});
 	};
 
-	const handleClick = async (jobId, url) => {
+	const handleClick = async (jobId, url, slug) => {
 		if (activeJob === jobId) {
 			await setActiveJob(null);
 			history.pushState(
@@ -73,6 +74,7 @@ function JobsList(props) {
 				`${WEB_URL}${url}`
 			);
 			addVisitedJob(jobId);
+			analytics.trackEvent(slug, analytics.eventTypes["click-on-job"]);
 		}
 
 		scrollToTargetAdjusted(jobId);
@@ -109,7 +111,7 @@ function JobsList(props) {
 								<div className="a">
 									<div
 										className={visitedJobs.includes(job.id) ? "visited" : null}
-										onClick={() => handleClick(job.id, `/trabajo/${job.slug}`)}
+										onClick={() => handleClick(job.id, `/trabajo/${job.slug}`, job.slug)}
 									>
 										{job.logo && job.showLogo ? (
 											<div className="img">
@@ -152,26 +154,35 @@ function JobsList(props) {
 												<a
 													target="_blank"
 													rel="noopener"
-													className="main-button solicitar umami--click--solicitar-trabajo"
+													className="main-button solicitar"
+													onClick={() => {
+														analytics.trackEvent(job.slug, analytics.eventTypes["apply-to-job"]);
+													}}
 													href={
 														job.link.includes("@")
 															? `mailto:${job.link}?body=%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%20-%20El%20Equipo%20de%20Trabajos%20Remotos%20%0A%20trabajosremotos.es`
 															: job.link
 													}
 												>
-													Solicitar trabajo
+													{job.link.includes("@") ? "Solicitar trabajo (email)" : "Solicitar trabajo (enlace externo)"}
 												</a>
 											) : (
-												<span className="main-button solicitar disabled umami--click--solicitar-trabajo-caducado">
-													Trabajo caducado
-												</span>
+												<span className="main-button solicitar disabled">Trabajo no disponible</span>
 											)}
 										</div>
 									) : null}
 								</div>
 							</div>
 						) : (
-							<a className={`trabajo archive umami--click--click-anuncio`} key={job.id} id={job.id} href={job.Url}>
+							<a
+								className={`trabajo archive`}
+								key={job.id}
+								id={job.id}
+								href={job.Url}
+								onClick={() => {
+									analytics.trackEvent(job.Title, analytics.eventTypes["click-on-banner"]);
+								}}
+							>
 								<div className="a">
 									<div>
 										<div className="img">

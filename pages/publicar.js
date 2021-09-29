@@ -7,6 +7,7 @@ import Spinner from "../components/Spinner";
 
 import { API_URL } from "../utils";
 import { FacebookChat } from "../components/FacebookChat";
+import analytics from "../utils/analytics";
 
 const STRIPE_KEY = process.env.STRIPE_KEY || "pk_test_ggi6CNK5xAQySQxoZfkFVJoZ00FxmHeKgq";
 
@@ -250,6 +251,7 @@ const Statistic = () => {
 								target="_blank"
 								rel="noopener"
 								style={{ textDecoration: "underline" }}
+								onClick={() => analytics.trackEvent("header", analytics.eventTypes["click-on-analytics"])}
 							>
 								enlace
 							</a>{" "}
