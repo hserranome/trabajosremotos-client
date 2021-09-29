@@ -10,4 +10,4 @@ const trackEvent = (value, type) => {
 	umami.trackEvent(value, type);
 };
 
-export default analytics = { trackEvent, eventTypes };
+export default { trackEvent, eventTypes };
