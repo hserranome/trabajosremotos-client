@@ -176,8 +176,8 @@ export const PublishBanner = () => {
 				style={{ backgroundColor: "#e2f4fa" }}
 			>
 				<h2 className="text-l text-black">
-					<span className="font-extrabold">👉 ¿Contratando en remoto?</span>{" "}
-					<span className="font-semibold">
+					<span className="font-bold">👉 ¿Contratando en remoto?</span>{" "}
+					<span className="font-regular">
 						Alcanza a más de <span className="accent-text font-bold">10.000</span> trabajadores en remoto
 					</span>
 				</h2>
