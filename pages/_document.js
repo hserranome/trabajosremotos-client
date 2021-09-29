@@ -46,6 +46,7 @@ export default class MyDocument extends Document {
 							defer
 							data-website-id="9b2e0d69-64ef-40d9-917f-6e6a1d2f889c"
 							src="https://analytics.mango.moe/umami.js"
+							data-cache="true"
 						></script>
 					) : null}
 				</Head>
