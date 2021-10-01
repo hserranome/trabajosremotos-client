@@ -5,16 +5,10 @@ const Publicitate = () => {
 	return (
 		<div>
 			<Head>
-				<title>Publicar nuevo trabajo - Trabajos remotos</title>
+				<title>Publicitate con nosotros - Trabajos remotos</title>
 
-				<meta
-					property="og:description"
-					content="La plataforma para encontrar trabajos remotos online de manera sencilla."
-				/>
-				<meta
-					name="twitter:description"
-					content="La plataforma para encontrar trabajos remotos online de manera sencilla."
-				/>
+				<meta property="og:description" content="Publicitate con trabajosremotos.es" />
+				<meta name="twitter:description" content="Publicitate con trabajosremotos.es" />
 			</Head>
 			<FacebookChat />
 			<div className="pt-20 pb-32">
