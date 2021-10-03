@@ -15,7 +15,7 @@ const PublishBanner = () => {
 				</h2>
 				<div className="pt-2 lg:pt-0">
 					<button
-						className="main-button"
+						className="main-button trans"
 						style={{ backgroundColor: "#e2f4fa !important", border: "2px solid #ff4114", color: "#ff4114" }}
 						onClick={() => {
 							analytics.trackEvent("publish-cta", analytics.eventTypes["click-on-cta"]);

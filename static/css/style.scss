@@ -1371,7 +1371,7 @@ nav.desktop .search {
 	color: white;
 	border: none;
 	outline: none;
-	background-color: #ff4114 !important;
+	background-color: #ff4114;
 	font-weight: 700;
 	border-radius: 2px;
 	display: block;
@@ -1383,6 +1383,10 @@ nav.desktop .search {
 	box-sizing: border-box;
 	padding: 8px 24px;
 	position: relative;
+
+	&.trans{
+		background-color: transparent;
+	}
 }
 .main-button.solicitar {
 	margin-top: 1rem;
