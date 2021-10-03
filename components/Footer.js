@@ -9,19 +9,7 @@ const Footer = (props) => (
 				<div className="inside">
 					<h4>Trabajos remotos</h4>
 
-					<p>Somos la comunidad hispanohablante más grande para encontrar empleo remoto. 🔥</p>
-				</div>
-			</div>
-
-			{/* Empty copy to have more space */}
-			<div className="copy">
-				<div className="inside">
-					<h4>Recursos</h4>
-
-					<p><a href="https://emailoctopus.com/lists/347308e1-960d-11ea-a3d0-06b4694bee2a/forms/subscribe" target="_blank" rel="noopener">Newsletter</a></p>
-					<p><a href={`${WEB_URL}/blog`}>Blog</a></p>
-					<p><a href={`${WEB_URL}/recursos`}>Recursos</a></p>
-					{/* <p><a target="_blank" href={`https://analytics.mango.moe/share/5a8g1BjG/trabajosremotos.es`}>Analíticas</a></p> */}
+					<p>Plataforma 100% de empleo remoto para LATAM y España.</p>
 				</div>
 			</div>
 
@@ -29,11 +17,11 @@ const Footer = (props) => (
 				<div className="inside">
 					<h4>Empleos remotos</h4>
 
-					<p><a href={`${WEB_URL}/categoria/programacion`}>Trabajos de programación</a></p>
-					<p><a href={`${WEB_URL}/categoria/diseno`}>Trabajos de diseño</a></p>
-					<p><a href={`${WEB_URL}/categoria/marketing`}>Trabajos de marketing</a></p>
-					<p><a href={`${WEB_URL}/categoria/atencion-al-cliente`}>Trabajos de atención al cliente</a></p>
-					<p><a href={`${WEB_URL}/categoria/otros`}>Otros trabajos</a></p>
+					<p><a href={`${WEB_URL}/categoria/programacion`}>Empleo remoto de programación</a></p>
+					<p><a href={`${WEB_URL}/categoria/diseno`}>Empleo remoto de diseño</a></p>
+					<p><a href={`${WEB_URL}/categoria/marketing`}>Empleo remoto de marketing</a></p>
+					<p><a href={`${WEB_URL}/categoria/atencion-al-cliente`}>Empleo remoto de atención al cliente</a></p>
+					<p><a href={`${WEB_URL}/categoria/otros`}>Otros empleos remotos</a></p>
 				</div>
 			</div>
 
@@ -79,3 +67,4 @@ const Footer = (props) => (
 )
 
 export default Footer;
+

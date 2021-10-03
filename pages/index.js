@@ -1,11 +1,12 @@
 import JobsList from "../modules/JobsList";
 import CategoryMenu from "../components/CategoryMenu";
 import SearchBar from "../components/SearchBar";
+import PublishBanner from "../components/PublishBanner";
+import Hero from "../components/Hero";
 import fetch from "isomorphic-unfetch";
 import Head from "next/head";
 
 import { WEB_URL, API_URL, getLocalDate } from "../utils";
-import ActiveLink from "../components/ActiveLink";
 import analytics from "../utils/analytics";
 
 const Index = (props) => {
@@ -53,7 +54,7 @@ const Index = (props) => {
 				<meta name="googlebot" content="index,follow" />
 			</Head>
 
-			<Header />
+			<Hero />
 			<SearchBar />
 
 			<div className="trabajos nobottom">
@@ -137,67 +138,3 @@ Index.getInitialProps = async () => {
 };
 
 export default Index;
-
-export const Header = () => {
-	return (
-		<div className="hero">
-			<div className="container">
-				<div className="desktop">
-					<br />
-					<br />
-					<br />
-				</div>
-				<h1 className="hero-title">Trabajos remotos</h1>
-				<p className="hero-subtitle">La plataforma para encontrar trabajos remotos online de manera sencilla.</p>
-			</div>
-			<div className="text-center pb-2">
-				<div>
-					<p className="max-w-md mx-auto text-xs text-gray-600 sm:text-sm mb-3">
-						¿Quieres recibir las últimas ofertas de trabajo todos los martes?
-					</p>
-					<a
-						href="https://emailoctopus.com/lists/347308e1-960d-11ea-a3d0-06b4694bee2a/forms/subscribe"
-						target="_blank"
-						className="inline-flex shadow-md focus:shadow-outline tracking-wide focus:outline-none items-center justify-center w-full h-12 px-6 mb-4 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none cursor:pointer"
-						style={{ backgroundColor: "#ff4114" }}
-						onClick={() => {
-							analytics.trackEvent("newsletter-cta", analytics.eventTypes["click-on-cta"]);
-						}}
-					>
-						¡Únete a nuestra newsletter!
-					</a>
-				</div>
-			</div>
-		</div>
-	);
-};
-
-export const PublishBanner = () => {
-	return (
-		<div style={{ padding: "0 1rem", overflow: "hidden" }} className="container">
-			<div
-				className="flex flex-col lg:flex-row items-center justify-between rounded-xl overflow-hidden w-full mx-auto py-4 px-10 z-20"
-				style={{ backgroundColor: "#e2f4fa" }}
-			>
-				<h2 className="text-l text-black">
-					<span className="font-bold">👉 ¿Contratando en remoto?</span>{" "}
-					<span className="font-regular">
-						Alcanza a más de <span className="accent-text font-bold">10.000</span> trabajadores en remoto
-					</span>
-				</h2>
-				<div className="pt-2 lg:pt-0">
-					<button
-						className="main-button outline"
-						onClick={() => {
-							analytics.trackEvent("publish-cta", analytics.eventTypes["click-on-cta"]);
-						}}
-					>
-						<ActiveLink href="/publicar">
-							<span>Publica un trabajo</span>
-						</ActiveLink>
-					</button>
-				</div>
-			</div>
-		</div>
-	);
-};

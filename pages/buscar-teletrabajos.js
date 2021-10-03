@@ -2,6 +2,9 @@ import JobsList from '../modules/JobsList';
 import fetch from 'isomorphic-unfetch';
 import Head from 'next/head';
 import SearchBar from '../components/SearchBar';
+import CategoryMenu from "../components/CategoryMenu";
+import PublishBanner from "../components/PublishBanner";
+import Hero from "../components/Hero";
 
 import { API_URL, getLocalDate } from '../utils';
 
@@ -18,22 +21,13 @@ const Search = (props) => {
 				<meta name="twitter:description" content="La plataforma para encontrar trabajos remotos online de manera sencilla." />
 			</Head>
 
-      <div className="hero">
-        <div className="container">
-          <div className="desktop"><br /><br /><br /></div>
-          <h1>Trabajos remotos</h1>
-          <p className="prata">La plataforma para encontrar trabajos remotos online de manera sencilla.</p>
-        </div>
-      </div>
+			<Hero />
+			<SearchBar />
 
-      <SearchBar />
-
-			<div className="trabajos">
-				<JobsList
-					initialJobs={initialJobs}
-					error={error}
-					query={query}
-				/>
+			<div className="trabajos nobottom">
+				<CategoryMenu />
+				<PublishBanner />
+				<JobsList initialJobs={initialJobs} error={error} query={query} />
 			</div>
 		</div>
 	)

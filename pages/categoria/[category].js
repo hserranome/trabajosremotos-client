@@ -1,9 +1,10 @@
 import fetch from 'isomorphic-unfetch';
 import Head from 'next/head';
 import Link from '../../components/ActiveLink';
-import CategoryMenu from '../../components/CategoryMenu';
-import SearchBar from '../../components/SearchBar';
-
+import CategoryMenu from "../../components/CategoryMenu";
+import SearchBar from "../../components/SearchBar";
+import Hero from "../../components/Hero";
+import PublishBanner from "../../components/PublishBanner";
 import JobsList from '../../modules/JobsList';
 import MailForm from '../../components/MailForm';
 import { API_URL, getLocalDate } from '../../utils';
@@ -30,30 +31,13 @@ const CategoryList = (props) => {
 				<meta name="googlebot" content="index,follow" />
 			</Head>
 
-      <div className="hero">
-        <div className="container">
-          <div className="desktop"><br /><br /><br /></div>
-          {
-            categoryTextName == 'Otros'
-              ?
-              <h1>Otros trabajos remotos</h1>
-              :
-              <h1>Trabajos remotos de {categoryTextName}</h1>
-          }
-          <p className="prata">La plataforma para encontrar trabajos remotos online de manera sencilla.</p>
-        </div>
-      </div>
-
-      <SearchBar />
+			<Hero />
+			<SearchBar />
 
 			<div className="trabajos nobottom">
-        <CategoryMenu />
-        
-				<JobsList
-					initialJobs={initialJobs}
-					error={error}
-					query={query}
-				/>
+				<CategoryMenu />
+				<PublishBanner />
+				<JobsList initialJobs={initialJobs} error={error} query={query} />
 			</div>
 
 			<div className="extra">
