@@ -3,4 +3,4 @@
 .env
 # .env.production
 # Sentry
-.sentryclirc
+# .sentryclirc
