@@ -9,10 +9,12 @@ export function init() {
 	chatbox.setAttribute("attribution", "biz_inbox");
 
 	window.fbAsyncInit = function () {
-		FB.init({
-			xfbml: true,
-			version: "v12.0",
-		});
+		if (FB) {
+			FB.init({
+				xfbml: true,
+				version: "v12.0",
+			});
+		}
 	};
 
 	(function (d, s, id) {
@@ -36,8 +38,9 @@ export function cleanup() {
 			target.parentNode.removeChild(target);
 		}
 	})(document, "facebook-jssdk");
-
-	delete window.FB;
+	if (window.FB) {
+		delete window.FB;
+	}
 }
 
 export function FacebookChat() {
