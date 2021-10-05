@@ -27,10 +27,10 @@ export const Content = () => {
 				<div className="flex flex-col justify-center">
 					<div className="max-w-xl mb-6">
 						<h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
-							Publicitate con trabajosremotos.es
+							Publicítate con trabajosremotos.es
 						</h2>
 						<p className="text-base text-gray-700 md:text-lg">
-							Ofrecemos la oportunidad de anunciarte en nuestros canales a un publico hispanoablante interesado en
+							Ofrecemos la oportunidad de anunciarte en nuestros canales a un público hispanohablante interesado en
 							avanzar su carrera profesional.
 						</p>
 					</div>
@@ -79,7 +79,7 @@ export const Content = () => {
 											<path d="M20 6L9 17l-5-5"></path>
 										</svg>
 									</span>
-									La mayoria residen en <b className="font-medium">Colombia 🇨🇴, México 🇲🇽, y EE. UU 🇺🇸</b>.
+									La mayoría residen en <b className="font-medium">Colombia 🇨🇴, México 🇲🇽, y EE. UU 🇺🇸</b>.
 								</p>
 								<p>
 									<span class="brand-secondary-bg-color text-indigo-400 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
@@ -188,8 +188,8 @@ export const Pricing = () => {
 					<div className="mb-6">
 						<div className="flex items-center justify-between pb-6 mb-6 border-b">
 							<div>
-								<p className="text-sm font-bold tracking-wider uppercase">Paquete estandar</p>
-								<p className="text-5xl font-extrabold">150€/mes</p>
+								<p className="text-sm font-bold tracking-wider uppercase">Paquete estándar</p>
+								<p className="text-5xl font-extrabold">150 €/mes</p>
 							</div>
 							<div className="flex items-center justify-center w-24 h-24 rounded-full bg-blue-gray-50">
 								<svg className="w-10 h-10 text-gray-600" viewBox="0 0 24 24" strokeLinecap="round" strokeLidth="2">
@@ -281,7 +281,7 @@ export const Pricing = () => {
 											<circle cx="12" cy="12" fill="none" r="11" stroke="currentColor" />
 										</svg>
 									</div>
-									<p className="font-medium text-gray-800">Dos publicaciónes en LinkedIn</p>
+									<p className="font-medium text-gray-800">Dos publicaciones en LinkedIn</p>
 								</li>
 								<li className="flex items-center">
 									<div className="mr-2">
@@ -308,7 +308,7 @@ export const Pricing = () => {
 							Ponte en contacto
 						</a>
 						<p className="text-sm text-gray-600">
-							Para mas información, puedes ponerte en contactarnos en{" "}
+							Para más información, puedes ponerte en contactarnos en{" "}
 							<a href="mailto:trabajosremotos@mango.moe" className="underline text-indigo-500">
 								trabajosremotos@mango.moe
 							</a>
