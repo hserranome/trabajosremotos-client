@@ -104,7 +104,7 @@ const Publicar = () => {
 						{/* Title */}
 						<label>
 							<p>
-								Puesto de trabajo <span className="required"></span>
+								Título de trabajo <span className="required"></span>
 							</p>
 							<input
 								name="title"
@@ -284,7 +284,7 @@ const Statistic = () => {
 			</div>
 			<div className="pt-8">
 				<p className="text-gray-700">
-					Al publicar vuestra oferta la mostraremos tambien en el resto de nuestros canales.
+					Al publicar vuestra oferta la mostraremos también en el resto de nuestros canales.
 				</p>
 			</div>
 		</div>
