@@ -6,9 +6,11 @@ const eventTypes = {
 };
 
 const trackEvent = (value, type) => {
-	if (umami) {
-		umami.trackEvent(value, type);
-	}
+	try {
+		if (umami) {
+			umami.trackEvent(value, type);
+		}
+	} catch (e) {}
 };
 
 export default { trackEvent, eventTypes };
