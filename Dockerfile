@@ -3,6 +3,10 @@ FROM node:14.17.6-slim
 # Setting working directory. All the path will be relative to WORKDIR
 WORKDIR /usr/src/app
 
+RUN apt-get update
+RUN apt-get install curl
+RUN apt install ca-certificates
+
 # Copying source files
 COPY . .
 
