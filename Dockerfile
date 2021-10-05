@@ -4,8 +4,8 @@ FROM node:14.17.6-slim
 WORKDIR /usr/src/app
 
 RUN apt-get update
-RUN apt-get install curl
-RUN apt install ca-certificates
+RUN apt-get install -y curl
+RUN apt-get install -y ca-certificates
 
 # Copying source files
 COPY . .
