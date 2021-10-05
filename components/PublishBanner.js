@@ -1,3 +1,4 @@
+import analytics from "../utils/analytics";
 import ActiveLink from "./ActiveLink";
 
 const PublishBanner = () => {

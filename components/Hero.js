@@ -1,3 +1,4 @@
+import analytics from "../utils/analytics";
 const Hero = () => {
 	return (
 		<div className="hero">
