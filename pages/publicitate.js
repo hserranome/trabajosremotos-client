@@ -6,9 +6,14 @@ const Publicitate = () => {
 		<div>
 			<Head>
 				<title>Publicitate con nosotros - Trabajos remotos</title>
-
-				<meta property="og:description" content="Publicitate con trabajosremotos.es" />
-				<meta name="twitter:description" content="Publicitate con trabajosremotos.es" />
+				<meta
+					property="og:description"
+					content="Ofrecemos la oportunidad de anunciarte en nuestros canales a un público hispanohablante interesado en avanzar su carrera profesional. La mayoría residen en Colombia 🇨🇴, México 🇲🇽, y EE. UU 🇺🇸."
+				/>
+				<meta
+					name="twitter:description"
+					content="Ofrecemos la oportunidad de anunciarte en nuestros canales a un público hispanohablante interesado en avanzar su carrera profesional. La mayoría residen en Colombia 🇨🇴, México 🇲🇽, y EE. UU 🇺🇸."
+				/>
 			</Head>
 			<FacebookChat />
 			<div className="pt-20 pb-32">
@@ -267,7 +272,7 @@ export const Pricing = () => {
 											<circle cx="12" cy="12" fill="none" r="11" stroke="currentColor" />
 										</svg>
 									</div>
-									<p className="font-medium text-gray-800">Anuncio en nuestra newsletter semanal durante 4 semanas</p>
+									<p className="font-medium text-gray-800">Anuncio en nuestra newsletter semanal durante 2 semanas</p>
 								</li>
 								<li className="flex items-center">
 									<div className="mr-2">
