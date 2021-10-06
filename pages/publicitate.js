@@ -116,7 +116,7 @@ export const Content = () => {
 											<path d="M20 6L9 17l-5-5"></path>
 										</svg>
 									</span>
-									Nuestro canal de Telegram tiene <b className="font-medium">1000 usuarios</b> activos
+									Nuestro canal de Telegram tiene <b className="font-medium">1.000 usuarios</b> activos
 								</p>
 								<p>
 									<span class="brand-secondary-bg-color text-indigo-400 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
@@ -132,7 +132,7 @@ export const Content = () => {
 											<path d="M20 6L9 17l-5-5"></path>
 										</svg>
 									</span>
-									Nuestra página de LinkedIn tiene más de <b className="font-medium">1200 seguidores</b>
+									Nuestra página de LinkedIn tiene más de <b className="font-medium">1.200 seguidores</b>
 								</p>
 								<p>
 									<span class="brand-secondary-bg-color text-indigo-400 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
