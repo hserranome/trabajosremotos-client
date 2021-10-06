@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import Head from "next/head";
 import Markdown from "markdown-to-jsx";
 import LazyLoad from "react-lazyload";
-import MailForm from "../../components/MailForm";
 import fetch from "isomorphic-unfetch";
 
 import { API_URL, getLocalDate } from "../../utils";
@@ -103,7 +102,15 @@ function SingleJob(props) {
 								<div className="description">
 									{job.description ? <Markdown>{job.description}</Markdown> : ""}
 									{isJobValid ? (
-										<a target="_blank" rel="noopener" className="main-button solicitar" href={job.link}>
+										<a
+											target="_blank"
+											rel="noopener"
+											className="main-button solicitar"
+											href={job.link}
+											onClick={() => {
+												analytics.trackEvent(job.slug, analytics.eventTypes["apply-to-job"]);
+											}}
+										>
 											Solicitar trabajo
 										</a>
 									) : (
