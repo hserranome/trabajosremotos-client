@@ -113,7 +113,7 @@ class Header extends React.Component {
 							</li>
 							<li>
 								<Link href="/publicitate">
-									<a>Publicítate</a>
+									<a>Sponsorship</a>
 								</Link>
 							</li>
 							<li>
@@ -207,7 +207,7 @@ class Header extends React.Component {
 						</li>
 						<li onClick={this.closeMenu}>
 							<Link href="/publicitate">
-								<a>Publicítate</a>
+								<a>Sponsorship</a>
 							</Link>
 						</li>
 						<li onClick={this.closeMenu}>
