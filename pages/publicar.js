@@ -6,7 +6,6 @@ import SimpleMDE from "react-simplemde-editor";
 import Spinner from "../components/Spinner";
 
 import { API_URL } from "../utils";
-import { FacebookChat } from "../components/FacebookChat";
 import analytics from "../utils/analytics";
 
 const STRIPE_KEY = process.env.STRIPE_KEY || "pk_test_ggi6CNK5xAQySQxoZfkFVJoZ00FxmHeKgq";
@@ -91,7 +90,6 @@ const Publicar = () => {
 					content="La plataforma para encontrar trabajos remotos online de manera sencilla."
 				/>
 			</Head>
-			<FacebookChat />
 			<div className="container recursos-hero" style={{ marginTop: "6rem" }}>
 				<div className="content">
 					<Statistic />

@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { FacebookChat } from "../components/FacebookChat";
 
 const Publicitate = () => {
 	return (
@@ -15,7 +14,6 @@ const Publicitate = () => {
 					content="Ofrecemos la oportunidad de anunciarte en nuestros canales a un público hispanohablante interesado en avanzar su carrera profesional. La mayoría residen en Colombia 🇨🇴, México 🇲🇽, y EE. UU 🇺🇸."
 				/>
 			</Head>
-			<FacebookChat />
 			<div className="pt-20 pb-32">
 				<Content />
 				<Pricing />
