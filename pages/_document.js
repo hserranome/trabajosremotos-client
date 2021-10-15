@@ -41,6 +41,9 @@ export default class MyDocument extends Document {
 					) : null}
 				</Head>
 				<body>
+					{/* Made by */}
+					<p className="by">Proyecto de <a href="http://twitter.com/mascarelldev" target="_blank" rel="noopener noreferrer">Mascarell</a> y <a href="http://twitter.com/hserranome" target="_blank" rel="noopener noreferrer">Hserranome</a></p>
+					
 					<Main />
 					<NextScript />
 				</body>

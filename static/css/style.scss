@@ -638,6 +638,24 @@ a {
 }
 /* ----------------------------------- */
 
+// Made by
+.by{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	padding: .5rem;
+	border-top-right-radius: 7px;
+	font-size: .8rem;
+	box-shadow: rgba(5, 10, 15, 0.2) 0px 0.3rem 1.2rem 0px;
+	border: 1px solid #dadada;
+	background-color: #fafafb;
+	z-index: 99999;
+
+	a{
+		font-weight: bold;
+	}
+}
+
 /* Submit new job listing form */
 form.publicar-anuncio {
 	display: flex;
