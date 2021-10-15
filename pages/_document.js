@@ -1,5 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
+import analytics from "../utils/analytics";
 
 export default class MyDocument extends Document {
 	static async getInitialProps(ctx) {
@@ -48,7 +49,7 @@ export default class MyDocument extends Document {
 						target="_blank" 
 						rel="noopener noreferrer"
 						onClick={() => {
-							analytics.trackEvent(job.slug, analytics.eventTypes["open-twitter"]);
+							analytics.trackEvent(analytics.eventTypes["open-twitter"]);
 						}}
 					>Mascarell</a> y 
 					<a 
@@ -56,7 +57,7 @@ export default class MyDocument extends Document {
 						target="_blank" 
 						rel="noopener noreferrer"
 						onClick={() => {
-							analytics.trackEvent(job.slug, analytics.eventTypes["open-twitter"]);
+							analytics.trackEvent(analytics.eventTypes["open-twitter"]);
 						}}
 					>Hserranome</a></p>
 					
