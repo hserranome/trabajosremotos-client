@@ -93,7 +93,7 @@ function SingleJob(props) {
 					<div>
 						<div className="container small">
 							<div className="content fullwidth">
-								<h1>{job.title}</h1>
+								<h1 className="text-2xl font-bold sm:text-4xl">{job.title}</h1>
 								<p className="company-single">
 									{job.company}
 									<span>{job.created_at_formatted}</span>
