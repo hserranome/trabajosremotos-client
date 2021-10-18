@@ -148,22 +148,34 @@ function JobsList(props) {
 									{activeJob === job.id ? (
 										<div className="description">
 											<Markdown>{job.description ? job.description : ""}</Markdown>
-											<div />
-											<a
-												target="_blank"
-												rel="noopener"
-												className="main-button solicitar"
-												onClick={() => {
-													analytics.trackEvent(job.slug, analytics.eventTypes["apply-to-job"]);
-												}}
-												href={
-													job.link.includes("@")
-														? `mailto:${job.link}?body=%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%20-%20El%20Equipo%20de%20Trabajos%20Remotos%20%0A%20trabajosremotos.es`
-														: job.link
-												}
-											>
-												{job.link.includes("@") ? "Solicitar trabajo (email)" : "Solicitar trabajo (enlace externo)"}
-											</a>
+											{job.expired === true ? (
+												<a
+													target="_blank"
+													rel="noopener"
+													className="main-button disabled solicitar"
+													onClick={() => {
+														analytics.trackEvent(job.slug, analytics.eventTypes["apply-to-expired-job"]);
+													}}
+												>
+													Trabajo no disponible (caducado)
+												</a>
+											) : (
+												<a
+													target="_blank"
+													rel="noopener"
+													className="main-button solicitar"
+													onClick={() => {
+														analytics.trackEvent(job.slug, analytics.eventTypes["apply-to-job"]);
+													}}
+													href={
+														job.link.includes("@")
+															? `mailto:${job.link}?body=%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%20-%20El%20Equipo%20de%20Trabajos%20Remotos%20%0A%20trabajosremotos.es`
+															: job.link
+													}
+												>
+													{job.link.includes("@") ? "Solicitar trabajo (email)" : "Solicitar trabajo (enlace externo)"}
+												</a>
+											)}
 										</div>
 									) : null}
 								</div>

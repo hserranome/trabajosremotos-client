@@ -101,20 +101,33 @@ function SingleJob(props) {
 
 								<div className="description">
 									{job.description ? <Markdown>{job.description}</Markdown> : ""}
-									{isJobValid ? (
+									{job.expired === true ? (
+										<a
+											target="_blank"
+											rel="noopener"
+											className="main-button disabled solicitar"
+											onClick={() => {
+												analytics.trackEvent(job.slug, analytics.eventTypes["apply-to-expired-job"]);
+											}}
+										>
+											Trabajo no disponible (caducado)
+										</a>
+									) : (
 										<a
 											target="_blank"
 											rel="noopener"
 											className="main-button solicitar"
-											href={job.link}
 											onClick={() => {
 												analytics.trackEvent(job.slug, analytics.eventTypes["apply-to-job"]);
 											}}
+											href={
+												job.link.includes("@")
+													? `mailto:${job.link}?body=%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%20-%20El%20Equipo%20de%20Trabajos%20Remotos%20%0A%20trabajosremotos.es`
+													: job.link
+											}
 										>
-											Solicitar trabajo
+											{job.link.includes("@") ? "Solicitar trabajo (email)" : "Solicitar trabajo (enlace externo)"}
 										</a>
-									) : (
-										<span className="main-button solicitar disabled">Trabajo caducado</span>
 									)}
 								</div>
 							</div>
