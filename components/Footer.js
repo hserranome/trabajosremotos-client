@@ -30,7 +30,7 @@ const Footer = (props) => (
 					<h4>Sobre nosotros</h4>
 
 					<p><a href={`${WEB_URL}/contacto`}>Contacto</a></p>
-					<p><a href={`${WEB_URL}/publicar`}>Publicar anuncio</a></p>
+					<p><a href={`${WEB_URL}/alternativas`}>Alternativas</a></p>
 					<p><a href={`${WEB_URL}/cookies`}>Cookies</a></p>
 					<p><a href={`${WEB_URL}/privacidad`}>Privacidad</a></p>
 					<p><a href={`${WEB_URL}/terminos`}>Terminos y condiciones</a></p>
