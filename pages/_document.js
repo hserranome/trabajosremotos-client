@@ -36,7 +36,7 @@ export default class MyDocument extends Document {
 							async
 							defer
 							data-website-id="9b2e0d69-64ef-40d9-917f-6e6a1d2f889c"
-							src="https://analytics.mango.moe/umami.js"
+							src="https://analytics.trabajosremotos.es/umami.js"
 							data-cache="true"
 						></script>
 					) : null}
@@ -51,15 +51,7 @@ export default class MyDocument extends Document {
 						onClick={() => {
 							analytics.trackEvent(analytics.eventTypes["open-twitter"]);
 						}}
-					>Mascarell</a> y 
-					<a 
-						href="http://twitter.com/hserranome" 
-						target="_blank" 
-						rel="noopener noreferrer"
-						onClick={() => {
-							analytics.trackEvent(analytics.eventTypes["open-twitter"]);
-						}}
-					>Hserranome</a></p>
+					>Mascarell</a></p>
 					
 					<Main />
 					<NextScript />

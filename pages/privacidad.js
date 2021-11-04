@@ -103,7 +103,7 @@ const Privacidad = (props) => {
 						<h4>Contáctenos</h4>
 
 						<p>
-							Si tiene alguna pregunta o comentario sobre esta Política de privacidad o su información personal, para realizar una solicitud de acceso o corrección, ejercer los derechos aplicables, presentar una queja u obtener información sobre nuestras políticas y prácticas con respecto a cualquier proveedor de servicios Fuera de España, nuestro Oficial de Privacidad (o el Oficial de Protección de Datos) puede ser contactado por correo o correo electrónico utilizando la siguiente información de contacto: por correo electrónico a trabajosremotos@mango.moe.
+							Si tiene alguna pregunta o comentario sobre esta Política de privacidad o su información personal, para realizar una solicitud de acceso o corrección, ejercer los derechos aplicables, presentar una queja u obtener información sobre nuestras políticas y prácticas con respecto a cualquier proveedor de servicios Fuera de España, nuestro Oficial de Privacidad (o el Oficial de Protección de Datos) puede ser contactado por correo o correo electrónico utilizando la siguiente información de contacto: por correo electrónico a contacto@trabajosremtos.es.
 						</p>
 					</div>
 				</div>

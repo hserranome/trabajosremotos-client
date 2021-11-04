@@ -30,38 +30,17 @@ const Footer = (props) => (
 					<h4>Sobre nosotros</h4>
 
 					<p><a href={`${WEB_URL}/contacto`}>Contacto</a></p>
-					<p><a href={`${WEB_URL}/publicar`}>Publicar anuncio</a></p>
+					{/* <p><a href={`${WEB_URL}/alternativas`}>Alternativas</a></p> */}
 					<p><a href={`${WEB_URL}/cookies`}>Cookies</a></p>
 					<p><a href={`${WEB_URL}/privacidad`}>Privacidad</a></p>
 					<p><a href={`${WEB_URL}/terminos`}>Terminos y condiciones</a></p>
-					<p><a href={`https://analytics.mango.moe/share/5a8g1BjG/trabajosremotos.es`} target="_blank" rel="noopener">Analíticas</a></p>
+					<p><a href={`https://analytics.trabajosremotos.es/share/5a8g1BjG/trabajosremotos.es`} target="_blank" rel="noopener">Analíticas</a></p>
 				</div>
 			</div>
 		</div>
 
 		<div className="container copyright">
-			<p>&copy; 2020 <a style={{ marginLeft: 0 }} rel="noopener" target="_blank" href="https://www.mango.moe?ref=trabajos">MangoMoe</a></p>
-
-			<div>
-				{/* Social media buttons */}
-				<div className="img">
-					<a rel="noopener" target="_blank" href="https://www.linkedin.com/company/trabajosremotos">
-						<img src='/static/images/linkedin.svg' alt='icono de linkedin' />
-					</a>
-				</div>
-
-				<div className="img">
-					<a rel="noopener" target="_blank" href="https://www.instagram.com/trabajos_remoto/">
-						<img src='/static/images/instagram.svg' alt='icono de instagram' />
-					</a>
-				</div>
-
-				<div className="img">
-					<a rel="noopener" target="_blank" href="https://t.me/trabajos_remotos">
-						<img src='/static/images/telegram2.svg' alt='icono de telegram' />
-					</a>
-				</div>
-			</div>
+			<p>&copy; 2021 Trabajos Remotos</p>
 		</div>
 	</div>
 )

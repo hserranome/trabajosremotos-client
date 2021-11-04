@@ -305,7 +305,6 @@ a {
 
 		p {
 			&:first-child {
-				font-weight: 600;
 				opacity: 0.6;
 			}
 		}
@@ -1384,7 +1383,10 @@ nav.desktop .search {
 	}
 }
 /* ----------------------------------- */
-
+// Secondary color
+.secondary-color{
+	color: #3855d8;
+}
 /* Main button */
 .main-button {
 	color: white;
