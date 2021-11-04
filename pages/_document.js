@@ -51,15 +51,7 @@ export default class MyDocument extends Document {
 						onClick={() => {
 							analytics.trackEvent(analytics.eventTypes["open-twitter"]);
 						}}
-					>Mascarell</a> y 
-					<a 
-						href="http://twitter.com/hserranome" 
-						target="_blank" 
-						rel="noopener noreferrer"
-						onClick={() => {
-							analytics.trackEvent(analytics.eventTypes["open-twitter"]);
-						}}
-					>Hserranome</a></p>
+					>Mascarell</a></p>
 					
 					<Main />
 					<NextScript />
