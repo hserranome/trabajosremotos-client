@@ -49,12 +49,12 @@ const Confirmation = (props) => {
 						<p>
 							Las nuevas ofertas de trabajo pueden tardar en aparecer en la web como maxímo 12 horas. Para cualquier
 							cambio que quieras realizar puedes enviarnos un correo a{" "}
-							<a href="mailto:trabajosremotos@mango.moe">trabajosremotos@mango.moe</a>.
+							<a href="mailto:contacto@trabajosremotos.es">contacto@trabajosremotos.es</a>.
 						</p>
 						<p>
 							Las ofertas de trabajo que se publican aparecerán en la web una vez sean aprobadas manualmente. En caso de
 							no ser aprobada, se te reembolsará el importe. Si tienes dudas sobre tu publicación, puedes mandarnos un
-							correo a <a href="mailto:trabajosremotos@mango.moe">trabajosremotos@mango.moe</a>.
+							correo a <a href="mailto:contacto@trabajosremotos.es">contacto@trabajosremotos.es</a>.
 						</p>
 					</div>
 				</div>

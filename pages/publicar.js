@@ -245,7 +245,7 @@ const Statistic = () => {
 						<p className="text-gray-700">
 							¿Quieres ver las analíticas de nuestra web antes de publicar? Puedes en este{" "}
 							<a
-								href={`https://analytics.mango.moe/share/5a8g1BjG/trabajosremotos.es`}
+								href={`https://analytics.trabajosremotos.es/share/5a8g1BjG/trabajosremotos.es`}
 								target="_blank"
 								rel="noopener"
 								style={{ textDecoration: "underline" }}

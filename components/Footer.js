@@ -34,7 +34,7 @@ const Footer = (props) => (
 					<p><a href={`${WEB_URL}/cookies`}>Cookies</a></p>
 					<p><a href={`${WEB_URL}/privacidad`}>Privacidad</a></p>
 					<p><a href={`${WEB_URL}/terminos`}>Terminos y condiciones</a></p>
-					<p><a href={`https://analytics.mango.moe/share/5a8g1BjG/trabajosremotos.es`} target="_blank" rel="noopener">Analíticas</a></p>
+					<p><a href={`https://analytics.trabajosremotos.es/share/5a8g1BjG/trabajosremotos.es`} target="_blank" rel="noopener">Analíticas</a></p>
 				</div>
 			</div>
 		</div>
