@@ -87,9 +87,9 @@ const LinkedIn = (props) => {
 							<span class="mb-8 text-xl font-bold tracking-widest text-blue-600">Motivo 1</span>
 							<h1 class="mb-8 text-4xl font-bold leading-none tracking-tighter text-neutral-600 lg:text-5xl
               ">El tamaño no importa</h1>
+							<p class="mb-8 text-xl leading-relaxed text-left text-gray-800">Nuestra plataforma tiene precios fijos para ofrecer las mismas oportunidades a todas las empresas, independientemente de su tamaño.</p>
 							<p class="mb-8 text-xl leading-relaxed text-left text-gray-800">Cuando se trata de usar LinkedIn para contratar, los precios no son claros y cuesta encontrar información antes de decidir si quieres pagar o no.</p>
 							<p class="mb-8 text-xl leading-relaxed text-left text-gray-800">Esto hace que competir con otras empresas más grandes con mejores presupuestos se convierta en una tarea difícil.</p>
-							<p class="mb-8 text-xl leading-relaxed text-left text-gray-800">Nuestra plataforma tiene precios fijos para ofrecer las mismas oportunidades a todas las empresas, independientemente de su tamaño.</p>
 						</div>
 					</div>
 				</div>
