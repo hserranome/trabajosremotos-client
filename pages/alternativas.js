@@ -11,7 +11,7 @@ const Alternativas = (props) => {
 				<meta name="robots" content="all" />
 				<meta
 					property="description"
-					content={`Blog de trabajosremotos.es, donde podrás encontrar información sobre el trabajo remoto, consejos, entrevistas y mucho mas.`}
+					content={`Descubre por qué somos la mejor plataforma de empleo remoto`}
 				/>
 				<meta property="og:title" content={`Descubre por qué somos la mejor plataforma de empleo remoto`} key="trabajos-title-og" />
 				<meta

@@ -11,9 +11,9 @@ const Indeed = (props) => {
 				<meta name="robots" content="all" />
 				<meta
 					property="description"
-					content={`Blog de trabajosremotos.es, donde podrás encontrar información sobre el trabajo remoto, consejos, entrevistas y mucho mas.`}
+					content={`Descubre la mejor alternativa a Indeed`}
 				/>
-				<meta property="og:title" content={`Blog de teletrabajo, productividad y mucho mas`} key="trabajos-title-og" />
+				<meta property="og:title" content={`Descubre la mejor alternativa a Indeed`} key="trabajos-title-og" />
 				<meta
 					property="og:image"
 					content="https://api.trabajosremotos.es/uploads/Frame_2_7b94d3392d.jpeg"
@@ -21,11 +21,11 @@ const Indeed = (props) => {
 				/>
 				<meta
 					property="og:description"
-					content={`Blog de trabajosremotos.es, donde podrás encontrar información sobre el trabajo remoto, consejos, entrevistas y mucho mas.`}
+					content={`Descubre la mejor alternativa a Indeed`}
 				/>
 				<meta
 					name="twitter:title"
-					content={`Blog de teletrabajo, productividad y mucho mas`}
+					content={`Descubre la mejor alternativa a Indeed`}
 					key="trabajos-title-twitter"
 				/>
 				<meta
@@ -35,7 +35,7 @@ const Indeed = (props) => {
 				/>
 				<meta
 					name="twitter:description"
-					content={`Blog de trabajosremotos.es, donde podrás encontrar información sobre el trabajo remoto, consejos, entrevistas y mucho mas.`}
+					content={`Descubre la mejor alternativa a Indeed`}
 				/>
 				<meta name="robots" content="index,follow" />
 				<meta name="googlebot" content="index,follow" />
