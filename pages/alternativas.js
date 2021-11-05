@@ -50,7 +50,7 @@ const Alternativas = (props) => {
 
 							<h1 class="text-black-800 text-4xl sm:text-5xl mb-8 md:mb-12">Descubre por qué somos la mejor plataforma de empleo remoto</h1>
 
-							<p class="lg:w-4/5 text-gray-500 xl:text-lg leading-relaxed mb-8 md:mb-12">Sabemos que se siente cuando estás buscando una alternativa a tu proceso de selección de nuevos empleados y siempre acabas en las mismas páginas web. En <strong className="font-semibold">trabajosremotos.es</strong> queremos facilitar la contratación de nuevos empleados remotos y hacer que sea más accesible para todo tipo de empresas.</p>
+							<p class="lg:w-4/5 text-gray-500 xl:text-lg leading-relaxed mb-8 md:mb-12">Sabemos qué se siente cuando estás buscando una alternativa a tu proceso de selección de nuevos empleados y siempre acabas en las mismas páginas web. En <strong className="font-semibold">trabajosremotos.es</strong> queremos facilitar la contratación de nuevos empleados remotos y hacer que sea más accesible para todo tipo de empresas.</p>
 
 							<div class="w-full flex flex-col sm:flex-row sm:justify-center gap-2.5">
 								<a href="#" class="inline-block text-white text-sm md:text-base text-center rounded-lg outline-none transition duration-100 px-8 py-3 main-button">Publicar trabajo</a>
