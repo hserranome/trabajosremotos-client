@@ -61,26 +61,26 @@ const Alternativas = (props) => {
 			</div>
 
 			<GridContainer className="blog-container notop">
-				<BlogPost href={`/alternativas`}>
+				<BlogPost href={`/alternativas/linkedin`}>
 					<PostContent>
-						<PostThumbnail src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/768px-LinkedIn_logo_initials.png" />
+						<PostThumbnail src="https://api.trabajosremotos.es/uploads/linkedin_1863b2acac.webp" />
 						<PostTitle className="prata">Alternativa a <strong>LinkedIn</strong></PostTitle>
 					</PostContent>
 				</BlogPost>
 				
 				<BlogPost href={`/alternativas/indeed`}>
 					<PostContent>
-						<PostThumbnail src="https://logos-marcas.com/wp-content/uploads/2021/02/Indeed-Logo.png" />
+						<PostThumbnail src="https://api.trabajosremotos.es/uploads/indeed_efce70a315.png" />
 						<PostTitle className="prata">Alternativa a <strong>Indeed</strong></PostTitle>
 					</PostContent>
 				</BlogPost>
 				
-				<BlogPost href={`/alternativas`}>
+				{/* <BlogPost href={`/alternativas`}>
 					<PostContent>
 						<PostThumbnail src="https://images-na.ssl-images-amazon.com/images/I/41Tjko5+4nL.png" />
 						<PostTitle className="prata">Alternativa a <strong>InfoJobs</strong></PostTitle>
 					</PostContent>
-				</BlogPost>
+				</BlogPost> */}
 			</GridContainer>
 		</div>
 	);

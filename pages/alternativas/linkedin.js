@@ -2,7 +2,7 @@ import Router, { withRouter } from "next/router";
 import styled from 'styled-components';
 import Head from "next/head";
 
-const Indeed = (props) => {
+const LinkedIn = (props) => {
 	return (
 		<div>
 			<Head>
@@ -47,8 +47,8 @@ const Indeed = (props) => {
 				<div class="px-4 py-12 mx-auto max-w-7xl sm:px-6 md:px-12 lg:px-24">
 					<div class="flex flex-wrap items-center mx-auto max-w-7xl">
 						<div class="flex flex-col items-start mb-16 text-left lg:flex-grow lg:w-1/2 lg:pr-24 md:mb-0">
-							<h1 class="mb-8 text-4xl font-bold leading-none tracking-tighter text-neutral-600 lg:text-5xl">Descubre la mejor alternativa a Indeed</h1>
-							<p class="mb-8 text-xl leading-relaxed text-left text-gray-800">¿En qué se diferencian Trabajos Remotos e Indeed? ¿Cuál es la mejor web para contratar nuevos empleados? Descubre nuestra comparativa entre Trabajos Remotos e Indeed.</p>
+							<h1 class="mb-8 text-4xl font-bold leading-none tracking-tighter text-neutral-600 lg:text-5xl">Descubre la mejor alternativa a LinkedIn</h1>
+							<p class="mb-8 text-xl leading-relaxed text-left text-gray-800">¿En qué se diferencian Trabajos Remotos y LinkedIn? ¿Cuál es la mejor web para contratar nuevos empleados? Descubre nuestra comparativa entre Trabajos Remotos y LinkedIn.</p>
 							<a href="/publicar" className="main-button big">Publica tu trabajo</a>
 						</div>
 						<div class="w-full mt-12 lg:w-5/6 lg:max-w-lg rounded-xl xl:mt-0">
@@ -57,7 +57,7 @@ const Indeed = (props) => {
 									<div class="absolute top-0 rounded-full bg-violet-300 -left-4 w-72 h-72 mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
 									<div class="absolute rounded-full bg-fuchsia-300 -bottom-24 right-20 w-72 h-72 mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
 									<div class="relative">
-										<img class="object-cover object-center mx-auto rounded-lg" src='/static/images/indeed.jpg' alt='trabajos remotos esta fuerte' />
+										<img class="object-cover object-center mx-auto rounded-lg" src='/static/images/linkedin.jpg' alt='trabajos remotos esta fuerte' />
 									</div>
 								</div>
 							</div>
@@ -87,7 +87,7 @@ const Indeed = (props) => {
 							<span class="mb-8 text-xl font-bold tracking-widest text-blue-600">Motivo 1</span>
 							<h1 class="mb-8 text-4xl font-bold leading-none tracking-tighter text-neutral-600 lg:text-5xl
               ">El tamaño no importa</h1>
-							<p class="mb-8 text-xl leading-relaxed text-left text-gray-800">Aunque publicar en ambas plataformas es completamente gratuito, para tener un mejor alcance en Indeed tienes que, como mínimo, pagar 150 euros al mes.</p>
+							<p class="mb-8 text-xl leading-relaxed text-left text-gray-800">Cuando se trata de usar LinkedIn para contratar, los precios no son claros y cuesta encontrar información antes de decidir si quieres pagar o no.</p>
 							<p class="mb-8 text-xl leading-relaxed text-left text-gray-800">Esto hace que competir con otras empresas más grandes con mejores presupuestos se convierta en una tarea difícil.</p>
 							<p class="mb-8 text-xl leading-relaxed text-left text-gray-800">Nuestra plataforma tiene precios fijos para ofrecer las mismas oportunidades a todas las empresas, independientemente de su tamaño.</p>
 						</div>
@@ -101,7 +101,7 @@ const Indeed = (props) => {
 						<div class="flex flex-col items-start mb-16 text-left lg:flex-grow lg:w-1/2 lg:pr-24 md:mb-0">
 							<span class="mb-8 text-xl font-bold tracking-widest text-blue-600">Motivo 2</span>
 							<h1 class="mb-8 text-4xl font-bold leading-none tracking-tighter text-neutral-600 lg:text-5xl">Exclusivamente remoto</h1>
-							<p class="mb-8 text-xl leading-relaxed text-left text-gray-800">No cabe duda que Indeed es una gran plataforma para encontrar empleo y cuenta con gran alcance, pero su web no está enfocada en empleo remoto y esto puede afectar a tu proceso de selección cuando ya te has decidido por la modalidad de trabajo remoto.</p>
+							<p class="mb-8 text-xl leading-relaxed text-left text-gray-800">No cabe duda de que LinkedIn es la plataforma de empleo más grande del mundo, pero su web no está enfocada en empleo remoto y esto puede afectar a tu proceso de selección cuando ya te has decidido por la modalidad de trabajo remoto.</p>
 							<p class="mb-8 text-xl leading-relaxed text-left text-gray-800">Nuestra plataforma se centra 100% en ofertas de teletrabajo en empresas de habla hispana, facilitando tu alcance.</p>
 						</div>
 						<div class="w-full mt-12 lg:w-5/6 lg:max-w-lg rounded-xl xl:mt-0">
@@ -169,8 +169,8 @@ const Indeed = (props) => {
 	);
 };
 
-Indeed.getInitialProps = ({ query }) => {
+LinkedIn.getInitialProps = ({ query }) => {
 	return { query };
 };
 
-export default withRouter(Indeed);
+export default withRouter(LinkedIn);
