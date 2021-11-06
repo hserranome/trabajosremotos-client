@@ -100,9 +100,9 @@ const sitemapXml = (blogPosts, jobsList) => {
 
 class Sitemap extends React.Component {
 	static async getInitialProps({ res }) {
-    const postsRes = await fetch(`${API_URL}/posts_limit=-1`);
+    const postsRes = await fetch(`${API_URL}/posts?_limit=-1`);
 		const posts = await postsRes.json();
-    const jobsRes = await fetch(`${API_URL}/jobs_limit=-1`);
+    const jobsRes = await fetch(`${API_URL}/jobs?_limit=-1`);
 		const jobs = await jobsRes.json();
 
 		res.setHeader("Content-Type", "text/xml");
