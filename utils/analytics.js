@@ -1,3 +1,5 @@
+// File from previous analytics (umami), not in use right now
+
 const eventTypes = {
 	"apply-to-job": "apply-to-job",
 	"click-on-banner": "click-on-banner",

@@ -1,6 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
-import analytics from "../utils/analytics";
 
 export default class MyDocument extends Document {
 	static async getInitialProps(ctx) {
@@ -56,9 +55,6 @@ export default class MyDocument extends Document {
 						href="http://twitter.com/mascarelldev" 
 						target="_blank" 
 						rel="noopener noreferrer"
-						onClick={() => {
-							analytics.trackEvent(analytics.eventTypes["open-twitter"]);
-						}}
 					>Mascarell</a></p>
 					
 					<Main />

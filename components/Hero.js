@@ -1,4 +1,3 @@
-import analytics from "../utils/analytics";
 const Hero = () => {
 	return (
 		<div className="hero">
@@ -21,9 +20,6 @@ const Hero = () => {
 						target="_blank"
 						className="inline-flex shadow-md focus:shadow-outline tracking-wide focus:outline-none items-center justify-center w-full h-12 px-6 mb-4 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto focus:shadow-outline focus:outline-none cursor:pointer"
 						style={{ backgroundColor: "#ff4114" }}
-						onClick={() => {
-							analytics.trackEvent("newsletter-cta", analytics.eventTypes["click-on-cta"]);
-						}}
 					>
 						¡Únete a nuestra newsletter!
 					</a>

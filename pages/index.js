@@ -7,7 +7,6 @@ import fetch from "isomorphic-unfetch";
 import Head from "next/head";
 
 import { WEB_URL, API_URL, getLocalDate } from "../utils";
-import analytics from "../utils/analytics";
 
 const Index = (props) => {
 	const { initialJobs, error, query } = props;

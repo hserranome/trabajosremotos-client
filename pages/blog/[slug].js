@@ -5,7 +5,6 @@ import MailForm from "../../components/MailForm";
 
 import { API_URL, getLocalDate } from "../../utils";
 import Error from "../_error";
-import analytics from "../../utils/analytics";
 
 function SingleBlogPost(props) {
 	const { publicacion, randomAd } = props;
@@ -76,9 +75,6 @@ function SingleBlogPost(props) {
 									key={randomAd.id}
 									id={randomAd.id}
 									href={randomAd.Url}
-									onClick={() => {
-										analytics.trackEvent(randomAd.Title, analytics.eventTypes["click-on-banner"]);
-									}}
 								>
 									<div className="a">
 										<div>

@@ -6,7 +6,6 @@ import SimpleMDE from "react-simplemde-editor";
 import Spinner from "../components/Spinner";
 
 import { API_URL } from "../utils";
-import analytics from "../utils/analytics";
 
 const STRIPE_KEY = process.env.STRIPE_KEY || "pk_test_ggi6CNK5xAQySQxoZfkFVJoZ00FxmHeKgq";
 
@@ -240,20 +239,6 @@ const Statistic = () => {
 						<p className="text-gray-700">
 							La oferta permanecerá activa durante 30 días. Después, la publicación seguirá visible, pero no se podrá
 							postular a ella.
-						</p>
-						<br />
-						<p className="text-gray-700">
-							¿Quieres ver las analíticas de nuestra web antes de publicar? Puedes en este{" "}
-							<a
-								href={`https://analytics.trabajosremotos.es/share/5a8g1BjG/trabajosremotos.es`}
-								target="_blank"
-								rel="noopener"
-								style={{ textDecoration: "underline" }}
-								onClick={() => analytics.trackEvent("header", analytics.eventTypes["click-on-analytics"])}
-							>
-								enlace
-							</a>{" "}
-							🎉
 						</p>
 					</div>
 				</div>
