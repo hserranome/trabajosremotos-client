@@ -7,7 +7,6 @@ import fetch from "isomorphic-unfetch";
 import { API_URL, getLocalDate } from "../../utils";
 import Error from "../_error";
 import addVisitedJob from "../../utils/addVisitedJob";
-import analytics from "../../utils/analytics";
 
 function SingleJob(props) {
 	const { job, isJobValid, randomAd } = props;
@@ -106,9 +105,6 @@ function SingleJob(props) {
 											target="_blank"
 											rel="noopener"
 											className="main-button disabled solicitar"
-											onClick={() => {
-												analytics.trackEvent(job.slug, analytics.eventTypes["apply-to-expired-job"]);
-											}}
 										>
 											Trabajo no disponible (caducado)
 										</a>
@@ -117,9 +113,6 @@ function SingleJob(props) {
 											target="_blank"
 											rel="noopener"
 											className="main-button solicitar"
-											onClick={() => {
-												analytics.trackEvent(job.slug, analytics.eventTypes["apply-to-job"]);
-											}}
 											href={
 												job.link.includes("@")
 													? `mailto:${job.link}?body=%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%20-%20El%20Equipo%20de%20Trabajos%20Remotos%20%0A%20trabajosremotos.es`
@@ -140,7 +133,6 @@ function SingleJob(props) {
 									key={randomAd.id}
 									id={randomAd.id}
 									href={randomAd.Url}
-									onClick={() => analytics.trackEvent(randomAd.Title, analytics.eventTypes["click-on-banner"])}
 								>
 									<div className="a">
 										<div>

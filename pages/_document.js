@@ -1,6 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
-import analytics from "../utils/analytics";
 
 export default class MyDocument extends Document {
 	static async getInitialProps(ctx) {
@@ -31,15 +30,23 @@ export default class MyDocument extends Document {
 		return (
 			<Html lang="es">
 				<Head>
-					{process.env.NODE_ENV == "production" ? (
-						<script
-							async
-							defer
-							data-website-id="9b2e0d69-64ef-40d9-917f-6e6a1d2f889c"
-							src="https://analytics.trabajosremotos.es/umami.js"
-							data-cache="true"
-						></script>
-					) : null}
+          {/* Global Site Tag (gtag.js) - Google Analytics */}
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=G-6Q8LEBSWBY`}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-6Q8LEBSWBY', {
+              page_path: window.location.pathname,
+            });
+          `,
+            }}
+          />
 				</Head>
 				<body>
 					{/* Made by */}
@@ -48,9 +55,6 @@ export default class MyDocument extends Document {
 						href="http://twitter.com/mascarelldev" 
 						target="_blank" 
 						rel="noopener noreferrer"
-						onClick={() => {
-							analytics.trackEvent(analytics.eventTypes["open-twitter"]);
-						}}
 					>Mascarell</a></p>
 					
 					<Main />

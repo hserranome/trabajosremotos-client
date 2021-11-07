@@ -6,7 +6,6 @@ import LazyLoad from "react-lazyload";
 
 import { WEB_URL, API_URL, getLocalDate } from "../utils";
 import addVisitedJob from "../utils/addVisitedJob";
-import analytics from "../utils/analytics";
 
 function JobsList(props) {
 	const { initialJobs, query } = props;
@@ -153,9 +152,6 @@ function JobsList(props) {
 													target="_blank"
 													rel="noopener"
 													className="main-button disabled solicitar"
-													onClick={() => {
-														analytics.trackEvent(job.slug, analytics.eventTypes["apply-to-expired-job"]);
-													}}
 												>
 													Trabajo no disponible (caducado)
 												</a>
@@ -164,9 +160,6 @@ function JobsList(props) {
 													target="_blank"
 													rel="noopener"
 													className="main-button solicitar"
-													onClick={() => {
-														analytics.trackEvent(job.slug, analytics.eventTypes["apply-to-job"]);
-													}}
 													href={
 														job.link.includes("@")
 															? `mailto:${job.link}?body=%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%20-%20El%20Equipo%20de%20Trabajos%20Remotos%20%0A%20trabajosremotos.es`
@@ -186,9 +179,6 @@ function JobsList(props) {
 								key={job.id}
 								id={job.id}
 								href={job.Url}
-								onClick={() => {
-									analytics.trackEvent(job.Title, analytics.eventTypes["click-on-banner"]);
-								}}
 							>
 								<div className="a">
 									<div>
