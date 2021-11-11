@@ -176,7 +176,7 @@ export const Pricing = () => {
 						<div className="flex items-center justify-between pb-6 mb-6 border-b">
 							<div>
 								<p className="text-sm font-bold tracking-wider uppercase">Paquete estándar</p>
-								<p className="text-5xl font-extrabold">249 €/mes</p>
+								<p className="text-5xl font-extrabold">249 €</p>
 							</div>
 							<div className="flex items-center justify-center w-24 h-24 rounded-full bg-blue-gray-50">
 								<svg className="w-10 h-10 text-gray-600" viewBox="0 0 24 24" strokeLinecap="round" strokeLidth="2">
@@ -194,22 +194,8 @@ export const Pricing = () => {
 							</div>
 						</div>
 						<div>
-							<p className="mb-2 font-bold tracking-wide">Que incluye</p>
+							<p className="mb-2 font-bold tracking-wide">Qué incluye</p>
 							<ul className="space-y-2">
-								<li className="flex items-center">
-									<div className="mr-2">
-										<svg
-											className="w-4 h-4 text-deep-purple-accent-400"
-											viewBox="0 0 24 24"
-											strokeLinecap="round"
-											strokeLidth="2"
-										>
-											<polyline fill="none" stroke="currentColor" points="6,12 10,16 18,8" />
-											<circle cx="12" cy="12" fill="none" r="11" stroke="currentColor" />
-										</svg>
-									</div>
-									<p className="font-medium text-gray-800">Anuncio nativo en la barra de categorías</p>
-								</li>
 								<li className="flex items-center">
 									<div className="mr-2">
 										<svg
@@ -238,7 +224,7 @@ export const Pricing = () => {
 											<circle cx="12" cy="12" fill="none" r="11" stroke="currentColor" />
 										</svg>
 									</div>
-									<p className="font-medium text-gray-800">Anuncio en nuestra newsletter semanal durante 2 semanas</p>
+									<p className="font-medium text-gray-800">Anuncio en nuestra newsletter semanal</p>
 								</li>
 								<li className="flex items-center">
 									<div className="mr-2">
@@ -252,7 +238,7 @@ export const Pricing = () => {
 											<circle cx="12" cy="12" fill="none" r="11" stroke="currentColor" />
 										</svg>
 									</div>
-									<p className="font-medium text-gray-800">Dos publicaciones en LinkedIn</p>
+									<p className="font-medium text-gray-800">Publicacion en LinkedIn</p>
 								</li>
 								<li className="flex items-center">
 									<div className="mr-2">
@@ -266,7 +252,7 @@ export const Pricing = () => {
 											<circle cx="12" cy="12" fill="none" r="11" stroke="currentColor" />
 										</svg>
 									</div>
-									<p className="font-medium text-gray-800">Dos mensajes en Telegram.</p>
+									<p className="font-medium text-gray-800">Mensaje en Telegram</p>
 								</li>
 							</ul>
 						</div>
