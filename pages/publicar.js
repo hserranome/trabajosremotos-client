@@ -16,10 +16,8 @@ const Publicar = () => {
 	const [stripe, setStripe] = useState(undefined);
 	const priceSpr = useSpring({ price, config: { ...config.stiff, clamp: true } });
 
-	// ON FIRST LOAD, GET VALUES FROM LOCALSTORAGE
+	// FIRST LOAD
 	useEffect(() => {
-		const publishValues = localStorage.getItem("publishValues");
-		if (publishValues) setValues(JSON.parse(publishValues));
 		if (!stripe) {
 			try {
 				setStripe(window.Stripe(STRIPE_KEY));
@@ -27,14 +25,13 @@ const Publicar = () => {
 		}
 	}, []);
 
-	// ON VALUE CHANGE, SET PRICE COUNTER AND SAVE TO LOCALSTORAGE
+	// ON VALUE CHANGE, SET PRICE COUNTER
 	useEffect(() => {
 		let thisPrice = 39;
 		if (values.pinned) thisPrice += 29;
 		if (values.featured) thisPrice += 19;
 		if (values.showLogo) thisPrice += 9;
 		setPrice(thisPrice);
-		localStorage.setItem("publishValues", JSON.stringify(values));
 	}, [values]);
 
 	// HANDLE SUBMIT
@@ -234,8 +231,9 @@ const Statistic = () => {
 		<div className="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 pt-8 pb-8">
 			<div className="grid gap-24 row-gap-8 lg:grid-cols-5">
 				<div className="grid gap-8 lg:col-span-2">
-					<div>
-						<h4 className="mb-2 text-lg font-bold">Publica tu oferta en trabajosremotos.es</h4>
+					<div className="relative">
+            <br />
+						<h4 className="text-lg font-bold">Publica tu oferta en trabajosremotos.es</h4>
 						<p className="text-gray-700">
 							La oferta permanecerá activa durante 30 días. Después, la publicación seguirá visible, pero no se podrá
 							postular a ella.
@@ -250,25 +248,20 @@ const Statistic = () => {
 						</div>
 						<div>
 							<p className="text-lg font-semibold text-gray-800 sm:text-base">Usuarios en Telegram</p>
-							<p className="text-2xl font-bold accent-text sm:text-2xl">+1.000</p>
+							<p className="text-2xl font-bold accent-text sm:text-2xl">+1.100</p>
 						</div>
 					</div>
 					<div className="flex flex-col justify-between p-10">
 						<div>
 							<p className="text-lg font-semibold text-gray-800 sm:text-base">Seguidores en LinkedIn</p>
-							<p className="text-2xl font-bold accent-text sm:text-2xl">+1.200</p>
+							<p className="text-2xl font-bold accent-text sm:text-2xl">+1.600</p>
 						</div>
 						<div>
-							<p className="text-lg font-semibold text-gray-800 sm:text-base">Seguidores en Instagram</p>
-							<p className="text-2xl font-bold accent-text sm:text-2xl">+850</p>
+							<p className="text-lg font-semibold text-gray-800 sm:text-base">Newsletter</p>
+							<p className="text-2xl font-bold accent-text sm:text-2xl">+500</p>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div className="pt-8">
-				<p className="text-gray-700">
-					Al publicar vuestra oferta la mostraremos también en el resto de nuestros canales.
-				</p>
 			</div>
 		</div>
 	);
