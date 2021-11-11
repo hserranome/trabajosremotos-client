@@ -8,25 +8,6 @@ import { API_URL } from "../utils";
 const Confirmation = (props) => {
 	const { result, query } = props;
 
-	const checkJob = async () => {
-		const { session_id } = query;
-		const res = await axios.get(`${API_URL}/orders?session_id=${session_id}`);
-		// if (!res.data || !res.data[0] || !res.data[0].job) {
-		// 	Router.push('/')
-		// 	return false;
-		// }
-		return true;
-	};
-
-	// CHECK IF JOB EXISTS
-	useEffect(() => {
-		const thisFunction = async () => {
-			const result = await checkJob();
-			if (result) localStorage.clear();
-		};
-		thisFunction();
-	}, []);
-
 	return (
 		<div>
 			<Head>
@@ -47,14 +28,7 @@ const Confirmation = (props) => {
 					<div className="content fullwidth">
 						<h4>🎉 ¡Gracias por confiar en Trabajos Remotos para buscar tu próximo empleado!</h4>
 						<p>
-							Las nuevas ofertas de trabajo pueden tardar en aparecer en la web como maxímo 12 horas. Para cualquier
-							cambio que quieras realizar puedes enviarnos un correo a{" "}
-							<a href="mailto:contacto@trabajosremotos.es">contacto@trabajosremotos.es</a>.
-						</p>
-						<p>
-							Las ofertas de trabajo que se publican aparecerán en la web una vez sean aprobadas manualmente. En caso de
-							no ser aprobada, se te reembolsará el importe. Si tienes dudas sobre tu publicación, puedes mandarnos un
-							correo a <a href="mailto:contacto@trabajosremotos.es">contacto@trabajosremotos.es</a>.
+							Las nuevas ofertas de trabajo pueden tardar en aparecer en la web como maxímo 12 horas. Para cualquier cambio que quieras realizar puedes enviarnos un correo a <a href="mailto:contacto@trabajosremotos.es">contacto@trabajosremotos.es</a>.
 						</p>
 					</div>
 				</div>
