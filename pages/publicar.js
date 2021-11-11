@@ -94,7 +94,7 @@ const Publicar = () => {
 
 			<div className="block nuevo" style={{ marginTop: 0 }}>
 				<div className="container">
-          <iframe src="https://tally.so/embed/nGoQjn?hideTitle=1&alignLeft=1&transparentBackground=1" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0" title="Nuevo empleo en Trabajos Remotos"></iframe>
+          <iframe src="https://tally.so/embed/nGoQjn?hideTitle=1&alignLeft=1&transparentBackground=1" width="100%" height="500" frameBorder="0" marginHeight="0" marginWidth="0" title="Nuevo empleo en Trabajos Remotos"></iframe>
 				</div>
 			</div>
 		</div>

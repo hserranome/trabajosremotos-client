@@ -128,7 +128,7 @@ class Header extends React.Component {
 								</Link>
 							</li>
 							<li>
-								<Link href="/publicar">
+                <Link href="https://tally.so/r/nGoQjn">
 									<a className="main-button">Publicar trabajo</a>
 								</Link>
 							</li>
@@ -214,7 +214,7 @@ class Header extends React.Component {
 							</Link>
 						</li>
 						<li onClick={this.closeMenu}>
-							<Link href="/publicar">
+              <Link href="https://tally.so/r/nGoQjn">
 								<a className="main-button">Publicar trabajo</a>
 							</Link>
 						</li>

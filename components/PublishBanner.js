@@ -1,4 +1,4 @@
-import ActiveLink from "./ActiveLink";
+import Link from "./ActiveLink";
 
 const PublishBanner = () => {
 	return (
@@ -18,9 +18,9 @@ const PublishBanner = () => {
 						className="main-button trans"
 						style={{ backgroundColor: "#e2f4fa !important", border: "2px solid #ff4114", color: "#ff4114" }}
 					>
-						<ActiveLink href="/publicar">
+            <Link href="https://tally.so/r/nGoQjn">
 							<span>Publica un trabajo</span>
-						</ActiveLink>
+						</Link>
 					</button>
 				</div>
 			</div>

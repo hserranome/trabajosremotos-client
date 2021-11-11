@@ -49,7 +49,7 @@ const LinkedIn = (props) => {
 						<div class="flex flex-col items-start mb-16 text-left lg:flex-grow lg:w-1/2 lg:pr-24 md:mb-0">
 							<h1 class="mb-8 text-4xl font-bold leading-none tracking-tighter text-neutral-600 lg:text-5xl">Descubre la mejor alternativa a LinkedIn</h1>
 							<p class="mb-8 text-xl leading-relaxed text-left text-gray-800">¿En qué se diferencian Trabajos Remotos y LinkedIn? ¿Cuál es la mejor web para contratar nuevos empleados? Descubre nuestra comparativa entre Trabajos Remotos y LinkedIn.</p>
-							<a href="/publicar" className="main-button big">Publica tu trabajo</a>
+              <a href="https://tally.so/r/nGoQjn" className="main-button big">Publica tu trabajo</a>
 						</div>
 						<div class="w-full mt-12 lg:w-5/6 lg:max-w-lg rounded-xl xl:mt-0">
 							<div>
@@ -158,7 +158,7 @@ const LinkedIn = (props) => {
 								<p class="max-w-xl mx-auto mt-8 text-xl leading-relaxed text-gray-800
                 ">Publica tu próxima oferta de empleo remoto con nosotros y consigue un 30% de descuento con el código <strong>REMOTE30</strong></p>
 								<div className="mx-auto flex justify-center items-center mt-8">
-									<a href="/publicar" className="main-button big">Publicar anuncio</a>
+                  <a href="https://tally.so/r/nGoQjn" className="main-button big">Publicar anuncio</a>
 								</div>
 							</div>
 						</div>
