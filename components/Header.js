@@ -106,6 +106,11 @@ class Header extends React.Component {
 									</li>
 								</ul>
 							</li> */}
+              <li>
+                <Link href="/">
+                  <a>Empleos remotos</a>
+                </Link>
+              </li>
 							<li>
 								<Link href="">
 									<a
@@ -141,7 +146,7 @@ class Header extends React.Component {
 					<div className="links">
 						<li onClick={this.closeMenu}>
 							<Link href="/">
-								<a>Trabajos remotos</a>
+								<a>Empleos remotos</a>
 							</Link>
 						</li>
 						<li onClick={this.closeMenu}>
