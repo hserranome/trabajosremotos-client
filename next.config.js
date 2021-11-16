@@ -6,7 +6,7 @@ const withSass = require("@zeit/next-sass");
 const withImages = require("next-images");
 const withOffline = require("next-offline");
 const withSourceMaps = require("@zeit/next-source-maps");
-const { withSentryConfig } = require("@sentry/nextjs");
+// const { withSentryConfig } = require("@sentry/nextjs");
 
 require("dotenv").config();
 
@@ -49,8 +49,8 @@ const moduleExports = withSourceMaps(
 	)
 );
 
-const SentryWebpackPluginOptions = {
-	silent: true,
-};
+// const SentryWebpackPluginOptions = {
+// 	silent: true, e
+// };
 
-module.exports = withSentryConfig(moduleExports, SentryWebpackPluginOptions);
+module.exports = moduleExports
