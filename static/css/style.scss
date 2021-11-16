@@ -215,6 +215,12 @@ a {
 	color: #202122;
 	overflow: hidden;
 	background-color: #e2f4fa;
+  padding-top: 96px;
+
+  @media only screen and (min-width: 800px) {
+		display: block;
+    padding-top: 0;
+	}
 
 	.container {
 		z-index: 6;
