@@ -17,7 +17,7 @@ const CategoryMenu = () => (
 				<span>Marketing</span>
 			</a>
 			<a href={`${WEB_URL}/categoria/atencion-al-cliente`}>
-				<img src='/static/images/atencion.svg' alt='icono de atencion' />
+				<img src='/static/images/atencion-al-cliente.svg' alt='icono de atencion' />
 				<span>Atención <br /> al cliente</span>
 			</a>
 			<a href={`${WEB_URL}/categoria/gamedev`}>

@@ -85,14 +85,14 @@ class Header extends React.Component {
 						</Link>
 
 						<ul>
-							{/* <li className="dropdown-parent">
+              <li>
+                <Link href="/trabajos">
+                  <a>Empleos remotos</a>
+                </Link>
+              </li>
+							<li className="dropdown-parent">
 								<a>Comunidad</a>
 								<ul className="dropdown">
-									<li>
-										<Link href="/recursos">
-											<a>Recursos</a>
-										</Link>
-									</li>
 									<li>
 										<Link href="">
 											<a
@@ -104,28 +104,28 @@ class Header extends React.Component {
 											</a>
 										</Link>
 									</li>
+									<li>
+										<Link href="">
+                      <a 
+                        href='https://t.me/trabajos_remotos'
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        Telegram
+                      </a>
+										</Link>
+									</li>
+                  <li>
+                    <Link href="/blog">
+                      <a>Blog</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/recursos">
+                      <a>Recursos</a>
+                    </Link>
+                  </li>
 								</ul>
-							</li> */}
-              <li>
-                <Link href="/">
-                  <a>Empleos remotos</a>
-                </Link>
-              </li>
-							<li>
-								<Link href="">
-									<a
-										href="https://emailoctopus.com/lists/347308e1-960d-11ea-a3d0-06b4694bee2a/forms/subscribe"
-										target="_blank"
-										rel="noopener"
-									>
-										Newsletter
-									</a>
-								</Link>
-							</li>
-							<li>
-								<Link href="/blog">
-									<a>Blog</a>
-								</Link>
 							</li>
 							<li>
 								<Link href="/publicitate">
@@ -145,7 +145,7 @@ class Header extends React.Component {
 				<div className="overlay">
 					<div className="links">
 						<li onClick={this.closeMenu}>
-							<Link href="/">
+							<Link href="/trabajos">
 								<a>Empleos remotos</a>
 							</Link>
 						</li>

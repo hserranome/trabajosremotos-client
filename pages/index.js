@@ -1,6 +1,5 @@
-import JobsList from "../modules/JobsList";
-import CategoryMenu from "../components/CategoryMenu";
 import SearchBar from "../components/SearchBar";
+import styled from 'styled-components';
 import PublishBanner from "../components/PublishBanner";
 import Hero from "../components/Hero";
 import fetch from "isomorphic-unfetch";
@@ -9,7 +8,7 @@ import Head from "next/head";
 import { WEB_URL, API_URL, getLocalDate } from "../utils";
 
 const Index = (props) => {
-	const { initialJobs, error, query } = props;
+	const { jobs, jobCount, error, query } = props;
 
 	return (
 		<div>
@@ -56,11 +55,34 @@ const Index = (props) => {
 			<Hero />
 			<SearchBar />
 
-			<div className="trabajos nobottom">
-				<CategoryMenu />
+			{/* <div className="trabajos nobottom">
 				<PublishBanner />
-				<JobsList initialJobs={initialJobs} error={error} query={query} />
-			</div>
+			</div> */}
+
+      <div className="container nobottom title-jobs" style={{ marginTop: '2rem'}}>
+        <h2 className="text-2xl text-left md:text-3xl">Descubre {jobCount} oportunidades de empleo remoto.</h2>
+        <p className="text-gray-700 text-left max-w-2xl mt-3">Encuentra tu próximo empleo remoto usando trabajos remotos y únete a empresas que apuestan por sus empleados y metodologías de trabajo modernas.</p>
+        <a className="text-left block mt-3 accent-text font-bold" href="/trabajos">Explora todos los trabajos remotos →</a>
+      </div>
+
+      <GridContainer className="blog-container notop">
+        {jobs && jobs.length > 0 ? (
+          jobs.map((job) =>
+            <BlogPost href={`/categoria/${job.slug}`} key={job.slug}>
+              <PostContent>
+                <PostThumbnail src={`/static/images/${job.slug}.png`} />
+                <PostTitle className="prata">
+                  <strong>{job.jobs}</strong> empleos remotos de {job.name}
+                </PostTitle>
+              </PostContent>
+            </BlogPost>
+          )
+        ) : (
+          <div key="empty-div" className="empty-message">
+            Error, recarga la página por favor.
+          </div>
+        )}
+      </GridContainer>
 
 			<div className="extra">
 				<div className="container" style={{ marginTop: "0" }}>
@@ -107,29 +129,20 @@ const Index = (props) => {
 };
 
 Index.getInitialProps = async () => {
-	const thisQuery = `/jobs?_sort=pinned:DESC,created_at:desc&_limit=40`;
+	const thisQuery = `/categories`;
 
 	try {
-		// Advertisement query
-		const ad = await fetch(`${API_URL}/archives?_sort=active:DESC`);
-		const ads = await ad.json();
-		const randomAd = ads[Math.floor(Math.random() * ads.length)];
 
 		// Jobs query
 		const res = await fetch(`${API_URL}${thisQuery}`);
 		const jobs = await res.json();
+    let jobCount = 0;
 
-		// Format date and sort jobs
-		const initialJobs = jobs.map((job) => ({ ...job, created_at_formatted: getLocalDate(job.created_at) }));
-
-		// Before returning the jobs, add the advertisement to the array of jobs
-		try {
-			if (ads.length !== 0 && randomAd.Active === true) initialJobs.splice(3, 0, randomAd);
-		} catch {
-			console.error("cannot load ads");
-		}
-
-		return { initialJobs, query: thisQuery };
+    jobs.forEach(job => {
+      jobCount = jobCount + job.jobs;
+    });
+    
+		return { jobs, jobCount, query: thisQuery };
 	} catch (error) {
 		console.error(error);
 		return { error };
@@ -137,3 +150,58 @@ Index.getInitialProps = async () => {
 };
 
 export default Index;
+
+// Styles
+const GridContainer = styled.div`
+	display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
+  grid-column-gap: 25px;
+  grid-row-gap: 25px;
+  padding: 60px 20px;
+  margin: 0 auto;
+  max-width: 960px;
+  padding-top: 32px;
+`;
+const PostThumbnail = styled.img`
+	height: 96px;
+	border-radius: 10px;
+	margin-bottom: 1rem;
+	max-width: 100%;
+`;
+const BlogPost = styled.a`
+	width: 100%;
+	max-width: 100%;
+	border-radius: 10px;
+	overflow: hidden;
+	transition: .1s linear;
+	background-color: white;
+	border: 1px solid #eee;
+	
+	&:hover{
+		transform: translateY(-5px);
+		box-shadow: 0 0.3rem 1.2rem 0 rgba(5,10,15, .03);
+	}
+`;
+const PostContent = styled.div`
+	position: relative;
+	box-sizing: border-box;
+	padding: 1rem;
+`;
+const PostTitle = styled.h2`
+	font-size: 1.2rem;
+	margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: 400;
+	white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  @supports (-webkit-line-clamp: 2) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: initial;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+`;

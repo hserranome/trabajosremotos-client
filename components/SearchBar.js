@@ -34,11 +34,11 @@ const SearchBar = (props) => {
 		<div className="bar">
 			<div className="container">
 				<form method='get' id='searchform' onSubmit={(event) => handleSearch(event)}>
-					<input type='text' className='field' id="searchQuery" minLength='1' placeholder='Escribe aquí el trabajo que quieres buscar' />
+					<input type='text' className='field' id="searchQuery" minLength='1' placeholder='¿De qué quieres trabajar?' />
 					<input className='search' type='submit' value='Buscar' />
 				</form>
 
-				<div className="tags">
+				{/* <div className="tags">
 					<p>Etiquetas populares: 
 						<span><a href={`${WEB_URL}/etiqueta/seo`}>seo</a></span> 
 						<span><a href={`${WEB_URL}/etiqueta/react`}>react</a></span> 
@@ -47,7 +47,7 @@ const SearchBar = (props) => {
 						<span><a href={`${WEB_URL}/etiqueta/redes-sociales`}>redes sociales</a></span> 
 						<span><a href={`${WEB_URL}/etiqueta/photoshop`}>photoshop</a></span> 
 					</p>
-				</div>
+				</div> */}
 			</div>
 		</div>
 	);
