@@ -66,6 +66,18 @@ const sitemapXml = (blogPosts, jobsList) => {
       <priority>0.8</priority>
     </url>
     <url>
+      <loc>https://www.trabajosremotos.es/alternativas</loc>
+      <priority>0.8</priority>
+    </url>
+    <url>
+      <loc>https://www.trabajosremotos.es/alternativas/linkedin</loc>
+      <priority>0.8</priority>
+    </url>
+    <url>
+      <loc>https://www.trabajosremotos.es/alternativas/indeed</loc>
+      <priority>0.8</priority>
+    </url>
+    <url>
       <loc>https://www.trabajosremotos.es/contacto</loc>
       <priority>0.5</priority>
     </url>
@@ -79,6 +91,10 @@ const sitemapXml = (blogPosts, jobsList) => {
     </url>
     <url>
       <loc>https://www.trabajosremotos.es/publicar</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>https://www.trabajosremotos.es/publicitate</loc>
       <priority>0.5</priority>
     </url>
     <url>
