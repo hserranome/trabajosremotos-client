@@ -5,6 +5,7 @@ Client for trabajosremotos.es built using React and Next.js.
 # Getting started 
 
 ## Requirements
+
 NPM xd
 
 ## Steps

@@ -1,6 +1,6 @@
 import SearchBar from "../components/SearchBar";
 import styled from 'styled-components';
-import PublishBanner from "../components/PublishBanner";
+import PublishBannerHero from "../components/PublishBannerHero";
 import Hero from "../components/Hero";
 import fetch from "isomorphic-unfetch";
 import Head from "next/head";
@@ -53,10 +53,13 @@ const Index = (props) => {
 			</Head>
 
 			<Hero />
+      <div style={{ backgroundColor: "#e2f4fa" }} >
+        <PublishBannerHero />
+      </div>
 			<SearchBar />
 
 			{/* <div className="trabajos nobottom">
-				<PublishBanner />
+				<PublishBannerHero />
 			</div> */}
 
       <div className="container nobottom title-jobs" style={{ marginTop: '2rem'}}>
