@@ -47,6 +47,10 @@ export default class MyDocument extends Document {
           `,
             }}
           />
+
+          {/* Adsense */}
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9374214313904321"
+            crossOrigin="anonymous"></script>
 				</Head>
 				<body>
 					{/* Made by */}
