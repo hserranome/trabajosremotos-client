@@ -47,6 +47,8 @@ export default class MyDocument extends Document {
           `,
             }}
           />
+
+          <meta name="propeller" content="2c723ca3e18e5e7c38c61c6607e98f75"></meta>
 				</Head>
 				<body>
 					{/* Made by */}
