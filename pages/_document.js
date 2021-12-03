@@ -52,7 +52,7 @@ export default class MyDocument extends Document {
 					{/* Made by */}
 					<p className="by">Proyecto de 
 					<a 
-						href="http://twitter.com/mascarelldev" 
+						href="http://mascarell.me" 
 						target="_blank" 
 						rel="noopener noreferrer"
 					>Mascarell</a></p>
