@@ -114,7 +114,7 @@ export const Content = () => {
 											<path d="M20 6L9 17l-5-5"></path>
 										</svg>
 									</span>
-									Nuestro canal de Telegram tiene <b className="font-medium">1.100 usuarios</b> activos
+									Nuestro canal de Telegram tiene <b className="font-medium">1.400 usuarios</b> activos
 								</p>
 								<p>
 									<span class="brand-secondary-bg-color text-indigo-400 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
@@ -130,7 +130,7 @@ export const Content = () => {
 											<path d="M20 6L9 17l-5-5"></path>
 										</svg>
 									</span>
-									Nuestra página de LinkedIn tiene más de <b className="font-medium">1.500 seguidores</b>
+									Nuestra página de LinkedIn tiene más de <b className="font-medium">2.000 seguidores</b>
 								</p>
 							</div>
 						</div>
@@ -176,7 +176,7 @@ export const Pricing = () => {
 						<div className="flex items-center justify-between pb-6 mb-6 border-b">
 							<div>
 								<p className="text-sm font-bold tracking-wider uppercase">Paquete estándar</p>
-								<p className="text-5xl font-extrabold">249 €</p>
+								<p className="text-5xl font-extrabold">199 €</p>
 							</div>
 							<div className="flex items-center justify-center w-24 h-24 rounded-full bg-blue-gray-50">
 								<svg className="w-10 h-10 text-gray-600" viewBox="0 0 24 24" strokeLinecap="round" strokeLidth="2">
