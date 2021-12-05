@@ -47,6 +47,8 @@ export default class MyDocument extends Document {
           `,
             }}
           />
+
+          <script data-ad-client="ca-pub-9374214313904321" async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js`}></script>
 				</Head>
 				<body>
 					{/* Made by */}
